@@ -16,7 +16,6 @@ let searchValue;
 
 document.getElementById("bigheading").innerHTML = "Please wait - loading data...";
 getData();
-setUpUI();
 document.getElementById("bigheading").innerHTML = "Coordinate transformation";
 
 // Event when fromSRS is changed
