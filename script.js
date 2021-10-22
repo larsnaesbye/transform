@@ -3,7 +3,7 @@ const webproj_info_url = "https://api.dataforsyningen.dk/rest/webproj/v1.0/crs/"
 const webproj_trans_url = "https://api.dataforsyningen.dk/rest/webproj/v1.0/trans/"; // add {src}/{dst}/{v1}/{v2} at the end
 const df_token_string = "?token=d2460098015969ae9229d18233f05a60"
 
-let EPSG_data; // our database of projections and metadata
+let EPSG_data = []; // our database of projections and metadata
 
 // for selecting different controls
 const search = document.querySelector(".searchBox");
@@ -16,12 +16,19 @@ let searchValue;
 
 document.getElementById("bigheading").innerHTML = "Please wait - loading data...";
 getData();
+setUpUI();
 document.getElementById("bigheading").innerHTML = "Coordinate transformation";
 
 // Event when fromSRS is changed
 fromSRS.addEventListener('change', (event) => {
     resultFrom = `${event.target.value}`;
     document.getElementById('convert').disabled = !bothSRSselected();
+    // TODO : how do we get these from EPSG_data easily?
+    document.getElementById('koordinatfromlabel1').innerHTML = EPSG_data[region][index]["v1"];
+    document.getElementById('koordinatfromlabel2').innerHTML = EPSG_data[region][index]["v2"];
+    document.getElementById('koordinatfromlabel3').innerHTML = EPSG_data[region][index]["v3"];
+    document.getElementById('koordinatfromlabel4').innerHTML = EPSG_data[region][index]["v4"];
+
 });
 
 // Event when toSRS is changed
@@ -48,6 +55,7 @@ function updateValue(e) {
 }
 
 function getResults() {
+    //TBD
     fetch(`${webproj_trans_url + df_token_string}`)
         .then(data => {
             return data.json();
@@ -58,50 +66,60 @@ function displayResults(data) {
     // TBD
 }
 
-function getDescription(EPSG) {
-    return fetch(webproj_info_url + EPSG + df_token_string)
-        .then(response => response.json())
-        .catch((e) => {
-        });
+function getDescription2(EPSG) {
+    // get info about EPSG code
+    const httpRequest = new XMLHttpRequest();
+    let result = {};
+    httpRequest.onreadystatechange = function () {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+                try {
+                    result = JSON.parse(httpRequest.responseText);
+                } catch (e) {
+                    console.error("Parse Error", httpRequest.statusText);
+                }
+            } else {
+                console.error("Response Error", httpRequest.statusText);
+            }
+        }
+    }
+    httpRequest.onerror = function () {
+        console.error("Request Error");
+    };
+    httpRequest.open('GET', webproj_info_url + EPSG + df_token_string, false);
+    httpRequest.send();
+    result = JSON.parse(httpRequest.responseText);
+    return result;
 }
 
-// Get our data, process EPSG codes and populate the dropdowns with codes
-// and put descriptions into tooltips
-// To have UI setup moved out
+// Get our data from WEBPROJ
 
 function getData() {
     const httpRequest = new XMLHttpRequest();
-    httpRequest.onreadystatechange = async function () {
-        let groupselect1 = document.getElementById('sel1');
-        let groupselect2 = document.getElementById('sel2');
-        let description;
+    httpRequest.onreadystatechange = function () {
+        let description = {};
+        let EPSG_codes;
+        let regiondict;
+        let countrydict;
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
             if (httpRequest.status === 200) {
                 try {
                     // first get the list of EPSG codes
-                    EPSG_data = JSON.parse(httpRequest.responseText);
-                    console.log(EPSG_data);
-                    for (const region of Object.keys(EPSG_data)) {
+                    EPSG_codes = JSON.parse(httpRequest.responseText);
+                    countrydict = {}
+                    for (const region of Object.keys(EPSG_codes)) {
                         // iterate over regions
-                        const opt = document.createElement('option');
-                        opt.value = region;
-                        opt.innerHTML = region;
-                        opt.disabled = true;
-                        groupselect1.appendChild(opt);
-                        groupselect2.appendChild(opt.cloneNode(true));
-                        for (const epsgcode of Object.keys(EPSG_data[region])) {
+                        regiondict = {}
+                        for (const epsgcode of Object.keys(EPSG_codes[region])) {
                             // iterate over projections
-                            const opt2 = document.createElement('option');
-                            opt2.disabled = false;
-                            description = await getDescription(EPSG_data[region][epsgcode]);
-                            opt2.title = EPSG_data[region][epsgcode];
-                            opt2.value = EPSG_data[region][epsgcode];
-                            opt2.innerHTML = description["title"];
-                            groupselect1.appendChild(opt2);
-                            groupselect2.appendChild(opt2.cloneNode(true));
+                            countrydict = {}
+                            description = getDescription2(EPSG_codes[region][epsgcode]);
+                            description["EPSG"] = EPSG_codes[region][epsgcode]
+                            regiondict[epsgcode] = description; // add EPSG plus info to region dictionary
                         }
+                        countrydict[region] = regiondict;
+                        EPSG_data = Object.assign(EPSG_data, countrydict);
                     }
-
                 } catch (e) {
                     console.error("Parse Error", httpRequest.statusText);
                 }
@@ -113,11 +131,38 @@ function getData() {
     httpRequest.onerror = function () {
         console.error("Request Error");
     };
-    httpRequest.open('GET', webproj_srslist_url + df_token_string);
+    httpRequest.open('GET', webproj_srslist_url + df_token_string, false);
     httpRequest.send();
 }
 
+function setUpUI() {
+    let groupselect1 = document.getElementById('sel1');
+    let groupselect2 = document.getElementById('sel2');
+    let region;
+    let description;
+    for (region of Object.keys(EPSG_data)) {
+        // iterate over regions
+        console.log(region);
+        const opt = document.createElement('option');
+        opt.value = region;
+        opt.innerHTML = region;
+        opt.disabled = true;
+        groupselect1.appendChild(opt);
+        groupselect2.appendChild(opt.cloneNode(true));
+        for (const index of Object.keys(EPSG_data[region])) {
+            // iterate over projections
+            const opt2 = document.createElement('option');
+            opt2.disabled = false;
+            description = EPSG_data[region][index]["EPSG"]
+            opt2.title = EPSG_data[region][index]["EPSG"];
+            opt2.value = EPSG_data[region][index]["EPSG"];
+            opt2.innerHTML = EPSG_data[region][index]["title"];
+            groupselect1.appendChild(opt2);
+            groupselect2.appendChild(opt2.cloneNode(true));
+        }
 
+    }
+}
 
 function clearVal() {
     window.location.reload();
