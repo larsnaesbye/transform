@@ -1,16 +1,16 @@
 # transform
 
-By lanch@sdfe.dk
+by Lars Næsbye Christensen (lanch@sdfe.dk)
 
 Uses the `webproj` service extensively.
 
-### TODO first
+### TODO 1.0
 
-- [ ] Set the coordinate labels based on selected EPSG codes (title tag)
 - [ ] Build and send transformation URL properly
 - [ ] Show EPSG below selector in label?
+
+### TODO 1.1
+
 - [ ] Add map?
-- [ ] 1st refactor
-- [ ] Add LICENSE and credits
+- [ ] Make all calls async
 - [ ] Add a copy result to clipboard button
-- [ ] Make the whole shebob async

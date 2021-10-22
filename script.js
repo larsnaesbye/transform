@@ -14,20 +14,23 @@ let resultFrom;
 let resultTo;
 let searchValue;
 
-document.getElementById("bigheading").innerHTML = "Please wait - loading data...";
 getData();
+//console.log(EPSG_data)
 setUpUI();
-document.getElementById("bigheading").innerHTML = "Coordinate transformation";
+document.getElementById("bigheading").innerHTML = "Coordinate transformation"; // set title right when done loading data
 
 // Event when fromSRS is changed
 fromSRS.addEventListener('change', (event) => {
     resultFrom = `${event.target.value}`;
     document.getElementById('convert').disabled = !bothSRSselected();
-    // TODO : how do we get these from EPSG_data easily?
-    document.getElementById('koordinatfromlabel1').innerHTML = EPSG_data[region][index]["v1"];
-    document.getElementById('koordinatfromlabel2').innerHTML = EPSG_data[region][index]["v2"];
-    document.getElementById('koordinatfromlabel3').innerHTML = EPSG_data[region][index]["v3"];
-    document.getElementById('koordinatfromlabel4').innerHTML = EPSG_data[region][index]["v4"];
+
+    const e1 = document.getElementById('sel1');
+    const e1_txt = e1.options[e1.selectedIndex].title; // title holds EPSG code
+    let fromEPSG = metaByEPSG(e1_txt);
+    document.getElementById('koordinatfromlabel1').innerHTML = fromEPSG["v1"];
+    document.getElementById('koordinatfromlabel2').innerHTML = fromEPSG["v2"];
+    document.getElementById('koordinatfromlabel3').innerHTML = fromEPSG["v3"];
+    document.getElementById('koordinatfromlabel4').innerHTML = fromEPSG["v4"];
 
 });
 
@@ -36,6 +39,18 @@ toSRS.addEventListener('change', (event) => {
     resultTo = `${event.target.value}`;
     document.getElementById('convert').disabled = !bothSRSselected();
 });
+
+function metaByEPSG(EPSG) {
+    // try searching for metadata for a given EPSG string
+    for (const region of Object.keys(EPSG_data)) {
+        // iterate over regions
+        for (const epsgcode of Object.keys(EPSG_data[region])) {
+            // iterate over projections
+            if (EPSG_data[region][epsgcode]["EPSG"] === EPSG) return EPSG_data[region][epsgcode]
+        }
+    }
+    return "not found"
+}
 
 function bothSRSselected() {
     const e1 = document.getElementById('sel1');
@@ -55,15 +70,27 @@ function updateValue(e) {
 }
 
 function getResults() {
-    //TBD
-    fetch(`${webproj_trans_url + df_token_string}`)
+    //TODO: gather values and EPSG codes before sending on
+    const e1 = document.getElementById('sel1');
+    const e2 = document.getElementById('sel2');
+    const sourceproj = e1.options[e1.selectedIndex].title;
+    const destproj = e2.options[e2.selectedIndex].title;
+
+    let sourceval1 = document.getElementById('koordinatfrom1').value;
+    console.log(sourceval1);
+    let sourceval2 = document.getElementById('koordinatfrom2').value;
+    console.log(sourceval2);
+
+    let sourceval3;
+    let sourceval4;
+    fetch(`${webproj_trans_url + sourceproj + "/" + destproj + "/" + sourceval1 + "," + sourceval2 + df_token_string}`)
         .then(data => {
             return data.json();
         }).then(displayResults);
 }
 
 function displayResults(data) {
-    // TBD
+    console.log(data);
 }
 
 function getDescription2(EPSG) {
@@ -142,7 +169,6 @@ function setUpUI() {
     let description;
     for (region of Object.keys(EPSG_data)) {
         // iterate over regions
-        console.log(region);
         const opt = document.createElement('option');
         opt.value = region;
         opt.innerHTML = region;
