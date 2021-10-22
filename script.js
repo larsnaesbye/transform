@@ -68,29 +68,37 @@ function updateValue(e) {
     searchValue = e.target.value;
 }
 
+function copyToClip() {
+let stringToCopy = document.getElementById("koordinatto1").value;
+
+   /* Copy the text inside the text field */
+  navigator.clipboard.writeText(stringToCopy);
+
+  /* Alert the copied text */
+  alert("Copied the text: " + stringToCopy);
+}
+
 function getResults() {
     const e1 = document.getElementById('sel1');
     const e2 = document.getElementById('sel2');
     const sourceproj = e1.options[e1.selectedIndex].title;
     const destproj = e2.options[e2.selectedIndex].title;
 
-    let sourceval1 = document.getElementById('koordinatfrom1').value;
-    console.log(sourceval1);
+    var sourceval1 = document.getElementById('koordinatfrom1').value;
     let sourceval2 = document.getElementById('koordinatfrom2').value;
-    console.log(sourceval2);
-
-    let sourceval3= document.getElementById('koordinatfrom3').value;
-                      console.log(sourceval3);
+    let sourceval3 = document.getElementById('koordinatfrom3').value;
     let sourceval4= document.getElementById('koordinatfrom4').value;
-                      console.log(sourceval4);
-    fetch(`${webproj_trans_url + sourceproj + "/" + destproj + "/" + sourceval1 + "," + sourceval2 + df_token_string}`)
+    fetch(`${webproj_trans_url + sourceproj + "/" + destproj + "/" + sourceval1 + "," + sourceval2+ "," + sourceval3+ "," + sourceval4 + df_token_string}`)
         .then(data => {
             return data.json();
         }).then(displayResults);
 }
 
 function displayResults(data) {
-    console.log(data);
+document.getElementById('koordinatto1').value = data["v1"];
+document.getElementById('koordinatto2').value = data["v2"];
+document.getElementById('koordinatto3').value = data["v3"];
+document.getElementById('koordinatto4').value = data["v4"];
 }
 
 function getDescription2(EPSG) {
