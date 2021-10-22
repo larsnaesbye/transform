@@ -15,7 +15,6 @@ let resultTo;
 let searchValue;
 
 getData();
-//console.log(EPSG_data)
 setUpUI();
 document.getElementById("bigheading").innerHTML = "Coordinate transformation"; // set title right when done loading data
 
@@ -70,7 +69,6 @@ function updateValue(e) {
 }
 
 function getResults() {
-    //TODO: gather values and EPSG codes before sending on
     const e1 = document.getElementById('sel1');
     const e2 = document.getElementById('sel2');
     const sourceproj = e1.options[e1.selectedIndex].title;
@@ -81,8 +79,10 @@ function getResults() {
     let sourceval2 = document.getElementById('koordinatfrom2').value;
     console.log(sourceval2);
 
-    let sourceval3;
-    let sourceval4;
+    let sourceval3= document.getElementById('koordinatfrom3').value;
+                      console.log(sourceval3);
+    let sourceval4= document.getElementById('koordinatfrom4').value;
+                      console.log(sourceval4);
     fetch(`${webproj_trans_url + sourceproj + "/" + destproj + "/" + sourceval1 + "," + sourceval2 + df_token_string}`)
         .then(data => {
             return data.json();
