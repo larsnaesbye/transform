@@ -6,11 +6,11 @@ Uses the `webproj` service extensively.
 
 ### TODO 1.0
 
-- [ ] Show EPSG below selector in label?
+- [ ] Make copy result to clipboard button work
 
 ### TODO 1.1
 
-- [ ] Add map?
-- [ ] Swap button?
+- [ ] Table conversion
+- [ ] Upload file (CSV?)  
+- [ ] Map (OSM?)
 - [ ] Make all calls async
-- [ ] Add a copy result to clipboard button

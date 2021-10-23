@@ -57,7 +57,7 @@ function bothSRSselected() {
     const e1_txt = e1.options[e1.selectedIndex].title; // title holds EPSG code
     const e2_txt = e2.options[e2.selectedIndex].title;
 
-    return e1_txt.includes("EPSG:") && e2_txt.includes("EPSG:");
+    return e1_txt.includes(":") && e2_txt.includes(":");
 }
 
 search.addEventListener('input', updateValue);
@@ -101,7 +101,7 @@ document.getElementById('koordinatto3').value = data["v3"];
 document.getElementById('koordinatto4').value = data["v4"];
 }
 
-function getDescription2(EPSG) {
+function getDescription(EPSG) {
     // get info about EPSG code
     const httpRequest = new XMLHttpRequest();
     let result = {};
@@ -148,7 +148,7 @@ function getData() {
                         for (const epsgcode of Object.keys(EPSG_codes[region])) {
                             // iterate over projections
                             countrydict = {}
-                            description = getDescription2(EPSG_codes[region][epsgcode]);
+                            description = getDescription(EPSG_codes[region][epsgcode]);
                             description["EPSG"] = EPSG_codes[region][epsgcode]
                             regiondict[epsgcode] = description; // add EPSG plus info to region dictionary
                         }
