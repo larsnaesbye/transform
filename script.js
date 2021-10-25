@@ -84,15 +84,27 @@ function updateValue(e) {
     searchValue = e.target.value;
 }
 
-function copyToClip() {
-    let stringToCopy = document.getElementById("koordinatto1").value;
+function copyToClipboard() {
+    let system = document.getElementById('sel2').value
+    let v1 = document.getElementById('koordinatto1').value;
+    let v2 = document.getElementById('koordinatto2').value;
+    let v3 = document.getElementById('koordinatto3').value;
+    let v4 = document.getElementById('koordinatto4').value;
 
-    /* Copy the text inside the text field */
-    navigator.clipboard.writeText(stringToCopy);
-
-    /* Alert the copied text */
-    alert("Copied the text: " + stringToCopy);
+    pushToClipboard(system + "\n" + v1 + "," + v2 + "," + v3 + "," + v4);
 }
+
+const pushToClipboard = str => {
+    const el = document.createElement('textarea');
+    el.value = str;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+};
 
 function getResults() {
     const e1 = document.getElementById('sel1');
