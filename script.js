@@ -37,6 +37,14 @@ fromSRS.addEventListener('change', (event) => {
 toSRS.addEventListener('change', (event) => {
     resultTo = `${event.target.value}`;
     document.getElementById('convert').disabled = !bothSRSselected();
+    const e2 = document.getElementById('sel2');
+    const e2_txt = e2.options[e2.selectedIndex].title; // title holds EPSG code
+    let fromEPSG = metaByEPSG(e2_txt);
+    document.getElementById('koordinattolabel1').innerHTML = fromEPSG["v1"];
+    document.getElementById('koordinattolabel2').innerHTML = fromEPSG["v2"];
+    document.getElementById('koordinattolabel3').innerHTML = fromEPSG["v3"];
+    document.getElementById('koordinattolabel4').innerHTML = fromEPSG["v4"];
+
 });
 
 function metaByEPSG(EPSG) {
@@ -69,13 +77,13 @@ function updateValue(e) {
 }
 
 function copyToClip() {
-let stringToCopy = document.getElementById("koordinatto1").value;
+    let stringToCopy = document.getElementById("koordinatto1").value;
 
-   /* Copy the text inside the text field */
-  navigator.clipboard.writeText(stringToCopy);
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(stringToCopy);
 
-  /* Alert the copied text */
-  alert("Copied the text: " + stringToCopy);
+    /* Alert the copied text */
+    alert("Copied the text: " + stringToCopy);
 }
 
 function getResults() {
@@ -84,21 +92,21 @@ function getResults() {
     const sourceproj = e1.options[e1.selectedIndex].title;
     const destproj = e2.options[e2.selectedIndex].title;
 
-    var sourceval1 = document.getElementById('koordinatfrom1').value;
+    let sourceval1 = document.getElementById('koordinatfrom1').value;
     let sourceval2 = document.getElementById('koordinatfrom2').value;
     let sourceval3 = document.getElementById('koordinatfrom3').value;
-    let sourceval4= document.getElementById('koordinatfrom4').value;
-    fetch(`${webproj_trans_url + sourceproj + "/" + destproj + "/" + sourceval1 + "," + sourceval2+ "," + sourceval3+ "," + sourceval4 + df_token_string}`)
+    let sourceval4 = document.getElementById('koordinatfrom4').value;
+    fetch(`${webproj_trans_url + sourceproj + "/" + destproj + "/" + sourceval1 + "," + sourceval2 + "," + sourceval3 + "," + sourceval4 + df_token_string}`)
         .then(data => {
             return data.json();
         }).then(displayResults);
 }
 
 function displayResults(data) {
-document.getElementById('koordinatto1').value = data["v1"];
-document.getElementById('koordinatto2').value = data["v2"];
-document.getElementById('koordinatto3').value = data["v3"];
-document.getElementById('koordinatto4').value = data["v4"];
+    document.getElementById('koordinatto1').value = data["v1"];
+    document.getElementById('koordinatto2').value = data["v2"];
+    document.getElementById('koordinatto3').value = data["v3"];
+    document.getElementById('koordinatto4').value = data["v4"];
 }
 
 function getDescription(EPSG) {
