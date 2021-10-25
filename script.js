@@ -26,10 +26,18 @@ fromSRS.addEventListener('change', (event) => {
     const e1 = document.getElementById('sel1');
     const e1_txt = e1.options[e1.selectedIndex].title; // title holds EPSG code
     let fromEPSG = metaByEPSG(e1_txt);
-    document.getElementById('koordinatfromlabel1').innerHTML = fromEPSG["v1"];
-    document.getElementById('koordinatfromlabel2').innerHTML = fromEPSG["v2"];
-    document.getElementById('koordinatfromlabel3').innerHTML = fromEPSG["v3"];
-    document.getElementById('koordinatfromlabel4').innerHTML = fromEPSG["v4"];
+    let v1 = fromEPSG["v1"];
+    document.getElementById('koordinatfrom1').disabled = (v1 === null);
+    let v2 = fromEPSG["v2"];
+    document.getElementById('koordinatfrom2').disabled = (v2 === null);
+    let v3 = fromEPSG["v3"];
+    document.getElementById('koordinatfrom3').disabled = (v3 === null);
+    let v4 = fromEPSG["v4"];
+    document.getElementById('koordinatfrom4').disabled = (v4 === null);
+    document.getElementById('koordinatfromlabel1').innerHTML = v1;
+    document.getElementById('koordinatfromlabel2').innerHTML = v2;
+    document.getElementById('koordinatfromlabel3').innerHTML = v3;
+    document.getElementById('koordinatfromlabel4').innerHTML = v4;
 
 });
 
