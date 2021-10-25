@@ -16,7 +16,7 @@ let searchValue;
 
 getData();
 setUpUI();
-document.getElementById("bigheading").innerHTML = "Coordinate transformation"; // set title right when done loading data
+document.getElementById("bigheading").innerHTML = "Koordinattransformation"; // set title right when done loading data
 
 // Event when fromSRS is changed
 fromSRS.addEventListener('change', (event) => {
@@ -48,7 +48,7 @@ function metaByEPSG(EPSG) {
             if (EPSG_data[region][epsgcode]["EPSG"] === EPSG) return EPSG_data[region][epsgcode]
         }
     }
-    return "not found"
+    return "ikke fundet"
 }
 
 function bothSRSselected() {
