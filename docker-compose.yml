@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  switchboard:
+  transform:
     image: kortforsyningen/transform:latest
     container_name: transform
     ports:
