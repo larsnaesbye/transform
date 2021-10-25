@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="da">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +13,22 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js">
     </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+
 </head>
 <body>
-
-<h1 class="heading text-center display-2" id="bigheading">
-    Vent venligst - indlæser projektioner...</h1>
-<h4 class="heading text-center text-muted">gør brug af <a href="https://github.com/Kortforsyningen/WEBPROJ"
-                                                          target="_blank">WEBPROJ</a></h4>
+<a href="https://sdfe.dk" target="_blank"><img src="log_sde_rgb_dk.webp" alt="SDFE homepage"
+                                               class="img-fluid"
+                                               style="margin: 10px; width: 140px; position: absolute;"/></a>
+<h2 class="heading text-center display-2" id="bigheading">
+    Vent venligst - indlæser projektioner...</h2>
+<p class="heading text-center text-muted">gør brug af <a href="https://github.com/Kortforsyningen/WEBPROJ"
+                                                         target="_blank">WEBPROJ</a></p>
 <hr>
 <p class="text-center">Vælg kilde- og destinationsprojektioner, udfyld kildeparametre og klik 'Transformér'</p>
 <div class="container">
@@ -110,10 +118,8 @@
         <div class="text-center">
             <button class="btn btn-primary convert m-2" type="submit" id="convert" disabled> Transformér</button>
             <button class="btn btn-primary m-2" onclick="copyToClipboard()"> Kopiér til udklipsholder</button>
+            <button class="btn btn-primary m-2" disabled> Vis på kort</button>
             <button class="btn btn-primary m-2" onclick="clearVal()"> Nulstil</button>
-            <a href="https://sdfe.dk" target="_blank"><img src="log_sde_rgb_dk.webp" alt="SDFE homepage"
-                                                           class="img-fluid"
-                                                           style="float: right; margin: 5px; width: 140px;"/></a>
         </div>
     </div>
 </div>
@@ -124,8 +130,30 @@
 		</span>
     </h2></div>
 
+<div id="map" style="width: 100%; height: 580px"></div>
 
 <script src="script.js"></script>
+<script>
+                 // Creating map options
+                 var mapOptions = {
+                    center: [56.3, 10.5],
+                    zoom: 7
+                 }
+
+                 // Creating a map object
+                 var map = new L.map('map', mapOptions);
+
+                 // Creating a Layer object
+                 var layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+                 // Adding layer to the map
+                 map.addLayer(layer);
+                 let marker = new L.Marker([56.0, 12.0]);
+marker.addTo(map)
+
+
+
+</script>
 </body>
 
 </html>
