@@ -2,4 +2,10 @@
 
 by Lars Næsbye Christensen (lanch@sdfe.dk)
 
-Uses the `webproj` service extensively.
+Basic coordinate transformation app.
+
+Uses :
+
+* Webproj
+* OpenStreetMap
+* Leaflet.js
