@@ -21,7 +21,7 @@ const colorTemplate = {
   // Added for buttons, links, tooltips, tabs, panels
   primary: '#B2940E', // same as appThemeColor - used on datasetButtons
   primaryDark: '#735F09', // used as background on map-control panel headers 7F6A0A
-  active: '#B2940E', // same as appThemeColor - used as underline on tabs and active buttons
+  active: '#3EDDC6', // same as appThemeColor - used as underline on tabs and active buttons
   tooltipColor: '#B2940E', // same as appThemeColor
   linkColor: '#B2940E', // same as appThemeColor
 
