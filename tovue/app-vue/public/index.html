@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+        <title>Forsyningsdataportal.dk</title>
+        <style>
+            #ie-banner {
+                padding: 20px;
+                display: none;
+            }
+        </style>
+        <script>
+            function isOldIE (userAgent) {
+                var msie = userAgent.indexOf('MSIE');
+                if (msie > 0) {
+                    // IE 10 or older
+                    return true
+                };
+                var trident = userAgent.indexOf('Trident/');
+                if (trident > 0) {
+                    return true
+                };
+                // other browser, IE 11, or Edge
+                return false
+            };
+
+            if (isOldIE(window.navigator.userAgent)) {
+                var ieWarning = document.getElementById('ie-banner')
+                ieWarning.setAttribute('style', 'display: block;')
+            };
+        </script>
+    </head>
+    <body>
+        <noscript>
+            <strong>We're sorry but forsyningsdata doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        </noscript>
+        <div id="ie-banner">
+            <div id="ie-message">
+                <h1>Denne side er ikke optimeret til internet explorer</h1>
+                <p>For at kunne benytte den nyeste webteknologi har vi valgt ikke at understøtte Internet Explorer. Du kan til gengæld bruge Firefox, Chrome, Edge og Safari</p>
+            </div>
+        </div>
+        <div id="app"></div>
+            <!-- built files will be auto injected -->
+        <script async id="CookieConsent" src="https://policy.app.cookieinformation.com/uc.js" data-culture="DA"></script>
+        <script async type="text/javascript" src="<%= BASE_URL %>js/dummy.js" data-consent-src="https://siteimproveanalytics.com/js/siteanalyze_6083803.js" data-category-consent="cookie_cat_statistic"></script>
+    </body>
+</html>

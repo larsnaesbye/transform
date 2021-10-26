@@ -1,0 +1,49 @@
+pipeline {
+   agent none
+    stages {
+        stage ('load155') {
+            agent { node { label 'load155' } }
+            steps {
+                dir('/local/jenkins/forsyningsdata_test') {
+                    git credentialsId: '48c7f747-c6c3-40aa-9579-b99fc976b0d4', url: 'https://github.com/Dataforsyningen/Forsyningsdata'
+                }
+            }
+        }
+        stage ('load154') {
+            agent { node { label 'load154' } }
+            steps {
+                dir('/local/jenkins/forsyningsdata_test') {
+                    git credentialsId: '48c7f747-c6c3-40aa-9579-b99fc976b0d4', url: 'https://github.com/Dataforsyningen/Forsyningsdata'
+                }
+            }
+        }
+        stage ('load210') {
+            agent { node { label 'load210' } }
+            steps {
+                dir('/local/jenkins/forsyningsdata_test') {
+                    git credentialsId: '48c7f747-c6c3-40aa-9579-b99fc976b0d4', url: 'https://github.com/Dataforsyningen/Forsyningsdata'
+                }
+            }
+        }
+
+        stage ('build') {
+            agent { node { label 'load210' } }
+            steps {
+                dir('/local/jenkins/forsyningsdata_test') {
+                    sh 'docker build --pull -f Dockerfile-test-web --tag kortforsyningen/forsyningsdata:test-latest --tag kortforsyningen/forsyningsdata:test-$BUILD_NUMBER .'
+                    sh 'docker image push kortforsyningen/forsyningsdata:test-latest'
+                    sh 'docker image push kortforsyningen/forsyningsdata:test-$BUILD_NUMBER'
+                }
+            }
+        }
+
+        stage ('deploy') {
+            agent { node { label 'load154' } }
+            steps {
+                dir('/local/jenkins/forsyningsdata_test') {
+                    sh 'docker stack deploy -c swarm.test.yml forsyningsdata_test --with-registry-auth --resolve-image always'
+                }
+            }
+        }
+    }
+}
