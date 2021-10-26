@@ -1,8 +1,5 @@
 <template>
   <article aria-label="om os">
-    <h2>
-      Om os
-    </h2>
     <a class="dataforsyningen-logo" href="https://dataforsyningen.dk" target="_blank">
       <Icon
         icon="CrownCirclesLogo"
@@ -17,39 +14,8 @@
       </div>
     </a>
     <p>
-      Forsyningsdataportal.dk er en del af Dataforsyningen.dk.
       Sitet administreres af Styrelsen for Dataforsyning og Effektivisering
     </p>
-    <address>
-      Support – SDFE <br />
-      <a
-        href="tel:+4578768792"
-        class="icon-link"
-      >
-        <Icon
-          icon="PhoneIcon"
-          :width="1.5"
-          :height="1.5"
-          :strokeWidth="1"
-          color="#000"
-        />
-        <span>Tlf. 7876 8792</span>
-      </a>
-      <a
-        href="mailto:sdfe@sdfe.dk"
-        class="icon-link"
-      >
-        <Icon
-          icon="MailIcon"
-          :width="1.5"
-          :height="1.5"
-          :strokeWidth="0.5"
-          color="#000"
-        />
-        <span>support@sdfe.dk</span>
-      </a>
-      Vi har åbent alle hverdage kl. 10:00-15:00.
-    </address>
     <ul class="info-links">
       <li>
         <router-link to="/om" class="icon-link">
