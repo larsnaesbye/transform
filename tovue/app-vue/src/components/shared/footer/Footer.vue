@@ -2,8 +2,6 @@
   <footer>
     <section class="info layout-3col__footer">
       <Us />
-      <Follow />
-      <Visit />
     </section>
     <section class="branding">
       <article class="brands" aria-label="Logoer">
@@ -43,8 +41,6 @@ export default {
   name: 'Footer',
   components: {
     Us: () => import('@/components/shared/footer/Us'),
-    Visit: () => import('@/components/shared/footer/Visit'),
-    Follow: () => import('@/components/shared/footer/Follow')
   },
   data () {
     return {
