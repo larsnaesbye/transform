@@ -29,7 +29,7 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      document.title = to.meta.title || 'Forsyningsdataportal'
+      document.title = to.meta.title || 'Koordinattransformation'
     }
   },
   created () {

@@ -6,7 +6,7 @@
           to="/"
           class="main-menu__item"
         >
-          Forside
+          Danmark
         </router-link>
       </li>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'Datasets' || $route.name == 'Dataset' || $route.name == 'DatasetVisning'}">
@@ -14,7 +14,7 @@
           to="/dataoversigt"
           class="main-menu__item"
         >
-          Datasæt
+          Grønland
         </router-link>
       </li>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'About'}">
@@ -22,7 +22,7 @@
           to="/om"
           class="main-menu__item"
         >
-          Om forsyningsdata
+          Vejledning
         </router-link>
       </li>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'Support'}">
@@ -30,7 +30,7 @@
           to="/vejledning"
           class="main-menu__item"
         >
-          Hjælp
+          Dokumentation
         </router-link>
       </li>
     </ul>
