@@ -10,13 +10,12 @@
       <div
         class="title cursor-point"
       >
-        Forsyningsdataportal
+        Koordinattransformation
       </div>
       <span
         class="sub-title cursor-point text-small"
       >
-        Klima-, Energi- og Forsyningsministeriet
-        <!-- Styrelsen for Dataforsyning og Effektivisering -->
+         Styrelsen for Dataforsyning og Effektivisering
       </span>
     </div>
   </router-link>

@@ -1,7 +1,7 @@
 <template>
   <main>
     <Hero
-      title="Om Forsyningsdata"
+      title="Om Koordinattransformation"
       :summary="summary"
       :image="coverImageUrl"
     />
