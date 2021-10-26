@@ -1,11 +1,8 @@
 <template>
   <main>
-<!--    <Hero>-->
-<!--      :title="title"-->
-<!--      :summary="summary"-->
-<!--      :image="coverImageUrl"-->
+    <Hero>
 
-<!--    </Hero>-->
+    </Hero>
   </main>
 </template>
 
