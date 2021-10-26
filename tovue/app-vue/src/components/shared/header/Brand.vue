@@ -79,7 +79,7 @@ export default {
 .brand-name > .title
   margin-top 2px
   margin-bottom 0.3rem
-  color white
+  color black
   font-size 0.75rem
   line-height 0.875rem
   font-weight 700
@@ -89,6 +89,6 @@ export default {
 
 span.sub-title
   word-break keep-all
-  color white
+  color black
 
 </style>
