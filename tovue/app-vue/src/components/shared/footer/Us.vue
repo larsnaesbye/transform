@@ -13,63 +13,6 @@
         <div class="paragraph_lille">Styrelsen for Dataforsyning og Effektivisering</div>
       </div>
     </a>
-    <p>
-      Sitet administreres af Styrelsen for Dataforsyning og Effektivisering
-    </p>
-    <ul class="info-links">
-      <li>
-        <router-link to="/om" class="icon-link">
-          <Icon
-            icon="MoreIcon"
-            :width="1.5"
-            :height="1.5"
-            color="#000"
-          />
-          <span>
-            Om Forsyningsdata
-          </span>
-        </router-link>
-      </li>
-      <li>
-        <a href="https://dataforsyningen.dk/Persondata" class="icon-link" target="_blank">
-          <Icon
-            icon="MoreIcon"
-            :width="1.5"
-            :height="1.5"
-            color="#000"
-          />
-          <span>
-            Persondatapolitik
-          </span>
-        </a>
-      </li>
-      <li>
-        <router-link to="/cookies" class="icon-link">
-          <Icon
-            icon="MoreIcon"
-            :width="1.5"
-            :height="1.5"
-            color="#000"
-          />
-          <span>
-            Cookiepolitik
-          </span>
-        </router-link>
-      </li>
-      <li>
-        <a href="https://www.was.digst.dk/forsyningsdataportal-dk" target="_blank" class="icon-link">
-          <Icon
-            icon="MoreIcon"
-            :width="1.5"
-            :height="1.5"
-            color="#000"
-          />
-          <span>
-            Webtilgængelighedserklæring
-          </span>
-        </a>
-      </li>
-    </ul>
   </article>
 </template>
 
