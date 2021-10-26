@@ -260,15 +260,12 @@ export const datasetMeta = {
 }
 export const pageMeta = {
   forside: {
-    title: 'Samlet indgang til data om Danmarks forsyning',
-    summary: 'Klima-, Energi- og Forsyningsministeriet præsenterer i samarbejde med Energistyrelsen, Forsyningssekretariatet, Forsyningstilsynet og Styrelsen for Dataforsyning og Effektivisering en samlet indgang til data om din forsyningssektor.',
+    title: 'Transformer koordinater mellem systemer',
+    summary: 'Styrelsen for Dataforsyning og Effektivisering præsenterer en samlet indgang til koordinattransformationer.',
     coverId: 1713,
     partnerLinks: [
-      { label: 'Klima-, Energi- og Forsyningsministeriet', url: 'https://kefm.dk/' },
-      { label: 'Energistyrelsen', url: 'https://ens.dk/' },
-      { label: 'Forsyningstilsynet', url: 'https://forsyningstilsynet.dk/' },
-      { label: 'Forsyningssekretariatet', url: 'https://www.kfst.dk/vandtilsyn/' },
       { label: 'Styrelsen for Dataforsyning og Effektivisering', url: 'https://sdfe.dk/' }
+      { label: 'Klima-, Energi- og Forsyningsministeriet', url: 'https://kefm.dk/' },
     ]
   },
   datasets: {
@@ -280,7 +277,7 @@ export const pageMeta = {
     title: 'Oversigt over datasæt',
     summary: '',
     coverId: 1719,
-    htmlText: 'Forsyningsdataportal er en dataplatform lavet af Klima-, Energi- og Forsyningsministeriets i samarbejde med Energistyrelsen, Forsyningssekretariatet, Forsyningstilsynet samt Styrelsen for Dataforsyning og Effektivisering. Platformen skal fungere som en samlet indgang til data om din forsyningssektor. <br /><br /> Dataplatformen er et første udgangspunkt for, hvordan data for forskellige forsyningsområder kan samles på én platform. Yderligere datasæt kan blive tilføjet. <br /><br />Platformens formål er at øge anvendelsen af og forbedre tilgangen til data i forsyningssektoren. Det skal på langt sigt øge gennemsigtigheden i sektoren, kvalificere beslutningsgrundlag og skabe grobund for innovation og nye forretningsmodeller.'
+    htmlText: 'Koordinattransformation er et værktøj lavet af Styrelsen for Dataforsyning og Effektivisering. <br /><br /> Dataplatformen er et første udgangspunkt for, hvordan data for forskellige forsyningsområder kan samles på én platform. Yderligere datasæt kan blive tilføjet. <br /><br />Platformens formål er at øge anvendelsen af og forbedre tilgangen til data i forsyningssektoren. Det skal på langt sigt øge gennemsigtigheden i sektoren, kvalificere beslutningsgrundlag og skabe grobund for innovation og nye forretningsmodeller.'
   },
   support: {
     title: 'Oversigt over datasæt',

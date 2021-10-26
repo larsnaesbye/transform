@@ -1,8 +1,8 @@
 <template>
   <main>
     <Hero
-      title="Denne side er ikke optimeret til internet explorer"
-      summary="For at kunne benytte den nyeste webteknologi har vi valgt ikke at understøtte Internet Explorer. Du kan til gengæld bruge Chrome, Firefox, Safari mv."
+      title="Denne side er ikke optimeret til Internet Explorer"
+      summary="For at kunne benytte den nyeste webteknologi har vi valgt ikke at understøtte Internet Explorer. Du kan til gengæld bruge Edge, Chrome, Firefox, Safari mv."
     />
   </main>
 </template>

@@ -12,11 +12,11 @@
       >
         Koordinattransformation
       </div>
-<!--      <span-->
-<!--        class="sub-title cursor-point text-small"-->
-<!--      >-->
-<!--         Styrelsen for Dataforsyning og Effektivisering-->
-<!--      </span>-->
+      <span
+        class="sub-title cursor-point text-small"
+      >
+         Styrelsen for Dataforsyning og Effektivisering
+      </span>
     </div>
   </router-link>
 </template>

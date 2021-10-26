@@ -10,7 +10,7 @@
         <h2>Brugerrettet dokumentation – vejledninger</h2>
         <ul>
           <li><a :href="udstillingsmetoderSupportPdfUrl" target="_blank">Oversigt over udstillingsmetoder</a></li>
-          <li><a :href="csvSupportPdfUrl" target="_blank">Sådan åbnes den downloadede csv-fil med korrekt formatering i excel</a></li>
+          <li><a :href="csvSupportPdfUrl" target="_blank">Sådan åbnes den downloadede CSV-fil med korrekt formatering i excel</a></li>
         </ul>
         <h2>Teknisk dokumentation</h2>
         <ul>

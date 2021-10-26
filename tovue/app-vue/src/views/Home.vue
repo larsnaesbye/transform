@@ -107,16 +107,6 @@ export default {
           link: 'https://geus.dk'
         },
         {
-          title: 'DMI',
-          summary: 'Danmarks Meteorologiske Institut indsamler store mængder data om vejr, hav og klima. Se eksempelvis DMIs Klimaatlas eller Frie Data.',
-          link: 'https://dmi.dk'
-        },
-        {
-          title: 'Datafordeler',
-          summary: 'En samlet indgang til offentlig grunddata fra Danmarks myndigheder.',
-          link: 'https://datafordeler.dk/'
-        },
-        {
           title: 'Danmarks Statistik',
           summary: 'En samlet indgang til statistik om Danmark',
           link: 'https://www.dst.dk'
@@ -142,8 +132,6 @@ export default {
   mounted () {
     this.$nextTick(() => {
       const linkBoxAssetsIds = [1725, 1719, 1717]
-      // const linkBoxAssetsIds = [964, 889, 886]
-      // let linkBoxAssetsIds = [721, 721, 721]
       const coverImageId = pageMeta.forside.coverId
       const ids = [coverImageId, ...linkBoxAssetsIds]
 
