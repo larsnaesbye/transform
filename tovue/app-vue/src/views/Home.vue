@@ -1,10 +1,10 @@
 <template>
   <main>
-    <Hero
+    <Hero>
 <!--      :title="title"-->
 <!--      :summary="summary"-->
       :image="coverImageUrl"
-    >
+
     </Hero>
   </main>
 </template>
