@@ -1,8 +1,6 @@
 <template>
   <footer>
-    <section class="info layout-3col__footer">
       <Us />
-    </section>
   </footer>
 </template>
 
