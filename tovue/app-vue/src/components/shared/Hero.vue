@@ -1,21 +1,8 @@
 <template>
   <section
     class="layout-3col__footer"
-    :style="'background-image: linear-gradient(90deg, rgba(28, 36, 0, 0.6), transparent), linear-gradient(180deg, rgba(36, 46, 0, 0.6) 24%, transparent), url(' + image + ');'"
+    :style="'background-color: white;'"
   >
-    <article aria-label="Sideintroduktion">
-      <h1
-        tabindex="0"
-        id="maincontent"
-        ref="firstfocus"
-      >
-        {{ title }}
-      </h1>
-      <p>
-        {{ summary }}
-      </p>
-      <slot></slot>
-    </article>
     <span v-if="image" class="hero__credit white-text">{{ photoCredit }}</span>
   </section>
 </template>
