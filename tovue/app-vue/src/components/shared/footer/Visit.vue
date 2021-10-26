@@ -17,58 +17,6 @@
           </span>
         </a>
       </li>
-      <li>
-        <a href="https://ens.dk/" target="_blank" rel="noopener">
-          <Icon
-            icon="MoreIcon"
-            :width="1.5"
-            :height="1.5"
-            :color="this.$themeColors.black"
-          />
-          <span>
-            Energistyrelsen
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="https://forsyningstilsynet.dk/" target="_blank" rel="noopener">
-          <Icon
-            icon="MoreIcon"
-            :width="1.5"
-            :height="1.5"
-            :color="this.$themeColors.black"
-          />
-          <span>
-            Forsyningstilsynet
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="https://www.kfst.dk/vandtilsyn/" target="_blank" rel="noopener">
-          <Icon
-            icon="MoreIcon"
-            :width="1.5"
-            :height="1.5"
-            :color="this.$themeColors.black"
-          />
-          <span>
-            Forsyningssekretariatet
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="https://sdfe.dk/" target="_blank" rel="noopener">
-          <Icon
-            icon="MoreIcon"
-            :width="1.5"
-            :height="1.5"
-            :color="this.$themeColors.black"
-          />
-          <span>
-            Styrelsen for Dataforsyning og Effektivisering
-          </span>
-        </a>
-      </li>
     </ul>
   </article>
 </template>

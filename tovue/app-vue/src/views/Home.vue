@@ -1,8 +1,8 @@
 <template>
   <main>
     <Hero
-      :title="title"
-      :summary="summary"
+<!--      :title="title"-->
+<!--      :summary="summary"-->
       :image="coverImageUrl"
     >
     </Hero>
@@ -30,12 +30,12 @@ export default {
     pageAssets () {
       return this.$store.state.HomeAssets.data
     },
-    title () {
-      return pageMeta.forside.title
-    },
-    summary () {
-      return pageMeta.forside.summary
-    },
+    // title () {
+    //   return pageMeta.forside.title
+    // },
+    // summary () {
+    //   return pageMeta.forside.summary
+    // },
   },
   methods: {},
   mounted () {
