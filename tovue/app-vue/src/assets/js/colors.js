@@ -43,8 +43,7 @@ const colorTemplate = {
   webApp5: '#B2940E',
   webApp6: '#8DAC20',
   webApp7: '#5FB246',
-  //appThemeColor: '#B2940E',
-  appThemeColor: '#0097A7',
+  appThemeColor: '#B2940E',
 
   // Uncategorised
   background: '#F2F7F7',

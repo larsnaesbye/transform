@@ -83,10 +83,10 @@ nav ul
 
 li.active .main-menu__item
   font-weight bold
-  color var(--appThemeColor)
+  color var(--turquoise)
 
 .main-menu__item
-  color #FFF
+  color #000
   white-space nowrap
   word-break keep-all
   flex-shrink 0
