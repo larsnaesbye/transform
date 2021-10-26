@@ -30,7 +30,7 @@ module.exports = {
     workboxOptions: {
       swSrc: 'src/ServiceWorker.js'
     },
-    name: 'Forsyningsdata',
+    name: 'Koordinattransformation',
     themeColor: '',
     msTileColor: '',
     appleMobileWebAppCapable: 'yes',

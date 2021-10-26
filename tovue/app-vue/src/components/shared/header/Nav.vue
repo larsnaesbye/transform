@@ -33,6 +33,14 @@
           Dokumentation
         </router-link>
       </li>
+      <li class="anim-underline color-theme" :class="{ active: $route.name == 'Support'}">
+        <router-link
+            to="/vejledning"
+            class="main-menu__item"
+        >
+          Om denne webapp
+        </router-link>
+      </li>
     </ul>
   </nav>
 </template>
