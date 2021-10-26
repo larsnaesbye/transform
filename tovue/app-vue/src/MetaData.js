@@ -259,12 +259,11 @@ export const datasetMeta = {
 }
 export const pageMeta = {
   forside: {
-    title: 'Transformer koordinater mellem systemer',
+    title: 'Transformer koordinater',
     summary: 'Styrelsen for Dataforsyning og Effektivisering præsenterer en samlet indgang til koordinattransformationer.',
     coverId: 1713,
     partnerLinks: [
       { label: 'Styrelsen for Dataforsyning og Effektivisering', url: 'https://sdfe.dk/' },
-      { label: 'Klima-, Energi- og Forsyningsministeriet', url: 'https://kefm.dk/' },
     ]
   },
   datasets: {

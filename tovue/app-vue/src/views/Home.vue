@@ -5,9 +5,9 @@
       :summary="summary"
       :image="coverImageUrl"
     >
-      <div class="hero-links">
-        <a v-for="partner in partnerlinks" :href="partner.url" target="_blank" rel="noopener" :key="partner.url">{{ partner.label }}</a>
-      </div>
+<!--      <div class="hero-links">-->
+<!--        <a v-for="partner in partnerlinks" :href="partner.url" target="_blank" rel="noopener" :key="partner.url">{{ partner.label }}</a>-->
+<!--      </div>-->
     </Hero>
     <section
       class="content-section layout-6col"
@@ -25,7 +25,7 @@
     </section>
     <section class="content-section layout-1col"
     >
-      <h3>Andre sider med klima-, energi-, og forsyningsdata</h3>
+      <h3>Andre sider med værktøjer</h3>
       <UiHorizontalScroller :scrollAmount="45">
         <div class="webkit-box-container">
           <ExtLinkBox
@@ -74,38 +74,18 @@ export default {
           link: '/om',
           linkTitle: 'Om forsyningsdata',
           imageUrl: '',
-          title: 'Læs mere om data og hvem der står bag forsyningsdataportal.dk',
-          summary: 'Læs mere om forsyningsdata og historien bag en samlet indgang til data.'
+          title: 'Læs mere om hvem der står bag koordinattransformation',
+          summary: 'Læs mere om koordinattransformation og historien bag.'
         },
         {
           link: '/vejledning',
           linkTitle: 'Hjælp og vejledning',
           imageUrl: '',
-          title: 'Få hjælp til at hente data',
-          summary: 'Hent brugervejledning og teknisk information.'
+          title: 'Få hjælp til transformationer',
+          summary: 'Brugervejledning og teknisk information.'
         }
       ],
       extLinkBoxes: [
-        {
-          title: 'EnergiDataPortal',
-          summary: 'Indgang til alle services og spørgsmål relateret til åbne data hos Energinet.',
-          link: 'https://energidataportal.dk/'
-        },
-        {
-          title: 'Services hos Energistyrelsen',
-          summary: 'Indgang til alle services relateret til bl.a. data og analyser hos Energistyrelsen.',
-          link: 'https://ens.dk/service'
-        },
-        {
-          title: 'Spar Energi',
-          summary: 'Energistyrelsens side om energi. Her finder du gode råd om el, varme og energirigtige løsninger.',
-          link: 'https://sparenergi.dk/'
-        },
-        {
-          title: 'GEUS',
-          summary: 'Datacenter for De Nationale Geologiske Undersøgelser for Danmark og Grønland (GEUS) kan tilgås her.',
-          link: 'https://geus.dk'
-        },
         {
           title: 'Danmarks Statistik',
           summary: 'En samlet indgang til statistik om Danmark',
