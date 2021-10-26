@@ -3,34 +3,6 @@
     <section class="info layout-3col__footer">
       <Us />
     </section>
-    <section class="branding">
-      <article class="brands" aria-label="Logoer">
-        <div>
-          <img :src="KEFMLogoUrl" alt="Logo for Klima-, Energi- og Forsyningsministeriet">
-        </div>
-        <div>
-          <img :src="ENSLogoUrl" alt="Logo for Energistyrelsen">
-        </div>
-        <div>
-          <img :src="FSTSLogoUrl" alt="Logo for Forsyningstilsynet">
-        </div>
-        <div>
-          <img :src="FSLogoUrl" alt="Logo for Konkurrence- og Forbrugerstyrelsen">
-        </div>
-        <div>
-          <img :src="SDFELogoUrl" alt="Logo for Styrelsen for Dataforsyning og Effektivisering">
-        </div>
-      </article>
-      <article class="copyright" aria-label="Copyright information">
-        <p>
-          <span>Bemærk:</span>
-          Sender du os en e-mail, vil oplysningerne blive registreret i vores centrale, digitale system til videre sagsbehandling.
-        </p>
-        <p>
-          &#169; 2020 Styrelsen for Dataforsyning og Effektivisering
-        </p>
-      </article>
-    </section>
   </footer>
 </template>
 
