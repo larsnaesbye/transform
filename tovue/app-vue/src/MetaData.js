@@ -262,9 +262,6 @@ export const pageMeta = {
     title: 'Transformer koordinater',
     summary: 'Styrelsen for Dataforsyning og Effektivisering præsenterer en samlet indgang til koordinattransformationer.',
     coverId: 1713,
-    partnerLinks: [
-      { label: 'Styrelsen for Dataforsyning og Effektivisering', url: 'https://sdfe.dk/' },
-    ]
   },
   datasets: {
     title: 'Oversigt over datasæt',
