@@ -20,13 +20,13 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      meta: { title: 'Koordinattransformation' },
+      meta: { title: 'Koordinattransformation - Danmark' },
       component: () => import(/* webpackChunkName: "Home", webpackMode: "lazy" */ '@/views/Home.vue')
     },
     {
       path: '/grønland',
-      name: 'Datasets',
-      meta: { title: 'Koordinattransformation - Oversigt over datasæt' },
+      name: 'Grønland',
+      meta: { title: 'Koordinattransformation - Grønland' },
       component: () => import(/* webpackChunkName: "Datasets", webpackMode: "lazy" */ '@/views/Datasets.vue')
     },
     {
