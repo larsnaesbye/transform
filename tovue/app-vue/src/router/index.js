@@ -27,7 +27,7 @@ export default new Router({
       path: '/grønland',
       name: 'Grønland',
       meta: { title: 'Koordinattransformation - Grønland' },
-      component: () => import(/* webpackChunkName: "Datasets", webpackMode: "lazy" */ '@/views/Datasets.vue')
+      component: () => import(/* webpackChunkName: "Datasets", webpackMode: "lazy" */ '@/views/Groenland.vue')
     },
     {
       path: '/data/:dataId',
@@ -53,7 +53,7 @@ export default new Router({
       path: '/vejledning',
       name: 'Vejledning',
       meta: { title: 'Koordinattransformation - Vejledning' },
-      component: () => import(/* webpackChunkName: "Support", webpackMode: "lazy" */ '@/views/CookiePolicy.vue')
+      component: () => import(/* webpackChunkName: "Support", webpackMode: "lazy" */ '@/views/Vejledning.vue')
     },
     {
       path: '/dokumentation',
