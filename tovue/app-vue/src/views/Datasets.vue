@@ -1,20 +1,20 @@
 <template>
   <main>
-    <Hero
-      :title="pageTitle"
-      :summary="pageSummary"
-      :image="coverImageUrl"
-    >
+    <Hero>
+<!--      :title="pageTitle"-->
+<!--      :summary="pageSummary"-->
+<!--      :image="coverImageUrl"-->
+<!--    >-->
     </Hero>
-    <section
-      class="content-section layout-1col"
-      v-show="!datasetsStatus === 'success' || !datasets[0]"
-    >
-      <h2 v-if="datasetsStatus === 'loading'">Henter alle datasæt...</h2>
-      <h2 v-else-if="datasetsStatus === 'success' && !datasets[0]">Ingen datasæt. Prøv eventuelt at genindlæse siden.</h2>
-      <h2 v-else-if="datasetsStatus === 'error'">Kunne ikke hente datasæt. Prøv eventuelt at genindlæse siden.</h2>
+<!--    <section-->
+<!--      class="content-section layout-1col"-->
+<!--      v-show="!datasetsStatus === 'success' || !datasets[0]"-->
+<!--    >-->
+<!--      <h2 v-if="datasetsStatus === 'loading'">Henter alle datasæt...</h2>-->
+<!--      <h2 v-else-if="datasetsStatus === 'success' && !datasets[0]">Ingen datasæt. Prøv eventuelt at genindlæse siden.</h2>-->
+<!--      <h2 v-else-if="datasetsStatus === 'error'">Kunne ikke hente datasæt. Prøv eventuelt at genindlæse siden.</h2>-->
 
-    </section>
+<!--    </section>-->
     <section
       class="content-section section_filter"
       v-if="datasetsStatus === 'success' && datasets[0]"
@@ -198,7 +198,6 @@ export default {
     }
   },
   created () {
-    // console.log('Datasets.vue created')
     this.$store.dispatch('DatasetsServices/get')
     this.$store.dispatch('Datasets/get')
       .then((response) => {
@@ -210,7 +209,6 @@ export default {
       })
   },
   mounted () {
-    // console.log('Datasets.vue mounted')
   }
 }
 </script>
