@@ -53,13 +53,13 @@ export default new Router({
       path: '/vejledning',
       name: 'Vejledning',
       meta: { title: 'Koordinattransformation - Vejledning' },
-      component: () => import(/* webpackChunkName: "Support", webpackMode: "lazy" */ '@/views/Support.vue')
+      component: () => import(/* webpackChunkName: "Support", webpackMode: "lazy" */ '@/views/CookiePolicy.vue')
     },
     {
       path: '/dokumentation',
       name: 'Dokumentation',
       meta: { title: 'Koordinattransformation - Dokumentation' },
-      component: () => import(/* webpackChunkName: "Cookies", webpackMode: "lazy" */ '@/views/CookiePolicy.vue')
+      component: () => import(/* webpackChunkName: "Cookies", webpackMode: "lazy" */ '@/views/Support.vue')
     },
     {
       path: '/devicefejl',
