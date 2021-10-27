@@ -7,15 +7,9 @@
     />
     <section class="content-section layout-sidebar">
       <div class="main-content">
-        <h2>Brugerrettet dokumentation – vejledninger</h2>
-        <ul>
-          <li><a :href="udstillingsmetoderSupportPdfUrl" target="_blank">Oversigt over udstillingsmetoder</a></li>
-          <li><a :href="csvSupportPdfUrl" target="_blank">Sådan åbnes den downloadede CSV-fil med korrekt formatering i excel</a></li>
-        </ul>
         <h2>Teknisk dokumentation</h2>
         <ul>
-          <li><a :href="vejledningWMSQGISPdfUrl" target="_blank">Vejledning WMS QGIS</a></li>
-          <li><a href="https://docs.kortforsyningen.dk/#forsyningsdata" target="_blank">Dokumentation REST services</a></li>
+          <li><a href="https://docs.kortforsyningen.dk/#webproj" target="_blank">Dokumentation WEBPROJ REST services</a></li>
         </ul>
       </div>
       <div class="sidebar">
