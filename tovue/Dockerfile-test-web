@@ -2,10 +2,10 @@ FROM node:17.0.1-alpine3.14 AS vue-build
 
 RUN apk update && apk upgrade
 
-COPY ./app-vue/ /forsyningsdata/
+COPY ./app-vue/ /transform/
 
 RUN npm install -g @vue/cli
-WORKDIR /forsyningsdata
+WORKDIR /transform
 RUN npm install --legacy-peer-deps
 RUN npm run build-test
 
@@ -23,7 +23,7 @@ RUN adduser nginx root
 RUN mkdir -p /data/nginx/ramcache/assets && mkdir -p /data/nginx/ramcache/elasticsearch
 RUN mkdir -p /data/nginx/assets
 
-COPY --from=vue-build /forsyningsdata/dist /usr/share/nginx/html
+COPY --from=vue-build /transform/dist /usr/share/nginx/html
 COPY ./nginx.test.conf /etc/nginx/nginx.conf
 
 RUN apk add tzdata
