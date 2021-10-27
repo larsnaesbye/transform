@@ -24,7 +24,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "Home", webpackMode: "lazy" */ '@/views/Home.vue')
     },
     {
-      path: '/dataoversigt',
+      path: '/grønland',
       name: 'Datasets',
       meta: { title: 'Koordinattransformation - Oversigt over datasæt' },
       component: () => import(/* webpackChunkName: "Datasets", webpackMode: "lazy" */ '@/views/Datasets.vue')
