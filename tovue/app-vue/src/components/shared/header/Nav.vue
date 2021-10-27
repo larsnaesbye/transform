@@ -9,7 +9,7 @@
           Danmark
         </router-link>
       </li>
-      <li class="anim-underline color-theme" :class="{ active: $route.name == 'Datasets' || $route.name == 'Dataset' || $route.name == 'DatasetVisning'}">
+      <li class="anim-underline color-theme" :class="{ active: $route.name == 'Grønland' || $route.name == 'Dataset' || $route.name == 'DatasetVisning'}">
         <router-link
           to="/grønland"
           class="main-menu__item"
