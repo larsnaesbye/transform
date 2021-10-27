@@ -56,9 +56,9 @@ export default new Router({
       component: () => import(/* webpackChunkName: "Support", webpackMode: "lazy" */ '@/views/Support.vue')
     },
     {
-      path: '/cookies',
+      path: '/dokumentation',
       name: 'CookiePolicy',
-      meta: { title: 'Koordinattransformation - Cookies' },
+      meta: { title: 'Koordinattransformation - Dokumentation' },
       component: () => import(/* webpackChunkName: "Cookies", webpackMode: "lazy" */ '@/views/CookiePolicy.vue')
     },
     {

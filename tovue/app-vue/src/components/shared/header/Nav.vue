@@ -25,9 +25,9 @@
           Vejledning
         </router-link>
       </li>
-      <li class="anim-underline color-theme" :class="{ active: $route.name == 'Support'}">
+      <li class="anim-underline color-theme" :class="{ active: $route.name == 'Dokumentation'}">
         <router-link
-          to="/cookies"
+          to="/dokumentation"
           class="main-menu__item"
         >
           Dokumentation
