@@ -1,6 +1,6 @@
 <template>
   <article aria-label="om os">
-    <a class="dataforsyningen-logo" href="https://dataforsyningen.dk" target="_blank">
+    <div class="dataforsyningen-logo" >
       <Icon
         icon="CrownCirclesLogo"
         :width=".11"
@@ -12,7 +12,7 @@
         <div class="title">Dataforsyningen</div>
         <div class="paragraph_lille">Styrelsen for Dataforsyning og Effektivisering</div>
       </div>
-    </a>
+    </div>
   </article>
 </template>
 
