@@ -17,7 +17,7 @@
           Grønland
         </router-link>
       </li>
-      <li class="anim-underline color-theme" :class="{ active: $route.name == 'About'}">
+      <li class="anim-underline color-theme" :class="{ active: $route.name == 'Vejledning'}">
         <router-link
           to="/vejledning"
           class="main-menu__item"

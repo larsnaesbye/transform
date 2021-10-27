@@ -51,7 +51,7 @@ export default new Router({
     },
     {
       path: '/vejledning',
-      name: 'Support',
+      name: 'Vejledning',
       meta: { title: 'Koordinattransformation - Vejledning' },
       component: () => import(/* webpackChunkName: "Support", webpackMode: "lazy" */ '@/views/Support.vue')
     },
