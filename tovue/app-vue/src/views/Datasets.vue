@@ -1,51 +1,7 @@
 <template>
   <main>
     <Hero>
-<!--      :title="pageTitle"-->
-<!--      :summary="pageSummary"-->
-<!--      :image="coverImageUrl"-->
-<!--    >-->
     </Hero>
-<!--    <section-->
-<!--      class="content-section layout-1col"-->
-<!--      v-show="!datasetsStatus === 'success' || !datasets[0]"-->
-<!--    >-->
-<!--      <h2 v-if="datasetsStatus === 'loading'">Henter alle datasæt...</h2>-->
-<!--      <h2 v-else-if="datasetsStatus === 'success' && !datasets[0]">Ingen datasæt. Prøv eventuelt at genindlæse siden.</h2>-->
-<!--      <h2 v-else-if="datasetsStatus === 'error'">Kunne ikke hente datasæt. Prøv eventuelt at genindlæse siden.</h2>-->
-
-<!--    </section>-->
-    <section
-      class="content-section section_filter"
-      v-if="datasetsStatus === 'success' && datasets[0]"
-    >
-      <Filtering
-        v-if="filters"
-        class="filters"
-        :filterDef="filters"
-        @input="updateFilters"
-      />
-    </section>
-    <section
-      class="content-section layout-6col"
-      v-if="datasetsStatus === 'success' && datasets[0]"
-    >
-      <dataset-box
-        v-for="dataset in filteredDatasets"
-        :key="dataset.id"
-        :id="dataset.id"
-        :title="dataset.title"
-        :sub-title="dataset.subTitle"
-        :summary="dataset.summary"
-        :services="dataset.services"
-        :downloads="dataset.downloads"
-        :csvColumns="dataset.tableSettings.columnDef ? dataset.tableSettings.columnDef : []"
-        :image="dataset.image"
-        :views="dataset.views"
-        :logos="dataset.logos"
-        :link="`data/${dataset.id}`"
-      />
-    </section>
   </main>
 </template>
 
