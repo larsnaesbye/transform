@@ -11,7 +11,7 @@
       </li>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'Datasets' || $route.name == 'Dataset' || $route.name == 'DatasetVisning'}">
         <router-link
-          to="/dataoversigt"
+          to="/grønland"
           class="main-menu__item"
         >
           Grønland
