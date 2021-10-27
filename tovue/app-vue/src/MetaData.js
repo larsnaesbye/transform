@@ -272,7 +272,7 @@ export const pageMeta = {
     title: 'Oversigt over datasæt',
     summary: '',
     coverId: 1719,
-    htmlText: 'Koordinattransformation er et værktøj lavet af Styrelsen for Dataforsyning og Effektivisering. <br /><br /> Dataplatformen er et første udgangspunkt for, hvordan data for forskellige forsyningsområder kan samles på én platform. Yderligere datasæt kan blive tilføjet. <br /><br />Platformens formål er at øge anvendelsen af og forbedre tilgangen til data i forsyningssektoren. Det skal på langt sigt øge gennemsigtigheden i sektoren, kvalificere beslutningsgrundlag og skabe grobund for innovation og nye forretningsmodeller.'
+    htmlText: 'Koordinattransformation er et værktøj lavet af Styrelsen for Dataforsyning og Effektivisering. <br />'
   },
   support: {
     title: 'Oversigt over datasæt',
