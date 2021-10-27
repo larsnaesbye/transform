@@ -19,7 +19,7 @@
       </li>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'About'}">
         <router-link
-          to="/om"
+          to="/vejledning"
           class="main-menu__item"
         >
           Vejledning
@@ -27,7 +27,7 @@
       </li>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'Support'}">
         <router-link
-          to="/vejledning"
+          to="/cookies"
           class="main-menu__item"
         >
           Dokumentation
@@ -35,7 +35,7 @@
       </li>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'Support'}">
         <router-link
-            to="/vejledning"
+            to="/om"
             class="main-menu__item"
         >
           Om denne webapp
