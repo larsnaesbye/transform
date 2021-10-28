@@ -13,7 +13,7 @@
     "@vanillaes/csv": "^2.1.11",
     "animate.css": "^4.1.1",
     "axios": "^0.22.0",
-    "core-js": "^3.18.2",
+    "core-js": "^3.19.0",
     "geojson-vt": "^3.2.1",
     "mobile-device-detect": "^0.4.3",
     "ol": "^6.8.1",
