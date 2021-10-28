@@ -1,7 +1,9 @@
 <template>
   <main>
     <Hero>
-
+<section class="layout-2col">
+  
+</section>
     </Hero>
   </main>
 </template>
