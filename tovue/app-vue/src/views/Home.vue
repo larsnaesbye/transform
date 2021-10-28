@@ -12,7 +12,6 @@
                    :key="2"/>
           <MapContainer v-if="showMap" :key="4"/>
         </article>
-      </section>
 
 </section>
     </Hero>
@@ -22,6 +21,8 @@
 <script>
 import { pageMeta } from '@/MetaData'
 import { getAssetLink, loadImage } from '@/HelperFunctions'
+import Infoboxes from '@/components/home/Infoboxes'
+import MapContainer from '@/components/map/MapContainer'
 
 export default {
   name: 'Home',
