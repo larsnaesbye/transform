@@ -7,9 +7,7 @@
                  :key="tag"
         />
         <Infoboxes v-if="!showMap && !searchActive" :mapgroups="mapgroups" :key="3" ref="infoBox" id="infobox"/>
-        <article v-else :class="{ 'layout-2col-map': showMap && searchActive}">
-          <Results v-if="searchActive"
-                   :key="2"/>
+        <article class="layout-2col-map">
           <MapContainer/>
         </article>
 
