@@ -1,114 +1,181 @@
 <template>
   <main>
-<!--  <MapContainer v-if=true :key="4"/>-->
-  <p>Something here?</p>
-  <section class="layout-2col_filters">
-    <Filters @toggle-map="toggleMap"
-             :mapgroups="mapgroups"
-             :key="tag"
-    />
-    <Infoboxes v-if="!showMap && !searchActive" :mapgroups="mapgroups" :key="3" ref="infoBox" id="infobox"/>
-    <article v-else :class="{ 'layout-2col-map': showMap && searchActive}">
-      <Results v-if="searchActive"
-               :key="2"/>
-      <MapContainer v-if="showMap" :key="4"/>
-    </article>
-
-  </section>
-<!--    <Hero>-->
-<!--    </Hero>-->
+    <Hero>
+      <p>Something here?</p>
+    </Hero>
   </main>
 </template>
 
 <script>
 import { pageMeta } from '@/MetaData'
-import { getAssetLink, loadImage } from '@/HelperFunctions'
-import Infoboxes from '@/components/home/Infoboxes'
-import MapContainer from '@/components/map/MapContainer'
-import { computed, provide } from 'vue'
-import { useStore } from 'vuex'
+import Filtering from '@/components/shared/Filtering'
 
 export default {
-  name: 'Home',
   components: {
     Hero: () => import('@/components/shared/Hero'),
-    UiHorizontalScroller: () => import('@/components/shared/baseUi/UiHorizontalScroller'),
-    // LinkBox: () => import('@/components/home/LinkBox'),
-    // ExtLinkBox: () => import('@/components/home/ExtLinkBox'),
-    MapContainer: () => import('@/components/map/MapContainer'),
+    DatasetBox: () => import('@/components/datasets/DatasetBox'),
+    Filtering: Filtering
   },
   data () {
     return {
-      coverImageUrl: '',
-      showMap: true,
-      searchActive: true
+      filters: {},
+      filteredDatasets: []
     }
   },
   computed: {
-    pageAssets () {
-      return this.$store.state.HomeAssets.data
+    datasetsStatus () {
+      return this.$store.state.Datasets.status
     },
-    searchActive () {
-      return !!Object.keys(this.$route.query).length
+    pageTitle () {
+      return pageMeta.datasets.title
     },
-    updateFilters () {
-      return this.$store.state.Filters.data
+    pageSummary () {
+      return pageMeta.datasets.summary
     },
-    mapgroups () {
-      const ret = []
-      const self = this
-      for (let i = 0, iEnd = self.infoboxes.length; i < iEnd; ++i) {
-        const arketypeID = self.infoboxes[i].arketypeID
-        const result = self.arketyper?.find(element => element === arketypeID)
-        if (result) {
-          ret[ret.length] = self.infoboxes[i]
+    datasets () {
+      return this.$store.state.Datasets.data
+    },
+    coverImageUrl () {
+      return this.getAssetLink(pageMeta.datasets.coverId)
+    },
+    datasetsCoverImageIds () {
+      // eslint-disable-next-line one-var
+      const ids = [],
+          data = this.$store.state.Datasets.data
+      for (let i = 0; i < data.length; i++) {
+        ids[i] = data[i].image
+      }
+      return ids
+    },
+    datasetsLogosIds () {
+      const ids = []
+      const data = this.$store.state.Datasets.data
+      for (let i = 0; i < data.length; i++) {
+        const lgs = data[i].logos
+        for (let j = 0; j < lgs.length; j++) {
+          ids.push(lgs[j].logoId)
         }
       }
-      return ret
+      return ids
+    },
+    pageAssets () {
+      const ids = []
+      const coverPhoto = pageMeta.datasets.coverId
+      if (coverPhoto) {
+        ids.push(coverPhoto)
+      }
+      return ids
+    },
+    allAssets () {
+      return [...this.datasetsCoverImageIds, ...this.datasetsLogosIds, ...this.pageAssets]
     }
   },
   methods: {
-    toggleMap () {
-      this.showMap = !this.showMap
-    }
+    getAssetLink (id) {
+      const img = this.$store.state.DatasetsAssets.data.find((e) => {
+        return id === e.id
+      })
+      return img ? (window.location.origin + '/asset' + img.path + img.filename) : ''
+    },
+    setFilter (prop, filter) {
+      if (filter.type === 'multiselect') {
+        // setting filter initValue
+        const options = filter.options
+        const value = (!filter.initValue || filter.initValue === '_all') ? options : filter.initValue
 
+        // adding (or replacing) the filter
+        this.$set(prop, [filter.name], {
+          label: filter.label,
+          value: value,
+          options: options,
+          name: filter.name,
+          type: filter.type,
+          fieldId: filter.fieldId
+        })
+      } else if (filter.type === 'search') {
+        this.$set(prop, [filter.name], {
+          label: filter.label,
+          type: filter.type,
+          value: ''
+        })
+      }
+    },
+    resetAllFilters () {
+      const filters = [
+        {
+          label: 'Filtrer på søgeord',
+          name: 'search',
+          type: 'search',
+          fieldId: '',
+          initValue: ''
+        },
+        {
+          label: 'Filtrer på sektor',
+          name: 'sectors',
+          type: 'multiselect',
+          options: ['Distribution af el', 'Produktion af el', 'Drikkevand', 'Spildevand', 'Varme'],
+          fieldId: 'sectors',
+          initValue: '_all'
+        }
+      ]
+      filters.forEach((filter) => {
+        this.setFilter(this.filters, filter)
+      })
+    },
+    updateFilters (filters) {
+      this.filteredDatasets = this.filterData(this.datasets, this.filters)
+    },
+    filterData (rows, filters) {
+      for (const key in filters) {
+        const filter = filters[key]
+        if ((filter.type === 'multiselect') && (Array.isArray(filter.value)) && (filter.options.length > filter.value.length)) {
+          rows = rows.filter((row) => {
+            if (row[filter.fieldId] !== undefined) {
+              return filter.value.some((val) => {
+                if (Array.isArray(row[filter.fieldId])) {
+                  return row[filter.fieldId].some(item => item === val)
+                } else {
+                  return val === row[filter.fieldId]
+                }
+              })
+            } else {
+              return true
+            }
+          })
+        } else if (filter.type === 'search') {
+          const keys = ['fields', 'title', 'description']
+          rows = rows.filter((row) => {
+            return keys.some((key) => {
+              return String(row[key]).toLowerCase().indexOf(filter.value.toLowerCase()) > -1
+            })
+          })
+        }
+      }
+      return rows
+    }
+  },
+  created () {
+    this.$store.dispatch('DatasetsServices/get')
+    this.$store.dispatch('Datasets/get')
+        .then((response) => {
+          this.resetAllFilters()
+          this.filteredDatasets = this.filterData(this.datasets, this.filters)
+          if (this.allAssets) {
+            this.$store.dispatch('DatasetsAssets/get', this.allAssets)
+          }
+        })
   },
   mounted () {
-    this.$nextTick(() => {
-      const linkBoxAssetsIds = [1725, 1719, 1717]
-      const coverImageId = pageMeta.forside.coverId
-      const ids = [coverImageId, ...linkBoxAssetsIds]
-
-      this.$store.dispatch('HomeAssets/get', ids).then(() => {
-        linkBoxAssetsIds.forEach((id, i) => {
-          const url = getAssetLink(id, this.pageAssets)
-          loadImage(url).then(() => {
-            this.linkBoxes[i].imageUrl = url
-          })
-        })
-        const coverUrl = getAssetLink(coverImageId, this.pageAssets)
-        loadImage(coverUrl).then(() => {
-          this.coverImageUrl = coverUrl
-        })
-      })
-    })
-  },
-
-
+  }
 }
 </script>
 
 <style lang="stylus" scoped>
-.hero-links
-  display flex
-  flex-wrap wrap
-
-.hero-links > a
-  color white
-  margin-right 1rem
-  white-space nowrap
-  font-weight bolder
-
-.bottom-ruler
-  border-bottom 2px solid var(--darkSteel)
+.filters {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
 </style>
