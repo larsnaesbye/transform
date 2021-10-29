@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+
+  hkpn:
+    deploy:
+      mode: global
+      labels:
+        - "traefik.enable=true"
+        # for Traefik V2
+        - "traefik.http.routers.hkpn-redirect.entrypoints=web"
+        - "traefik.http.routers.hkpn-redirect.rule=Host(`historiskekort.dk`, `historiskekort.dataforsyningen.dk`)"
+        - "traefik.http.routers.hkpn-redirect.middlewares=secHeadersAndRedirect@file"
+        - "traefik.http.routers.hkpn.entrypoints=websecure"
+        - "traefik.http.routers.hkpn.rule=Host(`historiskekort.dk`, `historiskekort.dataforsyningen.dk`)"
+        - "traefik.http.routers.hkpn.tls.certresolver=letsencrypt"
+        - "traefik.http.services.hkpn.loadbalancer.server.port=80"
+    image: kortforsyningen/hkpn-web:prod-latest
+    environment:
+      - TZ=Europe/Copenhagen
+    volumes:
+      - hkpn_cache_vol:/data/nginx/ramcache:delegated
+      - type: volume
+        source: pim_assets
+        target: /data/nginx/assets
+        consistency: cached
+        read_only: true
+        volume:
+          nocopy: true
+    networks:
+      - traefik
+
+networks:
+  traefik:
+    name: traefik
+    external: true
+
+volumes:
+  hkpn_cache_vol:
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+  pim_assets:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: "addr=loadfs8.kmsext.dk,rw,async,vers=4,rsize=65536,hard,tcp,timeo=600,intr,bg,ac,sec=sys,lookupcache=pos,nolock"
+      device: ":/data/kmsloadfs3/data/PIM/pimcore/web/var/assets"

@@ -1,0 +1,43 @@
+{
+  "title": "Feedback",
+  "description": "Udviklingen af af den nye hjemmeside til historiske kort er stadig i gang.\nHvis du oplever mangler eller tekniske fejl under brugen af siden vil vi gerne høre fra dig!",
+  "pages": [
+    {
+      "name": "page1",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "Kategori",
+          "title": "Kategori",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "item1",
+              "text": "Teknisk Fejl"
+            },
+            {
+              "value": "item2",
+              "text": "Ris og Ros"
+            },
+            {
+              "value": "item3",
+              "text": "Spørgsmål"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "Emne",
+          "title": "Emne",
+          "isRequired": true
+        },
+        {
+          "type": "comment",
+          "name": "Kommentar",
+          "title": "Kommentar",
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}
