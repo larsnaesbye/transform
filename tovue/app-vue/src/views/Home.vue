@@ -1,9 +1,9 @@
 <template>
   <main>
-    <Hero>
-      <p>Something here?</p>
-    </Hero>
-    <Map dataset-id="2934" map-settings=""></Map>
+<!--    <Hero>-->
+<!--      <p>Something here?</p>-->
+<!--    </Hero>-->
+    <Map dataset-id="2934" map-settings></Map>
   </main>
 </template>
 
