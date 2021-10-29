@@ -16,72 +16,72 @@
 </template>
 
 <script>
-import Hero from '@/components/home/Hero'
-import Filters from '@/components/shared/Filters'
+import { pageMeta } from '@/MetaData'
+import { getAssetLink, loadImage } from '@/HelperFunctions'
 import Infoboxes from '@/components/home/Infoboxes'
-import Results from '@/components/results/Results'
-import HeaderBackground from '@/components/shared/HeaderBackground'
-import MapContainer from '@/components/map/MapContainer'
-import { computed, provide } from 'vue'
-import { useStore } from 'vuex'
-export default {
-  name: 'Apps',
-  components: { Infoboxes, MapContainer, Hero, Filters, Results, HeaderBackground },
+// import MapContainer from '@/components/map/MapContainer'
 
+export default {
+  name: 'Home',
+  components: {
+    Hero: () => import('@/components/shared/Hero'),
+    UiHorizontalScroller: () => import('@/components/shared/baseUi/UiHorizontalScroller'),
+    LinkBox: () => import('@/components/home/LinkBox'),
+    ExtLinkBox: () => import('@/components/home/ExtLinkBox'),
+    MapContainer: () => import('@/components/map/MapContainer')
+  },
   data () {
     return {
-      arketyper: [],
-      infoboxes: [],
-      showMap: false,
-      tag: []
+      coverImageUrl: '',
+      showMap: true,
     }
   },
-  setup () {
-    const store = useStore()
-    provide('providedFilters', computed(() => store.state.Filters.data))
-  },
-  methods: {
-    toggleMap () {
-      this.showMap = !this.showMap
-    }
-  },
-  created () {
-    this.$store.dispatch('InfoBoxes/clear')
-    this.$store.dispatch('Arketyper/clear')
-
-    this.$store.dispatch('Arketyper/get').then(() => {
-      this.arketyper = this.$store.state.Arketyper.data
-    })
-
-    this.$store.dispatch('InfoBoxes/get').then(() => {
-      this.infoboxes = this.$store.state.InfoBoxes.data
-    })
-    window.dispatchEvent(new Event('resize', { bubbles: true, cancelable: false }))
-  },
-
   computed: {
-    searchActive () {
-      return !!Object.keys(this.$route.query).length
+    pageAssets () {
+      return this.$store.state.HomeAssets.data
     },
-    updateFilters () {
-      return this.$store.state.Filters.data
-    },
-    mapgroups () {
-      const ret = []
-      const self = this
-      for (let i = 0, iEnd = self.infoboxes.length; i < iEnd; ++i) {
-        const arketypeID = self.infoboxes[i].arketypeID
-        const result = self.arketyper?.find(element => element === arketypeID)
+    // title () {
+    //   return pageMeta.forside.title
+    // },
+    // summary () {
+    //   return pageMeta.forside.summary
+    // },
+  },
+  methods: {},
+  mounted () {
+    this.$nextTick(() => {
+      const linkBoxAssetsIds = [1725, 1719, 1717]
+      const coverImageId = pageMeta.forside.coverId
+      const ids = [coverImageId, ...linkBoxAssetsIds]
 
-        if (result) {
-          ret[ret.length] = self.infoboxes[i]
-        }
-      }
-      return ret
-    }
+      this.$store.dispatch('HomeAssets/get', ids).then(() => {
+        linkBoxAssetsIds.forEach((id, i) => {
+          const url = getAssetLink(id, this.pageAssets)
+          loadImage(url).then(() => {
+            this.linkBoxes[i].imageUrl = url
+          })
+        })
+        const coverUrl = getAssetLink(coverImageId, this.pageAssets)
+        loadImage(coverUrl).then(() => {
+          this.coverImageUrl = coverUrl
+        })
+      })
+    })
   }
 }
 </script>
 
-<style scoped>
+<style lang="stylus" scoped>
+.hero-links
+  display flex
+  flex-wrap wrap
+
+.hero-links > a
+  color white
+  margin-right 1rem
+  white-space nowrap
+  font-weight bolder
+
+.bottom-ruler
+  border-bottom 2px solid var(--darkSteel)
 </style>
