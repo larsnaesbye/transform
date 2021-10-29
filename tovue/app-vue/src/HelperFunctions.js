@@ -2,10 +2,6 @@ import
 /* webpackChunkName: "vanillaes" */
 { stringify } from '@vanillaes/csv'
 
-// avoid loading stringify in IE since it causes problems
-// import { isIE } from 'mobile-device-detect'
-// const stringify = !isIE ? require(/* webpackChunkName: "vanillaes" */'@vanillaes/csv').stringify : function (val) { return val }
-
 export const insertEveryN = function (arr, n, val) {
   for (let i = n; i < arr.length; i = i + n + 1) {
     arr.splice(i, 0, val)

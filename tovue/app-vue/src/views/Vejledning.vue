@@ -1,7 +1,7 @@
 <template>
   <main>
     <Hero
-      title="Cookies"
+      title="Vejledning"
       summary=""
       :image="coverImageUrl"
     />
