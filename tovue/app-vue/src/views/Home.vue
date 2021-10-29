@@ -1,5 +1,4 @@
 <template>
-  <p>Is this Home template here?</p>
   <Hero v-if="!searchActive" :key="1"/>
   <HeaderBackground v-else :key="2" />
   <section class="layout-2col_filters">
@@ -13,6 +12,7 @@
                :key="2"/>
       <MapContainer v-if="showMap" :key="4"/>
     </article>
+    <p>Is this Home template here?</p>
 
   </section>
 </template>
@@ -34,7 +34,7 @@ export default {
     return {
       arketyper: [],
       infoboxes: [],
-      showMap: true,
+      showMap: false,
       tag: []
     }
   },
