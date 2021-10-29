@@ -12,6 +12,8 @@
                :key="2"/>
       <MapContainer v-if="showMap" :key="4"/>
     </article>
+    <p>Is this Home template here?</p>
+
   </section>
 </template>
 
