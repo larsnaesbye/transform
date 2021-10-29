@@ -1,6 +1,6 @@
 <template>
   <p>Something here?</p>
-  <MapContainer/>
+  <MapContainer v-if="showMap" :key="4"/>
 
   <main>
     <Hero>
@@ -39,6 +39,7 @@ export default {
   data () {
     return {
       coverImageUrl: '',
+      showMap: true,
     }
   },
   computed: {
