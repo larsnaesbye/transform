@@ -6,7 +6,7 @@ COPY ./app-vue/ /transform/
 
 RUN npm install -g @vue/cli
 WORKDIR /transform
- RUN npm install --legacy-peer-deps
+# RUN npm install --legacy-peer-deps
 RUN npm run build-prod
 
 
