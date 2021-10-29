@@ -1,18 +1,18 @@
 <template>
-  <Hero v-if="!searchActive" :key="1"/>
-  <HeaderBackground v-else :key="2" />
-  <section class="layout-2col_filters">
-    <Filters @toggle-map="toggleMap"
-             :mapgroups="mapgroups"
-             :key="tag"
-    />
-    <Infoboxes v-if="!showMap && !searchActive" :mapgroups="mapgroups" :key="3" ref="infoBox" id="infobox"/>
-    <article v-else :class="{ 'layout-2col-map': showMap && searchActive}">
-      <Results v-if="searchActive"
-               :key="2"/>
-      <MapContainer v-if="showMap" :key="4"/>
-    </article>
-  </section>
+  <main>
+    <Hero>
+      <section class="layout-2col_filters">
+<!--        <Filters @toggle-map="toggleMap"-->
+<!--                 :mapgroups="mapgroups"-->
+<!--                 :key="tag"-->
+<!--        />-->
+        <article class="layout-2col-map">
+          <MapContainer/>
+        </article>
+
+</section>
+    </Hero>
+  </main>
 </template>
 
 <script>
