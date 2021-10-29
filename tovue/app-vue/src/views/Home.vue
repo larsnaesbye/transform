@@ -23,7 +23,9 @@
 import { pageMeta } from '@/MetaData'
 import { getAssetLink, loadImage } from '@/HelperFunctions'
 import Infoboxes from '@/components/home/Infoboxes'
-// import MapContainer from '@/components/map/MapContainer'
+import MapContainer from '@/components/map/MapContainer'
+import { computed, provide } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   name: 'Home',
@@ -32,7 +34,7 @@ export default {
     UiHorizontalScroller: () => import('@/components/shared/baseUi/UiHorizontalScroller'),
     LinkBox: () => import('@/components/home/LinkBox'),
     ExtLinkBox: () => import('@/components/home/ExtLinkBox'),
-    MapContainer: () => import('@/components/map/MapContainer')
+    // MapContainer: () => import('@/components/map/MapContainer')
   },
   data () {
     return {
@@ -44,14 +46,31 @@ export default {
     pageAssets () {
       return this.$store.state.HomeAssets.data
     },
-    // title () {
-    //   return pageMeta.forside.title
-    // },
-    // summary () {
-    //   return pageMeta.forside.summary
-    // },
+    searchActive () {
+      return !!Object.keys(this.$route.query).length
+    },
+    updateFilters () {
+      return this.$store.state.Filters.data
+    },
+    mapgroups () {
+      const ret = []
+      const self = this
+      for (let i = 0, iEnd = self.infoboxes.length; i < iEnd; ++i) {
+        const arketypeID = self.infoboxes[i].arketypeID
+        const result = self.arketyper?.find(element => element === arketypeID)
+        if (result) {
+          ret[ret.length] = self.infoboxes[i]
+        }
+      }
+      return ret
+    }
   },
-  methods: {},
+  methods: {
+    toggleMap () {
+      this.showMap = !this.showMap
+    }
+
+  },
   mounted () {
     this.$nextTick(() => {
       const linkBoxAssetsIds = [1725, 1719, 1717]
@@ -71,7 +90,9 @@ export default {
         })
       })
     })
-  }
+  },
+
+
 }
 </script>
 
