@@ -1,4 +1,5 @@
 <template>
+  <main>
   <MapContainer v-if=true :key="4"/>
   <p>Something here?</p>
   <section class="layout-2col_filters">
@@ -14,7 +15,6 @@
     </article>
 
   </section>
-  <main>
     <Hero>
     </Hero>
   </main>
@@ -33,14 +33,15 @@ export default {
   components: {
     Hero: () => import('@/components/shared/Hero'),
     UiHorizontalScroller: () => import('@/components/shared/baseUi/UiHorizontalScroller'),
-    LinkBox: () => import('@/components/home/LinkBox'),
-    ExtLinkBox: () => import('@/components/home/ExtLinkBox'),
-    MapContainer: () => import('@/components/map/MapContainer')
+    // LinkBox: () => import('@/components/home/LinkBox'),
+    // ExtLinkBox: () => import('@/components/home/ExtLinkBox'),
+    MapContainer: () => import('@/components/map/MapContainer'),
   },
   data () {
     return {
       coverImageUrl: '',
       showMap: true,
+      searchActive: true
     }
   },
   computed: {
