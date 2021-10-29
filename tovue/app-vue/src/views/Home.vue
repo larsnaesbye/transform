@@ -15,8 +15,8 @@
     </article>
 
   </section>
-    <Hero>
-    </Hero>
+<!--    <Hero>-->
+<!--    </Hero>-->
   </main>
 </template>
 
