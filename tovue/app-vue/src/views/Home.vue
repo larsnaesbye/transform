@@ -3,15 +3,18 @@
     <Hero>
       <p>Something here?</p>
     </Hero>
+    <Map dataset-id="0" map-settings></Map>
   </main>
 </template>
 
 <script>
 import { pageMeta } from '@/MetaData'
 import Filtering from '@/components/shared/Filtering'
+import Map from "../components/dataset/Map";
 
 export default {
   components: {
+    Map,
     Hero: () => import('@/components/shared/Hero'),
     DatasetBox: () => import('@/components/datasets/DatasetBox'),
     Filtering: Filtering
