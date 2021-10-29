@@ -3,6 +3,7 @@
     <Hero>
     </Hero>
   </main>
+  <p>Something here?</p>
 </template>
 
 <script>

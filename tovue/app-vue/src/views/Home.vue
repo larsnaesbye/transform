@@ -1,4 +1,6 @@
 <template>
+  <p>Something here?</p>
+
   <main>
     <Hero>
       <section class="layout-2col_filters">
