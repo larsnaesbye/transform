@@ -19,7 +19,7 @@
 import { pageMeta } from '@/MetaData'
 import { getAssetLink, loadImage } from '@/HelperFunctions'
 import Infoboxes from '@/components/home/Infoboxes'
-// import MapContainer from '@/components/map/MapContainer'
+import MapContainer from '@/components/map/MapContainer'
 
 export default {
   name: 'Home',
@@ -27,8 +27,7 @@ export default {
     Hero: () => import('@/components/shared/Hero'),
     UiHorizontalScroller: () => import('@/components/shared/baseUi/UiHorizontalScroller'),
     LinkBox: () => import('@/components/home/LinkBox'),
-    ExtLinkBox: () => import('@/components/home/ExtLinkBox'),
-    MapContainer: () => import('@/components/map/MapContainer')
+    ExtLinkBox: () => import('@/components/home/ExtLinkBox')
   },
   data () {
     return {
