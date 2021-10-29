@@ -1,5 +1,4 @@
 <template>
-  <p>Is this Home template here?</p>
   <Hero v-if="!searchActive" :key="1"/>
   <HeaderBackground v-else :key="2" />
   <section class="layout-2col_filters">
