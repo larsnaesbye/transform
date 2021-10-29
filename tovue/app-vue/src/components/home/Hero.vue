@@ -3,7 +3,6 @@
     class="layout-3col__footer"
     :style="'background-color: white;'"
   >
-    <p>Is this Hero template here?</p>
     <span v-if="image" class="hero__credit white-text">{{ photoCredit }}</span>
   </section>
 </template>
