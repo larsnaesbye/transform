@@ -1,33 +1,22 @@
 <template>
   <main>
-    <section>
-      <div id="map" class="olmap" ref="map" @mousemove.capture="onMouseMove">
-        <MapControls
-            id="map-controls-box"
-            @zoom-out="zoom('out')"
-            @zoom-in="zoom('in')"
-            @pin-pointer="pinPointer = !pinPointer"
-        />
-      </div>
-      <Icon :class="{ showPin: pinPointer }"
-            ref="mousePin"
-            id="mousePin"
-            icon="Locationicon"
-            :width="2"
-            :height="2"
-            :strokeWidth="1"
-            :color="colors.darkTurquoise3"
-      />
-      <div v-show="pinPointer" id="placed-pin">
-        <Icon icon="Locationicon"
-              :width="2"
-              :height="2"
-              :strokeWidth="1"
-              :color="colors.darkTurquoise3"
-        />
-      </div>
-      <div id="mouse-position"/>
-    </section>
+  <MapContainer v-if=true :key="4"/>
+  <p>Something here?</p>
+  <section class="layout-2col_filters">
+    <Filters @toggle-map="toggleMap"
+             :mapgroups="mapgroups"
+             :key="tag"
+    />
+    <Infoboxes v-if="!showMap && !searchActive" :mapgroups="mapgroups" :key="3" ref="infoBox" id="infobox"/>
+    <article v-else :class="{ 'layout-2col-map': showMap && searchActive}">
+      <Results v-if="searchActive"
+               :key="2"/>
+      <MapContainer v-if="showMap" :key="4"/>
+    </article>
+
+  </section>
+    <Hero>
+    </Hero>
   </main>
 </template>
 
@@ -47,7 +36,6 @@ export default {
     // LinkBox: () => import('@/components/home/LinkBox'),
     // ExtLinkBox: () => import('@/components/home/ExtLinkBox'),
     MapContainer: () => import('@/components/map/MapContainer'),
-    MapControls: () => import('@/components/map/MapControls')
   },
   data () {
     return {
