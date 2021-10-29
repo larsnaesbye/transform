@@ -1,6 +1,6 @@
 <template>
   <main>
-  <MapContainer v-if=true :key="4"/>
+<!--  <MapContainer v-if=true :key="4"/>-->
   <p>Something here?</p>
   <section class="layout-2col_filters">
     <Filters @toggle-map="toggleMap"

@@ -1,9 +1,9 @@
 <template>
   <main>
     <Hero>
+      <p>Something here?</p>
     </Hero>
   </main>
-  <p>Something here?</p>
 </template>
 
 <script>
