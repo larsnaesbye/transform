@@ -12,7 +12,7 @@ import geojsonvt from 'geojson-vt'
 import pin from '../../assets/mapIcons/cirkel_graa_spoergsmaal.svg'
 
 const kfText = 'Styrelsen for Dataforsyning og Effektivisering'
-const kfLink = 'https://download.kortforsyningen.dk/content/vilk%C3%A5r-og-betingelser'
+const kfLink = 'https://dataforsyningen.dk/asset/PDF/rettigheder_vilkaar/Vilk%C3%A5r%20for%20brug%20af%20frie%20geografiske%20data.pdf'
 const kfAttributionText = '&copy; <a target="_blank" href="' + kfLink +
 '">' + kfText + '</a>'
 const dfLink = 'https://datafordeler.dk/vejledning/brugervilkaar/sdfe-geografiske-data/'
