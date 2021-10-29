@@ -2,10 +2,11 @@
   <main>
     <Hero>
       <section class="layout-2col_filters">
-<!--        <Filters @toggle-map="toggleMap"-->
-<!--                 :mapgroups="mapgroups"-->
-<!--                 :key="tag"-->
-<!--        />-->
+        <Filters @toggle-map="toggleMap"
+                 :mapgroups="mapgroups"
+                 :key="tag"
+        />
+        <Infoboxes v-if="!showMap && !searchActive" :mapgroups="mapgroups" :key="3" ref="infoBox" id="infobox"/>
         <article class="layout-2col-map">
           <MapContainer/>
         </article>
