@@ -1,7 +1,7 @@
 <template>
   <section
-    class="layout-3col__footer"
-    :style="'background-color: white;'"
+      class="layout-3col__footer"
+      :style="'background-color: white;'"
   >
     <span v-if="image" class="hero__credit white-text">{{ photoCredit }}</span>
   </section>
@@ -28,7 +28,7 @@ export default {
       default: 'Foto: Lars Schmidt / schmidtaps.com'
     }
   },
-  mounted () {
+  mounted() {
     this.$nextTick(() => {
       this.$refs.firstfocus.focus()
     })

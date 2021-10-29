@@ -1,21 +1,21 @@
 <template>
   <div
-    class="tag"
-    :style="'background-color:' + backgroundColor + ';border-color:' + color + ';'"
-    @click="$emit('clicked')"
-    tabindex="0"
-    @keydown.enter.stop="$emit('clicked')"
+      class="tag"
+      :style="'background-color:' + backgroundColor + ';border-color:' + color + ';'"
+      @click="$emit('clicked')"
+      tabindex="0"
+      @keydown.enter.stop="$emit('clicked')"
   >
     <Icon
-      :icon="icons[type]"
-      :width="1.1"
-      :height="1.1"
-      :strokeWidth="1.1"
-      :color="color"
+        :icon="icons[type]"
+        :width="1.1"
+        :height="1.1"
+        :strokeWidth="1.1"
+        :color="color"
     />
     <span
-      class="tag--title"
-      :style="'color:' + color + ';'"
+        class="tag--title"
+        :style="'color:' + color + ';'"
     >
       {{ label }}
     </span>
@@ -36,7 +36,7 @@ export default {
       default: 'Tabel'
     }
   },
-  data () {
+  data() {
     return {
       icons: {
         table: 'DataIcon',

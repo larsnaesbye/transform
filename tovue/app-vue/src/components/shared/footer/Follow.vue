@@ -7,13 +7,13 @@
       <li>
         <a href="https://sdfe.dk/data-skaber-vaerdi/nyheder" target="_blank">
           <h6
-            class="h6_caption"
+              class="h6_caption"
           >
             <Icon
-              icon="MailIcon"
-              :width="1.5"
-              :height="1.5"
-              :color="this.$themeColors.black"
+                icon="MailIcon"
+                :width="1.5"
+                :height="1.5"
+                :color="this.$themeColors.black"
             />
             <span>
               Nyhedsbrev
@@ -24,13 +24,13 @@
       <li>
         <a href="https://www.linkedin.com/company/styrelsen-for-dataforsyning-og-effektivisering" target="_blank">
           <h6
-            class="h6_caption"
+              class="h6_caption"
           >
             <Icon
-              icon="LinkedinIcon"
-              :width="1.5"
-              :height="1.5"
-              :color="this.$themeColors.linkedin"
+                icon="LinkedinIcon"
+                :width="1.5"
+                :height="1.5"
+                :color="this.$themeColors.linkedin"
             />
             <span>
               Linkedin
@@ -41,13 +41,13 @@
       <li>
         <a href="https://twitter.com/SDFEtweet" target="_blank">
           <h6
-            class="h6_caption"
+              class="h6_caption"
           >
             <Icon
-              icon="TwitterIcon"
-              :width="1.5"
-              :height="1.5"
-              :color="this.$themeColors.twitter"
+                icon="TwitterIcon"
+                :width="1.5"
+                :height="1.5"
+                :color="this.$themeColors.twitter"
             />
             <span>
               Twitter

@@ -1,22 +1,22 @@
 <template>
   <router-link
-    to="/"
-    class="brand cursor-point"
+      to="/"
+      class="brand cursor-point"
   >
-    <web-app-logo class="cursor-point" />
+    <web-app-logo class="cursor-point"/>
     <div
-      class="brand-name"
+        class="brand-name"
     >
       <div
-        class="title cursor-point"
+          class="title cursor-point"
       >
         Koordinattransformation
       </div>
-<!--      <span-->
-<!--        class="sub-title cursor-point text-small"-->
-<!--      >-->
-<!--         Styrelsen for Dataforsyning og Effektivisering-->
-<!--      </span>-->
+      <!--      <span-->
+      <!--        class="sub-title cursor-point text-small"-->
+      <!--      >-->
+      <!--         Styrelsen for Dataforsyning og Effektivisering-->
+      <!--      </span>-->
     </div>
   </router-link>
 </template>
@@ -27,27 +27,27 @@ export default {
   components: {
     WebAppLogo: () => import('@/components/shared/icons/WebAppLogo')
   },
-  data () {
+  data() {
     return {
       color: '#FFF',
       background: '#000'
     }
   },
   computed: {
-    dynamicLogo () {
+    dynamicLogo() {
       // eslint-disable-next-line one-var
       const date = new Date(),
-        month = date.getMonth() + 1,
-        day = date.getDate()
+          month = date.getMonth() + 1,
+          day = date.getDate()
       return ((day === 31) && (month === 10))
-        ? 'scary-pumpkin'
-        : (month === 12)
-            ? 'christmas-crown-logo'
-            : 'CrownCirclesLogo'
+          ? 'scary-pumpkin'
+          : (month === 12)
+              ? 'christmas-crown-logo'
+              : 'CrownCirclesLogo'
     }
   },
   methods: {
-    hover (colors) {
+    hover(colors) {
       const self = this
       self.color = colors.color || self.color
       self.background = colors.background || self.background

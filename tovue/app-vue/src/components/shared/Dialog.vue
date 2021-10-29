@@ -3,7 +3,7 @@
     <div class="dialog-box">
       <header class="dialog-header"></header>
       <div class="dialog-body">
-        <slot />
+        <slot/>
       </div>
     </div>
   </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {}
   }
 }
@@ -25,7 +25,7 @@ export default {
   right 0
   bottom 0
   left 0
-  background-color rgba(0,0,0,.8)
+  background-color rgba(0, 0, 0, .8)
 
 .dialog-box
   margin 100px auto

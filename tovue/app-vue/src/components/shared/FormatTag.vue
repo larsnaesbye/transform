@@ -1,27 +1,27 @@
 <template>
   <div
-    class="tag"
-    :style="'background-color:' + backgroundColor + ';border-color:' + color + ';'"
-    @click="$emit('clicked')"
-    tabindex="0"
-    @keydown.enter="$emit('clicked')"
+      class="tag"
+      :style="'background-color:' + backgroundColor + ';border-color:' + color + ';'"
+      @click="$emit('clicked')"
+      tabindex="0"
+      @keydown.enter="$emit('clicked')"
   >
     <span
-      class="tag__title"
-      :style="'color:' + color + ';'"
+        class="tag__title"
+        :style="'color:' + color + ';'"
     >
       {{ title }}
     </span>
     <Icon
-      icon="DownloadIcon"
-      :width="1.1"
-      :height="1.1"
-      :strokeWidth="1.1"
-      :color="color"
+        icon="DownloadIcon"
+        :width="1.1"
+        :height="1.1"
+        :strokeWidth="1.1"
+        :color="color"
     />
     <span class="tag__badge"
-      v-if="amount > 1">
-      {{amount}}
+          v-if="amount > 1">
+      {{ amount }}
     </span>
   </div>
 </template>
@@ -44,18 +44,18 @@ export default {
     }
   },
   computed: {
-    serviceType () {
-      return this.serviceTypes.find(({ id }) => {
+    serviceType() {
+      return this.serviceTypes.find(({id}) => {
         return id === this.typeId
       })
     },
-    title () {
+    title() {
       return this.serviceType ? (this.serviceType.title || '') : ''
     },
-    color () {
+    color() {
       return this.serviceType ? (this.serviceType.color || '') : ''
     },
-    backgroundColor () {
+    backgroundColor() {
       return this.serviceType ? (this.serviceType.backgroundColor || '') : ''
     }
   }

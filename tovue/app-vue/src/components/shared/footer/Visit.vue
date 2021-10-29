@@ -7,10 +7,10 @@
       <li>
         <a href="https://kefm.dk" target="_blank" rel="noopener">
           <Icon
-            icon="MoreIcon"
-            :width="1.5"
-            :height="1.5"
-            :color="this.$themeColors.black"
+              icon="MoreIcon"
+              :width="1.5"
+              :height="1.5"
+              :color="this.$themeColors.black"
           />
           <span>
             Klima-, Energi- og Forsyningsministeriet

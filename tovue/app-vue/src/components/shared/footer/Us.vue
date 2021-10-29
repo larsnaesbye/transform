@@ -1,12 +1,12 @@
 <template>
   <article aria-label="om os">
-    <div class="dataforsyningen-logo" >
+    <div class="dataforsyningen-logo">
       <Icon
-        icon="CrownCirclesLogo"
-        :width=".11"
-        :height=".11"
-        :strokeWidth="0.3"
-        color="#000"
+          icon="CrownCirclesLogo"
+          :width=".11"
+          :height=".11"
+          :strokeWidth="0.3"
+          color="#000"
       />
       <div class="dataforsyningen-logo__text">
         <div class="title">Dataforsyningen</div>

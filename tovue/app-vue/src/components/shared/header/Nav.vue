@@ -3,32 +3,32 @@
     <ul>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'Home'}">
         <router-link
-          to="/"
-          class="main-menu__item"
+            to="/"
+            class="main-menu__item"
         >
           Danmark
         </router-link>
       </li>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'Grønland'}">
         <router-link
-          to="/grønland"
-          class="main-menu__item"
+            to="/grønland"
+            class="main-menu__item"
         >
           Grønland
         </router-link>
       </li>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'Vejledning'}">
         <router-link
-          to="/vejledning"
-          class="main-menu__item"
+            to="/vejledning"
+            class="main-menu__item"
         >
           Vejledning
         </router-link>
       </li>
       <li class="anim-underline color-theme" :class="{ active: $route.name == 'Dokumentation'}">
         <router-link
-          to="/dokumentation"
-          class="main-menu__item"
+            to="/dokumentation"
+            class="main-menu__item"
         >
           Dokumentation
         </router-link>
@@ -49,19 +49,19 @@
 export default {
   name: 'Nav',
   components: {},
-  data () {
+  data() {
     return {
       windowWidth: window.innerWidth
     }
   },
-  created () {
+  created() {
     window.addEventListener('resize', this.setWindowWidth)
   },
   methods: {
-    hover (elm) {
+    hover(elm) {
       this.$refs[elm].$el.classList.toggle('hover')
     },
-    setWindowWidth () {
+    setWindowWidth() {
       this.windowWidth = window.innerWidth
     }
   }
@@ -97,6 +97,7 @@ li.active .main-menu__item
   font-weight 500
   letter-spacing 0.06rem
   text-transform uppercase
+
   &:hover
     text-decoration none
 
@@ -109,7 +110,6 @@ li > a
 li
   padding-left 1rem
   padding-right 1rem
- // TODO remove padding on media queries
 
 .nav-icon
   width 3rem
