@@ -1,7 +1,5 @@
 <template>
   <p>Something here?</p>
-  <MapContainer v-if="showMap" :key="4"/>
-
   <main>
     <Hero>
       <section class="layout-2col_filters">

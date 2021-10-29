@@ -1,5 +1,5 @@
 <template>
-  <aside>
+  <section>
     <div id="map" class="olmap" ref="map" @mousemove.capture="onMouseMove">
       <MapControls
           id="map-controls-box"
@@ -26,7 +26,7 @@
       />
     </div>
     <div id="mouse-position"/>
-  </aside>
+  </section>
 </template>
 
 <script>
