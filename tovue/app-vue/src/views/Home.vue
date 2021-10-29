@@ -11,11 +11,9 @@
 import { pageMeta } from '@/MetaData'
 import Filtering from '@/components/shared/Filtering'
 import Map from "../components/dataset/Map";
-import MapContainer from "../components/map/MapContainer";
 
 export default {
   components: {
-    MapContainer,
     Map,
     Hero: () => import('@/components/shared/Hero'),
     DatasetBox: () => import('@/components/datasets/DatasetBox'),
