@@ -1,7 +1,6 @@
 <template>
   <main>
     <Hero>
-      <p> Invisble too?</p>
     </Hero>
   </main>
 </template>
