@@ -33,7 +33,7 @@ export default {
     Hero: () => import('@/components/shared/Hero'),
     UiHorizontalScroller: () => import('@/components/shared/baseUi/UiHorizontalScroller'),
     LinkBox: () => import('@/components/home/LinkBox'),
-    ExtLinkBox: () => import('@/components/home/ExtLinkBox')
+    ExtLinkBox: () => import('@/components/home/ExtLinkBox'),
     MapContainer: () => import('@/components/map/MapContainer')
   },
   data () {
