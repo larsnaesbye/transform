@@ -10,7 +10,7 @@
         <article v-else :class="{ 'layout-2col-map': showMap && searchActive}">
           <Results v-if="searchActive"
                    :key="2"/>
-          <MapContainer/>
+          <MapContainer v-if="showMap" :key="4"/>
         </article>
 
 </section>
