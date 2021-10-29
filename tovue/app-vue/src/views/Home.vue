@@ -3,7 +3,7 @@
 <!--    <Hero>-->
 <!--      <p>Something here?</p>-->
 <!--    </Hero>-->
-    <Map dataset-id="2934" map-settings></Map>
+    <Map dataset-id="-1" map-settings="null"></Map>
   </main>
 </template>
 
