@@ -7,7 +7,6 @@
           :height=".11"
           :strokeWidth="0.3"
           color="#000"
-          position="absolute"
       />
       <div class="dataforsyningen-logo__text">
         <div class="title">Dataforsyningen</div>
