@@ -1,10 +1,10 @@
 <template>
   <main id="main" ref="main">
-    <Hero
-      :title="title"
-      :summary="summary"
-      :image="image"
-    />
+<!--    <Hero-->
+<!--      :title="title"-->
+<!--      :summary="summary"-->
+<!--      :image="image"-->
+<!--    />-->
     <UiTabbedContent
       v-if="dataset"
       class=""
