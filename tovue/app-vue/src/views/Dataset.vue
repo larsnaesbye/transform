@@ -268,15 +268,15 @@
       </UiTabbedContentItem>
 
       <!-- DATA TERMS -->
-      <UiTabbedContentItem
-        v-if="dataset"
-        :title="'Vilkår'"
-        class="layout-1col"
-        name="vilkaar"
-        :active="currentTab === 'vilkaar'"      >
-        <h3>Vilkår for brug af data</h3>
-        <p v-html="dataset.description_tmp"></p>
-      </UiTabbedContentItem>
+<!--      <UiTabbedContentItem-->
+<!--        v-if="dataset"-->
+<!--        :title="'Vilkår'"-->
+<!--        class="layout-1col"-->
+<!--        name="vilkaar"-->
+<!--        :active="currentTab === 'vilkaar'"      >-->
+<!--        <h3>Vilkår for brug af data</h3>-->
+<!--        <p v-html="dataset.description_tmp"></p>-->
+<!--      </UiTabbedContentItem>-->
 
     </UiTabbedContent>
   </main>
