@@ -11,141 +11,6 @@
       ref="UiTabbedContent"
       @select="setTab"
     >
-      <!-- DATA TAB -->
-<!--      <UiTabbedContentItem-->
-<!--        v-if="dataset && dataset.views.some(view => view.type === 'table')"-->
-<!--        :title="'Data'"-->
-<!--        :active="currentTab === 'data'"-->
-<!--        name="data"-->
-<!--        class="layout-sidebar"-->
-<!--      >-->
-<!--        <div class="main-content">-->
-<!--          <Table-->
-<!--            :settings="tableSettings"-->
-<!--            :filters="filters.table"-->
-<!--            :data="data"-->
-<!--            :datasetId="id"-->
-<!--            :dataStatus="dataStatus"-->
-<!--            :shownColumns="shownColumns"-->
-<!--            :active="currentTab === 'data'"-->
-<!--            @open-field-description="navigateToFieldDescription"-->
-<!--            @downloadFilteredDataSet="downloadCSV(...arguments, dataset.title)"-->
-<!--            @filters-updated="updateDataFilters"-->
-<!--          />-->
-<!--        </div>-->
-<!--        <div class="sidebar">-->
-<!--          <div class="sidebar__section" v-if="downloadsDataReady">-->
-<!--            <div class="sidebar__section-header">Downloads:</div>-->
-<!--            <UiExpandBox-->
-<!--              title="CSV"-->
-<!--              :color="getFormatInfo(63) ? getFormatInfo(63).color : ''"-->
-<!--              :backgroundColor="getFormatInfo(63) ? getFormatInfo(63).backgroundColor : ''"-->
-<!--              :backgroundOpacity="0.2"-->
-<!--            >-->
-<!--              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">-->
-<!--                <p class="description paragraph_lille">Du kan downloade datasættet som CSV i to forskellige udgaver. <br />Som vist i tabellen eller som uformateret rådata. Download data fra tabelvisningen enten som hele datasættet eller filtreret med de kolonner du har valgt. Download af csv som uformateret rådata kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>-->
-<!--              </UiExpandBoxSection>-->
-<!--              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">-->
-<!--                <button-->
-<!--                  @click="downloadFilteredDataset"-->
-<!--                  class="button-reset cursor-point"-->
-<!--                >-->
-<!--                  <Icon-->
-<!--                    icon="DownloadIcon"-->
-<!--                    :color="getFormatInfo(63) ? getFormatInfo(63).color : 'black'"-->
-<!--                    :width="2"-->
-<!--                    :height="2"-->
-<!--                  />-->
-<!--                  Download som filtreret-->
-<!--                </button>-->
-<!--              </UiExpandBoxSection>-->
-<!--              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">-->
-<!--                <button-->
-<!--                  @click="downloadFullDataset"-->
-<!--                  class="button-reset cursor-point"-->
-<!--                >-->
-<!--                  <Icon-->
-<!--                    icon="DownloadIcon"-->
-<!--                    :color="getFormatInfo(63) ? getFormatInfo(63).color : 'black'"-->
-<!--                    :width="2"-->
-<!--                    :height="2"-->
-<!--                  />-->
-<!--                  Download hele datasættet-->
-<!--                </button>-->
-<!--              </UiExpandBoxSection>-->
-<!--              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">-->
-<!--                <a-->
-<!--                  :href="rawCsvDownloadUrl"-->
-<!--                  target="_blank"-->
-<!--                  class="cursor-point"-->
-<!--                >-->
-<!--                  <Icon-->
-<!--                    icon="ExtLinkIcon"-->
-<!--                    :color="getFormatInfo(63) ? getFormatInfo(63).color : 'black'"-->
-<!--                    :width="2"-->
-<!--                    :height="2"-->
-<!--                  />-->
-<!--                  Download rådata-->
-<!--                </a>-->
-<!--              </UiExpandBoxSection>-->
-<!--            </UiExpandBox>-->
-<!--            <UiExpandBox-->
-<!--              v-for="(service, index) in nonCsvDownloads"-->
-<!--              :key="index"-->
-<!--              :title="service.typeLabel"-->
-<!--              :color="service.typeColor"-->
-<!--              :backgroundColor="service.typeBackgroundColor"-->
-<!--              :backgroundOpacity="0.2"-->
-<!--            >-->
-<!--              <UiExpandBoxSection :color="service.typeColor">-->
-<!--                <p class="description paragraph_lille">Download af filen kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>-->
-<!--              </UiExpandBoxSection>-->
-<!--              <UiExpandBoxSection :color="service.typeColor">-->
-<!--                <a-->
-<!--                  :href="service.folder"-->
-<!--                  target="_blank"-->
-<!--                  class="cursor-point"-->
-<!--                >-->
-<!--                  <Icon-->
-<!--                    icon="DownloadIcon"-->
-<!--                    :color="service.typeColor"-->
-<!--                    :width="2"-->
-<!--                    :height="2"-->
-<!--                  />-->
-<!--                  Download-->
-<!--                </a>-->
-<!--              </UiExpandBoxSection>-->
-<!--            </UiExpandBox>-->
-<!--          </div>-->
-<!--          <div class="sidebar__section" v-if="servicesDataReady">-->
-<!--            <div class="sidebar__section-header">Services:</div>-->
-<!--            <UiExpandBox-->
-<!--              v-for="(service, index) in services"-->
-<!--              :key="index"-->
-<!--              :title="service.typeLabel"-->
-<!--              :color="service.typeColor"-->
-<!--              :backgroundColor="service.typeBackgroundColor"-->
-<!--              :backgroundOpacity="0.2"-->
-<!--            >-->
-<!--              <UiExpandBoxSection :color="service.typeColor">-->
-<!--                <p class="description paragraph_lille">Adgang til tjenesten kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>-->
-<!--              </UiExpandBoxSection>-->
-<!--              <UiExpandBoxSection-->
-<!--                :color="service.typeColor"-->
-<!--                v-for="entry in service.entries"-->
-<!--                :key="entry.id"-->
-<!--              >-->
-<!--                <h4>{{ entry.title }} ({{ entry.name }})</h4>-->
-<!--                <p class="description paragraph_lille">{{ entry.description }}</p>-->
-<!--                <UiCopyLink-->
-<!--                  :link="entry.link"-->
-<!--                />-->
-<!--              </UiExpandBoxSection>-->
-<!--            </UiExpandBox>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </UiTabbedContentItem>-->
-
       <!-- MAP -->
       <UiTabbedContentItem
         v-if="dataset && dataset.views.some(view => view.type === 'map')"
@@ -169,113 +34,32 @@
       </UiTabbedContentItem>
 
       <!-- DASHBOARD -->
-      <UiTabbedContentItem
-        v-if="dataset && dataset.views.some(view => view.type === 'dashboard')"
-        :title="'Figurer og tal'"
-        name="dashboard"
-        :active="currentTab === 'dashboard'"
-        class="layout-1col"
-      >
-        <p>
-          Forsyningstilsynet (FSTS) og Forsyningssekretariatet (FS) er ansvarlige for indholdet i den præsenterede visning. <br /><br />
-          Spørgsmål vedr. spildevand eller drikkevand skal rettes til FS på mail: <a href="mailto:vand@kfst.dk">vand@kfst.dk</a>  <br />
-          Spørgsmål vedr. distribution af el. kan rettes til FSTS på mail: <a href="mailto:post@forsyningstilsynet.dk">post@forsyningstilsynet.dk</a><br /><br />
-        </p>
-        <UiMessageBox
-          :message="'Du præsenteres nu for Microsoft Power BI. Værktøjet ligger på Microsofts domæne, og er ikke en integreret del af denne hjemmeside, hvorfor vi ikke kan garantere for sikkerhed og behandling af dine persondata.'"
-          buttonLabel="Vis dashboard"
-          :crossSessionId="'unikDashboardId'"
-          @close="showDashboard = true"
-        />
-        <iframe
-          v-if="showDashboard"
-          title="Figurer og tal"
-          class="dashboard-frame"
-          :src="dashboardSettings.powerBiUrl"
-          allowFullScreen="true"
-        >
-        </iframe>
-      </UiTabbedContentItem>
-
-      <!-- DATA DESCRIPTION -->
 <!--      <UiTabbedContentItem-->
-<!--        v-if="dataset"-->
-<!--        :title="'Databeskrivelse'"-->
-<!--        :ref="'databeskrivelse'"-->
-<!--        :active="currentTab === 'beskrivelse'"-->
-<!--        name="beskrivelse"-->
+<!--        v-if="dataset && dataset.views.some(view => view.type === 'dashboard')"-->
+<!--        :title="'Figurer og tal'"-->
+<!--        name="dashboard"-->
+<!--        :active="currentTab === 'dashboard'"-->
 <!--        class="layout-1col"-->
 <!--      >-->
-<!--        <h2-->
-<!--          :ref="'databeskrivelse-header'"-->
-<!--          class="anim-underline"-->
-<!--        >Beskrivelse af data for {{ title }}</h2>-->
-<!--        <p class="introduction" v-html="dataDescription"></p>-->
-<!--        <div class="table-of-contents">-->
-<!--          <h2>Oversigt over udstillede data</h2>-->
-<!--          <p>Nedenfor ses en oversigt over det udstillede data. I de efterfølgende afsnit gennemgås hver data.</p>-->
-<!--          <ul>-->
-<!--            <li v-for="field in fields" :key="field.fieldId">-->
-<!--              <a @click="scrollToField('fieldList_' + field.fieldId)">{{field.label}}</a>-->
-<!--            </li>-->
-<!--          </ul>-->
-
-<!--        </div>-->
-<!--        <div-->
-<!--          class="field-section"-->
-<!--          v-for="field in fields"-->
-<!--          :key="`fieldList_${field.fieldId}`"-->
-<!--          :ref="`fieldList_${field.fieldId}`"-->
-<!--          :id="'fieldList_' + field.fieldId"-->
+<!--        <p>-->
+<!--          Forsyningstilsynet (FSTS) og Forsyningssekretariatet (FS) er ansvarlige for indholdet i den præsenterede visning. <br /><br />-->
+<!--          Spørgsmål vedr. spildevand eller drikkevand skal rettes til FS på mail: <a href="mailto:vand@kfst.dk">vand@kfst.dk</a>  <br />-->
+<!--          Spørgsmål vedr. distribution af el. kan rettes til FSTS på mail: <a href="mailto:post@forsyningstilsynet.dk">post@forsyningstilsynet.dk</a><br /><br />-->
+<!--        </p>-->
+<!--        <UiMessageBox-->
+<!--          :message="'Du præsenteres nu for Microsoft Power BI. Værktøjet ligger på Microsofts domæne, og er ikke en integreret del af denne hjemmeside, hvorfor vi ikke kan garantere for sikkerhed og behandling af dine persondata.'"-->
+<!--          buttonLabel="Vis dashboard"-->
+<!--          :crossSessionId="'unikDashboardId'"-->
+<!--          @close="showDashboard = true"-->
+<!--        />-->
+<!--        <iframe-->
+<!--          v-if="showDashboard"-->
+<!--          title="Figurer og tal"-->
+<!--          class="dashboard-frame"-->
+<!--          :src="dashboardSettings.powerBiUrl"-->
+<!--          allowFullScreen="true"-->
 <!--        >-->
-<!--          <h3-->
-<!--            v-if="field.shortDef || field.longDef"-->
-<!--            style="margin-top: 3rem;"-->
-<!--            class="anim-underline"-->
-<!--          >-->
-<!--            {{field.label}}-->
-<!--            <a @click="scrollToField('main')">(tilbage toppen)</a>-->
-<!--          </h3>-->
-<!--          <p-->
-<!--            v-if="field.shortDef"-->
-<!--            v-html="field.shortDef"-->
-<!--          >-->
-<!--          </p>-->
-<!--          <h6-->
-<!--            v-if="field.longDef"-->
-<!--            style="margin-top: 2rem;"-->
-<!--          >-->
-<!--            Detaljeret beskrivelse-->
-<!--          </h6>-->
-<!--          <p-->
-<!--            v-if="field.longDef"-->
-<!--            v-html="field.longDef"-->
-<!--          >-->
-<!--          </p>-->
-<!--        </div>-->
-<!--      </UiTabbedContentItem>-->
-
-      <!-- DATA ORIGIN -->
-<!--      <UiTabbedContentItem-->
-<!--        v-if="dataset.description"-->
-<!--        :title="'Oprindelse og datakvalitet'"-->
-<!--        name="oprindelse"-->
-<!--        :active="currentTab === 'oprindelse'"-->
-<!--        class="layout-1col"-->
-<!--      >-->
-<!--        <h3>Oprindelse og datakvalitet</h3>-->
-<!--        <p v-html="dataset.description"></p>-->
-<!--      </UiTabbedContentItem>-->
-
-      <!-- DATA TERMS -->
-<!--      <UiTabbedContentItem-->
-<!--        v-if="dataset"-->
-<!--        :title="'Vilkår'"-->
-<!--        class="layout-1col"-->
-<!--        name="vilkaar"-->
-<!--        :active="currentTab === 'vilkaar'"      >-->
-<!--        <h3>Vilkår for brug af data</h3>-->
-<!--        <p v-html="dataset.description_tmp"></p>-->
+<!--        </iframe>-->
 <!--      </UiTabbedContentItem>-->
 
     </UiTabbedContent>
