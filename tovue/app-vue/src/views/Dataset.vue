@@ -169,33 +169,33 @@
       </UiTabbedContentItem>
 
       <!-- DASHBOARD -->
-<!--      <UiTabbedContentItem-->
-<!--        v-if="dataset && dataset.views.some(view => view.type === 'dashboard')"-->
-<!--        :title="'Figurer og tal'"-->
-<!--        name="dashboard"-->
-<!--        :active="currentTab === 'dashboard'"-->
-<!--        class="layout-1col"-->
-<!--      >-->
-<!--        <p>-->
-<!--          Forsyningstilsynet (FSTS) og Forsyningssekretariatet (FS) er ansvarlige for indholdet i den præsenterede visning. <br /><br />-->
-<!--          Spørgsmål vedr. spildevand eller drikkevand skal rettes til FS på mail: <a href="mailto:vand@kfst.dk">vand@kfst.dk</a>  <br />-->
-<!--          Spørgsmål vedr. distribution af el. kan rettes til FSTS på mail: <a href="mailto:post@forsyningstilsynet.dk">post@forsyningstilsynet.dk</a><br /><br />-->
-<!--        </p>-->
-<!--        <UiMessageBox-->
-<!--          :message="'Du præsenteres nu for Microsoft Power BI. Værktøjet ligger på Microsofts domæne, og er ikke en integreret del af denne hjemmeside, hvorfor vi ikke kan garantere for sikkerhed og behandling af dine persondata.'"-->
-<!--          buttonLabel="Vis dashboard"-->
-<!--          :crossSessionId="'unikDashboardId'"-->
-<!--          @close="showDashboard = true"-->
-<!--        />-->
-<!--        <iframe-->
-<!--          v-if="showDashboard"-->
-<!--          title="Figurer og tal"-->
-<!--          class="dashboard-frame"-->
-<!--          :src="dashboardSettings.powerBiUrl"-->
-<!--          allowFullScreen="true"-->
-<!--        >-->
-<!--        </iframe>-->
-<!--      </UiTabbedContentItem>-->
+      <UiTabbedContentItem
+        v-if="dataset && dataset.views.some(view => view.type === 'dashboard')"
+        :title="'Figurer og tal'"
+        name="dashboard"
+        :active="currentTab === 'dashboard'"
+        class="layout-1col"
+      >
+        <p>
+          Forsyningstilsynet (FSTS) og Forsyningssekretariatet (FS) er ansvarlige for indholdet i den præsenterede visning. <br /><br />
+          Spørgsmål vedr. spildevand eller drikkevand skal rettes til FS på mail: <a href="mailto:vand@kfst.dk">vand@kfst.dk</a>  <br />
+          Spørgsmål vedr. distribution af el. kan rettes til FSTS på mail: <a href="mailto:post@forsyningstilsynet.dk">post@forsyningstilsynet.dk</a><br /><br />
+        </p>
+        <UiMessageBox
+          :message="'Du præsenteres nu for Microsoft Power BI. Værktøjet ligger på Microsofts domæne, og er ikke en integreret del af denne hjemmeside, hvorfor vi ikke kan garantere for sikkerhed og behandling af dine persondata.'"
+          buttonLabel="Vis dashboard"
+          :crossSessionId="'unikDashboardId'"
+          @close="showDashboard = true"
+        />
+        <iframe
+          v-if="showDashboard"
+          title="Figurer og tal"
+          class="dashboard-frame"
+          :src="dashboardSettings.powerBiUrl"
+          allowFullScreen="true"
+        >
+        </iframe>
+      </UiTabbedContentItem>
 
       <!-- DATA DESCRIPTION -->
 <!--      <UiTabbedContentItem-->
@@ -256,33 +256,33 @@
 <!--      </UiTabbedContentItem>-->
 
       <!-- DATA ORIGIN -->
-<!--      <UiTabbedContentItem-->
-<!--        v-if="dataset.description"-->
-<!--        :title="'Oprindelse og datakvalitet'"-->
-<!--        name="oprindelse"-->
-<!--        :active="currentTab === 'oprindelse'"-->
-<!--        class="layout-1col"-->
-<!--      >-->
-<!--        <h3>Oprindelse og datakvalitet</h3>-->
-<!--        <p v-html="dataset.description"></p>-->
-<!--      </UiTabbedContentItem>-->
+      <UiTabbedContentItem
+        v-if="dataset.description"
+        :title="'Oprindelse og datakvalitet'"
+        name="oprindelse"
+        :active="currentTab === 'oprindelse'"
+        class="layout-1col"
+      >
+        <h3>Oprindelse og datakvalitet</h3>
+        <p v-html="dataset.description"></p>
+      </UiTabbedContentItem>
 
-<!--      &lt;!&ndash; DATA TERMS &ndash;&gt;-->
-<!--      <UiTabbedContentItem-->
-<!--        v-if="dataset"-->
-<!--        :title="'Vilkår'"-->
-<!--        class="layout-1col"-->
-<!--        name="vilkaar"-->
-<!--        :active="currentTab === 'vilkaar'"      >-->
-<!--        <h3>Vilkår for brug af data</h3>-->
-<!--        <p v-html="dataset.description_tmp"></p>-->
-<!--      </UiTabbedContentItem>-->
+      <!-- DATA TERMS -->
+      <UiTabbedContentItem
+        v-if="dataset"
+        :title="'Vilkår'"
+        class="layout-1col"
+        name="vilkaar"
+        :active="currentTab === 'vilkaar'"      >
+        <h3>Vilkår for brug af data</h3>
+        <p v-html="dataset.description_tmp"></p>
+      </UiTabbedContentItem>
 
-<!--    </UiTabbedContent>-->
-<!--  </main>-->
-<!--</template>-->
+    </UiTabbedContent>
+  </main>
+</template>
 
-<!--<script>-->
+<script>
 import { dataToCsvString, download } from '@/HelperFunctions'
 import Hero from '@/components/shared/Hero'
 import UiTabbedContent from '@/components/shared/baseUi/UiTabbedContent'
