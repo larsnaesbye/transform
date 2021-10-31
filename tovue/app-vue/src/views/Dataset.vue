@@ -27,8 +27,6 @@
         <h2 v-if="dataStatus === 'loading'">Henter data...</h2>
         <h2 v-if="dataStatus === 'error' || !mapSettings">Kunne ikke hente data prøv eventuelt at genindlæse siden...</h2>
       </UiTabbedContentItem>
-
-
     </UiTabbedContent>
   </main>
 </template>
