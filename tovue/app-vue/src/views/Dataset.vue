@@ -69,7 +69,7 @@ export default {
   },
   data () {
     return {
-      currentTab: 'data',
+      currentTab: 'kort',
       filters: {
         table: {},
         map: {}
