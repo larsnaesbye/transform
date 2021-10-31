@@ -8,12 +8,12 @@
 <!--    >-->
       <!-- MAP -->
 <!--      <UiTabbedContentItem-->
-<!--        v-if="dataset && dataset.views.some(view => view.type === 'map')"-->
-<!--        :title="'Kortvisning'"-->
-<!--        name="kort"-->
-<!--        :active="currentTab === 'kort'"-->
-<!--        class="layout-1col"-->
-<!--      >-->
+        v-if="dataset && dataset.views.some(view => view.type === 'map')"
+        :title="'Kortvisning'"
+        name="kort"
+        :active="currentTab === 'kort'"
+        class="layout-1col"
+      >
         <Map
           v-if="mapSettings && dataStatus === 'success'"
           :datasetId="id"
