@@ -12,139 +12,139 @@
       @select="setTab"
     >
       <!-- DATA TAB -->
-      <UiTabbedContentItem
-        v-if="dataset && dataset.views.some(view => view.type === 'table')"
-        :title="'Data'"
-        :active="currentTab === 'data'"
-        name="data"
-        class="layout-sidebar"
-      >
-        <div class="main-content">
-          <Table
-            :settings="tableSettings"
-            :filters="filters.table"
-            :data="data"
-            :datasetId="id"
-            :dataStatus="dataStatus"
-            :shownColumns="shownColumns"
-            :active="currentTab === 'data'"
-            @open-field-description="navigateToFieldDescription"
-            @downloadFilteredDataSet="downloadCSV(...arguments, dataset.title)"
-            @filters-updated="updateDataFilters"
-          />
-        </div>
-        <div class="sidebar">
-          <div class="sidebar__section" v-if="downloadsDataReady">
-            <div class="sidebar__section-header">Downloads:</div>
-            <UiExpandBox
-              title="CSV"
-              :color="getFormatInfo(63) ? getFormatInfo(63).color : ''"
-              :backgroundColor="getFormatInfo(63) ? getFormatInfo(63).backgroundColor : ''"
-              :backgroundOpacity="0.2"
-            >
-              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">
-                <p class="description paragraph_lille">Du kan downloade datasættet som CSV i to forskellige udgaver. <br />Som vist i tabellen eller som uformateret rådata. Download data fra tabelvisningen enten som hele datasættet eller filtreret med de kolonner du har valgt. Download af csv som uformateret rådata kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>
-              </UiExpandBoxSection>
-              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">
-                <button
-                  @click="downloadFilteredDataset"
-                  class="button-reset cursor-point"
-                >
-                  <Icon
-                    icon="DownloadIcon"
-                    :color="getFormatInfo(63) ? getFormatInfo(63).color : 'black'"
-                    :width="2"
-                    :height="2"
-                  />
-                  Download som filtreret
-                </button>
-              </UiExpandBoxSection>
-              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">
-                <button
-                  @click="downloadFullDataset"
-                  class="button-reset cursor-point"
-                >
-                  <Icon
-                    icon="DownloadIcon"
-                    :color="getFormatInfo(63) ? getFormatInfo(63).color : 'black'"
-                    :width="2"
-                    :height="2"
-                  />
-                  Download hele datasættet
-                </button>
-              </UiExpandBoxSection>
-              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">
-                <a
-                  :href="rawCsvDownloadUrl"
-                  target="_blank"
-                  class="cursor-point"
-                >
-                  <Icon
-                    icon="ExtLinkIcon"
-                    :color="getFormatInfo(63) ? getFormatInfo(63).color : 'black'"
-                    :width="2"
-                    :height="2"
-                  />
-                  Download rådata
-                </a>
-              </UiExpandBoxSection>
-            </UiExpandBox>
-            <UiExpandBox
-              v-for="(service, index) in nonCsvDownloads"
-              :key="index"
-              :title="service.typeLabel"
-              :color="service.typeColor"
-              :backgroundColor="service.typeBackgroundColor"
-              :backgroundOpacity="0.2"
-            >
-              <UiExpandBoxSection :color="service.typeColor">
-                <p class="description paragraph_lille">Download af filen kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>
-              </UiExpandBoxSection>
-              <UiExpandBoxSection :color="service.typeColor">
-                <a
-                  :href="service.folder"
-                  target="_blank"
-                  class="cursor-point"
-                >
-                  <Icon
-                    icon="DownloadIcon"
-                    :color="service.typeColor"
-                    :width="2"
-                    :height="2"
-                  />
-                  Download
-                </a>
-              </UiExpandBoxSection>
-            </UiExpandBox>
-          </div>
-          <div class="sidebar__section" v-if="servicesDataReady">
-            <div class="sidebar__section-header">Services:</div>
-            <UiExpandBox
-              v-for="(service, index) in services"
-              :key="index"
-              :title="service.typeLabel"
-              :color="service.typeColor"
-              :backgroundColor="service.typeBackgroundColor"
-              :backgroundOpacity="0.2"
-            >
-              <UiExpandBoxSection :color="service.typeColor">
-                <p class="description paragraph_lille">Adgang til tjenesten kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>
-              </UiExpandBoxSection>
-              <UiExpandBoxSection
-                :color="service.typeColor"
-                v-for="entry in service.entries"
-                :key="entry.id"
-              >
-                <h4>{{ entry.title }} ({{ entry.name }})</h4>
-                <p class="description paragraph_lille">{{ entry.description }}</p>
-                <UiCopyLink
-                  :link="entry.link"
-                />
-              </UiExpandBoxSection>
-            </UiExpandBox>
-          </div>
-        </div>
-      </UiTabbedContentItem>
+<!--      <UiTabbedContentItem-->
+<!--        v-if="dataset && dataset.views.some(view => view.type === 'table')"-->
+<!--        :title="'Data'"-->
+<!--        :active="currentTab === 'data'"-->
+<!--        name="data"-->
+<!--        class="layout-sidebar"-->
+<!--      >-->
+<!--        <div class="main-content">-->
+<!--          <Table-->
+<!--            :settings="tableSettings"-->
+<!--            :filters="filters.table"-->
+<!--            :data="data"-->
+<!--            :datasetId="id"-->
+<!--            :dataStatus="dataStatus"-->
+<!--            :shownColumns="shownColumns"-->
+<!--            :active="currentTab === 'data'"-->
+<!--            @open-field-description="navigateToFieldDescription"-->
+<!--            @downloadFilteredDataSet="downloadCSV(...arguments, dataset.title)"-->
+<!--            @filters-updated="updateDataFilters"-->
+<!--          />-->
+<!--        </div>-->
+<!--        <div class="sidebar">-->
+<!--          <div class="sidebar__section" v-if="downloadsDataReady">-->
+<!--            <div class="sidebar__section-header">Downloads:</div>-->
+<!--            <UiExpandBox-->
+<!--              title="CSV"-->
+<!--              :color="getFormatInfo(63) ? getFormatInfo(63).color : ''"-->
+<!--              :backgroundColor="getFormatInfo(63) ? getFormatInfo(63).backgroundColor : ''"-->
+<!--              :backgroundOpacity="0.2"-->
+<!--            >-->
+<!--              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">-->
+<!--                <p class="description paragraph_lille">Du kan downloade datasættet som CSV i to forskellige udgaver. <br />Som vist i tabellen eller som uformateret rådata. Download data fra tabelvisningen enten som hele datasættet eller filtreret med de kolonner du har valgt. Download af csv som uformateret rådata kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>-->
+<!--              </UiExpandBoxSection>-->
+<!--              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">-->
+<!--                <button-->
+<!--                  @click="downloadFilteredDataset"-->
+<!--                  class="button-reset cursor-point"-->
+<!--                >-->
+<!--                  <Icon-->
+<!--                    icon="DownloadIcon"-->
+<!--                    :color="getFormatInfo(63) ? getFormatInfo(63).color : 'black'"-->
+<!--                    :width="2"-->
+<!--                    :height="2"-->
+<!--                  />-->
+<!--                  Download som filtreret-->
+<!--                </button>-->
+<!--              </UiExpandBoxSection>-->
+<!--              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">-->
+<!--                <button-->
+<!--                  @click="downloadFullDataset"-->
+<!--                  class="button-reset cursor-point"-->
+<!--                >-->
+<!--                  <Icon-->
+<!--                    icon="DownloadIcon"-->
+<!--                    :color="getFormatInfo(63) ? getFormatInfo(63).color : 'black'"-->
+<!--                    :width="2"-->
+<!--                    :height="2"-->
+<!--                  />-->
+<!--                  Download hele datasættet-->
+<!--                </button>-->
+<!--              </UiExpandBoxSection>-->
+<!--              <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">-->
+<!--                <a-->
+<!--                  :href="rawCsvDownloadUrl"-->
+<!--                  target="_blank"-->
+<!--                  class="cursor-point"-->
+<!--                >-->
+<!--                  <Icon-->
+<!--                    icon="ExtLinkIcon"-->
+<!--                    :color="getFormatInfo(63) ? getFormatInfo(63).color : 'black'"-->
+<!--                    :width="2"-->
+<!--                    :height="2"-->
+<!--                  />-->
+<!--                  Download rådata-->
+<!--                </a>-->
+<!--              </UiExpandBoxSection>-->
+<!--            </UiExpandBox>-->
+<!--            <UiExpandBox-->
+<!--              v-for="(service, index) in nonCsvDownloads"-->
+<!--              :key="index"-->
+<!--              :title="service.typeLabel"-->
+<!--              :color="service.typeColor"-->
+<!--              :backgroundColor="service.typeBackgroundColor"-->
+<!--              :backgroundOpacity="0.2"-->
+<!--            >-->
+<!--              <UiExpandBoxSection :color="service.typeColor">-->
+<!--                <p class="description paragraph_lille">Download af filen kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>-->
+<!--              </UiExpandBoxSection>-->
+<!--              <UiExpandBoxSection :color="service.typeColor">-->
+<!--                <a-->
+<!--                  :href="service.folder"-->
+<!--                  target="_blank"-->
+<!--                  class="cursor-point"-->
+<!--                >-->
+<!--                  <Icon-->
+<!--                    icon="DownloadIcon"-->
+<!--                    :color="service.typeColor"-->
+<!--                    :width="2"-->
+<!--                    :height="2"-->
+<!--                  />-->
+<!--                  Download-->
+<!--                </a>-->
+<!--              </UiExpandBoxSection>-->
+<!--            </UiExpandBox>-->
+<!--          </div>-->
+<!--          <div class="sidebar__section" v-if="servicesDataReady">-->
+<!--            <div class="sidebar__section-header">Services:</div>-->
+<!--            <UiExpandBox-->
+<!--              v-for="(service, index) in services"-->
+<!--              :key="index"-->
+<!--              :title="service.typeLabel"-->
+<!--              :color="service.typeColor"-->
+<!--              :backgroundColor="service.typeBackgroundColor"-->
+<!--              :backgroundOpacity="0.2"-->
+<!--            >-->
+<!--              <UiExpandBoxSection :color="service.typeColor">-->
+<!--                <p class="description paragraph_lille">Adgang til tjenesten kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>-->
+<!--              </UiExpandBoxSection>-->
+<!--              <UiExpandBoxSection-->
+<!--                :color="service.typeColor"-->
+<!--                v-for="entry in service.entries"-->
+<!--                :key="entry.id"-->
+<!--              >-->
+<!--                <h4>{{ entry.title }} ({{ entry.name }})</h4>-->
+<!--                <p class="description paragraph_lille">{{ entry.description }}</p>-->
+<!--                <UiCopyLink-->
+<!--                  :link="entry.link"-->
+<!--                />-->
+<!--              </UiExpandBoxSection>-->
+<!--            </UiExpandBox>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </UiTabbedContentItem>-->
 
       <!-- MAP -->
       <UiTabbedContentItem
