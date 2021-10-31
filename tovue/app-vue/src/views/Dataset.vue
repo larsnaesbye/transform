@@ -43,7 +43,7 @@
               :backgroundOpacity="0.2"
             >
               <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">
-                <p class="description paragraph_lille">Du kan downloade datasættet som csv i to forskellige udgaver. <br />Som vist i tabellen eller som uformateret rådata. Download data fra tabelvisningen enten som hele datasættet eller filtreret med de kolonner du har valgt. Download af csv som uformateret rådata kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>
+                <p class="description paragraph_lille">Du kan downloade datasættet som CSV i to forskellige udgaver. <br />Som vist i tabellen eller som uformateret rådata. Download data fra tabelvisningen enten som hele datasættet eller filtreret med de kolonner du har valgt. Download af csv som uformateret rådata kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a></p>
               </UiExpandBoxSection>
               <UiExpandBoxSection :color="getFormatInfo(63) ? getFormatInfo(63).color : ''">
                 <button
@@ -198,62 +198,62 @@
       </UiTabbedContentItem>
 
       <!-- DATA DESCRIPTION -->
-      <UiTabbedContentItem
-        v-if="dataset"
-        :title="'Databeskrivelse'"
-        :ref="'databeskrivelse'"
-        :active="currentTab === 'beskrivelse'"
-        name="beskrivelse"
-        class="layout-1col"
-      >
-        <h2
-          :ref="'databeskrivelse-header'"
-          class="anim-underline"
-        >Beskrivelse af data for {{ title }}</h2>
-        <p class="introduction" v-html="dataDescription"></p>
-        <div class="table-of-contents">
-          <h2>Oversigt over udstillede data</h2>
-          <p>Nedenfor ses en oversigt over det udstillede data. I de efterfølgende afsnit gennemgås hver data.</p>
-          <ul>
-            <li v-for="field in fields" :key="field.fieldId">
-              <a @click="scrollToField('fieldList_' + field.fieldId)">{{field.label}}</a>
-            </li>
-          </ul>
+<!--      <UiTabbedContentItem-->
+<!--        v-if="dataset"-->
+<!--        :title="'Databeskrivelse'"-->
+<!--        :ref="'databeskrivelse'"-->
+<!--        :active="currentTab === 'beskrivelse'"-->
+<!--        name="beskrivelse"-->
+<!--        class="layout-1col"-->
+<!--      >-->
+<!--        <h2-->
+<!--          :ref="'databeskrivelse-header'"-->
+<!--          class="anim-underline"-->
+<!--        >Beskrivelse af data for {{ title }}</h2>-->
+<!--        <p class="introduction" v-html="dataDescription"></p>-->
+<!--        <div class="table-of-contents">-->
+<!--          <h2>Oversigt over udstillede data</h2>-->
+<!--          <p>Nedenfor ses en oversigt over det udstillede data. I de efterfølgende afsnit gennemgås hver data.</p>-->
+<!--          <ul>-->
+<!--            <li v-for="field in fields" :key="field.fieldId">-->
+<!--              <a @click="scrollToField('fieldList_' + field.fieldId)">{{field.label}}</a>-->
+<!--            </li>-->
+<!--          </ul>-->
 
-        </div>
-        <div
-          class="field-section"
-          v-for="field in fields"
-          :key="`fieldList_${field.fieldId}`"
-          :ref="`fieldList_${field.fieldId}`"
-          :id="'fieldList_' + field.fieldId"
-        >
-          <h3
-            v-if="field.shortDef || field.longDef"
-            style="margin-top: 3rem;"
-            class="anim-underline"
-          >
-            {{field.label}}
-            <a @click="scrollToField('main')">(tilbage toppen)</a>
-          </h3>
-          <p
-            v-if="field.shortDef"
-            v-html="field.shortDef"
-          >
-          </p>
-          <h6
-            v-if="field.longDef"
-            style="margin-top: 2rem;"
-          >
-            Detaljeret beskrivelse
-          </h6>
-          <p
-            v-if="field.longDef"
-            v-html="field.longDef"
-          >
-          </p>
-        </div>
-      </UiTabbedContentItem>
+<!--        </div>-->
+<!--        <div-->
+<!--          class="field-section"-->
+<!--          v-for="field in fields"-->
+<!--          :key="`fieldList_${field.fieldId}`"-->
+<!--          :ref="`fieldList_${field.fieldId}`"-->
+<!--          :id="'fieldList_' + field.fieldId"-->
+<!--        >-->
+<!--          <h3-->
+<!--            v-if="field.shortDef || field.longDef"-->
+<!--            style="margin-top: 3rem;"-->
+<!--            class="anim-underline"-->
+<!--          >-->
+<!--            {{field.label}}-->
+<!--            <a @click="scrollToField('main')">(tilbage toppen)</a>-->
+<!--          </h3>-->
+<!--          <p-->
+<!--            v-if="field.shortDef"-->
+<!--            v-html="field.shortDef"-->
+<!--          >-->
+<!--          </p>-->
+<!--          <h6-->
+<!--            v-if="field.longDef"-->
+<!--            style="margin-top: 2rem;"-->
+<!--          >-->
+<!--            Detaljeret beskrivelse-->
+<!--          </h6>-->
+<!--          <p-->
+<!--            v-if="field.longDef"-->
+<!--            v-html="field.longDef"-->
+<!--          >-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </UiTabbedContentItem>-->
 
       <!-- DATA ORIGIN -->
       <UiTabbedContentItem
