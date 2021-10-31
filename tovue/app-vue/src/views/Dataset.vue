@@ -1,13 +1,18 @@
 <template>
   <main id="main" ref="main">
-<!--    <UiTabbedContent-->
-<!--      v-if="dataset"-->
-<!--      class=""-->
-<!--      ref="UiTabbedContent"-->
-<!--      @select="setTab"-->
-<!--    >-->
+<!--    <Hero-->
+<!--      :title="title"-->
+<!--      :summary="summary"-->
+<!--      :image="image"-->
+<!--    />-->
+    <UiTabbedContent
+      v-if="dataset"
+      class=""
+      ref="UiTabbedContent"
+      @select="setTab"
+    >
       <!-- MAP -->
-<!--      <UiTabbedContentItem-->
+      <UiTabbedContentItem
         v-if="dataset && dataset.views.some(view => view.type === 'map')"
         :title="'Kortvisning'"
         name="kort"
@@ -26,10 +31,38 @@
         />
         <h2 v-if="dataStatus === 'loading'">Henter data...</h2>
         <h2 v-if="dataStatus === 'error' || !mapSettings">Kunne ikke hente data prøv eventuelt at genindlæse siden...</h2>
+      </UiTabbedContentItem>
+
+      <!-- DASHBOARD -->
+<!--      <UiTabbedContentItem-->
+<!--        v-if="dataset && dataset.views.some(view => view.type === 'dashboard')"-->
+<!--        :title="'Figurer og tal'"-->
+<!--        name="dashboard"-->
+<!--        :active="currentTab === 'dashboard'"-->
+<!--        class="layout-1col"-->
+<!--      >-->
+<!--        <p>-->
+<!--          Forsyningstilsynet (FSTS) og Forsyningssekretariatet (FS) er ansvarlige for indholdet i den præsenterede visning. <br /><br />-->
+<!--          Spørgsmål vedr. spildevand eller drikkevand skal rettes til FS på mail: <a href="mailto:vand@kfst.dk">vand@kfst.dk</a>  <br />-->
+<!--          Spørgsmål vedr. distribution af el. kan rettes til FSTS på mail: <a href="mailto:post@forsyningstilsynet.dk">post@forsyningstilsynet.dk</a><br /><br />-->
+<!--        </p>-->
+<!--        <UiMessageBox-->
+<!--          :message="'Du præsenteres nu for Microsoft Power BI. Værktøjet ligger på Microsofts domæne, og er ikke en integreret del af denne hjemmeside, hvorfor vi ikke kan garantere for sikkerhed og behandling af dine persondata.'"-->
+<!--          buttonLabel="Vis dashboard"-->
+<!--          :crossSessionId="'unikDashboardId'"-->
+<!--          @close="showDashboard = true"-->
+<!--        />-->
+<!--        <iframe-->
+<!--          v-if="showDashboard"-->
+<!--          title="Figurer og tal"-->
+<!--          class="dashboard-frame"-->
+<!--          :src="dashboardSettings.powerBiUrl"-->
+<!--          allowFullScreen="true"-->
+<!--        >-->
+<!--        </iframe>-->
 <!--      </UiTabbedContentItem>-->
 
-
-<!--    </UiTabbedContent>-->
+    </UiTabbedContent>
   </main>
 </template>
 
