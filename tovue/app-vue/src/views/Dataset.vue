@@ -1,19 +1,20 @@
 <template>
   <main id="main" ref="main">
-    <UiTabbedContent
-      v-if="dataset"
-      class=""
-      ref="UiTabbedContent"
-      @select="setTab"
-    >
+    <section class="page">
+<!--    <UiTabbedContent-->
+<!--      v-if="dataset"-->
+<!--      class=""-->
+<!--      ref="UiTabbedContent"-->
+<!--      @select="setTab"-->
+<!--    >-->
       <!-- MAP -->
-      <UiTabbedContentItem
-        v-if="dataset && dataset.views.some(view => view.type === 'map')"
-        :title="'Kortvisning'"
-        name="kort"
-        :active="currentTab === 'kort'"
-        class="layout-1col"
-      >
+<!--      <UiTabbedContentItem-->
+<!--        v-if="dataset && dataset.views.some(view => view.type === 'map')"-->
+<!--        :title="'Kortvisning'"-->
+<!--        name="kort"-->
+<!--        :active="currentTab === 'kort'"-->
+<!--        class="layout-1col"-->
+<!--      >-->
         <Map
           v-if="mapSettings && dataStatus === 'success'"
           :datasetId="id"
@@ -26,8 +27,9 @@
         />
         <h2 v-if="dataStatus === 'loading'">Henter data...</h2>
         <h2 v-if="dataStatus === 'error' || !mapSettings">Kunne ikke hente data prøv eventuelt at genindlæse siden...</h2>
-      </UiTabbedContentItem>
-    </UiTabbedContent>
+    </section>
+    <!--      </UiTabbedContentItem>-->
+<!--    </UiTabbedContent>-->
   </main>
 </template>
 
