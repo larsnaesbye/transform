@@ -256,16 +256,16 @@
 <!--      </UiTabbedContentItem>-->
 
       <!-- DATA ORIGIN -->
-      <UiTabbedContentItem
-        v-if="dataset.description"
-        :title="'Oprindelse og datakvalitet'"
-        name="oprindelse"
-        :active="currentTab === 'oprindelse'"
-        class="layout-1col"
-      >
-        <h3>Oprindelse og datakvalitet</h3>
-        <p v-html="dataset.description"></p>
-      </UiTabbedContentItem>
+<!--      <UiTabbedContentItem-->
+<!--        v-if="dataset.description"-->
+<!--        :title="'Oprindelse og datakvalitet'"-->
+<!--        name="oprindelse"-->
+<!--        :active="currentTab === 'oprindelse'"-->
+<!--        class="layout-1col"-->
+<!--      >-->
+<!--        <h3>Oprindelse og datakvalitet</h3>-->
+<!--        <p v-html="dataset.description"></p>-->
+<!--      </UiTabbedContentItem>-->
 
       <!-- DATA TERMS -->
 <!--      <UiTabbedContentItem-->

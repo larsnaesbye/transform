@@ -1,8 +1,8 @@
 <template>
   <main>
-    <Hero>
-      <p>Something here?</p>
-    </Hero>
+<!--    <Hero>-->
+<!--      <p>Something here?</p>-->
+<!--    </Hero>-->
   </main>
 </template>
 
