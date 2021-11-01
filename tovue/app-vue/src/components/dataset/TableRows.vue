@@ -264,7 +264,8 @@ export default {
   display flex
   align-items center
   text-transform uppercase
-  flex-flow row nowrap
+  //flex-flow row nowrap
+  flex-flow column wrap
   box-sizing border-box
   margin-bottom .5rem
   flex-shrink 1
