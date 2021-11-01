@@ -41,13 +41,13 @@
         </div>
       </div>
       <header>
-<!--        <Icon-->
-<!--          icon="DatasetIcon"-->
-<!--          :height="3"-->
-<!--          :width="3"-->
-<!--          class="dataset-icon"-->
-<!--          color="white"-->
-<!--        />-->
+        <Icon
+          icon="DatasetIcon"
+          :height="3"
+          :width="3"
+          class="dataset-icon"
+          color="white"
+        />
         <h5
           class="hyphenate"
         >
