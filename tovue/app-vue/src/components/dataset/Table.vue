@@ -216,13 +216,6 @@ export default {
         }, 300)
       }
     },
-    /* filters: {
-      handler: function (newVal) {
-        this.resetPagination()
-        this.processData()
-      },
-      deep: true
-    }, */
     data: {
       handler: function (data) {
         this.resetPagination()
