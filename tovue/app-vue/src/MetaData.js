@@ -269,7 +269,7 @@ export const pageMeta = {
     coverId: 1725
   },
   about: {
-    title: 'Oversigt over datasæt',
+    title: 'Om koordinattransformation',
     summary: '',
     coverId: 1719,
     htmlText: 'Koordinattransformation er et værktøj lavet af Styrelsen for Dataforsyning og Effektivisering. <br />'
