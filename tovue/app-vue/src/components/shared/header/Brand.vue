@@ -70,11 +70,12 @@ export default {
   background: white
 
 .brand-name
-  align-self flex-start
+  //align-self flex-start
   padding-left 1rem
   margin-top .3rem
   display flex
   flex-direction column
+  align-self center
 
 .brand-name > .title
   margin-top 2px
