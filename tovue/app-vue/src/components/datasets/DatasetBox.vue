@@ -170,7 +170,7 @@
         :color="selectedDownload.typeColor"
         v-if="!downloading"
       >
-        <p>Du kan downloade datasættet som csv i to forskellige udgaver. Som hele datasættet i en tilpasset udgave eller som uformateret rådata (kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a>).</p>
+        <p>Du kan downloade datasættet som CSV i to forskellige udgaver. Som hele datasættet i en tilpasset udgave eller som uformateret rådata (kræver <a href="https://dataforsyningen.dk/?show=login" target="_blank">login</a>).</p>
       </UiExpandBoxSection>
       <footer
         class="dialog-footer"

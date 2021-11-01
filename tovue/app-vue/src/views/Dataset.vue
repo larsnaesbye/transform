@@ -25,7 +25,7 @@
           @filters-updated="updateMapDataFilters"
         />
         <h2 v-if="dataStatus === 'loading'">Henter data...</h2>
-        <h2 v-if="dataStatus === 'error' || !mapSettings">Kunne ikke hente data prøv eventuelt at genindlæse siden...</h2>
+        <h2 v-if="dataStatus === 'error' || !mapSettings">Kunne ikke hente data. Prøv eventuelt at genindlæse siden...</h2>
           </UiTabbedContentItem>
     </UiTabbedContent>
   </main>
@@ -124,7 +124,7 @@ export default {
           downloadObj.typeColor = formatInfo.color
           downloadObj.typeBackgroundColor = formatInfo.backgroundColor
           if (download.typeId !== 63) {
-            // dont add CVS download that's handled manually
+            // dont add CSV download that's handled manually
             downloads.push(downloadObj)
           }
         })

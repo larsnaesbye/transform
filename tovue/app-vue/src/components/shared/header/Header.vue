@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-// TODO: hide or minimize header on scroll down and vice versa when scroll up
 header
   position absolute
   z-index 100
