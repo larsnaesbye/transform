@@ -1,4 +1,4 @@
-import { ForsyningsdataApi } from '@/store/shared/ForsyningsdataREST'
+// import { ForsyningsdataApi } from '@/store/shared/ForsyningsdataREST'
 import { flattenEPT } from '@/HelperFunctions'
 
 // eslint-disable-next-line one-var
