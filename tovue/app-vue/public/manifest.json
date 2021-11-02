@@ -1,6 +1,6 @@
 {
-  "name": "forsyningsdata",
-  "short_name": "forsyningsdata",
+  "name": "transform",
+  "short_name": "transform",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
