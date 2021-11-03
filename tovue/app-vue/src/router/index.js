@@ -21,8 +21,7 @@ export default new Router({
       path: '/',
       name: 'Home',
       meta: { title: 'Koordinattransformation - Danmark' },
-      // component: () => import(/* webpackChunkName: "Home", webpackMode: "lazy" */ '@/views/Home.vue')
-      component: () => import(/* webpackChunkName: "Dataset", webpackMode: "lazy" */ '@/views/Dataset.vue')
+      component: () => import(/* webpackChunkName: "Home", webpackMode: "lazy" */ '@/views/Home.vue')
     },
     {
       path: '/grønland',
