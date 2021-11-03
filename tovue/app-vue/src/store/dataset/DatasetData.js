@@ -26,12 +26,13 @@ const query = (id) => {
       rows = []
     }
     return rows
-  },
-  crud = new ForsyningsdataApi(query, parseForsyningsdata),
-  state = crud.state,
-  getters = crud.getters,
-  actions = crud.actions,
-  mutations = crud.mutations
+  }
+  // ,
+  // crud = new ForsyningsdataApi(query, parseForsyningsdata),
+  // state = crud.state,
+  // getters = crud.getters,
+  // actions = crud.actions,
+  // mutations = crud.mutations
 
 export const DatasetData = {
   namespaced: true,
