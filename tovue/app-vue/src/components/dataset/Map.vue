@@ -430,36 +430,36 @@ export default {
       const allCoords = []
       const allSizes = []
       const withoutCoords = []
-      for (let i = 0; i < data.length; i++) {
-        const row = data[i]
-        const coords = row[markerGeometryField].replace('POINT (', '').replace(')', '').split(' ')
-        const x = Number(String(coords[0]).split(',').join('.'))
-        const y = Number(String(coords[1]).split(',').join('.'))
-        if (!isNaN(x) && !isNaN(y)) {
-          const marker = {}
-          const coord = proj4(utm, wgs84, [x, y])
-          marker.lon = coord[0]
-          marker.lat = coord[1]
-
-          const iconType = markerIcon && markerIcon.dataFieldId && row[markerIcon.dataFieldId] ? String(row[markerIcon.dataFieldId]) : 'default'
-          const iconUrl = iconType && markerIcon.iconMap && markerIcon.iconMap[iconType] ? markerIcon.iconMap[iconType] : 'default'
-          marker.iconUrl = iconUrl
-
-          const sizeFieldValue = markerSize && markerSize.dataFieldId ? String(row[markerSize.dataFieldId]) : null
-          const size = sizeFieldValue && markerSize.sizeMap && !isNaN(markerSize.sizeMap[sizeFieldValue]) ? markerSize.sizeMap[sizeFieldValue] : 1
-
-          marker.size = size
-          marker.id = row[markerIdField]
-          markers[i] = marker
-
-          // just for dev purposes
-          allCoords.push(x + '-' + y)
-          allSizes.push(sizeFieldValue)
-        } else {
-          // just for dev purposes
-          withoutCoords.push(row)
-        }
-      }
+      // for (let i = 0; i < data.length; i++) {
+      //   const row = data[i]
+      //   const coords = row[markerGeometryField].replace('POINT (', '').replace(')', '').split(' ')
+      //   const x = Number(String(coords[0]).split(',').join('.'))
+      //   const y = Number(String(coords[1]).split(',').join('.'))
+      //   if (!isNaN(x) && !isNaN(y)) {
+      //     const marker = {}
+      //     const coord = proj4(utm, wgs84, [x, y])
+      //     marker.lon = coord[0]
+      //     marker.lat = coord[1]
+      //
+      //     const iconType = markerIcon && markerIcon.dataFieldId && row[markerIcon.dataFieldId] ? String(row[markerIcon.dataFieldId]) : 'default'
+      //     const iconUrl = iconType && markerIcon.iconMap && markerIcon.iconMap[iconType] ? markerIcon.iconMap[iconType] : 'default'
+      //     marker.iconUrl = iconUrl
+      //
+      //     const sizeFieldValue = markerSize && markerSize.dataFieldId ? String(row[markerSize.dataFieldId]) : null
+      //     const size = sizeFieldValue && markerSize.sizeMap && !isNaN(markerSize.sizeMap[sizeFieldValue]) ? markerSize.sizeMap[sizeFieldValue] : 1
+      //
+      //     marker.size = size
+      //     marker.id = row[markerIdField]
+      //     markers[i] = marker
+      //
+      //     // just for dev purposes
+      //     allCoords.push(x + '-' + y)
+      //     allSizes.push(sizeFieldValue)
+      //   } else {
+      //     // just for dev purposes
+      //     withoutCoords.push(row)
+      //   }
+      // }
       return markers
     },
     createProjection (name, settings, extent) {
