@@ -254,104 +254,104 @@ export default {
         this.currentClusterLayerId = clusterLayer.ol_uid
         this.map.addLayer(clusterLayer)
       }
-      if (this.visualizationDef && this.visualizationDef.markers && this.visualizationDef.markers.popup) {
-        const overlay = this.createOverlay('marker-popup')
-        this.map.addOverlay(overlay)
-        this.map.on('singleclick', (event) => {
-          const coordinate = event.coordinate
-          overlay.setPosition(coordinate)
-
-          let features = []
-          const self = this
-          this.map.forEachFeatureAtPixel(
-            event.pixel,
-            function (feature, layer) {
-              features = self.clustering ? feature.get('features') : [feature]
-            },
-            {
-              hitTolerance: 3
-            }
-          )
-          this.selectedMarkerData = []
-          for (let i = 0; i < features.length; i++) {
-            const feature = features[i]
-            const titleId = this.visualizationDef.markers.popupTitleFieldId
-            const secondLevelHeader = this.visualizationDef.markers.secondLevelHeader
-            const secondLevelTitleField = this.visualizationDef.markers.secondLevelTitleFieldId
-            const markerIdField = this.visualizationDef.markers.markerIdField || ''
-            const data = this.data
-
-            const featureDataIndex = data.findIndex(item => item[markerIdField] === feature.get('id'))
-            const featureData = data[featureDataIndex]
-            const popupData = {}
-            popupData.elements = []
-            for (const key in featureData) {
-              const val = featureData[key]
-              if (
-                ((typeof val === 'string') || (typeof val === 'number') || (typeof val === 'boolean')) &&
-                key !== titleId
-              ) {
-                const labelIndex = this.columnDef.findIndex(col => col.fieldId === key)
-                if (labelIndex !== -1) {
-                  const label = this.columnDef[labelIndex].label
-                  popupData.elements.push({ label: label, value: val })
-                }
-              } else if (Array.isArray(val)) {
-                const list = []
-                val.forEach(item => {
-                  const listProperties = []
-                  for (const key2 in item) {
-                    const val = item[key2]
-                    const labelIndex = this.columnDef.findIndex(col => col.fieldId === key2)
-                    if (labelIndex !== -1) {
-                      const label = this.columnDef[labelIndex].label
-                      listProperties.push({ label: label, value: val, active: false })
-                    }
-                  }
-                  const label = item[secondLevelTitleField]
-                  list.push({ label: label, value: listProperties, active: false })
-                })
-                popupData.elements.push({ label: secondLevelHeader, value: list, active: false })
-              }
-            }
-            popupData.elements = popupData.elements.reverse()
-            popupData.title = featureData[titleId]
-            popupData.active = features.length === 1
-            popupData.anlaeg = featureData.anlaeg
-            this.selectedMarkerData.push(popupData)
-          }
-          if (features[0]) {
-            this.showPopup = true
-          } else {
-            this.showPopup = false
-          }
-          const popup = document.getElementById('marker-popup')
-          popup.scrollTop = 0
-        })
-        this.map.on('dblclick', (event) => {
-          const coordinate = event.coordinate
-          overlay.setPosition(coordinate)
-
-          let features = []
-          const self = this
-          this.map.forEachFeatureAtPixel(
-            event.pixel,
-            function (feature, layer) {
-              features = self.clustering ? feature.get('features') : [feature]
-            },
-            {
-              hitTolerance: 1
-            }
-          )
-          if (features[0]) {
-            const extent = features[0].getGeometry().getExtent().slice(0)
-            for (let i = 0; i < features.length; i++) {
-              olExtent.extend(extent, features[i].getGeometry().getExtent())
-            }
-            this.map.getView().fit(extent, this.map.getSize())
-          }
-        })
-      }
+      // if (this.visualizationDef && this.visualizationDef.markers && this.visualizationDef.markers.popup) {
+      //   const overlay = this.createOverlay('marker-popup')
+      //   this.map.addOverlay(overlay)
+      //   this.map.on('singleclick', (event) => {
+      //     const coordinate = event.coordinate
+      //     overlay.setPosition(coordinate)
+      //
+      //     let features = []
+      //     const self = this
+      //     this.map.forEachFeatureAtPixel(
+      //       event.pixel,
+      //       function (feature, layer) {
+      //         features = self.clustering ? feature.get('features') : [feature]
+      //       },
+      //       {
+      //         hitTolerance: 3
+      //       }
+      //     )
+      //     this.selectedMarkerData = []
+      //     for (let i = 0; i < features.length; i++) {
+      //       const feature = features[i]
+      //       const titleId = this.visualizationDef.markers.popupTitleFieldId
+      //       const secondLevelHeader = this.visualizationDef.markers.secondLevelHeader
+      //       const secondLevelTitleField = this.visualizationDef.markers.secondLevelTitleFieldId
+      //       const markerIdField = this.visualizationDef.markers.markerIdField || ''
+      //       const data = this.data
+      //
+      //       const featureDataIndex = data.findIndex(item => item[markerIdField] === feature.get('id'))
+      //       const featureData = data[featureDataIndex]
+      //       const popupData = {}
+      //       popupData.elements = []
+      //       for (const key in featureData) {
+      //         const val = featureData[key]
+      //         if (
+      //           ((typeof val === 'string') || (typeof val === 'number') || (typeof val === 'boolean')) &&
+      //           key !== titleId
+      //         ) {
+      //           const labelIndex = this.columnDef.findIndex(col => col.fieldId === key)
+      //           if (labelIndex !== -1) {
+      //             const label = this.columnDef[labelIndex].label
+      //             popupData.elements.push({ label: label, value: val })
+      //           }
+      //         } else if (Array.isArray(val)) {
+      //           const list = []
+      //           val.forEach(item => {
+      //             const listProperties = []
+      //             for (const key2 in item) {
+      //               const val = item[key2]
+      //               const labelIndex = this.columnDef.findIndex(col => col.fieldId === key2)
+      //               if (labelIndex !== -1) {
+      //                 const label = this.columnDef[labelIndex].label
+      //                 listProperties.push({ label: label, value: val, active: false })
+      //               }
+      //             }
+      //             const label = item[secondLevelTitleField]
+      //             list.push({ label: label, value: listProperties, active: false })
+      //           })
+      //           popupData.elements.push({ label: secondLevelHeader, value: list, active: false })
+      //         }
+      //       }
+      //       popupData.elements = popupData.elements.reverse()
+      //       popupData.title = featureData[titleId]
+      //       popupData.active = features.length === 1
+      //       popupData.anlaeg = featureData.anlaeg
+      //       this.selectedMarkerData.push(popupData)
+      //     }
+      //     if (features[0]) {
+      //       this.showPopup = true
+      //     } else {
+      //       this.showPopup = false
+      //     }
+      //     const popup = document.getElementById('marker-popup')
+      //     popup.scrollTop = 0
+      //   })
+      //   this.map.on('dblclick', (event) => {
+      //     const coordinate = event.coordinate
+      //     overlay.setPosition(coordinate)
+      //
+      //     let features = []
+      //     const self = this
+      //     this.map.forEachFeatureAtPixel(
+      //       event.pixel,
+      //       function (feature, layer) {
+      //         features = self.clustering ? feature.get('features') : [feature]
+      //       },
+      //       {
+      //         hitTolerance: 1
+      //       }
+      //     )
+      //     if (features[0]) {
+      //       const extent = features[0].getGeometry().getExtent().slice(0)
+      //       for (let i = 0; i < features.length; i++) {
+      //         olExtent.extend(extent, features[i].getGeometry().getExtent())
+      //       }
+      //       this.map.getView().fit(extent, this.map.getSize())
+      //     }
+      //   })
+      // }
       this.status = 'ready'
       // console.log('map initialized')
     },
