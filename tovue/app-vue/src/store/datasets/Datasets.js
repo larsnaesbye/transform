@@ -13,11 +13,6 @@ const query = () => {
       query: {
         bool: {
           must: [
-            /* {
-              match: {
-                o_published: true
-              }
-            }, */
             {
               match: {
                 tag_names: 'forsyningsdata'
@@ -34,11 +29,6 @@ const query = () => {
       query: {
         bool: {
           must: [
-            /* {
-              match: {
-                o_published: true
-              }
-            }, */
             {
               match: {
                 tag_names: 'forsyningsdata'

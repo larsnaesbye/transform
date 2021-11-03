@@ -71,10 +71,8 @@ const query = () => {
     }
   },
   parseServiceType = (data) => {
-    // eslint-disable-next-line one-var
     const exist = !!data._source,
       source = (exist) ? data._source : ''
-    // eslint-disable-next-line multiline-ternary
     return (exist) ? {
       id: Number(source.o_id),
       title: source.servicetype_name,
@@ -103,10 +101,8 @@ const query = () => {
       }
     ]
     for (let i = data.hits.hits.length - 1, x = 0, y = 0; i > -1; --i) {
-      // eslint-disable-next-line one-var
       const curItem = data.hits.hits[i],
         cname = curItem._source.c_name;
-      // eslint-disable-next-line no-unused-expressions
       (cname === attributeCategories.serviceType.name)
         ? ((state[1].list[x] = parseServiceType(curItem)) && (++x))
         : (cname === attributeCategories.format.name)
