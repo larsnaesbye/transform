@@ -11,7 +11,7 @@
         v-if="dataset && dataset.views.some(view => view.type === 'map')"
         :title="'Kortvisning'"
         name="kort"
-        :active="currentTab === 'kort'"
+        :active=true
         class="layout-1col"
       >
         <Map
