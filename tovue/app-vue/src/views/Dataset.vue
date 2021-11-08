@@ -21,7 +21,7 @@
           :filters="filters.map"
           :mapSettings="mapSettings"
           :columnDef="tableSettings.columnDef"
-          :active="currentTab === 'kort'"
+          :active=true
           @filters-updated="updateMapDataFilters"
         />
         <h2 v-if="dataStatus === 'loading'">Henter data...</h2>
