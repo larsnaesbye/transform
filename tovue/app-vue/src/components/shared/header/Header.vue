@@ -33,7 +33,7 @@ header
   width 100%
   box-sizing border-box
   padding 2rem 10vw 2rem 10vw
-  background-color rgba(255, 255, 255, 0)
+  background-color rgba(255, 255, 255, 100)
   align-items flex-start
   grid-template-rows auto
 
