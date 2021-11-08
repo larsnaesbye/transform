@@ -86,8 +86,8 @@
           icon="InfoIconNew"
           border
           color="white"
-          :width="2"
-          :height="2"
+          :width="1"
+          :height="1"
         />
       </button>
     </header>
