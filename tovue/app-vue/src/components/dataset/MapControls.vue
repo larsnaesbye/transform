@@ -47,35 +47,35 @@
           :height="2"
         />
       </button>
-      <button
-        class="zoom-out buttonmaster no-border bg section"
-        :class="activeSection === 'filters' ? 'active' : ''"
-        @click="toggleSections('filters')"
-        aria-label="Se filtre"
-      >
-        <Icon
-          icon="FilterIcon"
-          border
-          color="white"
-          :width="2"
-          :height="2"
-        />
-      </button>
-      <button
-        class="zoom-out buttonmaster no-border bg section"
-        :class="activeSection === 'layers' ? 'active' : ''"
-        @click="toggleSections('layers')"
-        aria-label="Se kort-indstillinger"
-      >
-        <Icon
-          icon="LayersIcon"
-          border
-          color="white"
-          :width="2"
-          :height="2"
-          :stroke="2"
-        />
-      </button>
+<!--      <button-->
+<!--        class="zoom-out buttonmaster no-border bg section"-->
+<!--        :class="activeSection === 'filters' ? 'active' : ''"-->
+<!--        @click="toggleSections('filters')"-->
+<!--        aria-label="Se filtre"-->
+<!--      >-->
+<!--        <Icon-->
+<!--          icon="FilterIcon"-->
+<!--          border-->
+<!--          color="white"-->
+<!--          :width="2"-->
+<!--          :height="2"-->
+<!--        />-->
+<!--      </button>-->
+<!--      <button-->
+<!--        class="zoom-out buttonmaster no-border bg section"-->
+<!--        :class="activeSection === 'layers' ? 'active' : ''"-->
+<!--        @click="toggleSections('layers')"-->
+<!--        aria-label="Se kort-indstillinger"-->
+<!--      >-->
+<!--        <Icon-->
+<!--          icon="LayersIcon"-->
+<!--          border-->
+<!--          color="white"-->
+<!--          :width="2"-->
+<!--          :height="2"-->
+<!--          :stroke="2"-->
+<!--        />-->
+<!--      </button>-->
       <button
         class="zoom-out buttonmaster no-border bg section"
         :class="activeSection === 'info' ? 'active' : ''"
