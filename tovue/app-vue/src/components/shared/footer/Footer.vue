@@ -34,13 +34,14 @@ export default {
     SDFE (asset id 2189 - tag logo)
     FS (asset id 1767 - tag logo) */
     // const ids = [2029, 1733, 1735, 1767, 2189]
-    this.$store.dispatch('FooterAssets/get', ids).then(() => {
+    // this.$store.dispatch('FooterAssets/get', ids).then(() => {
       // this.KEFMLogoUrl = getAssetLink(2029, this.pageAssets)
       // this.ENSLogoUrl = getAssetLink(1733, this.pageAssets)
       // this.FSTSLogoUrl = getAssetLink(1735, this.pageAssets)
       // this.FSLogoUrl = getAssetLink(1767, this.pageAssets)
       // this.SDFELogoUrl = getAssetLink(2189, this.pageAssets)
-    })
+    // }
+    // )
   }
 }
 </script>
