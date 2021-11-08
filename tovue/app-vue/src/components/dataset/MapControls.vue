@@ -36,7 +36,7 @@
         />
       </button>
       <button
-        class="zoom-out buttonmaster no-border control margin-right-auto"
+        class="zoom-out buttonmaster no-border control"
         @click="$emit('zoom-out')"
         aria-label="zoom ud"
       >
