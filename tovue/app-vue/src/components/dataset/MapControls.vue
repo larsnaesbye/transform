@@ -1,28 +1,28 @@
 <template>
   <div class="map-controls box">
     <header class="map-controls__header">
-      <button
-        class="buttonmaster no-border control"
-        @click="expandCollapse"
-        :aria-label="expanded ? 'Fold kontrol-panel sammen' : 'Fold kontrol-panel ud'"
-      >
-        <Icon
-          v-if="expanded"
-          :key="'controls_collapse'"
-          icon="ChevronUpIcon"
-          color="black"
-          :width="2"
-          :height="2"
-        />
-        <Icon
-          v-if="!expanded"
-          :key="'controls_expand'"
-          icon="ChevronDownIcon"
-          color="black"
-          :width="2"
-          :height="2"
-        />
-      </button>
+<!--      <button-->
+<!--        class="buttonmaster no-border control"-->
+<!--        @click="expandCollapse"-->
+<!--        :aria-label="expanded ? 'Fold kontrol-panel sammen' : 'Fold kontrol-panel ud'"-->
+<!--      >-->
+<!--        <Icon-->
+<!--          v-if="expanded"-->
+<!--          :key="'controls_collapse'"-->
+<!--          icon="ChevronUpIcon"-->
+<!--          color="black"-->
+<!--          :width="2"-->
+<!--          :height="2"-->
+<!--        />-->
+<!--        <Icon-->
+<!--          v-if="!expanded"-->
+<!--          :key="'controls_expand'"-->
+<!--          icon="ChevronDownIcon"-->
+<!--          color="black"-->
+<!--          :width="2"-->
+<!--          :height="2"-->
+<!--        />-->
+<!--      </button>-->
       <button
         class="zoom-in buttonmaster no-border control"
         @click="$emit('zoom-in')"
