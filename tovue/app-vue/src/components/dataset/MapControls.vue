@@ -76,20 +76,20 @@
 <!--          :stroke="2"-->
 <!--        />-->
 <!--      </button>-->
-      <button
-        class="zoom-out buttonmaster no-border control"
-        :class="activeSection === 'info' ? 'active' : ''"
-        @click="toggleSections('info')"
-        aria-label="Se info om kort"
-      >
-        <Icon
-          icon="InfoIconNew"
-          border
-          color="black"
-          :width="1"
-          :height="1"
-        />
-      </button>
+<!--      <button-->
+<!--        class="zoom-out buttonmaster no-border control"-->
+<!--        :class="activeSection === 'info' ? 'active' : ''"-->
+<!--        @click="toggleSections('info')"-->
+<!--        aria-label="Se info om kort"-->
+<!--      >-->
+<!--        <Icon-->
+<!--          icon="InfoIconNew"-->
+<!--          border-->
+<!--          color="black"-->
+<!--          :width="1"-->
+<!--          :height="1"-->
+<!--        />-->
+<!--      </button>-->
     </header>
     <div class="section" v-if="expanded">
       <div v-if="activeSection === 'layers'">
