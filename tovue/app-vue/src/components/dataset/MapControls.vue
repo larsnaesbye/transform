@@ -77,17 +77,17 @@
 <!--        />-->
 <!--      </button>-->
       <button
-        class="zoom-out buttonmaster no-border"
+        class="zoom-out buttonmaster no-border bg section"
         :class="activeSection === 'info' ? 'active' : ''"
         @click="toggleSections('info')"
         aria-label="Se info om kort"
       >
         <Icon
           icon="InfoIconNew"
-          color="white"
           border
-          :width="1"
-          :height="1"
+          color="white"
+          :width="2"
+          :height="2"
         />
       </button>
     </header>
