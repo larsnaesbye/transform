@@ -84,7 +84,6 @@
       >
         <Icon
           icon="InfoIconNew"
-          border
           color="white"
           :width="1"
           :height="1"
