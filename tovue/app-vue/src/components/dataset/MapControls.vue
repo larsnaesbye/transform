@@ -77,7 +77,7 @@
 <!--        />-->
 <!--      </button>-->
       <button
-        class="zoom-out buttonmaster no-border bg section"
+        class="zoom-out buttonmaster no-border"
         :class="activeSection === 'info' ? 'active' : ''"
         @click="toggleSections('info')"
         aria-label="Se info om kort"
