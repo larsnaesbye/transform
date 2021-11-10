@@ -1,13 +1,13 @@
 <template>
   <main id="main" ref="main">
       <!-- MAP -->
-      <UiTabbedContentItem
+      <UiTabbedContentItem>
 <!--        v-if="dataset && dataset.views.some(view => view.type === 'map')"-->
         :title="'Kortvisning'"
         name="kort"
         :active=true
         class="layout-1col"
-      >
+<!--      >-->
         <Map
           v-if="mapSettings && dataStatus === 'success'"
           :datasetId="id"
