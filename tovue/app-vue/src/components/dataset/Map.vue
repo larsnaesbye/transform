@@ -16,7 +16,7 @@
     >
     </MapControls>
     <MapInput
-        id="map__controls-box"
+        id="map__input-box"
         v-if="status === 'ready'"
         @zoom-out="zoom('out')"
         @zoom-in="zoom('in')"
@@ -491,6 +491,15 @@ export default {
 #map__controls-box
   position absolute
   top 10rem
+  left 1rem
+  max-width 20rem
+  min-width 1rem
+  max-height 40rem
+  width auto
+
+#map__input-box
+  position absolute
+  top 1rem
   left 1rem
   max-width 20rem
   min-width 1rem
