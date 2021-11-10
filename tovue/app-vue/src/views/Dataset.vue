@@ -1,11 +1,5 @@
 <template>
   <main id="main" ref="main">
-<!--    <UiTabbedContent-->
-<!--      v-if="dataset"-->
-<!--      class=""-->
-<!--      ref="UiTabbedContent"-->
-<!--      @select="setTab"-->
-<!--    >-->
       <!-- MAP -->
       <UiTabbedContentItem
         v-if="dataset && dataset.views.some(view => view.type === 'map')"
@@ -27,7 +21,6 @@
         <h2 v-if="dataStatus === 'loading'">Henter data...</h2>
         <h2 v-if="dataStatus === 'error' || !mapSettings">Kunne ikke hente data. Prøv eventuelt at genindlæse siden...</h2>
           </UiTabbedContentItem>
-<!--    </UiTabbedContent>-->
   </main>
 </template>
 
@@ -112,30 +105,6 @@ export default {
       } else {
         return []
       }
-    },
-    nonCsvDownloads () {
-      if (this.dataset.downloads && this.dataset.downloads[0] && this.downloadTypeList && this.serviceTypeList) {
-        const downloads = []
-        this.dataset.downloads.forEach((download) => {
-          const downloadObj = download
-          const formatInfo = this.getFormatInfo(download.formatIds)
-          downloadObj.typeId = download.formatIds
-          downloadObj.typeLabel = formatInfo.title
-          downloadObj.typeColor = formatInfo.color
-          downloadObj.typeBackgroundColor = formatInfo.backgroundColor
-          if (download.typeId !== 63) {
-            // dont add CSV download that's handled manually
-            downloads.push(downloadObj)
-          }
-        })
-        return downloads
-      } else {
-        return []
-      }
-    },
-    rawCsvDownloadUrl () {
-      const csvDownloads = this.dataset.downloads.filter(item => item.typeId === 63)
-      return csvDownloads[0] ? csvDownloads[0].folder : 'no link'
     },
     datasetsAssets () {
       return this.$store.state.DatasetsAssets.data

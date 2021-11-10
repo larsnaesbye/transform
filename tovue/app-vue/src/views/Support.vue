@@ -65,15 +65,6 @@ export default {
     }
   },
   computed: {
-    udstillingsmetoderSupportPdfUrl () {
-      return this.getAssetLink(1045)
-    },
-    csvSupportPdfUrl () {
-      return this.getAssetLink(1047)
-    },
-    vejledningWMSQGISPdfUrl () {
-      return this.getAssetLink(2475)
-    },
     coverImageUrl () {
       return this.getAssetLink(pageMeta.support.coverId)
     },
