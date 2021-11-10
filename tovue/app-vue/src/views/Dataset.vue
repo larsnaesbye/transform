@@ -75,36 +75,39 @@ export default {
     dataStatus () {
       return this.$store.state.DatasetData.status || 'loading'
     },
+    metaStatus () {
+      return this.$store.state.DatasetMeta.status || 'loading'
+    },
     id () {
       return Number(this.dataId) || -1
     },
     dataset () {
-      return null
+      return this.$store.state.DatasetMeta.data.id === this.id ? this.$store.state.DatasetMeta.data : null
     },
     services () {
-      // if (this.dataset.services && this.dataset.services[0] && this.downloadTypeList && this.serviceTypeList) {
-      //   const services = []
-      //   this.dataset.services.forEach((service) => {
-      //     const serviceObj = {}
-      //     serviceObj.entries = []
-      //     if (service.ids[0]) {
-      //       service.ids.forEach(id => {
-      //         serviceObj.entries.push(this.findService(id))
-      //       })
-      //     }
-      //     const formatInfo = this.getFormatInfo(service.typeId)
-      //     serviceObj.typeLabel = formatInfo.title
-      //     serviceObj.typeColor = formatInfo.color
-      //     serviceObj.typeBackgroundColor = formatInfo.backgroundColor
-      //     services.push(serviceObj)
-      //   })
-      //   return services
-      // } else {
+      if (this.dataset.services && this.dataset.services[0] && this.downloadTypeList && this.serviceTypeList) {
+        const services = []
+        this.dataset.services.forEach((service) => {
+          const serviceObj = {}
+          serviceObj.entries = []
+          if (service.ids[0]) {
+            service.ids.forEach(id => {
+              serviceObj.entries.push(this.findService(id))
+            })
+          }
+          const formatInfo = this.getFormatInfo(service.typeId)
+          serviceObj.typeLabel = formatInfo.title
+          serviceObj.typeColor = formatInfo.color
+          serviceObj.typeBackgroundColor = formatInfo.backgroundColor
+          services.push(serviceObj)
+        })
+        return services
+      } else {
         return []
-      // }
+      }
     },
     datasetsAssets () {
-      return null
+      return this.$store.state.DatasetsAssets.data
     },
     title () {
       const status = this.$store.state.DatasetMeta.status
@@ -119,22 +122,22 @@ export default {
       }
     },
     summary () {
-      return ''
+      return this.dataset ? this.dataset.summary : ''
     },
     image () {
-      return ''
+      return (this.dataset && this.datasetsAssets.length > 0) ? this.getAssetLink(this.dataset.image) : ''
     },
     downloadTypeList () {
-      return  null
+      return this.$store.state.DatasetsAttributes.data[0] ? this.$store.state.DatasetsAttributes.data[0].list : null
     },
     serviceTypeList () {
-      return  null
+      return this.$store.state.DatasetsAttributes.data[1] ? this.$store.state.DatasetsAttributes.data[1].list : null
     },
     tableSettings () {
-      return  null
+      return this.dataset ? this.dataset.tableSettings : null
     },
     fields () {
-      return  []
+      return this.tableSettings ? this.tableSettings.columnDef : []
     },
     dataDescription () {
       return this.dataset.dataDescription
@@ -147,23 +150,23 @@ export default {
     }
   },
   created () {
-    // this.currentTab = this.tab || 'data'
-    // if (
-    //   (this.dataset) &&
-    //   (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
-    //   (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
-    //   (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
-    // ) {
-    //   this.shownColumns = []
-    //   this.tableSettings.columnDef.forEach((column) => {
-    //     this.shownColumns.push(column.fieldId)
-    //   })
-    //   this.data = this.$store.state.DatasetData.data.table
-    //   this.mapData = this.$store.state.DatasetData.data.map
-    //   this.resetAllFilters()
-    // } else {
-    //   this.initDatasetData()
-    // }
+    this.currentTab = this.tab || 'data'
+    if (
+      (this.dataset) &&
+      (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
+      (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
+      (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
+    ) {
+      this.shownColumns = []
+      this.tableSettings.columnDef.forEach((column) => {
+        this.shownColumns.push(column.fieldId)
+      })
+      this.data = this.$store.state.DatasetData.data.table
+      this.mapData = this.$store.state.DatasetData.data.map
+      this.resetAllFilters()
+    } else {
+      this.initDatasetData()
+    }
   },
   mounted () {
     // console.log('Dataset.vue mounted')
