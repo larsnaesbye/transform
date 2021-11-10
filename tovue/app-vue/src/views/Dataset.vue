@@ -224,7 +224,7 @@ export default {
     $route (to, from) {
       this.currentTab = to.params.tab
       if (!this.dataset.id || !this.data[0] || (this.currentTab === 'kort' && !this.mapData[0])) {
-        this.initDatasetData()
+        // this.initDatasetData()
       }
     }
   },
