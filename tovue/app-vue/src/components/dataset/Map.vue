@@ -44,7 +44,8 @@ import MapControls from '@/components/dataset/MapControls'
 import MapInput from "@/components/dataset/MapInput";
 export default {
   components: {
-    MapControls
+    MapControls,
+    MapInput
   },
   props: {
     datasetId: {
