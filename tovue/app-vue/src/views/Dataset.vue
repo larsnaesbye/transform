@@ -190,14 +190,14 @@ export default {
             this.shownColumns.push(column.fieldId)
           })
           const views = this.dataset.views.map(view => view.type)
-          this.$store.dispatch('DatasetData/get', { id: this.id, views: views }).then(resp => {
-            this.data = this.$store.state.DatasetData.data.table
-            this.mapData = this.$store.state.DatasetData.data.map
-            this.resetAllFilters()
-          })
-          if (this.dataset.image) {
+          // this.$store.dispatch('DatasetData/get', { id: this.id, views: views }).then(resp => {
+          //   this.data = this.$store.state.DatasetData.data.table
+          //   this.mapData = this.$store.state.DatasetData.data.map
+          //   this.resetAllFilters()
+          // })
+          // if (this.dataset.image) {
             // this.$store.dispatch('DatasetsAssets/get', [this.dataset.image])
-          }
+          // }
         }
       })
       // getting stuff for the downloads and services
