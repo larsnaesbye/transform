@@ -500,7 +500,7 @@ export default {
 #map__input-box
   position absolute
   top 1rem
-  left 1rem
+  right 1rem
   max-width 20rem
   min-width 1rem
   max-height 40rem
