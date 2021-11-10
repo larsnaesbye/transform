@@ -75,39 +75,36 @@ export default {
     dataStatus () {
       return this.$store.state.DatasetData.status || 'loading'
     },
-    metaStatus () {
-      return this.$store.state.DatasetMeta.status || 'loading'
-    },
     id () {
       return Number(this.dataId) || -1
     },
     dataset () {
-      return this.$store.state.DatasetMeta.data.id === this.id ? this.$store.state.DatasetMeta.data : null
+      return null
     },
     services () {
-      if (this.dataset.services && this.dataset.services[0] && this.downloadTypeList && this.serviceTypeList) {
-        const services = []
-        this.dataset.services.forEach((service) => {
-          const serviceObj = {}
-          serviceObj.entries = []
-          if (service.ids[0]) {
-            service.ids.forEach(id => {
-              serviceObj.entries.push(this.findService(id))
-            })
-          }
-          const formatInfo = this.getFormatInfo(service.typeId)
-          serviceObj.typeLabel = formatInfo.title
-          serviceObj.typeColor = formatInfo.color
-          serviceObj.typeBackgroundColor = formatInfo.backgroundColor
-          services.push(serviceObj)
-        })
-        return services
-      } else {
+      // if (this.dataset.services && this.dataset.services[0] && this.downloadTypeList && this.serviceTypeList) {
+      //   const services = []
+      //   this.dataset.services.forEach((service) => {
+      //     const serviceObj = {}
+      //     serviceObj.entries = []
+      //     if (service.ids[0]) {
+      //       service.ids.forEach(id => {
+      //         serviceObj.entries.push(this.findService(id))
+      //       })
+      //     }
+      //     const formatInfo = this.getFormatInfo(service.typeId)
+      //     serviceObj.typeLabel = formatInfo.title
+      //     serviceObj.typeColor = formatInfo.color
+      //     serviceObj.typeBackgroundColor = formatInfo.backgroundColor
+      //     services.push(serviceObj)
+      //   })
+      //   return services
+      // } else {
         return []
-      }
+      // }
     },
     datasetsAssets () {
-      return this.$store.state.DatasetsAssets.data
+      return null
     },
     title () {
       const status = this.$store.state.DatasetMeta.status
@@ -122,22 +119,22 @@ export default {
       }
     },
     summary () {
-      return this.dataset ? this.dataset.summary : ''
+      return ''
     },
     image () {
-      return (this.dataset && this.datasetsAssets.length > 0) ? this.getAssetLink(this.dataset.image) : ''
+      return ''
     },
     downloadTypeList () {
-      return this.$store.state.DatasetsAttributes.data[0] ? this.$store.state.DatasetsAttributes.data[0].list : null
+      return  null
     },
     serviceTypeList () {
-      return this.$store.state.DatasetsAttributes.data[1] ? this.$store.state.DatasetsAttributes.data[1].list : null
+      return  null
     },
     tableSettings () {
-      return this.dataset ? this.dataset.tableSettings : null
+      return  null
     },
     fields () {
-      return this.tableSettings ? this.tableSettings.columnDef : []
+      return  []
     },
     dataDescription () {
       return this.dataset.dataDescription
@@ -150,23 +147,23 @@ export default {
     }
   },
   created () {
-    this.currentTab = this.tab || 'data'
-    if (
-      (this.dataset) &&
-      (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
-      (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
-      (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
-    ) {
-      this.shownColumns = []
-      this.tableSettings.columnDef.forEach((column) => {
-        this.shownColumns.push(column.fieldId)
-      })
-      this.data = this.$store.state.DatasetData.data.table
-      this.mapData = this.$store.state.DatasetData.data.map
-      this.resetAllFilters()
-    } else {
-      this.initDatasetData()
-    }
+    // this.currentTab = this.tab || 'data'
+    // if (
+    //   (this.dataset) &&
+    //   (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
+    //   (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
+    //   (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
+    // ) {
+    //   this.shownColumns = []
+    //   this.tableSettings.columnDef.forEach((column) => {
+    //     this.shownColumns.push(column.fieldId)
+    //   })
+    //   this.data = this.$store.state.DatasetData.data.table
+    //   this.mapData = this.$store.state.DatasetData.data.map
+    //   this.resetAllFilters()
+    // } else {
+    //   this.initDatasetData()
+    // }
   },
   mounted () {
     // console.log('Dataset.vue mounted')
