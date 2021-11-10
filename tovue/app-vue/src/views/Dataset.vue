@@ -197,23 +197,23 @@ export default {
     }
   },
   created () {
-    // this.currentTab = this.tab || 'data'
-    // if (
-    //   (this.dataset) &&
-    //   (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
-    //   (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
-    //   (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
-    // ) {
-    //   this.shownColumns = []
-    //   this.tableSettings.columnDef.forEach((column) => {
-    //     this.shownColumns.push(column.fieldId)
-    //   })
-    //   this.data = this.$store.state.DatasetData.data.table
-    //   this.mapData = this.$store.state.DatasetData.data.map
-    //   this.resetAllFilters()
-    // } else {
-    //   this.initDatasetData()
-    // }
+    this.currentTab = this.tab || 'data'
+    if (
+      (this.dataset) &&
+      (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
+      (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
+      (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
+    ) {
+      this.shownColumns = []
+      this.tableSettings.columnDef.forEach((column) => {
+        this.shownColumns.push(column.fieldId)
+      })
+      this.data = this.$store.state.DatasetData.data.table
+      this.mapData = this.$store.state.DatasetData.data.map
+      this.resetAllFilters()
+    } else {
+      this.initDatasetData()
+    }
   },
   mounted () {
     // console.log('Dataset.vue mounted')
@@ -243,7 +243,7 @@ export default {
             this.resetAllFilters()
           })
           if (this.dataset.image) {
-            this.$store.dispatch('DatasetsAssets/get', [this.dataset.image])
+            // this.$store.dispatch('DatasetsAssets/get', [this.dataset.image])
           }
         }
       })
