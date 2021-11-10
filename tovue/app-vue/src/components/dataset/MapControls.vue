@@ -1,95 +1,30 @@
 <template>
   <div class="map-controls box">
     <header class="map-controls__header">
-<!--      <button-->
-<!--        class="buttonmaster no-border control"-->
-<!--        @click="expandCollapse"-->
-<!--        :aria-label="expanded ? 'Fold kontrol-panel sammen' : 'Fold kontrol-panel ud'"-->
-<!--      >-->
-<!--        <Icon-->
-<!--          v-if="expanded"-->
-<!--          :key="'controls_collapse'"-->
-<!--          icon="ChevronUpIcon"-->
-<!--          color="black"-->
-<!--          :width="2"-->
-<!--          :height="2"-->
-<!--        />-->
-<!--        <Icon-->
-<!--          v-if="!expanded"-->
-<!--          :key="'controls_expand'"-->
-<!--          icon="ChevronDownIcon"-->
-<!--          color="black"-->
-<!--          :width="2"-->
-<!--          :height="2"-->
-<!--        />-->
-<!--      </button>-->
       <button
-        class="zoom-in buttonmaster no-border control"
-        @click="$emit('zoom-in')"
-        aria-label="zoom ind"
+          class="zoom-in buttonmaster no-border control"
+          @click="$emit('zoom-in')"
+          aria-label="zoom ind"
       >
         <Icon
-          :width="2"
-          :height="2"
-          icon="PlusIcon"
-          color="black"
+            :width="2"
+            :height="2"
+            icon="PlusIcon"
+            color="black"
         />
       </button>
       <button
-        class="zoom-out buttonmaster no-border control"
-        @click="$emit('zoom-out')"
-        aria-label="zoom ud"
+          class="zoom-out buttonmaster no-border control"
+          @click="$emit('zoom-out')"
+          aria-label="zoom ud"
       >
         <Icon
-          icon="MinusIcon"
-          color="black"
-          :width="2"
-          :height="2"
+            icon="MinusIcon"
+            color="black"
+            :width="2"
+            :height="2"
         />
       </button>
-<!--      <button-->
-<!--        class="zoom-out buttonmaster no-border bg section"-->
-<!--        :class="activeSection === 'filters' ? 'active' : ''"-->
-<!--        @click="toggleSections('filters')"-->
-<!--        aria-label="Se filtre"-->
-<!--      >-->
-<!--        <Icon-->
-<!--          icon="FilterIcon"-->
-<!--          border-->
-<!--          color="white"-->
-<!--          :width="2"-->
-<!--          :height="2"-->
-<!--        />-->
-<!--      </button>-->
-<!--      <button-->
-<!--        class="zoom-out buttonmaster no-border bg section"-->
-<!--        :class="activeSection === 'layers' ? 'active' : ''"-->
-<!--        @click="toggleSections('layers')"-->
-<!--        aria-label="Se kort-indstillinger"-->
-<!--      >-->
-<!--        <Icon-->
-<!--          icon="LayersIcon"-->
-<!--          border-->
-<!--          color="white"-->
-<!--          :width="2"-->
-<!--          :height="2"-->
-<!--          :stroke="2"-->
-<!--        />-->
-<!--      </button>-->
-<!--      <button-->
-<!--        class="zoom-out buttonmaster no-border control"-->
-<!--        :class="activeSection === 'info' ? 'active' : ''"-->
-<!--        @click="toggleSections('info')"-->
-<!--        aria-label="Se info om kort"-->
-<!--      >-->
-<!--        <Icon-->
-<!--          icon="InfoIconNew"-->
-<!--          border-->
-<!--          color="black"-->
-<!--          :width="1"-->
-<!--          :height="1"-->
-<!--        />-->
-<!--      </button>-->
     </header>
     <div class="section" v-if="expanded">
       <div v-if="activeSection === 'layers'">
@@ -98,16 +33,16 @@
         </div>
         <div class="section-content">
           <label
-            class="switch"
-            tabindex="0"
-            @keydown.enter="$emit('toggle-clustering', $event)"
+              class="switch"
+              tabindex="0"
+              @keydown.enter="$emit('toggle-clustering', $event)"
           >
             <span for="clustering">Gruppér kortmarkører som ligger tæt på hinanden</span>
             <input
-              type="checkbox"
-              id="clustering"
-              @change="$emit('toggle-clustering', $event)"
-              :checked="clustering"
+                type="checkbox"
+                id="clustering"
+                @change="$emit('toggle-clustering', $event)"
+                :checked="clustering"
             >
             <span class="slider round"></span>
           </label>
@@ -119,9 +54,9 @@
         </div>
         <div class="section-content">
           <Filtering
-            :filterDef="filterDef"
-            direction="column"
-            @input="updateFilters"
+              :filterDef="filterDef"
+              direction="column"
+              @input="updateFilters"
           />
         </div>
       </div>
@@ -131,15 +66,16 @@
         </div>
         <div class="section-content">
           <p>
-            Kortet viser forsyningsværkers placering i Danmark. Du kan zoome ud og ind samt navigere med din mus eller touchpad. Du kan også filtrere i resultaterne ved at klikke på filterikonet ovenfor.
+            Kortet viser forsyningsværkers placering i Danmark. Du kan zoome ud og ind samt navigere med din mus eller
+            touchpad. Du kan også filtrere i resultaterne ved at klikke på filterikonet ovenfor.
           </p>
           <p>Visualiseringer:</p>
           <ul class="icon-list">
             <li v-for="icon in iconList" :key="icon.url">
               <img
-                :src="icon.url"
-                height="16"
-                width="16"
+                  :src="icon.url"
+                  height="16"
+                  width="16"
               />
               <span>{{ icon.name === 'default' ? 'Ukendt type' : icon.name }}</span>
             </li>
@@ -171,7 +107,7 @@ export default {
       default: false
     }
   },
-  data () {
+  data() {
     return {
       expanded: false,
       activeSection: '',
@@ -179,7 +115,7 @@ export default {
     }
   },
   computed: {
-    iconList () {
+    iconList() {
       const list = []
       const iconMap = this.mapSettings.visualizationDef.markerIcon.iconMap
       for (const key in iconMap) {
@@ -191,30 +127,10 @@ export default {
       return list
     }
   },
-  mounted () {},
+  mounted() {
+  },
   methods: {
-    expandCollapse () {
-      if (this.expanded) {
-        this.lastActiveSection = this.activeSection
-        this.activeSection = ''
-      } else {
-        this.activeSection = this.lastActiveSection
-      }
-      this.expanded = !this.expanded
-    },
-    toggleSections (section) {
-      if (this.expanded && this.activeSection === section) {
-        this.lastActiveSection = this.activeSection
-        this.activeSection = ''
-        this.expanded = false
-      } else if (!this.expanded) {
-        this.expanded = true
-        this.activeSection = section
-      } else {
-        this.activeSection = section
-      }
-    },
-    updateFilters (filters) {
+    updateFilters(filters) {
       this.$emit('update-filters', filters)
     }
   }
@@ -229,7 +145,7 @@ export default {
   overflow visible
   box-sizing content-box
   border 4px solid var(--darkSteel)
-  background-color rgba(255,255,255,0.9)
+  background-color rgba(255, 255, 255, 0.9)
 
 .map-controls
   transition all 200ms ease
@@ -243,8 +159,10 @@ export default {
 
 .map-controls__header > button
   margin-right .5rem
+
   &:last-child
     margin-right 0
+
   &.active
     background: var(--active)
 
@@ -254,7 +172,8 @@ export default {
 .section-header
   background var(--primaryDark)
   padding .5rem
-  &>*
+
+  & > *
     margin 0
     color var(--white)
 
