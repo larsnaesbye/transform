@@ -198,8 +198,8 @@ export default {
         }
       })
       // getting stuff for the downloads and services
-      // this.$store.dispatch('DatasetsAttributes/get')
-      // this.$store.dispatch('DatasetsServices/get')
+      this.$store.dispatch('DatasetsAttributes/get')
+      this.$store.dispatch('DatasetsServices/get')
     },
     setFilter (prop, filter, data) {
       if (filter.type === 'multiselect') {
