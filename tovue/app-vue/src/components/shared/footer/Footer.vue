@@ -1,18 +1,17 @@
 <template>
   <footer>
-      <Us />
+    <Us/>
   </footer>
 </template>
 
 <script>
-import { getAssetLink } from '@/HelperFunctions'
 
 export default {
   name: 'Footer',
   components: {
     Us: () => import('@/components/shared/footer/Us'),
   },
-  data () {
+  data() {
     return {
       KEFMLogoUrl: '',
       ENSLogoUrl: '',
@@ -22,26 +21,10 @@ export default {
     }
   },
   computed: {
-    pageAssets () {
-      // return this.$store.state.FooterAssets.data
+    pageAssets() {
     }
   },
-  mounted () {
-    /* SDFE (fra designguide)
-    KEFM (asset id 2029 - tag logo)
-    ENS (asset id 873 - tag logo)
-    FSTS (asset id 1735 - tag logo)
-    SDFE (asset id 2189 - tag logo)
-    FS (asset id 1767 - tag logo) */
-    // const ids = [2029, 1733, 1735, 1767, 2189]
-    // this.$store.dispatch('FooterAssets/get', ids).then(() => {
-      // this.KEFMLogoUrl = getAssetLink(2029, this.pageAssets)
-      // this.ENSLogoUrl = getAssetLink(1733, this.pageAssets)
-      // this.FSTSLogoUrl = getAssetLink(1735, this.pageAssets)
-      // this.FSLogoUrl = getAssetLink(1767, this.pageAssets)
-      // this.SDFELogoUrl = getAssetLink(2189, this.pageAssets)
-    // }
-    // )
+  mounted() {
   }
 }
 </script>
@@ -56,7 +39,6 @@ section
 
 section.info
   background-color var(--background)
-  // min-height: 490px;
 
 section.branding
   background-color var(--otherSteel)

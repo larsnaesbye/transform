@@ -139,22 +139,6 @@ export default {
     fields () {
       return this.tableSettings ? this.tableSettings.columnDef : []
     },
-    downloadsDataReady () {
-      const ready = this.dataset &&
-        this.dataset.downloads &&
-        this.downloadTypeList &&
-        this.serviceTypeList &&
-        (this.$store.state.DatasetsServices.data.length > 0)
-      return ready
-    },
-    servicesDataReady () {
-      const ready = this.dataset &&
-        this.dataset.services &&
-        this.dataset.services[0] &&
-        this.serviceTypeList &&
-        (this.$store.state.DatasetsServices.data.length > 0)
-      return ready
-    },
     dataDescription () {
       return this.dataset.dataDescription
     },

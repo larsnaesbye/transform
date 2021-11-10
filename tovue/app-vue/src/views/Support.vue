@@ -9,7 +9,7 @@
       <div class="main-content">
         <h2>Teknisk dokumentation</h2>
         <ul>
-          <li><a href="https://docs.dataforsyningen.dk/#webproj" target="_blank">Dokumentation WEBPROJ REST services</a></li>
+          <li><a href="https://docs.dataforsyningen.dk/#webproj" target="_blank">Dokumentation WEBPROJ REST service</a></li>
         </ul>
       </div>
       <div class="sidebar">
