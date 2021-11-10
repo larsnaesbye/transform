@@ -450,13 +450,13 @@ export default {
       this.serviceDialog = false
     },
     downloadInFormat (downloadInfo) {
-      if (downloadInfo.typeId === 63) {
-        this.downloading = true
-        this.downloadCSV().then(() => {
-          this.downloadDialog = false
-          this.downloading = false
-        })
-      } else {
+      // if (downloadInfo.typeId === 63) {
+      //   this.downloading = true
+      //   this.downloadCSV().then(() => {
+      //     this.downloadDialog = false
+      //     this.downloading = false
+      //   })
+      // } else {
         const url = window.location.origin + '/' + downloadInfo.folder.trim() + downloadInfo.file.trim()
         const a = document.createElement('a')
         a.href = url
@@ -464,7 +464,7 @@ export default {
         document.body.appendChild(a)
         a.click()
         document.body.removeChild(a)
-      }
+      // }
     },
     downloadCSV () {
       return new Promise((resolve, reject) => {
