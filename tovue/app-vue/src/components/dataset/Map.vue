@@ -84,26 +84,26 @@
       :clustering="clustering"
     >
     </MapControls>
-    <div id="map__info-box" v-if="status === 'ready'" class="box">
-      <button class="buttonmaster no-border cursor-point" @click="fullScreen = !fullScreen">
-        <span v-if="fullScreen === true">Luk fuldskærmsvisning</span>
-        <span v-else-if="fullScreen === false">Åbn i fuldskærmsvisning</span>
-        <Icon
-          v-if="fullScreen === true"
-          icon="CollapseIcon"
-          :key="'close'"
-          :width="2"
-          :height="2"
-        />
-        <Icon
-          v-else-if="fullScreen === false"
-          icon="ExpandIcon"
-          :key="'open'"
-          :width="2"
-          :height="2"
-        />
-      </button>
-    </div>
+<!--    <div id="map__info-box" v-if="status === 'ready'" class="box">-->
+<!--      <button class="buttonmaster no-border cursor-point" @click="fullScreen = !fullScreen">-->
+<!--        <span v-if="fullScreen === true">Luk fuldskærmsvisning</span>-->
+<!--        <span v-else-if="fullScreen === false">Åbn i fuldskærmsvisning</span>-->
+<!--        <Icon-->
+<!--          v-if="fullScreen === true"-->
+<!--          icon="CollapseIcon"-->
+<!--          :key="'close'"-->
+<!--          :width="2"-->
+<!--          :height="2"-->
+<!--        />-->
+<!--        <Icon-->
+<!--          v-else-if="fullScreen === false"-->
+<!--          icon="ExpandIcon"-->
+<!--          :key="'open'"-->
+<!--          :width="2"-->
+<!--          :height="2"-->
+<!--        />-->
+<!--      </button>-->
+<!--    </div>-->
   </div>
 </template>
 
