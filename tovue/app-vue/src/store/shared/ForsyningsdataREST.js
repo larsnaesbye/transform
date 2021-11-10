@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { datasetMeta } from '@/MetaData.js'
-import { projPath, projTestPath } from '@/store/shared/Paths.js'
+import { restPath, restPathTest } from '@/store/shared/Paths.js'
 
 export class ForsyningsdataApi {
   constructor (query, parseData) {
@@ -56,9 +56,12 @@ export class ForsyningsdataApi {
               }
             })
           }
-          const path = ((process.env.NODE_ENV === 'production') ? projPath : restPathTest) + serviceName + '?token=' + token + filterQuery
+          const path = ((process.env.NODE_ENV === 'production') ? restPath : restPathTest) + serviceName + '?token=' + token + filterQuery
+          // const start = new Date().getTime()
           axios.get(path)
             .then((resp) => {
+              // var time = new Date().getTime() - start
+              // console.log('rest/' + serviceName, ' Resp: ' + time + 'ms', resp)
               const data = resp.data[datasetMeta[id].RESTInfo.rootKey]
               if (!data || !Array.isArray(data)) {
                 commit('error', resp)

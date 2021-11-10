@@ -1,5 +1,8 @@
 <template>
   <main>
+<!--    <Hero>-->
+<!--      <p>Something here?</p>-->
+<!--    </Hero>-->
   </main>
 </template>
 
@@ -11,6 +14,8 @@ import Map from "../components/dataset/Map";
 export default {
   components: {
     Map,
+    Hero: () => import('@/components/shared/Hero'),
+    DatasetBox: () => import('@/components/datasets/DatasetBox'),
     Filtering: Filtering
   },
   data () {
@@ -36,6 +41,7 @@ export default {
       return this.getAssetLink(pageMeta.datasets.coverId)
     },
     datasetsCoverImageIds () {
+      // eslint-disable-next-line one-var
       const ids = [],
           data = this.$store.state.Datasets.data
       for (let i = 0; i < data.length; i++) {
