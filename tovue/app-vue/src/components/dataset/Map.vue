@@ -3,75 +3,6 @@
     <div id="map" ref="map">
       <h2 v-if="status === 'loading' || status === 'initializing'" class="loader">Henter kort...</h2>
     </div>
-<!--    <div id="marker-popup" v-show="showPopup">-->
-<!--      <div v-for="(marker, index) in selectedMarkerData" :key="marker.title + index">-->
-<!--        <h4 class="title" @click="marker.active = !marker.active">-->
-<!--          <Icon-->
-<!--            v-if="!marker.active"-->
-<!--            icon="ChevronDownIcon"-->
-<!--            :key="marker.title + index + 'ChevronDownIcon'"-->
-<!--            :width="1"-->
-<!--            :height="1"-->
-<!--            :color="'black'"-->
-<!--          />-->
-<!--          <Icon-->
-<!--            v-else-->
-<!--            icon="ChevronUpIcon"-->
-<!--            :key="marker.title + index + 'ChevronUpIcon'"-->
-<!--            :width="1"-->
-<!--            :height="1"-->
-<!--            :color="'black'"-->
-<!--          />-->
-<!--          {{ marker.title  }}-->
-<!--        </h4>-->
-<!--        <ul class="marker-data" v-if="marker.active">-->
-<!--          <li v-for="(attr, i) in marker.elements" :key="i">-->
-<!--            <div v-if="typeof attr.value === 'object'">-->
-<!--              <div>-->
-<!--                {{ attr.label }}:-->
-<!--              </div>-->
-<!--              <ul>-->
-<!--                <li v-for="(el, elIndex) in attr.value" :key="`${el.label}_${elIndex}`" class="indent-small">-->
-<!--                  <p @click="el.active = !el.active">-->
-<!--                    <Icon-->
-<!--                      v-if="!el.active"-->
-<!--                      icon="ChevronDownIcon"-->
-<!--                      :key="attr.label + elIndex + 'ChevronDownIcon'"-->
-<!--                      :width="1"-->
-<!--                      :height="1"-->
-<!--                      :color="'black'"-->
-<!--                    />-->
-<!--                    <Icon-->
-<!--                      v-else-->
-<!--                      icon="ChevronUpIcon"-->
-<!--                      :key="el.label + elIndex + 'ChevronUpIcon'"-->
-<!--                      :width="1"-->
-<!--                      :height="1"-->
-<!--                      :color="'black'"-->
-<!--                    />-->
-<!--                    {{ el.label }}-->
-<!--                  </p>-->
-<!--                  <ul v-if="el.active">-->
-<!--                    <li v-for="(attr, j) in el.value" :key="`${attr.label}_${j}`">-->
-<!--                      <p v-if="attr.value">-->
-<!--                        {{ attr.label }}-->
-<!--                        :-->
-<!--                        {{ attr.value }}-->
-<!--                      </p>-->
-<!--                    </li>-->
-<!--                  </ul>-->
-<!--                </li>-->
-<!--              </ul>-->
-<!--            </div>-->
-<!--            <p v-else>-->
-<!--              {{ attr.label }}-->
-<!--              :-->
-<!--              {{ attr.value }}-->
-<!--            </p>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--    </div>-->
     <MapControls
       id="map__controls-box"
       v-if="status === 'ready'"
@@ -84,26 +15,6 @@
       :clustering="clustering"
     >
     </MapControls>
-<!--    <div id="map__info-box" v-if="status === 'ready'" class="box">-->
-<!--      <button class="buttonmaster no-border cursor-point" @click="fullScreen = !fullScreen">-->
-<!--        <span v-if="fullScreen === true">Luk fuldskærmsvisning</span>-->
-<!--        <span v-else-if="fullScreen === false">Åbn i fuldskærmsvisning</span>-->
-<!--        <Icon-->
-<!--          v-if="fullScreen === true"-->
-<!--          icon="CollapseIcon"-->
-<!--          :key="'close'"-->
-<!--          :width="2"-->
-<!--          :height="2"-->
-<!--        />-->
-<!--        <Icon-->
-<!--          v-else-if="fullScreen === false"-->
-<!--          icon="ExpandIcon"-->
-<!--          :key="'open'"-->
-<!--          :width="2"-->
-<!--          :height="2"-->
-<!--        />-->
-<!--      </button>-->
-<!--    </div>-->
   </div>
 </template>
 
@@ -230,10 +141,8 @@ export default {
     }
   },
   created () {
-    // console.log('map component created')
   },
   mounted () {
-    // console.log('map component mounted')
     this.clustering = this.mapSettings.clustering
     this.initMap()
   },

@@ -80,7 +80,6 @@ export const createTileLayer = function (opt) {
       }
     })
   } else {
-    // console.error('Unknown service type: "' + type + '"')
     return null
   }
   return new TileLayer({
