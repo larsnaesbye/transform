@@ -118,7 +118,7 @@ export default {
       } else if (this.dataset && this.dataset.title) {
         return this.dataset.title
       } else {
-        return 'Det er sket en fejl'
+        return 'Der er sket en fejl'
       }
     },
     summary () {
