@@ -15,6 +15,18 @@
       :clustering="clustering"
     >
     </MapControls>
+    <MapInput
+        id="map__controls-box"
+        v-if="status === 'ready'"
+        @zoom-out="zoom('out')"
+        @zoom-in="zoom('in')"
+        :filterDef="filters"
+        :mapSettings="mapSettings"
+        @update-filters="updateFilters"
+        @toggle-clustering="toggleClustering"
+        :clustering="clustering"
+    >
+    </MapInput>
   </div>
 </template>
 
@@ -29,7 +41,7 @@ import Overlay from 'ol/Overlay'
 import * as olExtent from 'ol/extent'
 import { createTileLayer, createClusterLayer, createFeaturesLayer } from '@/components/dataset/MapFunctions.js'
 import MapControls from '@/components/dataset/MapControls'
-
+import MapInput from "@/components/dataset/MapInput";
 export default {
   components: {
     MapControls
