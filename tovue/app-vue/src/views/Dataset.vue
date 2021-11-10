@@ -2,14 +2,14 @@
   <main id="main" ref="main">
       <!-- MAP -->
       <UiTabbedContentItem
-        v-if=true
+        v-if="true"
         :title="'Kortvisning'"
         name="kort"
         :active=true
         class="layout-1col"
       >
         <Map
-          v-if=true
+          v-if="true"
           :datasetId="id"
           :data="mapData"
           :filters="filters.map"
