@@ -2,7 +2,7 @@
   <main id="main" ref="main">
       <!-- MAP -->
       <UiTabbedContentItem
-        v-if="dataset && dataset.views.some(view => view.type === 'map')"
+<!--        v-if="dataset && dataset.views.some(view => view.type === 'map')"-->
         :title="'Kortvisning'"
         name="kort"
         :active=true
