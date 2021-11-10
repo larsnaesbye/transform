@@ -1,6 +1,6 @@
 <template>
-  <div class="map-controls box">
-    <header class="map-controls__header">
+  <div class="map-input box">
+    <header class="map-input__header">
       <button
           class="zoom-in buttonmaster no-border control"
           @click="$emit('zoom-in')"
@@ -147,17 +147,17 @@ export default {
   border 4px solid var(--darkSteel)
   background-color rgba(255, 255, 255, 0.9)
 
-.map-controls
+.map-input
   transition all 200ms ease
 
-.map-controls__header
+.map-input__header
   display flex
   padding .5rem
 
-.map-controls__header > button.bg
+.map-input__header > button.bg
   background: var(--darkSteel)
 
-.map-controls__header > button
+.map-input__header > button
   margin-right .5rem
 
   &:last-child
@@ -166,7 +166,7 @@ export default {
   &.active
     background: var(--active)
 
-.map-controls__header > button.margin-right-auto
+.map-input__header > button.margin-right-auto
   margin-right auto
 
 .section-header
