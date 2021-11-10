@@ -1,15 +1,15 @@
 <template>
   <main id="main" ref="main">
       <!-- MAP -->
-      <UiTabbedContentItem>
-<!--        v-if="dataset && dataset.views.some(view => view.type === 'map')"-->
+      <UiTabbedContentItem
+        v-if=true
         :title="'Kortvisning'"
         name="kort"
         :active=true
         class="layout-1col"
-<!--      >-->
+      >
         <Map
-          v-if="mapSettings && dataStatus === 'success'"
+          v-if=true
           :datasetId="id"
           :data="mapData"
           :filters="filters.map"
