@@ -5,8 +5,27 @@ import { flattenEPT } from '@/HelperFunctions'
 const query = (id) => {
     return id
   },
-  parseForsyningsdata = () => {
-    return []
+  parseForsyningsdata = (id, data, view) => {
+    let rows
+    // if (Array.isArray(data)) {
+    //   if (id === 2934) {
+    //     rows = (view === 'map') ? flattenEPT(data, 'vaerk') : flattenEPT(data, 'anlaeg')
+    //     rows.forEach(row => {
+    //       if (row.vaerk_branchekode === '351100') {
+    //         row.branche = '351100 (Produktion af elektricitet)'
+    //       } else if (row.vaerk_branchekode === '353000') {
+    //         row.branche = '353000 (Varmeforsyning)'
+    //       } else {
+    //         row.branche = 'Anden branchekode'
+    //       }
+    //     })
+    //   } else {
+    //     rows = data
+    //   }
+    // } else {
+      rows = []
+    // }
+    return rows
   },
   crud = new ForsyningsdataApi(query, parseForsyningsdata),
   state = crud.state,
