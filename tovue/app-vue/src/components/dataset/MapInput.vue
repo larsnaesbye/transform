@@ -1,6 +1,7 @@
 <template>
   <div class="map-input box">
     <header class="map-input__header">
+      <h2>Input</h2>
       <button
           class="zoom-in buttonmaster no-border control"
           @click="$emit('zoom-in')"
@@ -10,7 +11,7 @@
             :width="2"
             :height="2"
             icon="PlusIcon"
-            color="white"
+            color="black"
         />
       </button>
       <button
@@ -20,7 +21,7 @@
       >
         <Icon
             icon="MinusIcon"
-            color="white"
+            color="black"
             :width="2"
             :height="2"
         />
