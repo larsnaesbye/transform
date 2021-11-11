@@ -4,15 +4,15 @@
       <h2 v-if="status === 'loading' || status === 'initializing'" class="loader">Henter kort...</h2>
     </div>
     <MapControls
-      id="map__controls-box"
-      v-if="status === 'ready'"
-      @zoom-out="zoom('out')"
-      @zoom-in="zoom('in')"
-      :filterDef="filters"
-      :mapSettings="mapSettings"
-      @update-filters="updateFilters"
-      @toggle-clustering="toggleClustering"
-      :clustering="clustering"
+        id="map__controls-box"
+        v-if="status === 'ready'"
+        @zoom-out="zoom('out')"
+        @zoom-in="zoom('in')"
+        :filterDef="filters"
+        :mapSettings="mapSettings"
+        @update-filters="updateFilters"
+        @toggle-clustering="toggleClustering"
+        :clustering="clustering"
     >
     </MapControls>
     <MapInput
@@ -32,16 +32,16 @@
 
 <script>
 import 'ol/ol.css'
-import { Map, View } from 'ol'
+import {Map, View} from 'ol'
 import WMTSTileGrid from 'ol/tilegrid/WMTS'
-import { get as getProjection, fromLonLat } from 'ol/proj'
-import { register } from 'ol/proj/proj4'
+import {fromLonLat, get as getProjection} from 'ol/proj'
+import {register} from 'ol/proj/proj4'
 import proj4 from 'proj4/dist/proj4'
 import Overlay from 'ol/Overlay'
-import * as olExtent from 'ol/extent'
-import { createTileLayer, createClusterLayer, createFeaturesLayer } from '@/components/dataset/MapFunctions.js'
+import {createClusterLayer, createFeaturesLayer, createTileLayer} from '@/components/dataset/MapFunctions.js'
 import MapControls from '@/components/dataset/MapControls'
 import MapInput from "@/components/dataset/MapInput";
+
 export default {
   components: {
     MapControls,
@@ -78,7 +78,7 @@ export default {
       type: Boolean
     }
   },
-  data () {
+  data() {
     return {
       status: 'loading',
       fullScreen: false,
@@ -123,15 +123,15 @@ export default {
     }
   },
   computed: {
-    mapConstants () {
+    mapConstants() {
       return this.mapSettings.mapConstants
     },
-    visualizationDef () {
+    visualizationDef() {
       return this.mapSettings.visualizationDef
     }
   },
   watch: {
-    data () {
+    data() {
       if (this.status === 'ready') {
         this.resetMarkersLayer()
         this.map.updateSize()
@@ -140,27 +140,27 @@ export default {
         this.status = 'ready'
       }
     },
-    active (val) {
+    active(val) {
       if (val) {
         this.$nextTick(() => {
           this.map.updateSize()
         })
       }
     },
-    fullScreen () {
+    fullScreen() {
       this.$nextTick(() => {
         this.map.updateSize()
       })
     }
   },
-  created () {
+  created() {
   },
-  mounted () {
+  mounted() {
     this.clustering = this.mapSettings.clustering
     this.initMap()
   },
   methods: {
-    initMap () {
+    initMap() {
       this.status = 'initializing'
       this.map = null
       const projection = this.createProjection('EPSG:25832', '+proj=utm +zone=32 +ellps=GRS80 +units=m +no_defs', this.mapConstants.extent)
@@ -277,7 +277,7 @@ export default {
       this.status = 'ready'
       // console.log('map initialized')
     },
-    createMap (tileLayers, projection) {
+    createMap(tileLayers, projection) {
       return new Map({
         target: 'map',
         layers: tileLayers,
@@ -290,7 +290,7 @@ export default {
         })
       })
     },
-    createOverlay (elementId) {
+    createOverlay(elementId) {
       const container = document.getElementById(elementId)
       const overlay = new Overlay({
         element: container,
@@ -301,7 +301,7 @@ export default {
       })
       return overlay
     },
-    createLayers (layerSettings, auth) {
+    createLayers(layerSettings, auth) {
       const layers = []
       const tileGrid = new WMTSTileGrid({
         extent: this.mapConstants.extent,
@@ -339,7 +339,7 @@ export default {
       })
       return layers
     },
-    createMarkersFromData (data, visualizationDef) {
+    createMarkersFromData(data, visualizationDef) {
       const markers = []
       const markerIcon = visualizationDef.markerIcon || {}
       const markerSize = visualizationDef.markerSize || {}
@@ -384,14 +384,14 @@ export default {
       // }
       return markers
     },
-    createProjection (name, settings, extent) {
+    createProjection(name, settings, extent) {
       proj4.defs(name, settings)
       register(proj4)
       const projection = getProjection(name)
       projection.setExtent(extent)
       return projection
     },
-    switchLayer () {
+    switchLayer() {
       if (this.background === 'dtk_skaermkort_daempet') {
         this.background = 'dtk_skaermkort'
         this.dtk_skaermkort.setVisible(true)
@@ -402,16 +402,16 @@ export default {
         this.dtk_skaermkort_daempet.setVisible(true)
       }
     },
-    zoom (type) {
+    zoom(type) {
       const view = this.map.getView()
       const factor = 1
       if (type === 'in') {
-        view.animate({ zoom: view.getZoom() + factor })
+        view.animate({zoom: view.getZoom() + factor})
       } else {
-        view.animate({ zoom: view.getZoom() - factor })
+        view.animate({zoom: view.getZoom() - factor})
       }
     },
-    resetMarkersLayer () {
+    resetMarkersLayer() {
       let currentLayer = null
       this.map.getLayers().forEach((layer) => {
         if (this.currentClusterLayerId === layer.ol_uid) {
@@ -426,10 +426,10 @@ export default {
       this.currentClusterLayerId = clusterLayer.ol_uid
       this.map.addLayer(clusterLayer)
     },
-    updateFilters (filters) {
+    updateFilters(filters) {
       this.$emit('filters-updated', filters)
     },
-    toggleClustering (val) {
+    toggleClustering(val) {
       // this.clustering = val.target.checked
       this.clustering = !this.clustering
       this.resetMarkersLayer()
@@ -455,16 +455,16 @@ export default {
   margin-left 2rem
   margin-top -2rem
   border 1px solid white
-  box-shadow 0 4px 4px rgba(0,0,0, .5)
+  box-shadow 0 4px 4px rgba(0, 0, 0, .5)
 
 #marker-popup::before {
-    content:"\A";
-    border-style: solid;
-    border-width: 10px 15px 10px 0;
-    border-color: transparent white transparent transparent;
-    position: absolute;
-    left: calc(2rem - 15px);
-    top: -10px;
+  content: "\A";
+  border-style: solid;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent white transparent transparent;
+  position: absolute;
+  left: calc(2rem - 15px);
+  top: -10px;
 }
 
 #marker-popup .title
@@ -477,7 +477,7 @@ export default {
   overflow hidden
   box-sizing content-box
   border 4px solid var(--darkSteel)
-  background-color rgba(255,255,255,0.8)
+  background-color rgba(255, 255, 255, 0.8)
 
 #map__info-box
   position absolute
@@ -485,6 +485,7 @@ export default {
   right 1rem
   padding 3px
   width auto
+
   & > button
     border-radius 18px !important
     padding 5px 5px 5px 10px
@@ -506,6 +507,7 @@ export default {
   min-width 1rem
   //max-height 40rem
   width auto
+  padding 44px;
 
 #marker-popup ul
   padding 0
