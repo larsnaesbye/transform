@@ -2,30 +2,30 @@
   <div class="map-input box">
     <header class="map-input__header">
       <h3>Input</h3>
-      <button
-          class="zoom-in buttonmaster no-border control"
-          @click="$emit('zoom-in')"
-          aria-label="zoom ind"
-      >
-        <Icon
-            :width="2"
-            :height="2"
-            icon="PlusIcon"
-            color="black"
-        />
-      </button>
-      <button
-          class="zoom-out buttonmaster no-border control"
-          @click="$emit('zoom-out')"
-          aria-label="zoom ud"
-      >
-        <Icon
-            icon="MinusIcon"
-            color="black"
-            :width="2"
-            :height="2"
-        />
-      </button>
+<!--      <button-->
+<!--          class="zoom-in buttonmaster no-border control"-->
+<!--          @click="$emit('zoom-in')"-->
+<!--          aria-label="zoom ind"-->
+<!--      >-->
+<!--        <Icon-->
+<!--            :width="2"-->
+<!--            :height="2"-->
+<!--            icon="PlusIcon"-->
+<!--            color="black"-->
+<!--        />-->
+<!--      </button>-->
+<!--      <button-->
+<!--          class="zoom-out buttonmaster no-border control"-->
+<!--          @click="$emit('zoom-out')"-->
+<!--          aria-label="zoom ud"-->
+<!--      >-->
+<!--        <Icon-->
+<!--            icon="MinusIcon"-->
+<!--            color="black"-->
+<!--            :width="2"-->
+<!--            :height="2"-->
+<!--        />-->
+<!--      </button>-->
     </header>
     <div class="section" v-if="expanded">
       <div v-if="activeSection === 'layers'">
