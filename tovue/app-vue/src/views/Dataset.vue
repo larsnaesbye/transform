@@ -138,8 +138,7 @@ export default {
   mounted() {
 
   },
-  watch: {
-  },
+  watch: {},
   methods: {
     initDatasetData() {
       this.$store.commit('DatasetData/clear')
@@ -240,15 +239,15 @@ export default {
             })
           })
         } else
-        //   if (filter.type === 'search') {
-        //   rows = rows.filter((row) => {
-        //     return Object.keys(row).some((key) => {
-        //       return String(row[key]).toLowerCase().indexOf(filter.value.toLowerCase()) > -1
-        //     })
-        //   })
-        // }
-        //   else
-            if (filter.type === 'columnFilter') {
+            //   if (filter.type === 'search') {
+            //   rows = rows.filter((row) => {
+            //     return Object.keys(row).some((key) => {
+            //       return String(row[key]).toLowerCase().indexOf(filter.value.toLowerCase()) > -1
+            //     })
+            //   })
+            // }
+            //   else
+        if (filter.type === 'columnFilter') {
           this.shownColumns = filter.value
         }
       }
