@@ -2,30 +2,6 @@
   <div class="map-input box">
     <header class="map-input__header">
       <h3>Input</h3>
-<!--      <button-->
-<!--          class="zoom-in buttonmaster no-border control"-->
-<!--          @click="$emit('zoom-in')"-->
-<!--          aria-label="zoom ind"-->
-<!--      >-->
-<!--        <Icon-->
-<!--            :width="2"-->
-<!--            :height="2"-->
-<!--            icon="PlusIcon"-->
-<!--            color="black"-->
-<!--        />-->
-<!--      </button>-->
-<!--      <button-->
-<!--          class="zoom-out buttonmaster no-border control"-->
-<!--          @click="$emit('zoom-out')"-->
-<!--          aria-label="zoom ud"-->
-<!--      >-->
-<!--        <Icon-->
-<!--            icon="MinusIcon"-->
-<!--            color="black"-->
-<!--            :width="2"-->
-<!--            :height="2"-->
-<!--        />-->
-<!--      </button>-->
     </header>
     <div class="section" v-if="expanded">
       <div v-if="activeSection === 'layers'">
@@ -61,28 +37,7 @@
           />
         </div>
       </div>
-      <div v-if="activeSection === 'info'">
-        <div class="section-header">
-          <h6>Sådan bruger du kortet</h6>
-        </div>
-        <div class="section-content">
-          <p>
-            Kortet viser forsyningsværkers placering i Danmark. Du kan zoome ud og ind samt navigere med din mus eller
-            touchpad. Du kan også filtrere i resultaterne ved at klikke på filterikonet ovenfor.
-          </p>
-          <p>Visualiseringer:</p>
-          <ul class="icon-list">
-            <li v-for="icon in iconList" :key="icon.url">
-              <img
-                  :src="icon.url"
-                  height="16"
-                  width="16"
-              />
-              <span>{{ icon.name === 'default' ? 'Ukendt type' : icon.name }}</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+
     </div>
   </div>
 </template>

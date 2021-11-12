@@ -507,7 +507,6 @@ export default {
   min-width 1rem
   //max-height 40rem
   width auto
-  margin 24px;
 
 #marker-popup ul
   padding 0
