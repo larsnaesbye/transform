@@ -31,7 +31,6 @@ import UiTabbedContentItem from '@/components/shared/baseUi/UiTabbedContentItem'
 import UiExpandBox from '@/components/shared/baseUi/UiExpandBox'
 import UiExpandBoxSection from '@/components/shared/baseUi/UiExpandBoxSection'
 import UiCopyLink from '@/components/shared/baseUi/UiCopyLink'
-import Table from '@/components/dataset/Table'
 import Map from '@/components/dataset/Map'
 import UiMessageBox from '@/components/shared/baseUi/UiMessageBox'
 
@@ -42,7 +41,6 @@ export default {
     UiExpandBox,
     UiExpandBoxSection,
     UiCopyLink,
-    Table,
     UiTabbedContentItem,
     Map,
     UiMessageBox
