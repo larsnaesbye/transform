@@ -147,9 +147,9 @@ export default {
       this.$store.dispatch('DatasetMeta/get', String(this.id)).then(result => {
         if (this.dataset) {
           this.shownColumns = []
-          this.tableSettings.columnDef.forEach((column) => {
-            this.shownColumns.push(column.fieldId)
-          })
+          // this.tableSettings.columnDef.forEach((column) => {
+          //   this.shownColumns.push(column.fieldId)
+          // })
           const views = this.dataset.views.map(view => view.type)
           this.$store.dispatch('DatasetData/get', {id: this.id, views: views}).then(resp => {
             this.data = this.$store.state.DatasetData.data.table
