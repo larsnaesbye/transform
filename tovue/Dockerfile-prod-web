@@ -12,9 +12,9 @@ RUN npm install -g @vue/cli \
   @vue/cli-plugin-vuex \
   @vue/compiler-sfc \
   vue-cli-plugin-style-resources-loader
+
 WORKDIR /transform
 RUN npm install --legacy-peer-deps
-RUN npm audit fix --force
 RUN npm run build-prod
 
 
