@@ -23,10 +23,10 @@ export default {
     Map,
   },
   props: {
-    // dataId: {
-    //   type: String,
-    //   default: '-1'
-    // },
+    dataId: {
+      type: String,
+      default: '-1'
+    },
     tab: {
       type: String,
       default: 'data'
@@ -53,8 +53,7 @@ export default {
       return this.$store.state.DatasetMeta.status || 'loading'
     },
     id() {
-      return -1
-      // return Number(this.dataId) || -1
+      return Number(this.dataId) || -1
     },
     dataset() {
       return this.$store.state.DatasetMeta.data.id === this.id ? this.$store.state.DatasetMeta.data : null
