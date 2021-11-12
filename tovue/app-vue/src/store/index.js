@@ -5,7 +5,7 @@ import { Datasets } from '@/store/datasets/Datasets'
 import { DatasetsAssets } from '@/store/datasets/DatasetsAssets'
 import { DatasetsAttributes } from '@/store/datasets/DatasetsAttributes'
 import { DatasetsServices } from '@/store/datasets/DatasetsServices'
-import { DatasetData } from '@/store/dataset/DatasetData'
+// import { DatasetData } from '@/store/dataset/DatasetData'
 import { DatasetMeta } from '@/store/dataset/DatasetMeta'
 import { HomeAssets } from '@/store/home/HomeAssets'
 import { AboutAssets } from '@/store/about/AboutAssets'
@@ -20,7 +20,7 @@ export default new Vuex.Store({
     DatasetsAssets,
     DatasetsAttributes,
     DatasetsServices,
-    DatasetData,
+    // DatasetData,
     DatasetMeta,
     HomeAssets,
     AboutAssets,
