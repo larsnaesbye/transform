@@ -13,7 +13,6 @@ import Filtering from '@/components/shared/Filtering'
 export default {
   components: {
     Hero: () => import('@/components/shared/Hero'),
-    DatasetBox: () => import('@/components/datasets/DatasetBox'),
     Filtering: Filtering
   },
   data () {

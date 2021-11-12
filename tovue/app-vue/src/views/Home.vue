@@ -15,7 +15,6 @@ export default {
   components: {
     Map,
     Hero: () => import('@/components/shared/Hero'),
-    DatasetBox: () => import('@/components/datasets/DatasetBox'),
     Filtering: Filtering
   },
   data () {
