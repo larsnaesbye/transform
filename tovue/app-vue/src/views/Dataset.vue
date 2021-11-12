@@ -1,6 +1,5 @@
 <template>
   <main id="main" ref="main">
-      <!-- MAP -->
       <UiTabbedContentItem
         v-if="true"
         :title="'Kortvisning'"
@@ -90,11 +89,11 @@ export default {
         this.dataset.services.forEach((service) => {
           const serviceObj = {}
           serviceObj.entries = []
-          if (service.ids[0]) {
+          // if (service.ids[0]) {
             // service.ids.forEach(id => {
             //   serviceObj.entries.push(this.findService(id))
             // })
-          }
+          // }
           const formatInfo = this.getFormatInfo(service.typeId)
           serviceObj.typeLabel = formatInfo.title
           serviceObj.typeColor = formatInfo.color
