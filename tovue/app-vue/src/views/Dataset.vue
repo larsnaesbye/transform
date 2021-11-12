@@ -1,12 +1,15 @@
 <template>
   <main id="main" ref="main">
-    <UiTabbedContentItem
-        :title="'Kortvisning'"
-        name="kort"
-        :active=true
-        class="layout-1col"
-    >
+<!--    <UiTabbedContentItem-->
+<!--        :title="'Kortvisning'"-->
+<!--        name="kort"-->
+<!--        :active=true-->
+<!--        class="layout-1col"-->
+<!--    >-->
       <Map
+          :title="'Kortvisning'"
+          name="kort"
+          class="layout-1col"
           :datasetId="id"
           :data="mapData"
           :filters="filters.map"
@@ -15,7 +18,7 @@
           :active=true
           @filters-updated="updateMapDataFilters"
       />
-    </UiTabbedContentItem>
+<!--    </UiTabbedContentItem>-->
   </main>
 </template>
 
