@@ -10,29 +10,6 @@
         <option value="">Vælg koordinatsystem...</option>
       </select>
     </header>
-    <div class="section" v-if="expanded">
-      <div v-if="activeSection === 'layers'">
-        <div class="section-header">
-          <h6>Indstillinger for kortvisning</h6>
-        </div>
-        <div class="section-content">
-          <label
-              class="switch"
-              tabindex="0"
-              @keydown.enter="$emit('toggle-clustering', $event)"
-          >
-            <span for="clustering">Gruppér kortmarkører som ligger tæt på hinanden</span>
-            <input
-                type="checkbox"
-                id="clustering"
-                @change="$emit('toggle-clustering', $event)"
-                :checked="clustering"
-            >
-            <span class="slider round"></span>
-          </label>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
