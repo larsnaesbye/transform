@@ -30,7 +30,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "Datasets", webpackMode: "lazy" */ '@/views/Groenland.vue')
     },
     {
-      path: '/data/:dataId',
+      path: '/:dataId',
       name: 'Dataset',
       props: true,
       meta: { title: 'Koordinattransformation - Dataside' },
