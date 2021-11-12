@@ -16,21 +16,11 @@
 </template>
 
 <script>
-import Hero from '@/components/shared/Hero'
-import UiExpandBox from '@/components/shared/baseUi/UiExpandBox'
-import UiExpandBoxSection from '@/components/shared/baseUi/UiExpandBoxSection'
-import UiCopyLink from '@/components/shared/baseUi/UiCopyLink'
 import Map from '@/components/dataset/Map'
-import UiMessageBox from '@/components/shared/baseUi/UiMessageBox'
 
 export default {
   components: {
-    Hero,
-    UiExpandBox,
-    UiExpandBoxSection,
-    UiCopyLink,
     Map,
-    UiMessageBox
   },
   props: {
     dataId: {
