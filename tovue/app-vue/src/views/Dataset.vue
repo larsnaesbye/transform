@@ -214,11 +214,11 @@ export default {
           this.setFilter(this.filters.table, filter, this.data)
         })
       }
-      if (this.mapSettings && this.mapSettings.filterDef) {
-        this.mapSettings.filterDef.forEach((filter) => {
-          this.setFilter(this.filters.map, filter, this.mapData)
-        })
-      }
+      // if (this.mapSettings && this.mapSettings.filterDef) {
+      //   this.mapSettings.filterDef.forEach((filter) => {
+      //     this.setFilter(this.filters.map, filter, this.mapData)
+      //   })
+      // }
     },
     filterData(rows, filters) {
       for (const key in filters) {
