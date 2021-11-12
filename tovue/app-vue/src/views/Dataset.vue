@@ -109,8 +109,7 @@ export default {
       return this.tableSettings ? this.tableSettings.columnDef : []
     },
     mapSettings() {
-      return null
-      // return this.dataset.mapSettings
+      return this.dataset.mapSettings
     },
     dashboardSettings() {
       return this.dataset.dashboardSettings
