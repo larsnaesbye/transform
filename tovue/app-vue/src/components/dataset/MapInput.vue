@@ -1,15 +1,14 @@
 <template>
   <div class="map-input box">
     <header class="map-input__header">
-      <label for="sel1" class="badge bg-primary">Input</label>
-      <select class="form-select from" id="sel1">
+      <label for="sel1">Input</label>
+      <select id="sel1">
         <option value="">Vælg koordinatsystem...</option>
       </select>
-      <label for="sel2" class="badge bg-primary">Output</label>
-      <select class="form-select to" id="sel2">
+      <label for="sel2">Output</label>
+      <select id="sel2">
         <option value="">Vælg koordinatsystem...</option>
       </select>
-
     </header>
     <div class="section" v-if="expanded">
       <div v-if="activeSection === 'layers'">
