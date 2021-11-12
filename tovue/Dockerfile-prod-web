@@ -7,7 +7,6 @@ RUN export NODE_OPTIONS=--openssl-legacy-provider
 RUN npm install -g @vue/cli
 WORKDIR /transform
 RUN npm install --legacy-peer-deps
-RUN npm audit fix --force
 RUN npm run build-prod
 
 
