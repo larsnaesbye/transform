@@ -1,14 +1,12 @@
 <template>
   <main id="main" ref="main">
     <UiTabbedContentItem
-        v-if="true"
         :title="'Kortvisning'"
         name="kort"
         :active=true
         class="layout-1col"
     >
       <Map
-          v-if="true"
           :datasetId="id"
           :data="mapData"
           :filters="filters.map"
