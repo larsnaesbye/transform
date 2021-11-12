@@ -279,331 +279,331 @@ export const datasetMeta = {
             {label: 'Energistyrelsen', link: '', logoId: 1733}
         ],
         dataInfo: {
-            dataDescription: 'På denne side kan du finde beskrivelser af data om el- og/eller varmeproducerende enheder, der leverer til offentligt net i Danmark, med undtagelse af elproduktion fra solceller og vindkraft.',
+            dataDescription: 'none',
             sectors: ['Produktion af el', 'Varme']
         },
-        tableSettings: {
-            columnDef: [
-                {
-                    type: 'txt',
-                    fieldId: 'anlaeg_aar',
-                    label: 'År',
-                    shortDef: 'Årstal, som data vedrører.',
-                    longDef: '',
-                    defaultWidth: 80
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'selskab_cvrnummer',
-                    label: 'CVR',
-                    shortDef: 'CVR-nummer for selskabet',
-                    longDef: '',
-                    defaultWidth: 110
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'selskab_navn',
-                    label: 'Selskab',
-                    shortDef: 'Selskabets navn.',
-                    longDef: '',
-                    defaultWidth: 300
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'vaerk_navn',
-                    label: 'Værk',
-                    shortDef: 'Værkets navn',
-                    longDef: '',
-                    defaultWidth: 300
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'vaerk_adresse',
-                    label: 'Adresse',
-                    shortDef: 'Værkets adresse (vejnavn og husnummer).',
-                    longDef: '',
-                    defaultWidth: 200
-                },
-                {
-                    type: 'num',
-                    fieldId: 'vaerk_postnummer',
-                    label: 'Postnummer',
-                    shortDef: 'Værkets postnummer.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'vaerk_postnummernavn',
-                    label: 'By',
-                    shortDef: 'Værkets postdistrikt.',
-                    longDef: '',
-                    defaultWidth: 100
-                },
-                {
-                    type: 'num',
-                    fieldId: 'vaerk_kommunekode',
-                    label: 'Kommunekode',
-                    shortDef: 'Værkets kommune.',
-                    longDef: '',
-                    defaultWidth: 160
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'vaerk_branchekode',
-                    label: 'Branchekode',
-                    shortDef: 'Branchekode (DB07) for værk som angivet i VIRK.',
-                    longDef: 'Branchekoden angiver, hvor ressourcen til energiproduktionen kommer fra. Der kan fx være varme fra en fremstillingsproces og branchekoden vil så angive fremstillingsprocessen.',
-                    defaultWidth: 160
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'vaerk_pnummer',
-                    label: 'P-nummer',
-                    shortDef: 'P-enhedens unikke ID.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'vaerk_vaerktype',
-                    label: 'Værktype',
-                    shortDef: 'Værkets type.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'vaerk_hovedbraendselsgruppe',
-                    label: 'Hovedbrændselsgruppe, værk',
-                    shortDef: 'Det hovedbrændsel, som har den største andel af det samlede brændselsforbrug på værksniveau i det pågældende år.',
-                    longDef: '',
-                    defaultWidth: 280
-                },
-                {
-                    type: 'num',
-                    fieldId: 'vaerk_fjernvarmenetid',
-                    label: 'Fjernvarmenet ID',
-                    shortDef: 'Unikt ID for det fjernvarmenet, som varmeproduktionen leveres til.',
-                    longDef: '',
-                    defaultWidth: 200
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'vaerk_fjernvarmenetnavn',
-                    label: 'Fjernvarmenet navn',
-                    shortDef: 'Navn på fjernvarmenet.',
-                    longDef: '',
-                    defaultWidth: 280
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'anlaeg_navn',
-                    label: 'Anlæg',
-                    shortDef: 'Anlæggets navn.',
-                    longDef: '',
-                    defaultWidth: 250
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'anlaeg_anlaegstype',
-                    label: 'Anlægstype',
-                    shortDef: 'Anlæggets type.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'anlaeg_aktoer',
-                    label: 'Aktør',
-                    shortDef: 'Beskriver om anlægget producerer el, varme eller begge dele, samt om anlæggets primære sektor er konverteringssektoren eller ej.',
-                    longDef: 'Energiproducenttællingen indeholder disse typer af aktører: Centrale elproducerende anlæg (cel), centrale kraftvarmeanlæg (cev), fjernvarmeanlæg (fvv), decentrale kraftvarmeanlæg (kvt), sekundære elproducenter (pel), sekundære kraftvarmeproducenter (pev), sekundære fjernvarmeproducenter (pvp), vandkraftanlæg (vkt), anden type aktør (and). Definitionerne følger Energistatistikkens inddeling.',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'dat',
-                    fieldId: 'anlaeg_idriftsaettelsesdato',
-                    label: 'Idriftsættelsesdato',
-                    shortDef: 'Dato for anlæggets idriftsættelse.',
-                    longDef: '',
-                    defaultWidth: 215
-                },
-                {
-                    type: 'dat',
-                    fieldId: 'anlaeg_skrotningsdato',
-                    label: 'Skrotningsdato',
-                    shortDef: 'Dato for anlæggets skrotning. Hvis der ikke er angivet en dato, er anlægget i drift.',
-                    longDef: '',
-                    defaultWidth: 180
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    separator: true,
-                    fieldId: 'anlaeg_elkapacitet',
-                    label: 'Elkapacitet',
-                    shortDef: 'Anlæggets elproduktionskapacitet (MW).',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_varmekapacitet',
-                    label: 'Varmekapacitet',
-                    shortDef: 'Anlæggets varmeproduktionskapacitet (MW).',
-                    longDef: '',
-                    defaultWidth: 180
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'anlaeg_hovedbraendsel',
-                    label: 'Hovedbrændsel, anlæg',
-                    shortDef: 'Det brændsel, som udgør den største andel af anlæggets samlede brændselsforbrug.',
-                    longDef: '',
-                    defaultWidth: 250
-                },
-                {
-                    type: 'txt',
-                    fieldId: 'anlaeg_hovedbraendselsgruppe',
-                    label: 'Hovedbrændselsgruppe, anlæg',
-                    shortDef: 'Type af hovedbrændsel.',
-                    longDef: '',
-                    defaultWidth: 300
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_affald',
-                    label: 'Affald',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Affald udgør af anlæggets samlede brændselsforbrug.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_bio_olie',
-                    label: 'Bio-olie',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Bio-olie udgør af anlæggets samlede brændselsforbrug.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_biogas',
-                    label: 'Biogas',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Biogas udgør af anlæggets samlede brændselsforbrug',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_braendselsfrit',
-                    label: 'Brændselsfrit',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Brændselsfrit udgør af anlæggets samlede brændselsforbrug. ”Brændselsfri” omfatter input af overskudsvarme, geotermi og en lille import af fjernvarme fra Tyskland (Padborg Fjernvarme).',
-                    longDef: '',
-                    defaultWidth: 180
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_elektricitet',
-                    label: 'Elektricitet',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Elektricitet udgør af anlæggets samlede brændselsforbrug.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_fastbiomasse',
-                    label: 'Fast biomasse',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Fast biomasse udgør af anlæggets samlede brændselsforbrug.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_kul',
-                    label: 'Kul',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Kul udgør af anlæggets samlede brændselsforbrug.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_naturgas',
-                    label: 'Naturgas',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Naturgas udgør af anlæggets samlede brændselsforbrug.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_olie',
-                    label: 'Olie',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Olie udgør af anlæggets samlede brændselsforbrug.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_solenergi',
-                    label: 'Solenergi',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Solenergi udgør af anlæggets samlede brændselsforbrug.',
-                    longDef: '',
-                    defaultWidth: 150
-                },
-                {
-                    type: 'num',
-                    decimals: 2,
-                    fieldId: 'anlaeg_andel_vandkraft',
-                    label: 'Vandkraft',
-                    shortDef: 'Andel, som forbrug af brændselsgruppen Vandkraft udgør af anlæggets samlede brændselsforbrug.',
-                    longDef: '',
-                    defaultWidth: 150
-                }
-            ],
-            filterDef: [
-                {
-                    label: 'Filtrer på søgeord',
-                    name: 'search',
-                    type: 'search',
-                    fieldId: '',
-                    initValue: ''
-                },
-                {
-                    label: 'År',
-                    name: 'anlaeg_aar',
-                    type: 'multiselect',
-                    options: ['2021', '2020', '2019', '2018'],
-                    fieldId: 'anlaeg_aar',
-                    initValue: '_all'
-                },
-                {
-                    label: 'Branche',
-                    name: 'branche',
-                    type: 'multiselect',
-                    options: ['351100 (Produktion af elektricitet)', '353000 (Varmeforsyning)', 'Anden branchekode'],
-                    fieldId: 'branche',
-                    initValue: '_all'
-                },
-                {
-                    label: 'Vis/skjul kolonner',
-                    name: 'columnFilter',
-                    type: 'columnFilter',
-                    fieldId: '',
-                    initValue: ''
-                }
-            ]
-        },
+        // tableSettings: {
+        //     columnDef: [
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'anlaeg_aar',
+        //             label: 'År',
+        //             shortDef: 'Årstal, som data vedrører.',
+        //             longDef: '',
+        //             defaultWidth: 80
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'selskab_cvrnummer',
+        //             label: 'CVR',
+        //             shortDef: 'CVR-nummer for selskabet',
+        //             longDef: '',
+        //             defaultWidth: 110
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'selskab_navn',
+        //             label: 'Selskab',
+        //             shortDef: 'Selskabets navn.',
+        //             longDef: '',
+        //             defaultWidth: 300
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'vaerk_navn',
+        //             label: 'Værk',
+        //             shortDef: 'Værkets navn',
+        //             longDef: '',
+        //             defaultWidth: 300
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'vaerk_adresse',
+        //             label: 'Adresse',
+        //             shortDef: 'Værkets adresse (vejnavn og husnummer).',
+        //             longDef: '',
+        //             defaultWidth: 200
+        //         },
+        //         {
+        //             type: 'num',
+        //             fieldId: 'vaerk_postnummer',
+        //             label: 'Postnummer',
+        //             shortDef: 'Værkets postnummer.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'vaerk_postnummernavn',
+        //             label: 'By',
+        //             shortDef: 'Værkets postdistrikt.',
+        //             longDef: '',
+        //             defaultWidth: 100
+        //         },
+        //         {
+        //             type: 'num',
+        //             fieldId: 'vaerk_kommunekode',
+        //             label: 'Kommunekode',
+        //             shortDef: 'Værkets kommune.',
+        //             longDef: '',
+        //             defaultWidth: 160
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'vaerk_branchekode',
+        //             label: 'Branchekode',
+        //             shortDef: 'Branchekode (DB07) for værk som angivet i VIRK.',
+        //             longDef: 'Branchekoden angiver, hvor ressourcen til energiproduktionen kommer fra. Der kan fx være varme fra en fremstillingsproces og branchekoden vil så angive fremstillingsprocessen.',
+        //             defaultWidth: 160
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'vaerk_pnummer',
+        //             label: 'P-nummer',
+        //             shortDef: 'P-enhedens unikke ID.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'vaerk_vaerktype',
+        //             label: 'Værktype',
+        //             shortDef: 'Værkets type.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'vaerk_hovedbraendselsgruppe',
+        //             label: 'Hovedbrændselsgruppe, værk',
+        //             shortDef: 'Det hovedbrændsel, som har den største andel af det samlede brændselsforbrug på værksniveau i det pågældende år.',
+        //             longDef: '',
+        //             defaultWidth: 280
+        //         },
+        //         {
+        //             type: 'num',
+        //             fieldId: 'vaerk_fjernvarmenetid',
+        //             label: 'Fjernvarmenet ID',
+        //             shortDef: 'Unikt ID for det fjernvarmenet, som varmeproduktionen leveres til.',
+        //             longDef: '',
+        //             defaultWidth: 200
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'vaerk_fjernvarmenetnavn',
+        //             label: 'Fjernvarmenet navn',
+        //             shortDef: 'Navn på fjernvarmenet.',
+        //             longDef: '',
+        //             defaultWidth: 280
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'anlaeg_navn',
+        //             label: 'Anlæg',
+        //             shortDef: 'Anlæggets navn.',
+        //             longDef: '',
+        //             defaultWidth: 250
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'anlaeg_anlaegstype',
+        //             label: 'Anlægstype',
+        //             shortDef: 'Anlæggets type.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'anlaeg_aktoer',
+        //             label: 'Aktør',
+        //             shortDef: 'Beskriver om anlægget producerer el, varme eller begge dele, samt om anlæggets primære sektor er konverteringssektoren eller ej.',
+        //             longDef: 'Energiproducenttællingen indeholder disse typer af aktører: Centrale elproducerende anlæg (cel), centrale kraftvarmeanlæg (cev), fjernvarmeanlæg (fvv), decentrale kraftvarmeanlæg (kvt), sekundære elproducenter (pel), sekundære kraftvarmeproducenter (pev), sekundære fjernvarmeproducenter (pvp), vandkraftanlæg (vkt), anden type aktør (and). Definitionerne følger Energistatistikkens inddeling.',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'dat',
+        //             fieldId: 'anlaeg_idriftsaettelsesdato',
+        //             label: 'Idriftsættelsesdato',
+        //             shortDef: 'Dato for anlæggets idriftsættelse.',
+        //             longDef: '',
+        //             defaultWidth: 215
+        //         },
+        //         {
+        //             type: 'dat',
+        //             fieldId: 'anlaeg_skrotningsdato',
+        //             label: 'Skrotningsdato',
+        //             shortDef: 'Dato for anlæggets skrotning. Hvis der ikke er angivet en dato, er anlægget i drift.',
+        //             longDef: '',
+        //             defaultWidth: 180
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             separator: true,
+        //             fieldId: 'anlaeg_elkapacitet',
+        //             label: 'Elkapacitet',
+        //             shortDef: 'Anlæggets elproduktionskapacitet (MW).',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_varmekapacitet',
+        //             label: 'Varmekapacitet',
+        //             shortDef: 'Anlæggets varmeproduktionskapacitet (MW).',
+        //             longDef: '',
+        //             defaultWidth: 180
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'anlaeg_hovedbraendsel',
+        //             label: 'Hovedbrændsel, anlæg',
+        //             shortDef: 'Det brændsel, som udgør den største andel af anlæggets samlede brændselsforbrug.',
+        //             longDef: '',
+        //             defaultWidth: 250
+        //         },
+        //         {
+        //             type: 'txt',
+        //             fieldId: 'anlaeg_hovedbraendselsgruppe',
+        //             label: 'Hovedbrændselsgruppe, anlæg',
+        //             shortDef: 'Type af hovedbrændsel.',
+        //             longDef: '',
+        //             defaultWidth: 300
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_affald',
+        //             label: 'Affald',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Affald udgør af anlæggets samlede brændselsforbrug.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_bio_olie',
+        //             label: 'Bio-olie',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Bio-olie udgør af anlæggets samlede brændselsforbrug.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_biogas',
+        //             label: 'Biogas',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Biogas udgør af anlæggets samlede brændselsforbrug',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_braendselsfrit',
+        //             label: 'Brændselsfrit',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Brændselsfrit udgør af anlæggets samlede brændselsforbrug. ”Brændselsfri” omfatter input af overskudsvarme, geotermi og en lille import af fjernvarme fra Tyskland (Padborg Fjernvarme).',
+        //             longDef: '',
+        //             defaultWidth: 180
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_elektricitet',
+        //             label: 'Elektricitet',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Elektricitet udgør af anlæggets samlede brændselsforbrug.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_fastbiomasse',
+        //             label: 'Fast biomasse',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Fast biomasse udgør af anlæggets samlede brændselsforbrug.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_kul',
+        //             label: 'Kul',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Kul udgør af anlæggets samlede brændselsforbrug.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_naturgas',
+        //             label: 'Naturgas',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Naturgas udgør af anlæggets samlede brændselsforbrug.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_olie',
+        //             label: 'Olie',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Olie udgør af anlæggets samlede brændselsforbrug.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_solenergi',
+        //             label: 'Solenergi',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Solenergi udgør af anlæggets samlede brændselsforbrug.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         },
+        //         {
+        //             type: 'num',
+        //             decimals: 2,
+        //             fieldId: 'anlaeg_andel_vandkraft',
+        //             label: 'Vandkraft',
+        //             shortDef: 'Andel, som forbrug af brændselsgruppen Vandkraft udgør af anlæggets samlede brændselsforbrug.',
+        //             longDef: '',
+        //             defaultWidth: 150
+        //         }
+        //     ],
+        //     filterDef: [
+        //         {
+        //             label: 'Filtrer på søgeord',
+        //             name: 'search',
+        //             type: 'search',
+        //             fieldId: '',
+        //             initValue: ''
+        //         },
+        //         {
+        //             label: 'År',
+        //             name: 'anlaeg_aar',
+        //             type: 'multiselect',
+        //             options: ['2021', '2020', '2019', '2018'],
+        //             fieldId: 'anlaeg_aar',
+        //             initValue: '_all'
+        //         },
+        //         {
+        //             label: 'Branche',
+        //             name: 'branche',
+        //             type: 'multiselect',
+        //             options: ['351100 (Produktion af elektricitet)', '353000 (Varmeforsyning)', 'Anden branchekode'],
+        //             fieldId: 'branche',
+        //             initValue: '_all'
+        //         },
+        //         {
+        //             label: 'Vis/skjul kolonner',
+        //             name: 'columnFilter',
+        //             type: 'columnFilter',
+        //             fieldId: '',
+        //             initValue: ''
+        //         }
+        //     ]
+        // },
         mapSettings: {
             mapConstants: {
                 center: [10.61010906, 56.15950977],
