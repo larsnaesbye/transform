@@ -1,13 +1,13 @@
 <template>
   <main id="main" ref="main">
-      <UiTabbedContentItem
+    <UiTabbedContentItem
         v-if="true"
         :title="'Kortvisning'"
         name="kort"
         :active=true
         class="layout-1col"
-      >
-        <Map
+    >
+      <Map
           v-if="true"
           :datasetId="id"
           :data="mapData"
@@ -16,17 +16,17 @@
           :columnDef="tableSettings.columnDef"
           :active=true
           @filters-updated="updateMapDataFilters"
-        />
-        <h2 v-if="dataStatus === 'loading'">Henter data...</h2>
-        <h2 v-if="dataStatus === 'error' || !mapSettings">Kunne ikke hente data. Prøv eventuelt at genindlæse siden...</h2>
-          </UiTabbedContentItem>
+      />
+      <h2 v-if="dataStatus === 'loading'">Henter data...</h2>
+      <h2 v-if="dataStatus === 'error' || !mapSettings">Kunne ikke hente data. Prøv eventuelt at genindlæse
+        siden...</h2>
+    </UiTabbedContentItem>
   </main>
 </template>
 
 <script>
 import {dataToCsvString, download} from '@/HelperFunctions'
 import Hero from '@/components/shared/Hero'
-import UiTabbedContent from '@/components/shared/baseUi/UiTabbedContent'
 import UiTabbedContentItem from '@/components/shared/baseUi/UiTabbedContentItem'
 import UiExpandBox from '@/components/shared/baseUi/UiExpandBox'
 import UiExpandBoxSection from '@/components/shared/baseUi/UiExpandBoxSection'
@@ -55,7 +55,7 @@ export default {
       default: 'data'
     }
   },
-  data () {
+  data() {
     return {
       currentTab: 'kort',
       filters: {
@@ -69,29 +69,24 @@ export default {
     }
   },
   computed: {
-    dataStatus () {
+    dataStatus() {
       return this.$store.state.DatasetData.status || 'loading'
     },
-    metaStatus () {
+    metaStatus() {
       return this.$store.state.DatasetMeta.status || 'loading'
     },
-    id () {
+    id() {
       return Number(this.dataId) || -1
     },
-    dataset () {
+    dataset() {
       return this.$store.state.DatasetMeta.data.id === this.id ? this.$store.state.DatasetMeta.data : null
     },
-    services () {
+    services() {
       if (this.dataset.services && this.dataset.services[0] && this.downloadTypeList && this.serviceTypeList) {
         const services = []
         this.dataset.services.forEach((service) => {
           const serviceObj = {}
           serviceObj.entries = []
-          // if (service.ids[0]) {
-            // service.ids.forEach(id => {
-            //   serviceObj.entries.push(this.findService(id))
-            // })
-          // }
           const formatInfo = this.getFormatInfo(service.typeId)
           serviceObj.typeLabel = formatInfo.title
           serviceObj.typeColor = formatInfo.color
@@ -103,10 +98,10 @@ export default {
         return []
       }
     },
-    datasetsAssets () {
+    datasetsAssets() {
       return this.$store.state.DatasetsAssets.data
     },
-    title () {
+    title() {
       const status = this.$store.state.DatasetMeta.status
       if (status === 'loading') {
         return 'Henter datasæt...'
@@ -118,41 +113,38 @@ export default {
         return 'Der er sket en fejl'
       }
     },
-    summary () {
+    summary() {
       return this.dataset ? this.dataset.summary : ''
     },
-    image () {
+    image() {
       return (this.dataset && this.datasetsAssets.length > 0) ? this.getAssetLink(this.dataset.image) : ''
     },
-    downloadTypeList () {
+    downloadTypeList() {
       return this.$store.state.DatasetsAttributes.data[0] ? this.$store.state.DatasetsAttributes.data[0].list : null
     },
-    serviceTypeList () {
+    serviceTypeList() {
       return this.$store.state.DatasetsAttributes.data[1] ? this.$store.state.DatasetsAttributes.data[1].list : null
     },
-    tableSettings () {
+    tableSettings() {
       return this.dataset ? this.dataset.tableSettings : null
     },
-    fields () {
+    fields() {
       return this.tableSettings ? this.tableSettings.columnDef : []
     },
-    dataDescription () {
-      return this.dataset.dataDescription
-    },
-    mapSettings () {
+    mapSettings() {
       return this.dataset.mapSettings
     },
-    dashboardSettings () {
+    dashboardSettings() {
       return this.dataset.dashboardSettings
     }
   },
-  created () {
+  created() {
     this.currentTab = this.tab || 'data'
     if (
-      (this.dataset) &&
-      (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
-      (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
-      (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
+        (this.dataset) &&
+        (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
+        (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
+        (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
     ) {
       this.shownColumns = []
       this.tableSettings.columnDef.forEach((column) => {
@@ -165,11 +157,11 @@ export default {
       this.initDatasetData()
     }
   },
-  mounted () {
+  mounted() {
     // console.log('Dataset.vue mounted')
   },
   watch: {
-    $route (to, from) {
+    $route(to, from) {
       this.currentTab = to.params.tab
       if (!this.dataset.id || !this.data[0] || (this.currentTab === 'kort' && !this.mapData[0])) {
         // this.initDatasetData()
@@ -177,7 +169,7 @@ export default {
     }
   },
   methods: {
-    initDatasetData () {
+    initDatasetData() {
       this.$store.commit('DatasetData/clear')
       // getting dataset-metadata and -data
       this.$store.dispatch('DatasetMeta/get', String(this.id)).then(result => {
@@ -187,7 +179,7 @@ export default {
             this.shownColumns.push(column.fieldId)
           })
           const views = this.dataset.views.map(view => view.type)
-          this.$store.dispatch('DatasetData/get', { id: this.id, views: views }).then(resp => {
+          this.$store.dispatch('DatasetData/get', {id: this.id, views: views}).then(resp => {
             this.data = this.$store.state.DatasetData.data.table
             this.mapData = this.$store.state.DatasetData.data.map
             this.resetAllFilters()
@@ -201,7 +193,7 @@ export default {
       this.$store.dispatch('DatasetsAttributes/get')
       this.$store.dispatch('DatasetsServices/get')
     },
-    setFilter (prop, filter, data) {
+    setFilter(prop, filter, data) {
       if (filter.type === 'multiselect') {
         let options = []
         if ((!Array.isArray(filter.options) || filter.options.length === 0) && data) {
@@ -247,7 +239,7 @@ export default {
         })
       }
     },
-    resetAllFilters () {
+    resetAllFilters() {
       if (this.tableSettings && this.tableSettings.filterDef) {
         this.tableSettings.filterDef.forEach((filter) => {
           this.setFilter(this.filters.table, filter, this.data)
@@ -259,18 +251,18 @@ export default {
         })
       }
     },
-    filterData (rows, filters) {
+    filterData(rows, filters) {
       for (const key in filters) {
         const filter = filters[key]
         if ((filter.type === 'multiselect') && (Array.isArray(filter.value)) && (filter.options.length > filter.value.length)) {
           rows = rows.filter((row) => {
             return filter.value.some((val) => {
               if (
-                val === '' &&
-                (row[filter.fieldId] === undefined ||
-                row[filter.fieldId] === null ||
-                row[filter.fieldId] === 'null' ||
-                row[filter.fieldId] === '')
+                  val === '' &&
+                  (row[filter.fieldId] === undefined ||
+                      row[filter.fieldId] === null ||
+                      row[filter.fieldId] === 'null' ||
+                      row[filter.fieldId] === '')
               ) {
                 return true
               } else {
@@ -290,7 +282,7 @@ export default {
       }
       return rows
     },
-    updateMapDataFilters (filters) {
+    updateMapDataFilters(filters) {
       this.mapData = this.filterData(this.$store.state.DatasetData.data.map, filters)
       /* this.$store.dispatch('DatasetData/get', { id: this.id, views: ['map'], filters: filters })then(resp => {
         this.mapData = this.$store.state.DatasetData.data.map
@@ -298,20 +290,20 @@ export default {
         console.error('Could not get data for dataset for' + this.title, err)
       }) */
     },
-    getAssetLink (id) {
+    getAssetLink(id) {
       const img = this.$store.state.DatasetsAssets.data.find((e) => {
         return id === e.id
       })
       return img ? (window.location.origin + '/asset' + img.path + img.filename) : ''
     },
-    getFormatInfo (id) {
+    getFormatInfo(id) {
       const allFormats = [...this.downloadTypeList, ...this.serviceTypeList]
       return allFormats.find(item => item.id === id)
     },
-    findService (id) {
+    findService(id) {
       return this.$store.state.DatasetsServices.data.find(service => service.id === id)
     },
-    highlightElement (element) {
+    highlightElement(element) {
       setTimeout(() => {
         element.querySelector('H1, H2, H3, H4').classList.add('active')
         setTimeout(() => {
@@ -319,12 +311,12 @@ export default {
         }, 450)
       }, 850)
     },
-    downloadCSV (columnDef, data, filename) {
+    downloadCSV(columnDef, data, filename) {
       let columnDefinitions = columnDef
       if (!columnDef) {
         columnDefinitions = []
         for (const key in data[0]) {
-          columnDefinitions.push({ label: key, fieldId: key })
+          columnDefinitions.push({label: key, fieldId: key})
         }
       }
       const csv = dataToCsvString(columnDefinitions, data)
