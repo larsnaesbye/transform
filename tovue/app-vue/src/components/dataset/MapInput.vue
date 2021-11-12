@@ -1,7 +1,7 @@
 <template>
   <div class="map-input box">
     <header class="map-input__header">
-      <h3>Input</h3>
+      <option value="">Vælg kilde</option>
     </header>
     <div class="section" v-if="expanded">
       <div v-if="activeSection === 'layers'">
