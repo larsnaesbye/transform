@@ -59,18 +59,7 @@ export default {
       return this.$store.state.DatasetMeta.data.id === 2934 ? this.$store.state.DatasetMeta.data : null
     },
     services() {
-      // if (this.dataset.services && this.dataset.services[0] && this.downloadTypeList && this.serviceTypeList) {
-      // this.dataset.services.forEach((service) => {
-      //   const serviceObj = {}
-      //   serviceObj.entries = []
-      //   const formatInfo = this.getFormatInfo(service.typeId)
-      //   serviceObj.typeLabel = formatInfo.title
-      //   serviceObj.typeColor = formatInfo.color
-      //   serviceObj.typeBackgroundColor = formatInfo.backgroundColor
-      //   services.push(serviceObj)
-      // })
       return []
-      // }
     },
     datasetsAssets() {
       return this.$store.state.DatasetsAssets.data
@@ -92,12 +81,6 @@ export default {
     },
     image() {
       return (this.dataset && this.datasetsAssets.length > 0) ? this.getAssetLink(this.dataset.image) : ''
-    },
-    downloadTypeList() {
-      return this.$store.state.DatasetsAttributes.data[0] ? this.$store.state.DatasetsAttributes.data[0].list : null
-    },
-    serviceTypeList() {
-      return this.$store.state.DatasetsAttributes.data[1] ? this.$store.state.DatasetsAttributes.data[1].list : null
     },
     tableSettings() {
       return this.dataset ? this.dataset.tableSettings : null
@@ -210,11 +193,6 @@ export default {
           this.setFilter(this.filters.table, filter, this.data)
         })
       }
-      // if (this.mapSettings && this.mapSettings.filterDef) {
-      //   this.mapSettings.filterDef.forEach((filter) => {
-      //     this.setFilter(this.filters.map, filter, this.mapData)
-      //   })
-      // }
     },
     filterData(rows, filters) {
       for (const key in filters) {
@@ -258,10 +236,6 @@ export default {
         return id === e.id
       })
       return img ? (window.location.origin + '/asset' + img.path + img.filename) : ''
-    },
-    getFormatInfo(id) {
-      const allFormats = [...this.downloadTypeList, ...this.serviceTypeList]
-      return allFormats.find(item => item.id === id)
     }
   }
 }
