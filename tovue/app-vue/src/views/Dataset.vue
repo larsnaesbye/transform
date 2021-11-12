@@ -138,7 +138,7 @@ export default {
     }
   },
   created() {
-    this.currentTab = this.tab || 'data'
+    // this.currentTab = this.tab || 'data'
     if (
         (this.dataset) &&
         (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
@@ -161,7 +161,7 @@ export default {
   },
   watch: {
     $route(to, from) {
-      this.currentTab = to.params.tab
+      // this.currentTab = to.params.tab
       if (!this.dataset.id || !this.data[0] || (this.currentTab === 'kort' && !this.mapData[0])) {
         // this.initDatasetData()
       }

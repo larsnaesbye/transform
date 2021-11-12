@@ -37,7 +37,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "Dataset", webpackMode: "lazy" */ '@/views/Dataset.vue')
     },
     {
-      path: '/data/:dataId/visning/:tab',
+      path: '/data/:dataId/visning/',
       name: 'DatasetVisning',
       props: true,
       meta: { title: 'Koordinattransformation - Dataside visning' },
