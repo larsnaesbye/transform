@@ -3,11 +3,11 @@
     <header class="map-input__header">
       <label for="sel1" class="badge bg-primary">Input</label>
       <select class="form-select from" id="sel1">
-        <option value="">Vælg kilde</option>
+        <option value="">Vælg koordinatsystem...</option>
       </select>
       <label for="sel2" class="badge bg-primary">Output</label>
       <select class="form-select to" id="sel2">
-        <option value="">Vælg destination</option>
+        <option value="">Vælg koordinatsystem...</option>
       </select>
 
     </header>
