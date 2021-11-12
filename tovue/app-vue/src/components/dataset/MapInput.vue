@@ -1,7 +1,15 @@
 <template>
   <div class="map-input box">
     <header class="map-input__header">
-      <option value="">Vælg kilde</option>
+      <label for="sel1" class="badge bg-primary">Fra</label>
+      <select class="form-select from" id="sel1">
+        <option value="">Vælg kilde</option>
+      </select>
+      <label for="sel2" class="badge bg-primary">Til</label>
+      <select class="form-select to" id="sel2">
+        <option value="">Vælg destination</option>
+      </select>
+
     </header>
     <div class="section" v-if="expanded">
       <div v-if="activeSection === 'layers'">
