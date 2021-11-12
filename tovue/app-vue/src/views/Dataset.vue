@@ -1,17 +1,17 @@
 <template>
   <main id="main" ref="main">
-      <Map
-          :title="'Kortvisning'"
-          name="kort"
-          class="layout-1col"
-          :datasetId="id"
-          :data="mapData"
-          :filters="filters.map"
-          :mapSettings="mapSettings"
-          :columnDef="tableSettings.columnDef"
-          :active=true
-          @filters-updated="updateMapDataFilters"
-      />
+    <Map
+        :title="'Kortvisning'"
+        name="kort"
+        class="layout-1col"
+        :datasetId="id"
+        :data="mapData"
+        :filters="filters.map"
+        :mapSettings="mapSettings"
+        :columnDef="tableSettings.columnDef"
+        :active=true
+        @filters-updated="updateMapDataFilters"
+    />
   </main>
 </template>
 
@@ -138,12 +138,6 @@ export default {
 
   },
   watch: {
-    $route(to, from) {
-      // this.currentTab = to.params.tab
-      if (!this.dataset.id || !this.data[0] || (this.currentTab === 'kort' && !this.mapData[0])) {
-        // this.initDatasetData()
-      }
-    }
   },
   methods: {
     initDatasetData() {

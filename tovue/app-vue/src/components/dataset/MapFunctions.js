@@ -9,7 +9,7 @@ import GeoJSON from 'ol/format/GeoJSON'
 import Projection from 'ol/proj/Projection'
 import VectorTileSource from 'ol/source/VectorTile'
 import geojsonvt from 'geojson-vt'
-import pin from '../../assets/mapIcons/cirkel_graa_spoergsmaal.svg'
+import pin from '../../assets/Icons/cirkel_graa_spoergsmaal.svg'
 
 const kfText = 'Styrelsen for Dataforsyning og Effektivisering'
 const kfLink = 'https://dataforsyningen.dk/asset/PDF/rettigheder_vilkaar/Vilk%C3%A5r%20for%20brug%20af%20frie%20geografiske%20data.pdf'
