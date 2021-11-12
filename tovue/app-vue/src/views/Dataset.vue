@@ -128,7 +128,7 @@ export default {
       //   this.shownColumns.push(column.fieldId)
       // }
       // )
-      this.data = this.$store.state.DatasetData.data.table
+      // this.data = this.$store.state.DatasetData.data.table
       this.mapData = this.$store.state.DatasetData.data.map
       this.resetAllFilters()
     } else {
