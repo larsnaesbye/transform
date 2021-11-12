@@ -37,7 +37,6 @@ import UiMessageBox from '@/components/shared/baseUi/UiMessageBox'
 export default {
   components: {
     Hero,
-    UiTabbedContent,
     UiExpandBox,
     UiExpandBoxSection,
     UiCopyLink,
