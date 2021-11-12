@@ -15,15 +15,11 @@
           :active=true
           @filters-updated="updateMapDataFilters"
       />
-      <h2 v-if="dataStatus === 'loading'">Henter data...</h2>
-      <h2 v-if="dataStatus === 'error' || !mapSettings">Kunne ikke hente data. Prøv eventuelt at genindlæse
-        siden...</h2>
     </UiTabbedContentItem>
   </main>
 </template>
 
 <script>
-import {dataToCsvString, download} from '@/HelperFunctions'
 import Hero from '@/components/shared/Hero'
 import UiTabbedContentItem from '@/components/shared/baseUi/UiTabbedContentItem'
 import UiExpandBox from '@/components/shared/baseUi/UiExpandBox'
@@ -136,7 +132,7 @@ export default {
     }
   },
   created() {
-    // this.currentTab = this.tab || 'data'
+
     if (
         (this.dataset) &&
         (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
@@ -155,7 +151,7 @@ export default {
     }
   },
   mounted() {
-    // console.log('Dataset.vue mounted')
+
   },
   watch: {
     $route(to, from) {
@@ -181,9 +177,6 @@ export default {
             this.mapData = this.$store.state.DatasetData.data.map
             this.resetAllFilters()
           })
-          // if (this.dataset.image) {
-            // this.$store.dispatch('DatasetsAssets/get', [this.dataset.image])
-          // }
         }
       })
       // getting stuff for the downloads and services
@@ -281,11 +274,6 @@ export default {
     },
     updateMapDataFilters(filters) {
       this.mapData = this.filterData(this.$store.state.DatasetData.data.map, filters)
-      /* this.$store.dispatch('DatasetData/get', { id: this.id, views: ['map'], filters: filters })then(resp => {
-        this.mapData = this.$store.state.DatasetData.data.map
-      }).catch(err => {
-        console.error('Could not get data for dataset for' + this.title, err)
-      }) */
     },
     getAssetLink(id) {
       const img = this.$store.state.DatasetsAssets.data.find((e) => {
