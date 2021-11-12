@@ -124,9 +124,10 @@ export default {
         (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
     ) {
       this.shownColumns = []
-      this.tableSettings.columnDef.forEach((column) => {
-        this.shownColumns.push(column.fieldId)
-      })
+      // this.tableSettings.columnDef.forEach((column) => {
+      //   this.shownColumns.push(column.fieldId)
+      // }
+      // )
       this.data = this.$store.state.DatasetData.data.table
       this.mapData = this.$store.state.DatasetData.data.map
       this.resetAllFilters()
