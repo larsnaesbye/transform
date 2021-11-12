@@ -56,7 +56,7 @@ export default {
       return Number(this.dataId) || -1
     },
     dataset() {
-      return this.$store.state.DatasetMeta.data.id === this.id ? this.$store.state.DatasetMeta.data : null
+      return this.$store.state.DatasetMeta.data.id === 2934 ? this.$store.state.DatasetMeta.data : null
     },
     services() {
       // if (this.dataset.services && this.dataset.services[0] && this.downloadTypeList && this.serviceTypeList) {
@@ -140,14 +140,14 @@ export default {
     initDatasetData() {
       this.$store.commit('DatasetData/clear')
       // getting dataset-metadata and -data
-      this.$store.dispatch('DatasetMeta/get', String(this.id)).then(result => {
+      this.$store.dispatch('DatasetMeta/get', '2934').then(result => {
         if (this.dataset) {
           this.shownColumns = []
           // this.tableSettings.columnDef.forEach((column) => {
           //   this.shownColumns.push(column.fieldId)
           // })
           const views = this.dataset.views.map(view => view.type)
-          this.$store.dispatch('DatasetData/get', {id: this.id, views: views}).then(resp => {
+          this.$store.dispatch('DatasetData/get', {id: 2934, views: views}).then(resp => {
             this.data = this.$store.state.DatasetData.data.table
             this.mapData = this.$store.state.DatasetData.data.map
             this.resetAllFilters()
