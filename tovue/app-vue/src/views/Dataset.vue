@@ -7,6 +7,7 @@
         :datasetId="id"
         :data="mapData"
         :filters="filters.map"
+        :mapSettings="mapSettings"
         :columnDef="tableSettings.columnDef"
         :active=true
         @filters-updated="updateMapDataFilters"
