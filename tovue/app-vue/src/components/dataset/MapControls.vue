@@ -26,63 +26,6 @@
         />
       </button>
     </header>
-    <div class="section" v-if="expanded">
-      <div v-if="activeSection === 'layers'">
-        <div class="section-header">
-          <h6>Indstillinger for kortvisning</h6>
-        </div>
-        <div class="section-content">
-          <label
-              class="switch"
-              tabindex="0"
-              @keydown.enter="$emit('toggle-clustering', $event)"
-          >
-            <span for="clustering">Gruppér kortmarkører som ligger tæt på hinanden</span>
-            <input
-                type="checkbox"
-                id="clustering"
-                @change="$emit('toggle-clustering', $event)"
-                :checked="clustering"
-            >
-            <span class="slider round"></span>
-          </label>
-        </div>
-      </div>
-      <div v-if="activeSection === 'filters'">
-        <div class="section-header">
-          <h6>Søg og filtrer</h6>
-        </div>
-        <div class="section-content">
-          <Filtering
-              :filterDef="filterDef"
-              direction="column"
-              @input="updateFilters"
-          />
-        </div>
-      </div>
-      <div v-if="activeSection === 'info'">
-        <div class="section-header">
-          <h6>Sådan bruger du kortet</h6>
-        </div>
-        <div class="section-content">
-          <p>
-            Kortet viser forsyningsværkers placering i Danmark. Du kan zoome ud og ind samt navigere med din mus eller
-            touchpad. Du kan også filtrere i resultaterne ved at klikke på filterikonet ovenfor.
-          </p>
-          <p>Visualiseringer:</p>
-          <ul class="icon-list">
-            <li v-for="icon in iconList" :key="icon.url">
-              <img
-                  :src="icon.url"
-                  height="16"
-                  width="16"
-              />
-              <span>{{ icon.name === 'default' ? 'Ukendt type' : icon.name }}</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
