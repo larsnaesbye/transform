@@ -293,15 +293,6 @@ export default {
       }
       return rows
     },
-    updateDataFilters (filters) {
-      this.data = this.filterData(this.$store.state.DatasetData.data.table, filters)
-
-      /* this.$store.dispatch('DatasetData/get', { id: this.id, views: ['table'], filters: filters }).then(resp => {
-        this.data = this.$store.state.DatasetData.data.table
-      }).catch(err => {
-        console.error('Could not get data for dataset for' + this.title, err)
-      }) */
-    },
     updateMapDataFilters (filters) {
       this.mapData = this.filterData(this.$store.state.DatasetData.data.map, filters)
       /* this.$store.dispatch('DatasetData/get', { id: this.id, views: ['map'], filters: filters })then(resp => {
@@ -349,23 +340,6 @@ export default {
           element.querySelector('H1, H2, H3, H4').classList.remove('active')
         }, 450)
       }, 850)
-    },
-    downloadFullDataset () {
-      const colDef = this.tableSettings.columnDef
-      const data = this.$store.state.DatasetData.data.table
-      const filename = this.dataset.title || 'datasæt'
-      this.downloadCSV(colDef, data, filename)
-    },
-    downloadFilteredDataset () {
-      const colDef = []
-      this.tableSettings.columnDef.forEach(col => {
-        if (this.shownColumns.some(name => name === col.fieldId)) {
-          colDef.push(col)
-        }
-      })
-      const data = this.data
-      const filename = this.dataset.title + '_filtreret' || 'datasæt_filtreret'
-      this.downloadCSV(colDef, data, filename)
     },
     downloadCSV (columnDef, data, filename) {
       let columnDefinitions = columnDef
