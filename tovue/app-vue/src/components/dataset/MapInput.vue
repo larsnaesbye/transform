@@ -33,19 +33,6 @@
           </label>
         </div>
       </div>
-      <div v-if="activeSection === 'filters'">
-        <div class="section-header">
-          <h6>Søg og filtrer</h6>
-        </div>
-        <div class="section-content">
-          <Filtering
-              :filterDef="filterDef"
-              direction="column"
-              @input="updateFilters"
-          />
-        </div>
-      </div>
-
     </div>
   </div>
 </template>
