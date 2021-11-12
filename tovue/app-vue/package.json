@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --openssl-legacy-provider node_modules/@vue/cli-service/bin/vue-cli-service.js --open --mode test",
-    "build-prod": "vue-cli-service --openssl-legacy-provider node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode production",
-    "build-test": "vue-cli-service --openssl-legacy-provider node_modules/@vue/cli-service/bin/vue-cli-service.js build --mode test",
-    "lint": "vue-cli-service --openssl-legacy-provider node_modules/@vue/cli-service/bin/vue-cli-service.js lint"
+    "serve": "vue-cli-service serve --open --mode test",
+    "build-prod": "vue-cli-service build --mode production",
+    "build-test": "vue-cli-service build --mode test",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@popperjs/core": "^2.10.2",
