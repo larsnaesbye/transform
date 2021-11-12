@@ -61,15 +61,15 @@ export default {
     services() {
       if (this.dataset.services && this.dataset.services[0] && this.downloadTypeList && this.serviceTypeList) {
         const services = []
-        this.dataset.services.forEach((service) => {
-          const serviceObj = {}
-          serviceObj.entries = []
-          const formatInfo = this.getFormatInfo(service.typeId)
-          serviceObj.typeLabel = formatInfo.title
-          serviceObj.typeColor = formatInfo.color
-          serviceObj.typeBackgroundColor = formatInfo.backgroundColor
-          services.push(serviceObj)
-        })
+        // this.dataset.services.forEach((service) => {
+        //   const serviceObj = {}
+        //   serviceObj.entries = []
+        //   const formatInfo = this.getFormatInfo(service.typeId)
+        //   serviceObj.typeLabel = formatInfo.title
+        //   serviceObj.typeColor = formatInfo.color
+        //   serviceObj.typeBackgroundColor = formatInfo.backgroundColor
+        //   services.push(serviceObj)
+        // })
         return services
       } else {
         return []
