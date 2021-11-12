@@ -181,9 +181,9 @@ export default {
             this.mapData = this.$store.state.DatasetData.data.map
             this.resetAllFilters()
           })
-          if (this.dataset.image) {
+          // if (this.dataset.image) {
             // this.$store.dispatch('DatasetsAssets/get', [this.dataset.image])
-          }
+          // }
         }
       })
       // getting stuff for the downloads and services
@@ -296,28 +296,6 @@ export default {
     getFormatInfo(id) {
       const allFormats = [...this.downloadTypeList, ...this.serviceTypeList]
       return allFormats.find(item => item.id === id)
-    },
-    findService(id) {
-      return this.$store.state.DatasetsServices.data.find(service => service.id === id)
-    },
-    highlightElement(element) {
-      setTimeout(() => {
-        element.querySelector('H1, H2, H3, H4').classList.add('active')
-        setTimeout(() => {
-          element.querySelector('H1, H2, H3, H4').classList.remove('active')
-        }, 450)
-      }, 850)
-    },
-    downloadCSV(columnDef, data, filename) {
-      let columnDefinitions = columnDef
-      if (!columnDef) {
-        columnDefinitions = []
-        for (const key in data[0]) {
-          columnDefinitions.push({label: key, fieldId: key})
-        }
-      }
-      const csv = dataToCsvString(columnDefinitions, data)
-      download(csv, filename + '.csv', 'text/csv;encoding:utf-8')
     }
   }
 }
