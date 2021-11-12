@@ -3,10 +3,10 @@ FROM node:17.1.0-alpine3.14 AS vue-build
 RUN apk update && apk upgrade
 
 COPY ./app-vue/ /transform/
-
+export NODE_OPTIONS=--openssl-legacy-provider
 RUN npm install -g @vue/cli
 WORKDIR /transform
-# RUN npm install --legacy-peer-deps
+RUN npm install --legacy-peer-deps
 RUN npm run build-prod
 
 
