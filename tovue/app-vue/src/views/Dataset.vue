@@ -91,9 +91,9 @@ export default {
           const serviceObj = {}
           serviceObj.entries = []
           if (service.ids[0]) {
-            service.ids.forEach(id => {
-              serviceObj.entries.push(this.findService(id))
-            })
+            // service.ids.forEach(id => {
+            //   serviceObj.entries.push(this.findService(id))
+            // })
           }
           const formatInfo = this.getFormatInfo(service.typeId)
           serviceObj.typeLabel = formatInfo.title
