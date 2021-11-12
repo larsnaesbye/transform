@@ -1,11 +1,5 @@
 <template>
   <main id="main" ref="main">
-<!--    <UiTabbedContentItem-->
-<!--        :title="'Kortvisning'"-->
-<!--        name="kort"-->
-<!--        :active=true-->
-<!--        class="layout-1col"-->
-<!--    >-->
       <Map
           :title="'Kortvisning'"
           name="kort"
@@ -18,13 +12,11 @@
           :active=true
           @filters-updated="updateMapDataFilters"
       />
-<!--    </UiTabbedContentItem>-->
   </main>
 </template>
 
 <script>
 import Hero from '@/components/shared/Hero'
-import UiTabbedContentItem from '@/components/shared/baseUi/UiTabbedContentItem'
 import UiExpandBox from '@/components/shared/baseUi/UiExpandBox'
 import UiExpandBoxSection from '@/components/shared/baseUi/UiExpandBoxSection'
 import UiCopyLink from '@/components/shared/baseUi/UiCopyLink'
@@ -37,7 +29,6 @@ export default {
     UiExpandBox,
     UiExpandBoxSection,
     UiCopyLink,
-    UiTabbedContentItem,
     Map,
     UiMessageBox
   },
