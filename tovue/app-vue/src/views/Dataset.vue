@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { dataToCsvString, download } from '@/HelperFunctions'
+import {dataToCsvString, download} from '@/HelperFunctions'
 import Hero from '@/components/shared/Hero'
 import UiTabbedContent from '@/components/shared/baseUi/UiTabbedContent'
 import UiTabbedContentItem from '@/components/shared/baseUi/UiTabbedContentItem'
@@ -298,10 +298,6 @@ export default {
         console.error('Could not get data for dataset for' + this.title, err)
       }) */
     },
-    setTab (name) {
-      // this.currentTab = name
-      this.$router.push(`/data/${this.id}/visning/${name}`)
-    },
     getAssetLink (id) {
       const img = this.$store.state.DatasetsAssets.data.find((e) => {
         return id === e.id
@@ -310,25 +306,10 @@ export default {
     },
     getFormatInfo (id) {
       const allFormats = [...this.downloadTypeList, ...this.serviceTypeList]
-      const infoItem = allFormats.find(item => item.id === id)
-      return infoItem
+      return allFormats.find(item => item.id === id)
     },
     findService (id) {
       return this.$store.state.DatasetsServices.data.find(service => service.id === id)
-    },
-    navigateToFieldDescription (fieldId) {
-      // this.$refs['UiTabbedContent'].onSelect(this.$refs['databeskrivelse'])
-      this.$router.push(`/data/${this.id}/visning/beskrivelse`)
-      this.$nextTick(() => {
-        setTimeout(() => {
-          this.scrollToField('fieldList_' + fieldId)
-        }, 700)
-      })
-    },
-    scrollToField (id) {
-      const element = document.getElementById(id)
-      element.scrollIntoView()
-      this.highlightElement(element)
     },
     highlightElement (element) {
       setTimeout(() => {
