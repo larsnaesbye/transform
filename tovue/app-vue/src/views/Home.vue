@@ -46,12 +46,6 @@ export default {
     }
   },
   computed: {
-    dataStatus() {
-      return this.$store.state.DatasetData.status || 'loading'
-    },
-    metaStatus() {
-      return this.$store.state.DatasetMeta.status || 'loading'
-    },
     id() {
       return Number(this.dataId) || -1
     },
