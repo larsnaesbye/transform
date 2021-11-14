@@ -141,52 +141,6 @@ export default {
       this.$store.dispatch('DatasetsAttributes/get')
       this.$store.dispatch('DatasetsServices/get')
     },
-    setFilter(prop, filter, data) {
-      if (filter.type === 'multiselect') {
-        let options = []
-        if ((!Array.isArray(filter.options) || filter.options.length === 0) && data) {
-          // getting options by finding all unique values in columns
-          const fieldData = data.map((row) => row[filter.fieldId])
-          options = [...new Set(fieldData)].sort()
-        } else {
-          options = filter.options
-        }
-
-        // setting filter initValue
-        const value = (!filter.initValue || filter.initValue === '_all') ? options : filter.initValue
-
-        // adding (or replacing) the filter
-        this.$set(prop, [filter.name], {
-          label: filter.label,
-          value: value,
-          options: options,
-          name: filter.name,
-          type: filter.type,
-          fieldId: filter.fieldId
-        })
-      } else if (filter.type === 'search') {
-        this.$set(prop, [filter.name], {
-          label: filter.label,
-          type: filter.type,
-          value: ''
-        })
-      } else if (filter.type === 'columnFilter') {
-        const shownColumns = []
-        const labels = []
-        this.tableSettings.columnDef.forEach((column) => {
-          shownColumns.push(column.fieldId)
-          labels[column.fieldId] = column.label
-        })
-        this.$set(prop, [filter.name], {
-          label: filter.label,
-          name: filter.name,
-          type: filter.type,
-          value: shownColumns,
-          options: shownColumns,
-          labels: labels
-        })
-      }
-    },
     resetAllFilters() {
       if (this.tableSettings && this.tableSettings.filterDef) {
         this.tableSettings.filterDef.forEach((filter) => {
