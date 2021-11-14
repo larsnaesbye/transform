@@ -269,10 +269,10 @@ export const datasetMeta = {
     2934: { // Energiproducent tælling
         RESTInfo: {
             serviceName: 'ept',
-            // rootKey: 'selskaber'
+            rootKey: 'selskaber'
         },
         views: [
-            {label: 'Tabel', type: 'table'},
+            // {label: 'Tabel', type: 'table'},
             {label: 'Kort', type: 'map'}
         ],
         logos: [
