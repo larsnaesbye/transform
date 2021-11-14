@@ -127,11 +127,11 @@ export default {
         if (this.dataset) {
           this.shownColumns = []
           const views = this.dataset.views.map(view => view.type)
-          // this.$store.dispatch('DatasetData/get', {id: 2934, views: views}).then(resp => {
-          //   this.data = this.$store.state.DatasetData.data.table
-          //   this.mapData = this.$store.state.DatasetData.data.map
-          //   this.resetAllFilters()
-          // })
+          this.$store.dispatch('DatasetData/get', {id: 2934, views: views}).then(resp => {
+            this.data = this.$store.state.DatasetData.data.table
+            this.mapData = this.$store.state.DatasetData.data.map
+            // this.resetAllFilters()
+          })
         }
       })
       // getting stuff for the downloads and services
