@@ -126,9 +126,6 @@ export default {
       this.$store.dispatch('DatasetMeta/get', '2934').then(result => {
         if (this.dataset) {
           this.shownColumns = []
-          // this.tableSettings.columnDef.forEach((column) => {
-          //   this.shownColumns.push(column.fieldId)
-          // })
           const views = this.dataset.views.map(view => view.type)
           this.$store.dispatch('DatasetData/get', {id: 2934, views: views}).then(resp => {
             this.data = this.$store.state.DatasetData.data.table
@@ -167,16 +164,7 @@ export default {
               }
             })
           })
-        } else
-            //   if (filter.type === 'search') {
-            //   rows = rows.filter((row) => {
-            //     return Object.keys(row).some((key) => {
-            //       return String(row[key]).toLowerCase().indexOf(filter.value.toLowerCase()) > -1
-            //     })
-            //   })
-            // }
-            //   else
-        if (filter.type === 'columnFilter') {
+        } else if (filter.type === 'columnFilter') {
           this.shownColumns = filter.value
         }
       }
