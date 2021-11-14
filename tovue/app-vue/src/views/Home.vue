@@ -110,7 +110,7 @@ export default {
       // )
       // this.data = this.$store.state.DatasetData.data.table
       this.mapData = this.$store.state.DatasetData.data.map
-      this.resetAllFilters()
+      // this.resetAllFilters()
     } else {
       this.initDatasetData()
     }
