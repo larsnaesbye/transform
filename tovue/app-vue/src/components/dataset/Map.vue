@@ -46,7 +46,7 @@ export default {
   props: {
     datasetId: {
       type: Number,
-      required: true
+      required: false
     },
     data: {
       type: Array,
