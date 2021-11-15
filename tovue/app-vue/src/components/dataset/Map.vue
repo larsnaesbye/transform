@@ -436,7 +436,7 @@ export default {
 
 <style lang="stylus">
 .map-container.normal
-  height auto
+  height 40rem
 
 #map
   width 100%
