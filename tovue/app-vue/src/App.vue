@@ -63,5 +63,5 @@ div#main
   width 100%
 
 #router-view
-  // min-height 20rem
+  height 100%
 </style>
