@@ -1,5 +1,5 @@
 <template>
-  <div class="map-container position-relative" :class="fullScreen ? 'full-screen' : 'normal'">
+  <div class="map-container position-relative">
     <div id="map" ref="map">
       <h2 v-if="status === 'loading' || status === 'initializing'" class="loader">Henter kort...</h2>
     </div>
@@ -435,7 +435,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.map-container.normal
+.map-container
   height 40rem
 
 #map
