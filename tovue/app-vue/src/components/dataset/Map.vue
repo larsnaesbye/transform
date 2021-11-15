@@ -439,9 +439,8 @@ export default {
   height 40rem
 
 #map
-  width 100vh
-  height 100vh
-  position: absolute
+  width 100%
+  height 100%
 
 #marker-popup
   display inline-block
