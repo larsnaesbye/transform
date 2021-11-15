@@ -33,8 +33,7 @@ export default {
 footer
   position absolute
   bottom: 0;
-  left: 0;
-  z-index: 0;
+  left: 20;
 
 section
   padding 3.5vw 10vw 3.5vw 10vw
