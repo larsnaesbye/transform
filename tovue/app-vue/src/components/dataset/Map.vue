@@ -5,7 +5,6 @@
     </div>
     <MapControls
         id="map__controls-box"
-        v-if="status === 'ready'"
         @zoom-out="zoom('out')"
         @zoom-in="zoom('in')"
         :filterDef="filters"
@@ -17,9 +16,6 @@
     </MapControls>
     <MapInput
         id="map__input-box"
-        v-if="status === 'ready'"
-        @zoom-out="zoom('out')"
-        @zoom-in="zoom('in')"
         :filterDef="filters"
         :mapSettings="mapSettings"
         @update-filters="updateFilters"
