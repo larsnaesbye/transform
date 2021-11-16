@@ -31,7 +31,7 @@ import WMTSTileGrid from 'ol/tilegrid/WMTS'
 import {fromLonLat, get as getProjection} from 'ol/proj'
 import {register} from 'ol/proj/proj4'
 import proj4 from 'proj4/dist/proj4'
-import {createClusterLayer, createFeaturesLayer, createTileLayer} from '@/components/dataset/MapFunctions.js'
+import {createTileLayer} from '@/components/dataset/MapFunctions.js'
 import MapControls from '@/components/dataset/MapControls'
 import MapInput from "@/components/dataset/MapInput";
 
@@ -216,9 +216,6 @@ export default {
       })
       return layers
     },
-    createMarkersFromData(data, visualizationDef) {
-      return []
-    },
     createProjection(name, settings, extent) {
       proj4.defs(name, settings)
       register(proj4)
@@ -234,21 +231,6 @@ export default {
       } else {
         view.animate({zoom: view.getZoom() - factor})
       }
-    },
-    resetMarkersLayer() {
-      let currentLayer = null
-      this.map.getLayers().forEach((layer) => {
-        if (this.currentClusterLayerId === layer.ol_uid) {
-          currentLayer = layer
-        }
-      })
-      if (currentLayer) {
-        this.map.removeLayer(currentLayer)
-      }
-      const markers = this.createMarkersFromData(this.data, this.visualizationDef)
-      const clusterLayer = this.clustering ? createClusterLayer(markers) : createFeaturesLayer(markers)
-      this.currentClusterLayerId = clusterLayer.ol_uid
-      this.map.addLayer(clusterLayer)
     },
     updateFilters(filters) {
       this.$emit('filters-updated', filters)
