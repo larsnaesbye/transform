@@ -164,12 +164,12 @@ export default {
       }
       this.tileLayers = this.createLayers(this.layerSettings, auth)
       this.map = this.createMap(this.tileLayers, projection)
-      if (this.visualizationDef && this.visualizationDef.markers) {
-        const markers = this.createMarkersFromData(this.data, this.visualizationDef)
-        const clusterLayer = this.clustering ? createClusterLayer(markers) : createFeaturesLayer(markers)
-        this.currentClusterLayerId = clusterLayer.ol_uid
-        this.map.addLayer(clusterLayer)
-      }
+      // if (this.visualizationDef && this.visualizationDef.markers) {
+      //   const markers = this.createMarkersFromData(this.data, this.visualizationDef)
+      //   const clusterLayer = this.clustering ? createClusterLayer(markers) : createFeaturesLayer(markers)
+      //   this.currentClusterLayerId = clusterLayer.ol_uid
+      //   this.map.addLayer(clusterLayer)
+      // }
       this.status = 'ready'
     },
     createMap(tileLayers, projection) {
@@ -184,17 +184,6 @@ export default {
           projection: projection
         })
       })
-    },
-    createOverlay(elementId) {
-      const container = document.getElementById(elementId)
-      const overlay = new Overlay({
-        element: container,
-        autoPan: false,
-        autoPanAnimation: {
-          duration: 250
-        }
-      })
-      return overlay
     },
     createLayers(layerSettings, auth) {
       const layers = []
