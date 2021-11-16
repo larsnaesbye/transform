@@ -98,13 +98,7 @@ export default {
         (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
     ) {
       this.shownColumns = []
-      // this.tableSettings.columnDef.forEach((column) => {
-      //   this.shownColumns.push(column.fieldId)
-      // }
-      // )
-      // this.data = this.$store.state.DatasetData.data.table
       this.mapData = this.$store.state.DatasetData.data.map
-      // this.resetAllFilters()
     } else {
       this.initDatasetData()
     }
@@ -165,7 +159,7 @@ export default {
       return rows
     },
     updateMapDataFilters(filters) {
-      this.mapData = this.filterData(this.$store.state.DatasetData.data.map, filters)
+      // this.mapData = this.filterData(this.$store.state.DatasetData.data.map, filters)
     },
     getAssetLink(id) {
       const img = this.$store.state.DatasetsAssets.data.find((e) => {
@@ -194,7 +188,6 @@ p
   width 100%
   height: 48vw
   border none
-  // box-shadow 0 0 4px var(--lightGrey)
   border-radius 8px
   overflow hidden
   border 4px solid var(--darkSteel)
