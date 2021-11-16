@@ -126,7 +126,7 @@ export default {
   watch: {
     data() {
       if (this.status === 'ready') {
-        this.resetMarkersLayer()
+        // this.resetMarkersLayer()
         this.map.updateSize()
       } else if (status === 'loading') {
         this.initMap()
