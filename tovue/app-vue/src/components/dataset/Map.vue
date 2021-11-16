@@ -84,19 +84,19 @@ export default {
           name: 'dtk_skaermkort',
           type: 'WMTS',
           title: 'Skærmkort dæmpet',
-          service: 'topo_skaermkort'
+          service: 'topo_skaermkort_DAF'
         },
         {
           name: 'dtk_skaermkort',
           type: 'WMTS',
           title: 'Skærmkort',
-          service: 'topo_skaermkort'
+          service: 'topo_skaermkort_DAF'
         },
         {
           name: 'orto_foraar',
           type: 'WMTS',
           title: 'Ortofoto',
-          service: 'orto_foraar'
+          service: 'orto_foraar_wmts_DAF'
         },
         {
           name: 'dagi',
