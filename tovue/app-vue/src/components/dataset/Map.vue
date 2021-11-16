@@ -10,7 +10,6 @@
         :filterDef="filters"
         :mapSettings="mapSettings"
         @update-filters="updateFilters"
-        @toggle-clustering="toggleClustering"
         :clustering="clustering"
     >
     </MapControls>
@@ -19,7 +18,6 @@
         :filterDef="filters"
         :mapSettings="mapSettings"
         @update-filters="updateFilters"
-        @toggle-clustering="toggleClustering"
         :clustering="clustering"
     >
     </MapInput>
@@ -172,106 +170,7 @@ export default {
         this.currentClusterLayerId = clusterLayer.ol_uid
         this.map.addLayer(clusterLayer)
       }
-      // if (this.visualizationDef && this.visualizationDef.markers && this.visualizationDef.markers.popup) {
-      //   const overlay = this.createOverlay('marker-popup')
-      //   this.map.addOverlay(overlay)
-      //   this.map.on('singleclick', (event) => {
-      //     const coordinate = event.coordinate
-      //     overlay.setPosition(coordinate)
-      //
-      //     let features = []
-      //     const self = this
-      //     this.map.forEachFeatureAtPixel(
-      //       event.pixel,
-      //       function (feature, layer) {
-      //         features = self.clustering ? feature.get('features') : [feature]
-      //       },
-      //       {
-      //         hitTolerance: 3
-      //       }
-      //     )
-      //     this.selectedMarkerData = []
-      //     for (let i = 0; i < features.length; i++) {
-      //       const feature = features[i]
-      //       const titleId = this.visualizationDef.markers.popupTitleFieldId
-      //       const secondLevelHeader = this.visualizationDef.markers.secondLevelHeader
-      //       const secondLevelTitleField = this.visualizationDef.markers.secondLevelTitleFieldId
-      //       const markerIdField = this.visualizationDef.markers.markerIdField || ''
-      //       const data = this.data
-      //
-      //       const featureDataIndex = data.findIndex(item => item[markerIdField] === feature.get('id'))
-      //       const featureData = data[featureDataIndex]
-      //       const popupData = {}
-      //       popupData.elements = []
-      //       for (const key in featureData) {
-      //         const val = featureData[key]
-      //         if (
-      //           ((typeof val === 'string') || (typeof val === 'number') || (typeof val === 'boolean')) &&
-      //           key !== titleId
-      //         ) {
-      //           const labelIndex = this.columnDef.findIndex(col => col.fieldId === key)
-      //           if (labelIndex !== -1) {
-      //             const label = this.columnDef[labelIndex].label
-      //             popupData.elements.push({ label: label, value: val })
-      //           }
-      //         } else if (Array.isArray(val)) {
-      //           const list = []
-      //           val.forEach(item => {
-      //             const listProperties = []
-      //             for (const key2 in item) {
-      //               const val = item[key2]
-      //               const labelIndex = this.columnDef.findIndex(col => col.fieldId === key2)
-      //               if (labelIndex !== -1) {
-      //                 const label = this.columnDef[labelIndex].label
-      //                 listProperties.push({ label: label, value: val, active: false })
-      //               }
-      //             }
-      //             const label = item[secondLevelTitleField]
-      //             list.push({ label: label, value: listProperties, active: false })
-      //           })
-      //           popupData.elements.push({ label: secondLevelHeader, value: list, active: false })
-      //         }
-      //       }
-      //       popupData.elements = popupData.elements.reverse()
-      //       popupData.title = featureData[titleId]
-      //       popupData.active = features.length === 1
-      //       popupData.anlaeg = featureData.anlaeg
-      //       this.selectedMarkerData.push(popupData)
-      //     }
-      //     if (features[0]) {
-      //       this.showPopup = true
-      //     } else {
-      //       this.showPopup = false
-      //     }
-      //     const popup = document.getElementById('marker-popup')
-      //     popup.scrollTop = 0
-      //   })
-      //   this.map.on('dblclick', (event) => {
-      //     const coordinate = event.coordinate
-      //     overlay.setPosition(coordinate)
-      //
-      //     let features = []
-      //     const self = this
-      //     this.map.forEachFeatureAtPixel(
-      //       event.pixel,
-      //       function (feature, layer) {
-      //         features = self.clustering ? feature.get('features') : [feature]
-      //       },
-      //       {
-      //         hitTolerance: 1
-      //       }
-      //     )
-      //     if (features[0]) {
-      //       const extent = features[0].getGeometry().getExtent().slice(0)
-      //       for (let i = 0; i < features.length; i++) {
-      //         olExtent.extend(extent, features[i].getGeometry().getExtent())
-      //       }
-      //       this.map.getView().fit(extent, this.map.getSize())
-      //     }
-      //   })
-      // }
       this.status = 'ready'
-      // console.log('map initialized')
     },
     createMap(tileLayers, projection) {
       return new Map({
@@ -336,49 +235,7 @@ export default {
       return layers
     },
     createMarkersFromData(data, visualizationDef) {
-      const markers = []
-      const markerIcon = visualizationDef.markerIcon || {}
-      const markerSize = visualizationDef.markerSize || {}
-      const markerIdField = visualizationDef.markers.markerIdField || ''
-      const markerGeometryField = visualizationDef.markers.markerGeometryField || ''
-
-      const utm = '+proj=utm +zone=32'
-      const wgs84 = '+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs'
-
-      const allCoords = []
-      const allSizes = []
-      const withoutCoords = []
-      // for (let i = 0; i < data.length; i++) {
-      //   const row = data[i]
-      //   const coords = row[markerGeometryField].replace('POINT (', '').replace(')', '').split(' ')
-      //   const x = Number(String(coords[0]).split(',').join('.'))
-      //   const y = Number(String(coords[1]).split(',').join('.'))
-      //   if (!isNaN(x) && !isNaN(y)) {
-      //     const marker = {}
-      //     const coord = proj4(utm, wgs84, [x, y])
-      //     marker.lon = coord[0]
-      //     marker.lat = coord[1]
-      //
-      //     const iconType = markerIcon && markerIcon.dataFieldId && row[markerIcon.dataFieldId] ? String(row[markerIcon.dataFieldId]) : 'default'
-      //     const iconUrl = iconType && markerIcon.iconMap && markerIcon.iconMap[iconType] ? markerIcon.iconMap[iconType] : 'default'
-      //     marker.iconUrl = iconUrl
-      //
-      //     const sizeFieldValue = markerSize && markerSize.dataFieldId ? String(row[markerSize.dataFieldId]) : null
-      //     const size = sizeFieldValue && markerSize.sizeMap && !isNaN(markerSize.sizeMap[sizeFieldValue]) ? markerSize.sizeMap[sizeFieldValue] : 1
-      //
-      //     marker.size = size
-      //     marker.id = row[markerIdField]
-      //     markers[i] = marker
-      //
-      //     // just for dev purposes
-      //     allCoords.push(x + '-' + y)
-      //     allSizes.push(sizeFieldValue)
-      //   } else {
-      //     // just for dev purposes
-      //     withoutCoords.push(row)
-      //   }
-      // }
-      return markers
+      return []
     },
     createProjection(name, settings, extent) {
       proj4.defs(name, settings)
