@@ -90,7 +90,7 @@ export default {
           name: 'dtk_skaermkort',
           type: 'WMTS',
           title: 'Skærmkort',
-          service: 'topo_skaermkort_DAF'
+          service: 'topo_skaermkort_wmts_DAF'
         },
         {
           name: 'orto_foraar',
