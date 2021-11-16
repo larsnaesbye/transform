@@ -1,5 +1,5 @@
-import { Tile as TileLayer, Vector as VectorLayer, VectorTile as VectorTileLayer } from 'ol/layer'
-import { Cluster, WMTS, TileWMS, Vector as VectorSource } from 'ol/source'
+import { Tile as TileLayer} from 'ol/layer'
+import { WMTS, TileWMS} from 'ol/source'
 import { Circle as CircleStyle, Fill, Stroke, Style, Text, Icon } from 'ol/style'
 import Feature from 'ol/Feature'
 import Point from 'ol/geom/Point'
