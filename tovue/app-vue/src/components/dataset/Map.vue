@@ -84,7 +84,7 @@ export default {
           name: 'dtk_skaermkort',
           type: 'WMTS',
           title: 'Skærmkort dæmpet',
-          service: 'topo_skaermkort_DAF'
+          service: 'topo_skaermkort_daempet_DAF'
         },
         {
           name: 'dtk_skaermkort',
