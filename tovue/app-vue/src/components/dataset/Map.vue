@@ -31,7 +31,6 @@ import WMTSTileGrid from 'ol/tilegrid/WMTS'
 import {fromLonLat, get as getProjection} from 'ol/proj'
 import {register} from 'ol/proj/proj4'
 import proj4 from 'proj4/dist/proj4'
-import Overlay from 'ol/Overlay'
 import {createClusterLayer, createFeaturesLayer, createTileLayer} from '@/components/dataset/MapFunctions.js'
 import MapControls from '@/components/dataset/MapControls'
 import MapInput from "@/components/dataset/MapInput";
@@ -164,12 +163,6 @@ export default {
       }
       this.tileLayers = this.createLayers(this.layerSettings, auth)
       this.map = this.createMap(this.tileLayers, projection)
-      // if (this.visualizationDef && this.visualizationDef.markers) {
-      //   const markers = this.createMarkersFromData(this.data, this.visualizationDef)
-      //   const clusterLayer = this.clustering ? createClusterLayer(markers) : createFeaturesLayer(markers)
-      //   this.currentClusterLayerId = clusterLayer.ol_uid
-      //   this.map.addLayer(clusterLayer)
-      // }
       this.status = 'ready'
     },
     createMap(tileLayers, projection) {
@@ -233,17 +226,6 @@ export default {
       projection.setExtent(extent)
       return projection
     },
-    switchLayer() {
-      if (this.background === 'dtk_skaermkort_daempet') {
-        this.background = 'dtk_skaermkort'
-        this.dtk_skaermkort.setVisible(true)
-        this.dtk_skaermkort_daempet.setVisible(false)
-      } else {
-        this.background = 'dtk_skaermkort_daempet'
-        this.dtk_skaermkort.setVisible(false)
-        this.dtk_skaermkort_daempet.setVisible(true)
-      }
-    },
     zoom(type) {
       const view = this.map.getView()
       const factor = 1
@@ -270,11 +252,6 @@ export default {
     },
     updateFilters(filters) {
       this.$emit('filters-updated', filters)
-    },
-    toggleClustering(val) {
-      // this.clustering = val.target.checked
-      this.clustering = !this.clustering
-      this.resetMarkersLayer()
     }
   }
 }
