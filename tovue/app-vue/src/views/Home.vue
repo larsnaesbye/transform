@@ -3,14 +3,13 @@
     <Map
         :title="'Kortvisning'"
         name="kort"
-        class="layout-1col"
         :datasetId="id"
         :data="mapData"
         :filters="filters.map"
         :mapSettings="mapSettings"
         :columnDef="tableSettings.columnDef"
-        :active=true
-        @filters-updated="updateMapDataFilters"
+        :active="true"
+        class="layout-1col"
     />
   </main>
 </template>
