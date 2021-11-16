@@ -76,18 +76,18 @@ export default {
       status: 'loading',
       fullScreen: false,
       map: {},
-      background: 'dtk_skaermkort',
+      background: 'topo_skaermkort_daempet',
       token: '1fa17ba3b6fb58e8e6e8b09ba2b14be6',
       tileLayers: [],
       layerSettings: [
         {
-          name: 'dtk_skaermkort',
+          name: 'topo_skaermkort_daempet',
           type: 'WMTS',
           title: 'Skærmkort dæmpet',
           service: 'topo_skaermkort_daempet_DAF'
         },
         {
-          name: 'dtk_skaermkort',
+          name: 'topo_skaermkort',
           type: 'WMTS',
           title: 'Skærmkort',
           service: 'topo_skaermkort_wmts_DAF'
