@@ -11,7 +11,7 @@ import VectorTileSource from 'ol/source/VectorTile'
 import geojsonvt from 'geojson-vt'
 // import pin from '../../assets/Icons/map_pin.svg'
 
-import {ScaleLine, defaults as defaultControls} from 'ol/control'; // for our upcoming Scaleline at the bottom
+import {ScaleLine} from 'ol/control'; // for our upcoming Scaleline at the bottom
 
 const kfText = 'Styrelsen for Dataforsyning og Effektivisering'
 const kfLink = 'https://dataforsyningen.dk/asset/PDF/rettigheder_vilkaar/Vilk%C3%A5r%20for%20brug%20af%20frie%20geografiske%20data.pdf'
