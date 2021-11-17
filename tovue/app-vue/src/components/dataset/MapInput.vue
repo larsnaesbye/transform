@@ -5,10 +5,25 @@
       <select id="sel1">
         <option value="">Vælg koordinatsystem...</option>
       </select>
+      <Icon
+          icon="NorthingIcon"
+          :width=".11"
+          :height=".11"
+          :strokeWidth="0.3"
+          color="#000"
+      />
       <label for="sel2">Output</label>
       <select id="sel2">
         <option value="">Vælg koordinatsystem...</option>
       </select>
+      <Icon
+          icon="EastingIcon"
+          :width=".11"
+          :height=".11"
+          :strokeWidth="0.3"
+          color="#000"
+      />
+
     </header>
   </div>
 </template>
