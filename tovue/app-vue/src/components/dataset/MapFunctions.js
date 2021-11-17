@@ -36,12 +36,8 @@ const createUrl = function (service, auth) {
     return null
   }
 }
-export const scaleControl = function scaleControl() {
+export const scaleControl = function () {
   return new ScaleLine({
-    units: "metric",
-    bar: true,
-    // steps: scaleBarSteps,
-    // text: scaleBarText,
     minWidth: 140,
   });
 }
