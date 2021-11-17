@@ -165,11 +165,11 @@ export default {
       this.map = this.createMap(this.tileLayers, projection)
       this.status = 'ready'
       this.map.getViewport().style.cursor = "-webkit-grab";
-      this.map.on('pointerdrag', function(evt) {
+      this.map.on('movestart', function(evt) {
         this.map.getViewport().style.cursor = "-webkit-grabbing";
       });
 
-      this.map.on('pointerup', function(evt) {
+      this.map.on('moveend', function(evt) {
         this.map.getViewport().style.cursor = "-webkit-grab";
       });
     },
