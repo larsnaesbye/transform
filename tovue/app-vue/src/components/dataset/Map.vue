@@ -329,9 +329,9 @@ export default {
 .ol-scale-line
   background rgba(0, 60, 136, .3);
   border-radius 4px
-  bottom 8
-  right 8
-  left clear
-  padding 2
+  bottom 8px
+  right 8px
+  left auto
+  padding 2px
   position absolute;
 </style>
