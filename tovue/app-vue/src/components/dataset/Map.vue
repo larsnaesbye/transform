@@ -32,7 +32,7 @@ import {defaults as defaultControls, ScaleLine} from 'ol/control';
 import {fromLonLat, get as getProjection} from 'ol/proj'
 import {register} from 'ol/proj/proj4'
 import proj4 from 'proj4/dist/proj4'
-import {createTileLayer} from '@/components/dataset/MapFunctions.js'
+import {createTileLayer, scaleControl} from '@/components/dataset/MapFunctions.js'
 import MapControls from '@/components/dataset/MapControls'
 import MapInput from "@/components/dataset/MapInput";
 
@@ -236,15 +236,7 @@ export default {
     updateFilters(filters) {
       this.$emit('filters-updated', filters)
     },
-    scaleControl() {
-      return new ScaleLine({
-        units: "metric",
-        bar: true,
-        // steps: scaleBarSteps,
-        // text: scaleBarText,
-        minWidth: 140,
-      });
-    }
+
 
   }
 }

@@ -36,7 +36,15 @@ const createUrl = function (service, auth) {
     return null
   }
 }
-
+export const scaleControl = function scaleControl() {
+  return new ScaleLine({
+    units: "metric",
+    bar: true,
+    // steps: scaleBarSteps,
+    // text: scaleBarText,
+    minWidth: 140,
+  });
+}
 export const createTileLayer = function (opt) {
   // a lot of copy from okapi
   const name = opt.name || ''
