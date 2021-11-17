@@ -613,26 +613,7 @@ export const datasetMeta = {
             },
             clustering: true,
             visualizationDef: {
-                markers: {
-                    markerIdField: 'vaerk_lokalid',
-                    markerGeometryField: 'vaerk_geometri',
-                    popup: true,
-                    popupTitleFieldId: 'vaerk_navn',
-                    secondLevelTitleFieldId: 'anlaeg_navn',
-                    secondLevelHeader: 'Anlæg'
-                },
-                markerIcon: {
-                    dataFieldId: 'vaerk_hovedbraendselsgruppe',
-                    iconMap: {}
-                },
-                markerSize: {
-                    dataFieldId: 'vaerk_vaerkstoerrelse',
-                    sizeMap: {
-                        1: 0.85,
-                        2: 0.7,
-                        3: 0.5
-                    }
-                }
+
             },
             filterDef: [
                 {
