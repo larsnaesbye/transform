@@ -325,4 +325,8 @@ export default {
 #marker-popup p
   margin-top .5rem
   margin-bottom .5rem
+
+.ol-scale-line
+  right: 8
+  left clear
 </style>
