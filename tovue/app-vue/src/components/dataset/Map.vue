@@ -164,14 +164,6 @@ export default {
       this.tileLayers = this.createLayers(this.layerSettings, auth)
       this.map = this.createMap(this.tileLayers, projection)
       this.status = 'ready'
-      this.map.getViewport().style.cursor = "-webkit-grab";
-      this.map.on('movestart', function(evt) {
-        this.map.getViewport().style.cursor = "-webkit-grabbing";
-      });
-
-      this.map.on('moveend', function(evt) {
-        this.map.getViewport().style.cursor = "-webkit-grab";
-      });
     },
     createMap(tileLayers, projection) {
       return new Map({
