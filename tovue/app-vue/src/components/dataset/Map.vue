@@ -327,10 +327,10 @@ export default {
   margin-bottom .5rem
 
 #scaleline
-background rgba(0,60,136,.3);
-border-radius 4px
-bottom 8
-left 8
-padding 2
-position absolute;
+  background rgba(0, 60, 136, .3);
+  border-radius 4px
+  bottom 8
+  left 8
+  padding 2
+  position absolute;
 </style>
