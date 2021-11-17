@@ -39,6 +39,7 @@ const createUrl = function (service, auth) {
 export const scaleControl = function () {
   return new ScaleLine({
     minWidth: 140,
+    className: 'scaleline'
   });
 }
 export const createTileLayer = function (opt) {
