@@ -326,7 +326,7 @@ export default {
   margin-top .5rem
   margin-bottom .5rem
 
-.scaleline
+#scaleline
 background rgba(0,60,136,.3);
 border-radius 4px
 bottom 8
