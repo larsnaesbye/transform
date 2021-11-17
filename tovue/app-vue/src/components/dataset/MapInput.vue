@@ -1,13 +1,13 @@
 <template>
   <div class="map-input box">
     <header class="map-input__header">
-<!--      <label for="sel1">Input</label>-->
-<!--      <select id="sel1">-->
-<!--        <option value="">Vælg koordinatsystem...</option>-->
-<!--      </select>-->
       <UiDropdown
-          label="Vælg koordinatsystem..."
-      />
+          label="Vælg koordinatsystem...">
+        <!--      <label for="sel1">Input</label>-->
+        <select id="sel1">
+          <option value="">Vælg koordinatsystem...</option>
+        </select>
+      </UiDropdown>
 
       <Icon
           icon="NorthingIcon"
@@ -19,13 +19,14 @@
       <Search>
         :label=""
       </Search>
-<!--      <label for="sel2">Output</label>-->
-<!--      <select id="sel2">-->
-<!--        <option value="">Vælg koordinatsystem...</option>-->
-<!--      </select>-->
+      <!--      <label for="sel2">Output</label>-->
       <UiDropdown
           label="Vælg koordinatsystem..."
-      />
+      >
+        <select id="sel2">
+          <option value="">Vælg koordinatsystem...</option>
+        </select>
+      </UiDropdown>
       <Icon
           icon="EastingIcon"
           :width="1.0"
@@ -41,7 +42,6 @@
 <script>
 import Filtering from '@/components/shared/Filtering'
 import Search from "../shared/baseUi/UiInputSearch";
-import UiDropdown from "../shared/baseUi/UiDropdown";
 
 export default {
   components: {
