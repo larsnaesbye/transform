@@ -12,6 +12,7 @@
           :strokeWidth="0.3"
           color="#000"
       />
+      <Search></Search>
       <label for="sel2">Output</label>
       <select id="sel2">
         <option value="">Vælg koordinatsystem...</option>
@@ -30,9 +31,11 @@
 
 <script>
 import Filtering from '@/components/shared/Filtering'
+import Search from "../shared/baseUi/UiInputSearch";
 
 export default {
   components: {
+    Search,
     Filtering
   },
   props: {
