@@ -326,11 +326,12 @@ export default {
   margin-top .5rem
   margin-bottom .5rem
 
-#scaleline
+.ol-scale-line
   background rgba(0, 60, 136, .3);
   border-radius 4px
   bottom 8
-  left 8
+  right 8
+  left clear
   padding 2
   position absolute;
 </style>
