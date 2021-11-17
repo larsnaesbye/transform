@@ -1,6 +1,13 @@
 <template>
   <div class="map-input box">
     <header class="map-input__header">
+      <Icon
+          icon="EastingIcon"
+          :width="1.0"
+          :height="1.0"
+          :strokeWidth="1.0"
+          color="#000"
+      />
       <UiDropdown
           label="Vælg koordinatsystem...">
         <!--      <label for="sel1">Input</label>-->
@@ -9,24 +16,10 @@
         </select>
       </UiDropdown>
 
-      <Icon
-          icon="EastingIcon"
-          :width="1.0"
-          :height="1.0"
-          :strokeWidth="1.0"
-          color="#000"
-      />
       <Search>
-        :label=""
+        :label="Søg"
       </Search>
       <!--      <label for="sel2">Output</label>-->
-      <UiDropdown
-          label="Vælg koordinatsystem..."
-      >
-        <select id="sel2">
-          <option value="">Vælg koordinatsystem...</option>
-        </select>
-      </UiDropdown>
       <Icon
           icon="NorthingIcon"
           :width="1.0"
@@ -34,6 +27,13 @@
           :strokeWidth="1.0"
           color="#000"
       />
+      <UiDropdown
+          label="Vælg koordinatsystem..."
+      >
+        <select id="sel2">
+          <option value="">Vælg koordinatsystem...</option>
+        </select>
+      </UiDropdown>
 
     </header>
   </div>
