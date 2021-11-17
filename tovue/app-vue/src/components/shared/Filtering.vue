@@ -5,7 +5,7 @@
       :key="filter.name"
       class="filter"
       :class="filter.type"
-      :arie-label="'filter: ' + filter.label"
+      :aria-label="'filter: ' + filter.label"
     >
       <UiDropdown
         v-if="filter.type === 'multiselect'"

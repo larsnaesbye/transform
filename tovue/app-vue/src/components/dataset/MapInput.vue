@@ -48,7 +48,8 @@ import UiDropdown from "../shared/baseUi/UiDropdown";
 export default {
   components: {
     Search,
-    Filtering
+    Filtering,
+    UiDropdown,
   },
   props: {
     filterDef: {
