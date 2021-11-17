@@ -78,8 +78,6 @@ export default {
       map: {},
       background: 'topo_skaermkort_daempet',
       token: '1fa17ba3b6fb58e8e6e8b09ba2b14be6',
-      username: 'LCTNUGNNHG',
-      password:'Jotu*5jellefikadt',
       tileLayers: [],
       layerSettings: [
         {
@@ -128,6 +126,7 @@ export default {
   watch: {
     data() {
       if (this.status === 'ready') {
+        // this.resetMarkersLayer()
         this.map.updateSize()
       } else if (status === 'loading') {
         this.initMap()
@@ -170,6 +169,7 @@ export default {
       return new Map({
         target: 'map',
         layers: tileLayers,
+        // controls: defaultControls().extend([scaleControl()]),
         controls: [scaleControl()],
         view: new View({
           center: fromLonLat(this.mapConstants.center, 'EPSG:25832'),
@@ -198,7 +198,6 @@ export default {
             matrixSet: 'View1',
             format: 'image/jpeg',
             tileGrid: tileGrid,
-            source: 'df',
             auth: auth
           }))
         } else if (layer.type === 'WMS') {
@@ -211,7 +210,7 @@ export default {
             layer: layer.layer,
             style: 'red',
             format: 'image/png',
-            source: 'df',
+            source: 'kf',
             auth: auth
           }))
         }
