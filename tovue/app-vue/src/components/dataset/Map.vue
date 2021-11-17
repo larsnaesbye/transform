@@ -28,6 +28,7 @@
 import 'ol/ol.css'
 import {Map, View} from 'ol'
 import WMTSTileGrid from 'ol/tilegrid/WMTS'
+import {defaults as defaultControls, ScaleLine} from 'ol/control';
 import {fromLonLat, get as getProjection} from 'ol/proj'
 import {register} from 'ol/proj/proj4'
 import proj4 from 'proj4/dist/proj4'
@@ -169,7 +170,7 @@ export default {
       return new Map({
         target: 'map',
         layers: tileLayers,
-        controls: [],
+        controls: defaultControls().extend([scaleControl()]),
         view: new View({
           center: fromLonLat(this.mapConstants.center, 'EPSG:25832'),
           zoom: 3,
@@ -234,7 +235,17 @@ export default {
     },
     updateFilters(filters) {
       this.$emit('filters-updated', filters)
+    },
+    scaleControl() {
+      return new ScaleLine({
+        units: "metric",
+        bar: true,
+        // steps: scaleBarSteps,
+        // text: scaleBarText,
+        minWidth: 140,
+      });
     }
+
   }
 }
 </script>
