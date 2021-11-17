@@ -19,7 +19,7 @@
       <Search>
         :label="Søg"
       </Search>
-      <h3>Input</h3>
+      <h3>Output</h3>
 
       <Icon
           icon="NorthingIcon"
@@ -43,6 +43,7 @@
 <script>
 import Filtering from '@/components/shared/Filtering'
 import Search from "../shared/baseUi/UiInputSearch";
+import UiDropdown from "../shared/baseUi/UiDropdown";
 
 export default {
   components: {
