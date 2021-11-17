@@ -10,7 +10,7 @@
       </UiDropdown>
 
       <Icon
-          icon="NorthingIcon"
+          icon="EastingIcon"
           :width="1.0"
           :height="1.0"
           :strokeWidth="1.0"
@@ -28,7 +28,7 @@
         </select>
       </UiDropdown>
       <Icon
-          icon="EastingIcon"
+          icon="NorthingIcon"
           :width="1.0"
           :height="1.0"
           :strokeWidth="1.0"
