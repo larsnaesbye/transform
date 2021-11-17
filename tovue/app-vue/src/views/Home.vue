@@ -1,7 +1,6 @@
 <template>
   <main id="main" ref="main">
     <Map
-        :title="'Kortvisning'"
         name="kort"
         :datasetId="id"
         :data="mapData"
