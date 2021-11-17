@@ -20,7 +20,6 @@
 export default {
   name: 'Brand',
   components: {
-    WebAppLogo: () => import('@/components/shared/icons/WebAppLogo')
   },
   data() {
     return {
@@ -29,17 +28,6 @@ export default {
     }
   },
   computed: {
-    dynamicLogo() {
-      // eslint-disable-next-line one-var
-      const date = new Date(),
-          month = date.getMonth() + 1,
-          day = date.getDate()
-      return ((day === 31) && (month === 10))
-          ? 'scary-pumpkin'
-          : (month === 12)
-              ? 'christmas-crown-logo'
-              : 'CrownCirclesLogo'
-    }
   },
   methods: {
     hover(colors) {
