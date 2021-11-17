@@ -170,7 +170,8 @@ export default {
       return new Map({
         target: 'map',
         layers: tileLayers,
-        controls: defaultControls().extend([scaleControl()]),
+        // controls: defaultControls().extend([scaleControl()]),
+        controls: scaleControl(),
         view: new View({
           center: fromLonLat(this.mapConstants.center, 'EPSG:25832'),
           zoom: 3,
