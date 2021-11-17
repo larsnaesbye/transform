@@ -325,9 +325,6 @@ export default {
 #marker-popup p
   margin-top .5rem
   margin-bottom .5rem
-
-.scale
-  right 10
-  bottom 10
-  position absolute
+#scale
+  right: 0px
 </style>
