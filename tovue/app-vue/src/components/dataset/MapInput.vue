@@ -7,21 +7,23 @@
       </select>
       <Icon
           icon="NorthingIcon"
-          :width=".11"
-          :height=".11"
-          :strokeWidth="0.3"
+          :width="1.0"
+          :height="1.0"
+          :strokeWidth="1.0"
           color="#000"
       />
-      <Search></Search>
+      <Search>
+        :label=""
+      </Search>
       <label for="sel2">Output</label>
       <select id="sel2">
         <option value="">Vælg koordinatsystem...</option>
       </select>
       <Icon
           icon="EastingIcon"
-          :width=".11"
-          :height=".11"
-          :strokeWidth="0.3"
+          :width="1.0"
+          :height="1.0"
+          :strokeWidth="1.0"
           color="#000"
       />
 
