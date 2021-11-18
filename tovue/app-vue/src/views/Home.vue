@@ -89,17 +89,17 @@ export default {
   },
   created() {
 
-    if (
-        (this.dataset) &&
-        (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
-        (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
-        (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
-    ) {
-      this.shownColumns = []
-      this.mapData = []
-    } else {
+    // if (
+    //     (this.dataset) &&
+    //     (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
+    //     (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
+    //     (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
+    // ) {
+    //   this.shownColumns = []
+    //   this.mapData = []
+    // } else {
       this.initDatasetData()
-    }
+    // }
   },
   mounted() {
 
