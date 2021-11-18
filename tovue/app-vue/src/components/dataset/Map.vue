@@ -342,5 +342,6 @@ export default {
   text-transform uppercase
   color black
   font-weight 700
-  font-size 12
+  font-size 12px
+  margin auto
 </style>
