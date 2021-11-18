@@ -327,7 +327,8 @@ export default {
   margin-bottom .5rem
 
 .ol-scale-line
-  background rgba(0, 60, 136, .3);
+  background transparent;
+  color black
   border-radius 4px
   bottom 8px
   right 8px
