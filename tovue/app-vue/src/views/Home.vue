@@ -44,9 +44,6 @@ export default {
     }
   },
   computed: {
-    // id() {
-    //   return Number(this.dataId) || -1
-    // },
     dataset() {
       return this.$store.state.DatasetMeta.data
     },
@@ -88,18 +85,7 @@ export default {
     }
   },
   created() {
-
-    // if (
-    //     (this.dataset) &&
-    //     (Array.isArray(this.$store.state.DatasetData.data.table) && this.$store.state.DatasetData.data.table[0]) &&
-    //     (Array.isArray(this.$store.state.DatasetsAttributes.data) && this.$store.state.DatasetsAttributes.data[0]) &&
-    //     (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
-    // ) {
-    //   this.shownColumns = []
-    //   this.mapData = []
-    // } else {
-      this.initDatasetData()
-    // }
+    this.initDatasetData()
   },
   mounted() {
 
@@ -107,20 +93,15 @@ export default {
   watch: {},
   methods: {
     initDatasetData() {
-      // this.$store.commit('DatasetData/clear')
-      // getting dataset-metadata and -data
       this.$store.dispatch('DatasetMeta/get', '2934').then(result => {
         if (this.dataset) {
           this.shownColumns = []
           const views = this.dataset.views.map(view => view.type)
           this.$store.dispatch('DatasetData/get', {id: 2934, views: views}).then(resp => {
-            // this.data = this.$store.state.DatasetData.data.table
             this.mapData = this.$store.state.DatasetData.data.map
           })
         }
       })
-      // getting stuff for the downloads and services
-      // this.$store.dispatch('DatasetsAttributes/get')
       this.$store.dispatch('DatasetsServices/get')
     },
     getAssetLink(id) {
