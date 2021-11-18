@@ -173,7 +173,7 @@ export default {
         controls: [scaleControl()],
         view: new View({
           center: fromLonLat(this.mapConstants.center, 'EPSG:25832'),
-          zoom: 3,
+          zoom: 5,
           maxZoom: 15,
           projection: projection
         })
