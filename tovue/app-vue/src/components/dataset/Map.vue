@@ -335,4 +335,7 @@ export default {
   left auto
   padding 2px
   position absolute;
+
+.ol-scale-line-inner
+  border 1 solid #000
 </style>
