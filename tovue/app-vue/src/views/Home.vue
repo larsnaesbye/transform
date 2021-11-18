@@ -124,13 +124,13 @@ export default {
       this.$store.dispatch('DatasetsAttributes/get')
       this.$store.dispatch('DatasetsServices/get')
     },
-    resetAllFilters() {
-      if (this.tableSettings && this.tableSettings.filterDef) {
-        this.tableSettings.filterDef.forEach((filter) => {
-          this.setFilter(this.filters.table, filter, this.data)
-        })
-      }
-    },
+    // resetAllFilters() {
+    //   if (this.tableSettings && this.tableSettings.filterDef) {
+    //     this.tableSettings.filterDef.forEach((filter) => {
+    //       this.setFilter(this.filters.table, filter, this.data)
+    //     })
+    //   }
+    // },
     filterData(rows, filters) {
       for (const key in filters) {
         const filter = filters[key]
