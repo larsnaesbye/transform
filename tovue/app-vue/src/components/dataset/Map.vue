@@ -341,5 +341,6 @@ export default {
   border-top none
   text-transform uppercase
   color black
-  font-weight 500
+  font-weight 700
+  font-size 12
 </style>
