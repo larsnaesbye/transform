@@ -37,7 +37,7 @@ export class ElasticSearch {
         state.status = 'loading'
       },
       success (state, data) {
-        state.data = parseData(data)
+        // state.data = parseData(data)
         state.status = 'success'
       },
       error (state) {
