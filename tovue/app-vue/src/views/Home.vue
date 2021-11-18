@@ -98,8 +98,7 @@ export default {
       this.shownColumns = []
       this.mapData = []
     } else {
-      this.shownColumns = []
-      this.mapData = []
+      this.initDatasetData()
     }
   },
   mounted() {
