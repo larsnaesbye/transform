@@ -109,7 +109,7 @@ export default {
     initDatasetData() {
       this.$store.commit('DatasetData/clear')
       // getting dataset-metadata and -data
-      this.$store.dispatch('DatasetMeta/get', '2934').then(result => {
+      // this.$store.dispatch('DatasetMeta/get', '2934').then(result => {
         if (this.dataset) {
           this.shownColumns = []
           const views = this.dataset.views.map(view => view.type)
@@ -118,7 +118,7 @@ export default {
             this.mapData = this.$store.state.DatasetData.data.map
           })
         }
-      })
+      // })
       // getting stuff for the downloads and services
       this.$store.dispatch('DatasetsAttributes/get')
       this.$store.dispatch('DatasetsServices/get')
