@@ -44,9 +44,9 @@ export default {
     }
   },
   computed: {
-    id() {
-      return Number(this.dataId) || -1
-    },
+    // id() {
+    //   return Number(this.dataId) || -1
+    // },
     dataset() {
       return this.$store.state.DatasetMeta.data
     },
