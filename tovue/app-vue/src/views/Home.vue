@@ -48,7 +48,7 @@ export default {
       return Number(this.dataId) || -1
     },
     dataset() {
-      return this.$store.state.DatasetMeta.data.id === 2934 ? this.$store.state.DatasetMeta.data : null
+      return this.$store.state.DatasetMeta.data
     },
     services() {
       return []
