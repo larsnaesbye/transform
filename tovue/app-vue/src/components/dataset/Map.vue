@@ -330,8 +330,8 @@ export default {
   background transparent;
   color black
   border-radius 4px
-  bottom 8px
-  right 8px
+  bottom 0px
+  right 0px
   left auto
   padding 2px
   position absolute;
