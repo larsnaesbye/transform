@@ -339,4 +339,7 @@ export default {
 .ol-scale-line-inner
   border 1px solid #000
   border-top none
+  text-transform uppercase
+  color black
+  font-weight 500
 </style>
