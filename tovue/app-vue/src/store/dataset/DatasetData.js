@@ -1,4 +1,3 @@
-import {ForsyningsdataApi} from '@/store/shared/ForsyningsdataREST'
 
 const query = (id) => {
         return id
