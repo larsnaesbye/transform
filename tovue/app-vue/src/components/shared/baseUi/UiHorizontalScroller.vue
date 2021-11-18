@@ -136,11 +136,9 @@ export default {
       const leftButton = this.$refs.buttonScrollLeft
       const rightButton = this.$refs.buttonScrollRight
       if (leftButton) {
-        // leftButton.style.bottom = 'calc(50% - ' + (leftButton.offsetHeight / 2) + 'px)'
         leftButton.style.left = (-1 * (leftButton.offsetWidth / 1)) + 'px'
       }
       if (rightButton) {
-        // rightButton.style.bottom = 'calc(50% - ' + (rightButton.offsetHeight / 2) + 'px)'
         rightButton.style.right = (-1 * (rightButton.offsetWidth / 1)) + 'px'
       }
     }

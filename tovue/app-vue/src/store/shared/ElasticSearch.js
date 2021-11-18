@@ -1,4 +1,3 @@
-// copy paste fra Dataforsyningen
 import axios from 'axios'
 
 export class ElasticSearch {
@@ -17,7 +16,6 @@ export class ElasticSearch {
           commit('request')
           axios.post(window.location.origin + '/' + path, query(data), { timeout: 5000 })
             .then((resp) => {
-              // console.log(path, resp)
               commit('success', resp.data)
               resolve(resp)
             })

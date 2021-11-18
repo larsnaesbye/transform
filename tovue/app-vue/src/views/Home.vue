@@ -96,9 +96,7 @@ export default {
       this.$store.dispatch('DatasetMeta/get', '2934').then(result => {
         if (this.dataset) {
           this.shownColumns = []
-          // this.$store.dispatch('DatasetData/get', {id: 2934, views: []}).then(resp => {
-            this.mapData = []
-          // })
+          this.mapData = []
         }
       })
       this.$store.dispatch('DatasetsServices/get')

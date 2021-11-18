@@ -16,7 +16,6 @@ import '@/assets/css/grid.css'
 
 import smoothscroll from 'smoothscroll-polyfill'
 import VTooltip from 'v-tooltip'
-// import 'pepjs'  pointer events polyfill (open layers i safari)
 
 Vue.use(VTooltip, {
   defaultBoundariesElement: document.body,
@@ -27,7 +26,6 @@ Vue.use(VTooltip, {
 
 smoothscroll.polyfill()
 
-// eslint-disable-next-line one-var
 const App = () => import('@/App'),
   axios = () => import(/* webpackChunkName: "axios" */'axios')
 
@@ -43,7 +41,6 @@ Vue.component(
 )
 
 window.addEventListener('DOMContentLoaded', () => {
-  // eslint-disable-next-line no-new
   new Vue({
     store,
     router,

@@ -1,7 +1,6 @@
 import { datasetMeta } from '@/MetaData'
 
 export const parseAssets = (data) => {
-  // eslint-disable-next-line one-var
   const state = [],
     array = data.hits ? data.hits.hits : data.docs
   for (let i = array.length - 1, c = 0; i > -1; --i, ++c) {
@@ -104,12 +103,7 @@ export const parseDataset = (data) => {
       tableSettings: {},
       sectors: []
     }
-  // add fields
-  // if (exist && datasetMeta[source.o_id].tableSettings && datasetMeta[source.o_id].tableSettings.columnDef) {
-  //   datasetMeta[source.o_id].tableSettings.columnDef.forEach(field => {
-  //     dataset.fields += field.label + ','
-  //   })
-  // }
+
 
   // add downloads
   if (exist && source.product_relations) {
