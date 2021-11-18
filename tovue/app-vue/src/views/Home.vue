@@ -149,7 +149,6 @@ p
 .dashboard-frame
   width 100%
   height: 48vw
-  border none
   border-radius 8px
   overflow hidden
   border 4px solid var(--darkSteel)
