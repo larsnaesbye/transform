@@ -105,11 +105,11 @@ export const parseDataset = (data) => {
       sectors: []
     }
   // add fields
-  if (exist && datasetMeta[source.o_id].tableSettings && datasetMeta[source.o_id].tableSettings.columnDef) {
-    datasetMeta[source.o_id].tableSettings.columnDef.forEach(field => {
-      dataset.fields += field.label + ','
-    })
-  }
+  // if (exist && datasetMeta[source.o_id].tableSettings && datasetMeta[source.o_id].tableSettings.columnDef) {
+  //   datasetMeta[source.o_id].tableSettings.columnDef.forEach(field => {
+  //     dataset.fields += field.label + ','
+  //   })
+  // }
 
   // add downloads
   if (exist && source.product_relations) {
