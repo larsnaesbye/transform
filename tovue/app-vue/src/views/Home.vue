@@ -107,7 +107,7 @@ export default {
   watch: {},
   methods: {
     initDatasetData() {
-      this.$store.commit('DatasetData/clear')
+      // this.$store.commit('DatasetData/clear')
       // getting dataset-metadata and -data
       this.$store.dispatch('DatasetMeta/get', '2934').then(result => {
         if (this.dataset) {
