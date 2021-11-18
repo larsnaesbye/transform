@@ -96,7 +96,7 @@ export default {
         (Array.isArray(this.$store.state.DatasetsServices.data) && this.$store.state.DatasetsServices.data[0])
     ) {
       this.shownColumns = []
-      this.mapData = this.$store.state.DatasetData.data.map
+      this.mapData = []
     } else {
       this.initDatasetData()
     }
