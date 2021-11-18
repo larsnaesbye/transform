@@ -337,5 +337,6 @@ export default {
   position absolute;
 
 .ol-scale-line-inner
-  border 1 solid #000
+  border 1px solid #000
+  border-top none
 </style>
