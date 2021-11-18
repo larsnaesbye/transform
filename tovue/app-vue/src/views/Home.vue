@@ -123,31 +123,6 @@ export default {
       // this.$store.dispatch('DatasetsAttributes/get')
       this.$store.dispatch('DatasetsServices/get')
     },
-    filterData(rows, filters) {
-      for (const key in filters) {
-        const filter = filters[key]
-        if ((filter.type === 'multiselect') && (Array.isArray(filter.value)) && (filter.options.length > filter.value.length)) {
-          rows = rows.filter((row) => {
-            return filter.value.some((val) => {
-              if (
-                  val === '' &&
-                  (row[filter.fieldId] === undefined ||
-                      row[filter.fieldId] === null ||
-                      row[filter.fieldId] === 'null' ||
-                      row[filter.fieldId] === '')
-              ) {
-                return true
-              } else {
-                return String(val) === String(row[filter.fieldId])
-              }
-            })
-          })
-        } else if (filter.type === 'columnFilter') {
-          this.shownColumns = filter.value
-        }
-      }
-      return rows
-    },
     getAssetLink(id) {
       const img = this.$store.state.DatasetsAssets.data.find((e) => {
         return id === e.id
