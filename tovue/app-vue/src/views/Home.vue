@@ -116,7 +116,6 @@ export default {
           this.$store.dispatch('DatasetData/get', {id: 2934, views: views}).then(resp => {
             this.data = this.$store.state.DatasetData.data.table
             this.mapData = this.$store.state.DatasetData.data.map
-            // this.resetAllFilters()
           })
         }
       })
@@ -124,13 +123,6 @@ export default {
       this.$store.dispatch('DatasetsAttributes/get')
       this.$store.dispatch('DatasetsServices/get')
     },
-    // resetAllFilters() {
-    //   if (this.tableSettings && this.tableSettings.filterDef) {
-    //     this.tableSettings.filterDef.forEach((filter) => {
-    //       this.setFilter(this.filters.table, filter, this.data)
-    //     })
-    //   }
-    // },
     filterData(rows, filters) {
       for (const key in filters) {
         const filter = filters[key]
@@ -155,9 +147,6 @@ export default {
         }
       }
       return rows
-    },
-    updateMapDataFilters(filters) {
-      // this.mapData = this.filterData(this.$store.state.DatasetData.data.map, filters)
     },
     getAssetLink(id) {
       const img = this.$store.state.DatasetsAssets.data.find((e) => {
