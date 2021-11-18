@@ -8,9 +8,9 @@ import { DatasetsServices } from '@/store/datasets/DatasetsServices'
 import { DatasetData } from '@/store/dataset/DatasetData'
 import { DatasetMeta } from '@/store/dataset/DatasetMeta'
 import { HomeAssets } from '@/store/home/HomeAssets'
-import { AboutAssets } from '@/store/about/AboutAssets'
+// import { AboutAssets } from '@/store/about/AboutAssets'
 // import { SupportAssets } from '@/store/support/SupportAssets'
-import { FooterAssets } from '@/store/footer/FooterAssets'
+// import { FooterAssets } from '@/store/footer/FooterAssets'
 
 Vue.use(Vuex)
 
@@ -23,8 +23,8 @@ export default new Vuex.Store({
     DatasetData,
     DatasetMeta,
     HomeAssets,
-    AboutAssets,
+    // AboutAssets,
     // SupportAssets,
-    FooterAssets
+    // FooterAssets
   }
 })
