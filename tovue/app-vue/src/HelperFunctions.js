@@ -68,26 +68,6 @@ export const download = function (content, fileName, mimeType) {
     location.href = 'data:application/octet-stream,' + encodeURIComponent(content) // only this mime type is supported
   }
 }
-export const dataToCsvString = function (columnDef, data) {
-  const headerRow = []
-  const dataRows = []
-  for (let i = 0; i < columnDef.length; i++) {
-    headerRow[i] = columnDef[i].label
-  }
-  for (let j = 0; j < data.length; j++) {
-    const dataRow = data[j]
-    const csvRow = []
-    for (let k = 0; k < columnDef.length; k++) {
-      const col = columnDef[k]
-      csvRow[k] = String(formatField(dataRow[col.fieldId], col.type, col.decimal, col.separator)).split(',').join('$_§')
-    }
-    dataRows[j] = csvRow
-  }
-  const csvArr = [headerRow, ...dataRows]
-  const stringified = stringify(csvArr).replace(/,/g, ';').split('$_§').join(',')
-  const BOM = '\uFEFF'
-  return BOM + stringified
-}
 export const copyToClipboard = (text) => {
   return window.navigator.clipboard.writeText((text || '')).then(
     () => { return { state: 'success' } },
@@ -109,64 +89,4 @@ export const loadImage = (url) => {
     highResImage.src = url
   })
   return promise
-}
-export const flattenEPT = (data, level) => {
-  const rows = []
-  data.forEach((selskab, index) => {
-    // LEVEL 1
-    if (selskab.vaerker && selskab.vaerker[0]) {
-      selskab.vaerker.forEach(vaerk => {
-        if (level === 'vaerk') {
-          const newRow = {}
-          for (const key in vaerk) {
-            newRow[key] = vaerk[key]
-          }
-          for (const key in selskab) {
-            if (key !== 'vaerker') {
-              newRow[key] = selskab[key]
-            }
-          }
-          rows.push(newRow)
-        }
-        if (level === 'anlaeg' && vaerk.anlaeg && Array.isArray(vaerk.anlaeg)) {
-          vaerk.anlaeg.forEach(anlaeg => {
-            const newRow = {}
-            for (const key in anlaeg) {
-              newRow[key] = anlaeg[key]
-            }
-            for (const key in vaerk) {
-              if (key !== 'anlaeg') {
-                newRow[key] = vaerk[key]
-              }
-            }
-            for (const key in selskab) {
-              if (key !== 'vaerker') {
-                newRow[key] = selskab[key]
-              }
-            }
-            rows.push(newRow)
-          })
-        }
-      })
-    } else {
-      rows.push(selskab)
-    }
-  })
-  return rows
-}
-export const hexToRgb = (hex) => {
-  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
-  hex = hex.slice(0, 7)
-  const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
-  hex = hex.replace(shorthandRegex, function (m, r, g, b) {
-    return r + r + g + g + b + b
-  })
-
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
-  // eslint-disable-next-line multiline-ternary
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null
 }
