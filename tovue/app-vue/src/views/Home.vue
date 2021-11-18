@@ -69,7 +69,7 @@ export default {
       return this.dataset ? this.dataset.summary : ''
     },
     image() {
-      return (this.dataset && this.datasetsAssets.length > 0) ? this.getAssetLink(this.dataset.image) : ''
+      return ''
     },
     tableSettings() {
       return this.dataset ? this.dataset.tableSettings : null
@@ -104,12 +104,6 @@ export default {
       })
       this.$store.dispatch('DatasetsServices/get')
     },
-    getAssetLink(id) {
-      const img = this.$store.state.DatasetsAssets.data.find((e) => {
-        return id === e.id
-      })
-      return img ? (window.location.origin + '/asset' + img.path + img.filename) : ''
-    }
   }
 }
 </script>
