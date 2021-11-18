@@ -11,7 +11,7 @@ export const getAll = () => {
   return {
     size: 9999,
     query: {
-      match_all: {}
+      // match_all: {}
     }
   }
 }
