@@ -78,7 +78,7 @@ export default {
       return this.dataset ? this.dataset.tableSettings : null
     },
     fields() {
-      return this.tableSettings ? this.tableSettings.columnDef : []
+      return []
     },
     mapSettings() {
       return this.dataset.mapSettings
