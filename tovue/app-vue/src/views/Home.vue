@@ -86,12 +86,7 @@ export default {
   watch: {},
   methods: {
     initDatasetData() {
-      this.$store.dispatch('DatasetMeta/get', '2934').then(() => {
-        // if (this.dataset) {
-        //   this.shownColumns = []
-        //   this.mapData = []
-        // }
-      })
+      this.$store.dispatch('DatasetMeta/get', '2934')
       this.$store.dispatch('DatasetsServices/get')
     },
   }
