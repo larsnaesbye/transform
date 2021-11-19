@@ -111,7 +111,11 @@ const query = () => {
     }
     return state
   },
-  crud = []
+  crud = new ElasticSearch(query, attributesSearch, parseData),
+  state = crud.state,
+  getters = crud.getters,
+  actions = crud.actions,
+  mutations = crud.mutations
 
 export const DatasetsAttributes = {
   namespaced: true,

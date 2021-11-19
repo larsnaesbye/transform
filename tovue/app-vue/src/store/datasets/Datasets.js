@@ -39,7 +39,11 @@ const query = () => {
       }
     }
   },
-  crud = []
+  crud = new ElasticSearch(query, productsSearch, parseDatasets),
+  state = crud.state,
+  getters = crud.getters,
+  actions = crud.actions,
+  mutations = crud.mutations
 
 export const Datasets = {
   namespaced: true,
