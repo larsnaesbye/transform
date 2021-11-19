@@ -32,7 +32,6 @@ export default {
   },
   data() {
     return {
-      currentTab: 'kort',
       filters: {
         table: {},
         map: {}
