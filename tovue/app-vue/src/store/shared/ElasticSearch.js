@@ -12,7 +12,18 @@ export class ElasticSearch {
 
     this.actions = {
       get ({ commit, dispatch }, data) {
-        return ""
+        return new Promise((resolve, reject) => {
+          commit('request')
+          axios.post(window.location.origin + '/' + path, query(data), { timeout: 5000 })
+            .then((resp) => {
+              commit('success', resp.data)
+              resolve(resp)
+            })
+            .catch((err) => {
+              commit('error', err)
+              reject(err)
+            })
+        })
       },
       clear ({ commit, dispatch }) {
         commit('clear')
