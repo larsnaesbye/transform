@@ -6,7 +6,7 @@
         :data="mapData"
         :filters="filters.map"
         :mapSettings="mapSettings"
-        columnDef=""
+        :columnDef="tableSettings.columnDef"
         :active="true"
         class="layout-1col"
     />
