@@ -5,7 +5,6 @@
         :datasetId="id"
         :data="mapData"
         :filters="filters.map"
-        :mapSettings="mapSettings"
         :active="true"
         class="layout-1col"
     />
@@ -69,9 +68,9 @@ export default {
     fields() {
       return []
     },
-    mapSettings() {
-      return this.dataset.mapSettings
-    },
+    // mapSettings() {
+    //   return this.dataset.mapSettings
+    // },
     dashboardSettings() {
       return this.dataset.dashboardSettings
     }
