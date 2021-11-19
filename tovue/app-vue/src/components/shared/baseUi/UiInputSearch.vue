@@ -10,7 +10,7 @@
     >
       {{ label }}:
     </label>
-    <input type="text" :value="value" @input="input" ref="searchInput" id="search">
+    <input type="text" :value="value" @input="input" ref="searchInput" id="search" placeholder="Søg">
     <Icon
         v-if="!showCloseIcon"
         icon="SearchIcon"
