@@ -2,7 +2,7 @@
   <div class="map-input box">
     <header class="map-input__header">
       <h3>Input</h3>
-      <UiDropdown
+      <UiDropdown label=""
       >
       </UiDropdown>
       <Icon
@@ -16,7 +16,7 @@
         :label="Søg"
       </Search>
       <h3>Output</h3>
-      <UiDropdown
+      <UiDropdown label=""
       >
       </UiDropdown>
       <Icon
