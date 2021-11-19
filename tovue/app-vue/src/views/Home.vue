@@ -68,9 +68,6 @@ export default {
     summary() {
       return this.dataset ? this.dataset.summary : ''
     },
-    image() {
-      return ''
-    },
     tableSettings() {
       return this.dataset ? this.dataset.tableSettings : null
     },
