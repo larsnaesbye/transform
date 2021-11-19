@@ -12,8 +12,8 @@
           :strokeWidth="1.0"
           color="#000"
       />
-      <Search>
-        :label="Søg"
+      <Search
+          label="">
       </Search>
       <h3>Output</h3>
       <UiDropdown label=""
