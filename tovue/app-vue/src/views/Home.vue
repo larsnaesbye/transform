@@ -88,8 +88,8 @@ export default {
     initDatasetData() {
       this.$store.dispatch('DatasetMeta/get', '2934').then(() => {
         // if (this.dataset) {
-          this.shownColumns = []
-          this.mapData = []
+        //   this.shownColumns = []
+        //   this.mapData = []
         // }
       })
       this.$store.dispatch('DatasetsServices/get')
