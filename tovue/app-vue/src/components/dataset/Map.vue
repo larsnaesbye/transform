@@ -149,7 +149,7 @@ export default {
   created() {
   },
   mounted() {
-    this.clustering = this.mapSettings.clustering
+    // this.clustering = this.mapSettings.clustering
     this.initMap()
   },
   methods: {
