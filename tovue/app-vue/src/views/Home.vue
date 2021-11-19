@@ -88,10 +88,10 @@ export default {
   methods: {
     initDatasetData() {
       this.$store.dispatch('DatasetMeta/get', '2934').then(() => {
-        if (this.dataset) {
+        // if (this.dataset) {
           this.shownColumns = []
           this.mapData = []
-        }
+        // }
       })
       this.$store.dispatch('DatasetsServices/get')
     },
