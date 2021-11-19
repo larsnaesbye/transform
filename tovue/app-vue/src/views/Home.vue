@@ -50,9 +50,6 @@ export default {
     services() {
       return []
     },
-    datasetsAssets() {
-      return this.$store.state.DatasetsAssets.data
-    },
     title() {
       const status = this.$store.state.DatasetMeta.status
       if (status === 'loading') {
