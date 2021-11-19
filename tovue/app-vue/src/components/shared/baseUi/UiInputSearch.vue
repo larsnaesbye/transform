@@ -1,34 +1,34 @@
 <template>
   <div
-    class="search-box__container"
-    @mouseenter.stop="isHovering = true"
-    @mouseleave.stop="isHovering = false"
+      class="search-box__container"
+      @mouseenter.stop="isHovering = true"
+      @mouseleave.stop="isHovering = false"
   >
-    <label
-      class="paragraph_micro"
-      for="search"
+    <label v-if='label!==""'
+           class="paragraph_micro"
+           for="search"
     >
       {{ label }}:
     </label>
     <input type="text" :value="value" @input="input" ref="searchInput" id="search">
     <Icon
-      v-if="!showCloseIcon"
-      icon="SearchIcon"
-      :width="2"
-      :height="2"
-      :color="$themeColors.dark"
-      :key="'searchIcon'"
-      class="search-icon"
+        v-if="!showCloseIcon"
+        icon="SearchIcon"
+        :width="2"
+        :height="2"
+        :color="$themeColors.dark"
+        :key="'searchIcon'"
+        class="search-icon"
     />
     <Icon
-      v-if="showCloseIcon"
-      icon="CloseIcon"
-      :width="2"
-      :height="2"
-      :color="$themeColors.dark"
-      :key="'searchCloseIcon'"
-      class="search-icon"
-      @click.native="resetSearch()"
+        v-if="showCloseIcon"
+        icon="CloseIcon"
+        :width="2"
+        :height="2"
+        :color="$themeColors.dark"
+        :key="'searchCloseIcon'"
+        class="search-icon"
+        @click.native="resetSearch()"
     />
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
       default: 'Søg'
     }
   },
-  data () {
+  data() {
     return {
       isHovering: false,
       showCloseIcon: false
@@ -55,11 +55,11 @@ export default {
   },
   computed: {},
   methods: {
-    input (event) {
+    input(event) {
       this.showCloseIcon = event.target.value.length > 0
       this.$emit('input', event.target.value)
     },
-    resetSearch () {
+    resetSearch() {
       this.$refs.searchInput.value = ''
       this.$refs.searchInput.focus()
       this.$emit('input', '')
@@ -83,7 +83,6 @@ export default {
   margin-left .5rem
 
 .search-box
-
 .search-box__container input
   display block
   width 100%
@@ -97,7 +96,7 @@ export default {
 
 .search-box__container input:focus
   outline none
-  border 1px solid rgba(0,0,0,0)
+  border 1px solid rgba(0, 0, 0, 0)
   box-shadow: 0 0 0 2pt var(--highlight);
 
 .search-icon
