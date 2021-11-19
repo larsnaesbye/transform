@@ -1,7 +1,7 @@
 <template>
   <div class="map-input box">
     <header class="map-input__header">
-      <h3>Input</h3>
+      <div><h3>Input</h3></div>
       <UiDropdown label=""
       >
       </UiDropdown>
