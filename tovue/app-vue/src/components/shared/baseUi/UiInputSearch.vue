@@ -76,7 +76,6 @@ export default {
   flex-grow 1
   min-width 200px
   position relative
-  flex-grow 1
   flex-shrink 1
 
 .search-box__container > label
