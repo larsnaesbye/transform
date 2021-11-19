@@ -2,12 +2,14 @@
   <div
     class="dropdown"
   >
-    <label
+    <>
+    <label v-if='label!==""'
       class="paragraph_micro"
       :for="label"
     >
       {{ label }}:
     </label>
+
     <div
       class="dropdown-input"
       v-click-outside="{
@@ -67,7 +69,7 @@ export default {
   props: {
     label: {
       type: String,
-      default: 'vælg'
+      default: ''
     }
   },
   data () {
