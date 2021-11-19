@@ -3,10 +3,7 @@
     <header class="map-input__header">
       <h3>Input</h3>
       <UiDropdown
-          label="Vælg koordinatsystem...">
-        <select id="sel1">
-          <option value="">Vælg koordinatsystem</option>
-        </select>
+          label="Vælg koordinatsystem">
       </UiDropdown>
       <Icon
           icon="EastingIcon"
@@ -20,11 +17,8 @@
       </Search>
       <h3>Output</h3>
       <UiDropdown
-          label="Vælg koordinatsystem..."
+          label="Vælg koordinatsystem"
       >
-        <select id="sel2">
-          <option value="">Vælg koordinatsystem</option>
-        </select>
       </UiDropdown>
       <Icon
           icon="NorthingIcon"
