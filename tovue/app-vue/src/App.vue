@@ -33,7 +33,7 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch('DatasetsAttributes/get')
+    // this.$store.dispatch('DatasetsAttributes/get')
   },
   mounted () {
     if (isConsole || isWearable || isSmartTV || isMobileOnly) {
