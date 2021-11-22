@@ -26,21 +26,6 @@ const query = () => {
     return {
       size: 9999,
       query: {
-        bool: {
-          should: [
-            {
-              match: {
-                c_name: attributeCategories.format.name
-              }
-            },
-            {
-              match: {
-                c_name: attributeCategories.serviceType.name
-              }
-            }
-          ],
-          minimum_should_match: 1
-        }
       }
     }
   },
