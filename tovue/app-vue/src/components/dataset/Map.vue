@@ -61,6 +61,12 @@ export default {
         return {}
       }
     },
+    columnDef: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
     active: {
       type: Boolean
     }
