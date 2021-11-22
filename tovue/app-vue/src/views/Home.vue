@@ -6,6 +6,7 @@
         :data="mapData"
         :filters="filters.map"
         :mapSettings="mapSettings"
+        :columnDef="tableSettings.columnDef"
         :active="true"
         class="layout-1col"
     />
@@ -63,9 +64,9 @@ export default {
     summary() {
       return this.dataset ? this.dataset.summary : ''
     },
-    // tableSettings() {
-    //   return this.dataset ? this.dataset.tableSettings : null
-    // },
+    tableSettings() {
+      return this.dataset ? this.dataset.tableSettings : null
+    },
     fields() {
       return []
     },
