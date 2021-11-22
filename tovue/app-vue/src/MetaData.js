@@ -1,19 +1,5 @@
 export const datasetMeta = {
     2934: { // Energiproducent tælling
-        RESTInfo: {
-            serviceName: 'ept',
-            rootKey: 'selskaber'
-        },
-        views: [
-            {label: 'Kort', type: 'map'}
-        ],
-        logos: [
-            {label: 'Energistyrelsen', link: '', logoId: 1733}
-        ],
-        dataInfo: {
-            dataDescription: 'none',
-            sectors: ['Produktion af el', 'Varme']
-        },
         mapSettings: {
             mapConstants: {
                 center: [10.2457, 55.5147],
