@@ -102,10 +102,10 @@ const query = () => {
   actions = crud.actions,
   mutations = crud.mutations
 
-export const DatasetsAttributes = {
-  namespaced: true,
-  state,
-  getters,
-  actions,
-  mutations
-}
+// export const DatasetsAttributes = {
+//   namespaced: true,
+//   state,
+//   getters,
+//   actions,
+//   mutations
+// }
