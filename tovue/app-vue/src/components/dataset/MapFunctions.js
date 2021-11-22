@@ -1,6 +1,5 @@
 import { Tile as TileLayer} from 'ol/layer'
 import { WMTS, TileWMS} from 'ol/source'
-import { Circle as CircleStyle, Fill, Stroke, Style, Text, Icon } from 'ol/style'
 import Feature from 'ol/Feature'
 import Point from 'ol/geom/Point'
 import axios from 'axios'
@@ -10,7 +9,7 @@ import VectorTileSource from 'ol/source/VectorTile'
 import geojsonvt from 'geojson-vt'
 // import pin from '../../assets/Icons/map_pin.svg'
 
-import {ScaleLine} from 'ol/control'; // for our upcoming Scaleline at the bottom
+import {ScaleLine} from 'ol/control';
 
 const kfText = 'Styrelsen for Dataforsyning og Effektivisering'
 const kfLink = 'https://dataforsyningen.dk/asset/PDF/rettigheder_vilkaar/Vilk%C3%A5r%20for%20brug%20af%20frie%20geografiske%20data.pdf'
