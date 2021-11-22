@@ -36,13 +36,13 @@ export default {
     }
   },
   mounted () {
-    const coverImageId = pageMeta.about.coverId
-    this.$store.dispatch('AboutAssets/get', [coverImageId]).then(() => {
-      const coverUrl = getAssetLink(coverImageId, this.pageAssets)
-      loadImage(coverUrl).then(() => {
-        this.coverImageUrl = coverUrl
-      })
-    })
+    // const coverImageId = pageMeta.about.coverId
+    // this.$store.dispatch('AboutAssets/get', [coverImageId]).then(() => {
+    //   const coverUrl = getAssetLink(coverImageId, this.pageAssets)
+    //   loadImage(coverUrl).then(() => {
+    //     this.coverImageUrl = coverUrl
+    //   })
+    // })
   },
   methods: {}
 }
