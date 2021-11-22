@@ -3,7 +3,6 @@
     <Hero
       title="Om Koordinattransformation"
       :summary="summary"
-      :image="coverImageUrl"
     />
     <section class="content-section layout-1col"
     >
