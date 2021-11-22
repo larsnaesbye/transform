@@ -109,9 +109,6 @@ export default {
           source: 'kf'
         }
       ],
-      selectedMarkerData: [],
-      showPopup: false,
-      currentClusterLayerId: '',
       clustering: false
     }
   },
