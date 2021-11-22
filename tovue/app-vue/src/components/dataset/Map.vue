@@ -304,9 +304,7 @@ export default {
   position absolute
   top 1rem
   left 1rem
-  //max-width 20rem
   min-width 1rem
-  //max-height 40rem
   width auto
 
 #marker-popup ul
