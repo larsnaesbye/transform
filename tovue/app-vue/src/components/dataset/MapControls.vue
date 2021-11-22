@@ -57,19 +57,7 @@ export default {
       lastActiveSection: 'filters'
     }
   },
-  computed: {
-    iconList() {
-      const list = []
-      const iconMap = this.mapSettings.visualizationDef.markerIcon.iconMap
-      for (const key in iconMap) {
-        list.push({
-          name: key,
-          url: iconMap[key]
-        })
-      }
-      return list
-    }
-  },
+  computed: {},
   mounted() {
   },
   methods: {
