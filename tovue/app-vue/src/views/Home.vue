@@ -2,7 +2,6 @@
   <main id="main" ref="main">
     <Map
         name="kort"
-        :datasetId="id"
         :data="mapData"
         :filters="filters.map"
         :mapSettings="mapSettings"
