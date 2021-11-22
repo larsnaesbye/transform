@@ -69,7 +69,7 @@ export const parseDataset = (data) => {
       views: datasetMeta[source.o_id].views || [],
       fields: [],
       tableSettings: datasetMeta.tableSettings || {},
-      mapSettings: datasetMeta.mapSettings || {},
+      mapSettings: datasetMeta[source.o_id].mapSettings || {},
       dashboardSettings: datasetMeta[source.o_id].dashboardSettings || {},
       dataDescription: datasetMeta[source.o_id].dataInfo && datasetMeta[source.o_id].dataInfo.dataDescription ? datasetMeta[source.o_id].dataInfo.dataDescription : '',
       sectors: datasetMeta[source.o_id].dataInfo && datasetMeta[source.o_id].dataInfo.sectors ? datasetMeta[source.o_id].dataInfo.sectors : ''
