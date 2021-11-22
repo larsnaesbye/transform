@@ -1,12 +1,10 @@
-import { ElasticSearch } from '@/store/shared/ElasticSearch'
-import { parseDataset } from '@/store/shared/ParseData'
-import { productsSearch } from '@/store/shared/Paths'
-import { getByIds } from '@/store/shared/Queries'
+import {ElasticSearch} from '@/store/shared/ElasticSearch'
+import {parseDataset} from '@/store/shared/ParseData'
+import {productsSearch} from '@/store/shared/Paths'
+import {getByIds} from '@/store/shared/Queries'
 
-// eslint-disable-next-line one-var
 const parse = (data) => {
-    const newData = parseDataset(data.hits.hits[0])
-    return newData
+        return parseDataset(data.hits.hits[0])
   },
   crud = new ElasticSearch(getByIds, productsSearch, parse),
   state = crud.state,
