@@ -126,7 +126,6 @@ export default {
   watch: {
     data() {
       if (this.status === 'ready') {
-        // this.resetMarkersLayer()
         this.map.updateSize()
       } else if (status === 'loading') {
         this.initMap()
@@ -149,7 +148,6 @@ export default {
   created() {
   },
   mounted() {
-    // this.clustering = this.mapSettings.clustering
     this.initMap()
   },
   methods: {
@@ -169,7 +167,6 @@ export default {
       return new Map({
         target: 'map',
         layers: tileLayers,
-        // controls: defaultControls().extend([scaleControl()]),
         controls: [scaleControl()],
         view: new View({
           center: fromLonLat(this.mapConstants.center, 'EPSG:25832'),
