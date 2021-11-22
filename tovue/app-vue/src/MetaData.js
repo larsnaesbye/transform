@@ -26,38 +26,38 @@ export const datasetMeta = {
 
             },
             filterDef: [
-                {
-                    label: 'Filtrer på søgeord',
-                    name: 'search',
-                    type: 'search',
-                    fieldId: '',
-                    initValue: ''
-                },
-                {
-                    label: 'År',
-                    name: 'vaerk_aar',
-                    type: 'multiselect',
-                    options: ['2018'],
-                    fieldId: 'vaerk_aar',
-                    initValue: '_all'
-                },
-                {
-                    label: 'Branche',
-                    name: 'branche',
-                    type: 'multiselect',
-                    options: ['351100 (Produktion af elektricitet)', '353000 (Varmeforsyning)', 'Anden branchekode'],
-                    fieldId: 'branche',
-                    initValue: '_all'
-                },
-                {
-                    label: 'Hovedbrændselsgruppe',
-                    name: 'vaerk_hovedbraendselsgruppe',
-                    type: 'multiselect',
-                    // options: ['Olie', 'Brændselsfrit', 'Fast biomasse', 'Elektricitet', 'Naturgas', 'Solenergi', 'Affald', 'Kul', 'Biogas', 'Bio-olie', 'Vandkraft', ''],
-                    options: [],
-                    fieldId: 'vaerk_hovedbraendselsgruppe',
-                    initValue: '_all'
-                }
+                // {
+                //     label: 'Filtrer på søgeord',
+                //     name: 'search',
+                //     type: 'search',
+                //     fieldId: '',
+                //     initValue: ''
+                // },
+                // {
+                //     label: 'År',
+                //     name: 'vaerk_aar',
+                //     type: 'multiselect',
+                //     options: ['2018'],
+                //     fieldId: 'vaerk_aar',
+                //     initValue: '_all'
+                // },
+                // {
+                //     label: 'Branche',
+                //     name: 'branche',
+                //     type: 'multiselect',
+                //     options: ['351100 (Produktion af elektricitet)', '353000 (Varmeforsyning)', 'Anden branchekode'],
+                //     fieldId: 'branche',
+                //     initValue: '_all'
+                // },
+                // {
+                //     label: 'Hovedbrændselsgruppe',
+                //     name: 'vaerk_hovedbraendselsgruppe',
+                //     type: 'multiselect',
+                //     // options: ['Olie', 'Brændselsfrit', 'Fast biomasse', 'Elektricitet', 'Naturgas', 'Solenergi', 'Affald', 'Kul', 'Biogas', 'Bio-olie', 'Vandkraft', ''],
+                //     options: [],
+                //     fieldId: 'vaerk_hovedbraendselsgruppe',
+                //     initValue: '_all'
+                // }
             ]
         }
     }
