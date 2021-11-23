@@ -1,7 +1,7 @@
 <template>
   <div class="map-input box">
     <header class="map-input__header">
-      <div class="gritty">
+      <div class="gritty-input">
         <div><h3>Input</h3></div>
         <UiDropdown label=""
         >
@@ -17,7 +17,7 @@
             label="">
         </Search>
       </div>
-      <div class="gritty">
+      <div class="gritty-output">
 
         <h3>Output</h3>
         <UiDropdown label=""
@@ -150,4 +150,10 @@ export default {
 
 .gritty
   display grid
+  padding 10px
+
+.gritty-input
+
+.gritty-output
+  background #F2F7F7
 </style>
