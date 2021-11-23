@@ -100,8 +100,8 @@ export default {
 
 .search-icon
   position absolute
-  bottom 0
-  right 0
+  bottom 2
+  right 2
 
 .tooltip p
   margin 0
