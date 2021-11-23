@@ -3,7 +3,6 @@
       class="layout-3col__footer"
       :style="'background-color: white;'"
   >
-    <span v-if="image" class="hero__credit white-text">{{ photoCredit }}</span>
   </section>
 </template>
 
@@ -29,9 +28,6 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(() => {
-      this.$refs.firstfocus.focus()
-    })
   }
 }
 </script>
