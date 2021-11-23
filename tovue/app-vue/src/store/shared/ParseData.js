@@ -1,41 +1,4 @@
 import { datasetMeta } from '@/MetaData'
-
-export const parseAssets = (data) => {
-  const state = [],
-    array = data.hits ? data.hits.hits : data.docs
-  for (let i = array.length - 1, c = 0; i > -1; --i, ++c) {
-    const curItem = array[i]._source
-    state[c] = {
-      id: curItem.id,
-      path: curItem.path,
-      filename: curItem.filename
-    }
-  }
-  return state
-}
-
-export const parseDatasets = (data) => {
-  // eslint-disable-next-line one-var
-  const state = [],
-    array = data.hits ? data.hits.hits : data.docs
-  for (let i = array.length - 1; i > -1; --i) {
-    const data = array[i]
-    if (!!data._source && datasetMeta[data._source.o_id]) {
-      state.push(parseDataset(array[i]))
-    }
-  }
-  return state
-}
-
-export const parseServices = (data) => {
-  // eslint-disable-next-line one-var
-  const state = [],
-    array = data.hits ? data.hits.hits : data.docs
-  for (let i = 0, iEnd = array.length; i < iEnd; ++i) {
-    state[i] = parseService(array[i])
-  }
-  return state
-}
 export const parseDataset = (data) => {
   // eslint-disable-next-line one-var
   const exist = !!data._source && datasetMeta[data._source.o_id],
