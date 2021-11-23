@@ -290,7 +290,7 @@ export default {
 
 #map__controls-box
   position absolute
-  top 10rem
+  top 12rem
   left 1rem
   max-width 20rem
   min-width 1rem
