@@ -90,7 +90,7 @@ li.active .main-menu__item
   white-space nowrap
   word-break keep-all
   flex-shrink 0
-  font-size .9rem
+  font-size .75rem
   margin-top 0.2rem
   margin-bottom 0.3rem
   line-height 0.875rem
