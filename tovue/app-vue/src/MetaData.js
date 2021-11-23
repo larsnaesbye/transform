@@ -20,22 +20,18 @@ export const pageMeta = {
     forside: {
         title: 'Transformer koordinater',
         summary: 'Styrelsen for Dataforsyning og Effektivisering præsenterer en samlet indgang til koordinattransformationer.',
-        coverId: 1713,
     },
     datasets: {
         title: 'Oversigt over datasæt',
         summary: 'Du kan her finde en oversigt over datasæt. Udforsk data med de forskellige muligheder for download, visualisering og filtrering. Der er kun få datasæt lige nu, men vi arbejder på at tilføje flere datasæt i fremtiden.',
-        coverId: 1725
     },
     about: {
         title: 'Om koordinattransformation',
         summary: '',
-        coverId: 1719,
         htmlText: 'Koordinattransformation er et værktøj lavet af Styrelsen for Dataforsyning og Effektivisering. <br />'
     },
     support: {
         title: 'Oversigt over datasæt',
         summary: 'Du kan her finde en oversigt over datasæt. Lige nu kan du finde to datasæt, men vi arbejder på at tilføje flere datasæt i fremtiden.',
-        coverId: 1717
     }
 }

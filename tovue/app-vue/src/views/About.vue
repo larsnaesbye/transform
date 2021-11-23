@@ -1,42 +1,42 @@
 <template>
   <main>
     <Hero
-      title="Om Koordinattransformation"
-      :summary="summary"
+        title="Om Koordinattransformation"
+        :summary="summary"
     />
     <section class="content-section layout-1col"
     >
-    <p v-html="htmlText"></p>
+      <p v-html="htmlText"></p>
     </section>
   </main>
 </template>
 
 <script>
-import { pageMeta } from '@/MetaData'
-import { getAssetLink, loadImage } from '@/HelperFunctions'
+import {pageMeta} from '@/MetaData'
+import {getAssetLink, loadImage} from '@/HelperFunctions'
 import Hero from '@/components/shared/Hero'
 
 export default {
   components: {
     Hero
   },
-  data () {
+  data() {
     return {
       coverImageUrl: ''
     }
   },
   computed: {
-    pageAssets () {
+    pageAssets() {
       return this.$store.state.AboutAssets.data
     },
-    htmlText () {
+    htmlText() {
       return pageMeta.about.htmlText
     },
-    summary () {
+    summary() {
       return pageMeta.about.summary
     }
   },
-  mounted () {
+  mounted() {
     const coverImageId = pageMeta.about.coverId
     this.$store.dispatch('AboutAssets/get', [coverImageId]).then(() => {
       const coverUrl = getAssetLink(coverImageId, this.pageAssets)

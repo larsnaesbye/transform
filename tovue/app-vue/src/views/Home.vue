@@ -49,16 +49,6 @@ export default {
       return []
     },
     title() {
-      const status = this.$store.state.DatasetMeta.status
-      if (status === 'loading') {
-        return 'Henter datasæt...'
-      } else if (status === 'error') {
-        return 'Kunne ikke hente dataset. Prøv eventuelt at genindlæse siden.'
-      } else if (this.dataset && this.dataset.title) {
-        return this.dataset.title
-      } else {
-        return 'Der er sket en fejl'
-      }
     },
     summary() {
       return this.dataset ? this.dataset.summary : ''
