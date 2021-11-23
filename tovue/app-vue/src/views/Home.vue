@@ -37,8 +37,6 @@ export default {
       },
       data: [],
       mapData: [],
-      shownColumns: [],
-      showDashboard: false
     }
   },
   computed: {
