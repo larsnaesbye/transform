@@ -113,12 +113,12 @@ export default {
     }
   },
   computed: {
-    // mapConstants() {
-    //   return this.mapSettings.mapConstants
-    // },
-    // visualizationDef() {
-    //   return this.mapSettings.visualizationDef
-    // }
+    mapConstants() {
+      return this.mapSettings.mapConstants
+    },
+    visualizationDef() {
+      return this.mapSettings.visualizationDef
+    }
   },
   watch: {
     data() {
