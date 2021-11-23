@@ -74,7 +74,7 @@ export default {
   methods: {
     initDatasetData() {
       this.$store.dispatch('DatasetMeta/get', '2934')
-      this.$store.dispatch('DatasetsServices/get')
+      // this.$store.dispatch('DatasetsServices/get')
     },
   }
 }
