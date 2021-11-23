@@ -106,7 +106,8 @@ export default {
 
 .map-input__header
   display flex
-  padding .5rem
+
+//padding .5rem
 
 .map-input__header > button.bg
   background: var(--darkSteel)
@@ -157,4 +158,5 @@ export default {
 .gritty-output
   background #F2F7F7
   padding 10px
+  border-radius 0 20px 20px 0;
 </style>
