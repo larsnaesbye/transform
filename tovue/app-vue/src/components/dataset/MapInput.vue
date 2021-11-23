@@ -1,31 +1,36 @@
 <template>
   <div class="map-input box">
     <header class="map-input__header">
-      <div><h3>Input</h3></div>
-      <UiDropdown label=""
-      >
-      </UiDropdown>
-      <Icon
-          icon="EastingIcon"
-          :width="1.0"
-          :height="1.0"
-          :strokeWidth="1.0"
-          color="#000"
-      />
-      <Search
-          label="">
-      </Search>
-      <h3>Output</h3>
-      <UiDropdown label=""
-      >
-      </UiDropdown>
-      <Icon
-          icon="NorthingIcon"
-          :width="1.0"
-          :height="1.0"
-          :strokeWidth="1.0"
-          color="#000"
-      />
+      <div class="gritty">
+        <div><h3>Input</h3></div>
+        <UiDropdown label=""
+        >
+        </UiDropdown>
+        <Icon
+            icon="EastingIcon"
+            :width="1.0"
+            :height="1.0"
+            :strokeWidth="1.0"
+            color="#000"
+        />
+        <Search
+            label="">
+        </Search>
+      </div>
+      <div class="gritty">
+
+        <h3>Output</h3>
+        <UiDropdown label=""
+        >
+        </UiDropdown>
+        <Icon
+            icon="NorthingIcon"
+            :width="1.0"
+            :height="1.0"
+            :strokeWidth="1.0"
+            color="#000"
+        />
+      </div>
 
     </header>
   </div>
@@ -142,4 +147,7 @@ export default {
 .icon-list img
   margin-right .5rem
   margin-bottom 2px
+
+.gritty
+  display grid
 </style>
