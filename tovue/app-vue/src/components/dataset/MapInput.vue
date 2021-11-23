@@ -150,10 +150,11 @@ export default {
 
 .gritty
   display grid
-  padding 10px
 
 .gritty-input
+  padding 10px
 
 .gritty-output
   background #F2F7F7
+  padding 10px
 </style>
