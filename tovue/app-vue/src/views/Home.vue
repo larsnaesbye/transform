@@ -2,7 +2,6 @@
   <main id="main" ref="main">
     <Map
         name="kort"
-        :data="mapData"
         :filters="filters.map"
         :mapSettings="mapSettings"
         :columnDef="tableSettings.columnDef"
@@ -36,7 +35,6 @@ export default {
         map: {}
       },
       data: [],
-      mapData: [],
     }
   },
   computed: {
