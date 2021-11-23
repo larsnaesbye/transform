@@ -5,14 +5,6 @@
         <div><h3>Input</h3></div>
         <UiDropdown label=""
         >
-          <Icon
-              icon="CoordinatesIcon"
-              :width="1.0"
-              :height="1.0"
-              :strokeWidth="1.0"
-              color="#000"
-          />
-
         </UiDropdown>
         <Icon
             icon="EastingIcon"
@@ -30,14 +22,6 @@
         <h3>Output</h3>
         <UiDropdown label=""
         >
-          <Icon
-              icon="CoordinatesIcon"
-              :width="1.0"
-              :height="1.0"
-              :strokeWidth="1.0"
-              color="#000"
-          />
-
         </UiDropdown>
         <Icon
             icon="NorthingIcon"

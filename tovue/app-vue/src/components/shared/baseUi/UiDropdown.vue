@@ -24,6 +24,14 @@
       <div
           class="choosen cursor-point"
       >
+        <Icon
+            icon="CoordinatesIcon"
+            :width="1.0"
+            :height="1.0"
+            :strokeWidth="1.0"
+            color="#000"
+        />
+
         <slot name="choosen"><span>Alle</span></slot>
       </div>
       <button
