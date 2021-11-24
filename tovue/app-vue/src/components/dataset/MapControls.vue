@@ -30,11 +30,11 @@
 </template>
 
 <script>
-import Filtering from '@/components/shared/Filtering'
+// import Filtering from '@/components/shared/Filtering'
 
 export default {
   components: {
-    Filtering
+    // Filtering
   },
   props: {
     filterDef: {
