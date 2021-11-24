@@ -8,12 +8,12 @@
 
 <script>
 import { pageMeta } from '@/MetaData'
-import Filtering from '@/components/shared/Filtering'
+// import Filtering from '@/components/shared/Filtering'
 
 export default {
   components: {
     Hero: () => import('@/components/shared/Hero'),
-    Filtering: Filtering
+    // Filtering: Filtering
   },
   data () {
     return {
