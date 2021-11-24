@@ -37,14 +37,14 @@
 </template>
 
 <script>
-import Filtering from '@/components/shared/Filtering'
+// import Filtering from '@/components/shared/Filtering'
 import Search from "../shared/baseUi/UiInputSearch";
 import UiDropdown from "../shared/baseUi/UiDropdown";
 
 export default {
   components: {
     Search,
-    Filtering,
+    // Filtering,
     UiDropdown,
   },
   props: {
