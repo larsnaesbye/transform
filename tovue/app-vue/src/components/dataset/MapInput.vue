@@ -68,19 +68,7 @@ export default {
       lastActiveSection: 'filters'
     }
   },
-  computed: {
-    // iconList() {
-    //   const list = []
-    //   const iconMap = this.mapSettings.visualizationDef.markerIcon.iconMap
-    //   for (const key in iconMap) {
-    //     list.push({
-    //       name: key,
-    //       url: iconMap[key]
-    //     })
-    //   }
-    //   return list
-    // }
-  },
+  computed: {},
   mounted() {
   },
   methods: {
@@ -106,8 +94,6 @@ export default {
 
 .map-input__header
   display flex
-
-//padding .5rem
 
 .map-input__header > button.bg
   background: var(--darkSteel)
