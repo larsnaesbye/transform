@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.10.2",
-    "@vanillaes/csv": "^2.1.11",
+    "@vanillaes/csv": "^2.1.16",
     "animate.css": "^4.1.1",
     "axios": "^0.24.0",
     "core-js": "^3.19.1",
