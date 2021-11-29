@@ -1,9 +1,7 @@
 import { datasetMeta } from '@/MetaData'
 export const parseDataset = (data) => {
-  // eslint-disable-next-line one-var
   const exist = !!data._source && datasetMeta[data._source.o_id],
     source = (exist) ? data._source : '',
-    // eslint-disable-next-line multiline-ternary
     dataset = (exist) ? {
       type: 'dataset',
       id: source.o_id || '',
