@@ -130,32 +130,3 @@ export const parseDataset = (data) => {
   }
   return dataset
 }
-
-export const parseService = (data) => {
-  // eslint-disable-next-line one-var
-  const exist = !!data._source,
-    source = (exist) ? data._source : '',
-    // eslint-disable-next-line multiline-ternary
-    service = (exist) ? {
-      id: source.o_id || '',
-      title: source.service_title || '',
-      name: source.service_name || '',
-      typeId: source.service_servicetype || '',
-      typeName: source.service_servicetypename || '',
-      description: source.service_description || '',
-      image: source.service_image || '',
-      token: source.service_tokenrequired || '',
-      link: source.service_link || ''
-    } : {
-      id: '',
-      title: '',
-      name: '',
-      typeId: '',
-      typeName: '',
-      description: '',
-      image: '',
-      token: '',
-      link: ''
-    }
-  return service
-}
