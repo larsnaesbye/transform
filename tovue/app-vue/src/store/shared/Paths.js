@@ -1,5 +1,2 @@
 export const assetsSearch = 'es/assets/_search'
-export const attributesSearch = 'es/attributes/_search'
-export const servicesSearch = 'es/services/_search'
 export const productsSearch = 'es/products/_search'
-export const dataproductsSearch = 'es/dataproducts/_search'
