@@ -28,8 +28,6 @@ export const parseDataset = (data) => {
       linkUrl: source.product_linkurl || '',
       relTitles: source.product_rel_titles || '',
       relDataProducts: source.product_rel_dataproducts || [],
-      logos: datasetMeta[source.o_id].logos || [],
-      views: datasetMeta[source.o_id].views || [],
       fields: [],
       tableSettings: datasetMeta[source.o_id].tableSettings || {},
       mapSettings: datasetMeta[source.o_id].mapSettings || {},
@@ -60,8 +58,6 @@ export const parseDataset = (data) => {
       linkUrl: '',
       relTitles: '',
       relDataProducts: [],
-      logos: [],
-      views: [],
       fields: [],
       tableSettings: {},
       sectors: []
