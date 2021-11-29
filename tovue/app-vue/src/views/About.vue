@@ -1,9 +1,5 @@
 <template>
   <main>
-    <Hero
-        title="Om Koordinattransformation"
-        :summary="summary"
-    />
     <section class="content-section layout-1col"
     >
       <p v-html="htmlText"></p>
@@ -14,11 +10,9 @@
 <script>
 import {pageMeta} from '@/MetaData'
 import {getAssetLink, loadImage} from '@/HelperFunctions'
-import Hero from '@/components/shared/Hero'
 
 export default {
   components: {
-    Hero
   },
   data() {
     return {
