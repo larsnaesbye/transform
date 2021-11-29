@@ -17,6 +17,10 @@ export const datasetMeta = {
     }
 }
 export const pageMeta = {
+    forside: {
+        title: 'Transformer koordinater',
+        summary: 'Styrelsen for Dataforsyning og Effektivisering præsenterer en samlet indgang til koordinattransformationer.',
+    },
     datasets: {
         title: 'Oversigt over datasæt',
         summary: 'Du kan her finde en oversigt over datasæt. Udforsk data med de forskellige muligheder for download, visualisering og filtrering. Der er kun få datasæt lige nu, men vi arbejder på at tilføje flere datasæt i fremtiden.',
