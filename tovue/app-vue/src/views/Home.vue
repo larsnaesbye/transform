@@ -58,9 +58,9 @@ export default {
     mapSettings() {
       return this.dataset.mapSettings
     },
-    dashboardSettings() {
-      return this.dataset.dashboardSettings
-    }
+    // dashboardSettings() {
+    //   return this.dataset.dashboardSettings
+    // }
   },
   created() {
     this.initDatasetData()
