@@ -9,11 +9,11 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.0",
-    "@vanillaes/csv": "^3.0.1",
+    "@popperjs/core": "^2.10.2",
+    "@vanillaes/csv": "^2.1.11",
     "animate.css": "^4.1.1",
-    "axios": "^0.24.0",
-    "core-js": "^3.19.1",
+    "axios": "^0.21.2",
+    "core-js": "^3.19.0",
     "geojson-vt": "^3.2.1",
     "mobile-device-detect": "^0.4.3",
     "ol": "^6.9.0",
@@ -34,13 +34,13 @@
     "@vue/cli-service": "^4.5.15",
     "@vue/eslint-config-standard": "^6.1.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^8.3.0",
-    "eslint-plugin-vue": "^8.1.1",
-    "eslint-plugin-import": "^2.25.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^7.19.1",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-promise": "^5.1.0",
     "stylus": "^0.55.0",
-    "stylus-loader": "^6.2.0",
+    "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.6.14"
   }
 }
