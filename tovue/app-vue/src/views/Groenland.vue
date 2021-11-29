@@ -1,19 +1,14 @@
 <template>
   <main>
-<!--    <Hero>-->
-<!--      <p>Something here?</p>-->
-<!--    </Hero>-->
   </main>
 </template>
 
 <script>
 import { pageMeta } from '@/MetaData'
-// import Filtering from '@/components/shared/Filtering'
 
 export default {
   components: {
     Hero: () => import('@/components/shared/Hero'),
-    // Filtering: Filtering
   },
   data () {
     return {
@@ -38,7 +33,6 @@ export default {
       return this.getAssetLink(pageMeta.datasets.coverId)
     },
     datasetsCoverImageIds () {
-      // eslint-disable-next-line one-var
       const ids = [],
         data = this.$store.state.Datasets.data
       for (let i = 0; i < data.length; i++) {
