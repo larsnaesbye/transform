@@ -3,7 +3,7 @@ import {parseDataset} from '@/store/shared/ParseData'
 import {getByIds} from '@/store/shared/Queries'
 
 const parse = (data) => {
-        return ''
+        return parseDataset(data.hits.hits[0])
   },
   crud = new ElasticSearch(getByIds, 'es/products/_search', parse),
   state = crud.state,
