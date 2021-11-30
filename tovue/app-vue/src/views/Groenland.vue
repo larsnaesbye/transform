@@ -8,7 +8,6 @@ import { pageMeta } from '@/MetaData'
 
 export default {
   components: {
-    Hero: () => import('@/components/shared/Hero'),
   },
   data () {
     return {

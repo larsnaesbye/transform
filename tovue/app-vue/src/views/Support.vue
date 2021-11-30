@@ -1,10 +1,5 @@
 <template>
   <main>
-    <Hero
-      title="Hjælp og vejledning"
-      summary="Her kan du finde vejledninger og baggrundsviden om forsyningsdata samt kontaktoplysninger til support."
-      :image="coverImageUrl"
-    />
     <section class="content-section layout-sidebar">
       <div class="main-content">
         <h2>Teknisk dokumentation</h2>
