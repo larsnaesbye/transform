@@ -1,6 +1,5 @@
 import {ElasticSearch} from '@/store/shared/ElasticSearch'
 import {parseDatasets} from '@/store/shared/ParseData'
-import {productsSearch} from '@/store/shared/Paths'
 
 const query = () => {
         return (process.env.NODE_ENV === 'production') ? {
@@ -17,7 +16,7 @@ const query = () => {
             query: {}
         }
     },
-    crud = new ElasticSearch(query, productsSearch, parseDatasets),
+    crud = new ElasticSearch(query, 'es/products/_search', parseDatasets),
     state = crud.state,
     getters = crud.getters,
     actions = crud.actions,
