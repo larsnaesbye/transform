@@ -4,7 +4,7 @@
         name="kort"
         :filters="filters.map"
         :mapSettings="mapSettings"
-        :columnDef="tableSettings.columnDef"
+        :columnDef="[]"
         :active="true"
         class="layout-1col"
     />
