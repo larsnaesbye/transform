@@ -62,40 +62,6 @@ export const parseDataset = (data) => {
     }
 
 
-  // add downloads
-  if (exist && source.product_relations) {
-    for (let i = 0, iEnd = source.product_relations.length; i < iEnd; ++i) {
-      // if an item with the same index as the current item in product_relations exists
-      // in either product_ftppath, product_fmename or product_mapcutouts then theese types
-      // exists and is added.
-      if (source.product_ftpurl[i]) {
-        dataset.downloads[i] = {
-          type: 'ftp',
-          link: source.product_ftpurl[i],
-          title: source.product_ftptitel[i],
-          subtitle: source.product_ftpsubtitel[i],
-          description: source.product_ftpdescription[i],
-          formatIds: source.product_relations[i].format[0]
-        }
-      } else if (source.product_httpurl[i]) {
-        dataset.downloads[i] = {
-          type: 'http',
-          link: source.product_httpurl[i],
-          title: source.product_httptitel[i],
-          subtitle: source.product_httpsubtitel[i],
-          description: source.product_httpdescription[i],
-          formatIds: source.product_relations[i].format[0]
-        }
-      } else if (source.product_fmename[i]) {
-        dataset.downloads[i] = {
-          type: 'fme',
-          formatIds: source.product_relations[i].format[0],
-          name: source.product_fmename[i],
-          cutouts: source.product_fmecutouts[i]
-        }
-      }
-    }
-  }
   // Add services
   if (exist && source.servicetypeid) {
     const allServices = []
