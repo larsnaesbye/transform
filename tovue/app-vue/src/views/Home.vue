@@ -58,9 +58,6 @@ export default {
     mapSettings() {
       return this.dataset.mapSettings
     },
-    // dashboardSettings() {
-    //   return this.dataset.dashboardSettings
-    // }
   },
   created() {
     this.initDatasetData()
@@ -72,7 +69,6 @@ export default {
   methods: {
     initDatasetData() {
       this.$store.dispatch('DatasetMeta/get', '2934')
-      // this.$store.dispatch('DatasetsServices/get')
     },
   }
 }
