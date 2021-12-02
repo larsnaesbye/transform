@@ -93,15 +93,6 @@ export const parseDataset = (data) => {
           name: source.product_fmename[i],
           cutouts: source.product_fmecutouts[i]
         }
-      } else if (source.product_mapcutouts[i]) {
-        dataset.downloads[i] = {
-          type: 'map',
-          formatIds: source.product_relations[i].format[0],
-          cutouts: source.product_mapcutouts[i],
-          link: Number(source.product_mapcutoutlink[i]),
-          folder: source.product_mapcutoutfolder[i],
-          file: source.product_mapcutoutdetails[i]
-        }
       }
     }
   }
