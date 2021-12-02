@@ -42,25 +42,6 @@ export default new Router({
             component: () => import(/* webpackChunkName: "Cookies", webpackMode: "lazy" */ '@/views/Support.vue')
         },
         {
-            path: '/devicefejl',
-            name: 'DeviceError',
-            meta: {title: 'Koordinattransformation - Devicefejl'},
-            component: () => import(/* webpackChunkName: "Devicefejl", webpackMode: "lazy" */ '@/views/DeviceIncompatible.vue')
-        },
-        {
-            path: '/ie',
-            name: 'BrowserError',
-            meta: {title: 'Koordinattransformation - Browser'},
-            component: () => import(/* webpackChunkName: "BrowserError", webpackMode: "lazy" */ '@/views/BrowserIncompatible.vue')
-        },
-        {
-            path: '/was',
-            meta: {title: 'Koordinattransformation - Tilgængelighedserklæring'},
-            beforeEnter(to, from, next) {
-                window.location = 'https://www.was.digst.dk/forsyningsdataportal-dk'
-            }
-        },
-        {
             path: '*',
             name: '404',
             component: () => import(/* webpackChunkName: "Support", webpackMode: "lazy" */ '@/views/PageNotFound.vue')

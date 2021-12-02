@@ -78,17 +78,6 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         proxy: {
-            '^/rest': {
-                target: 'https://api.dataforsyningen.dk/rest/',
-                pathRewrite: {
-                    '^/es/': 'forsyningsdata/v1.0/'
-                },
-                secure: false,
-                ws: true,
-                changeOrigin: true,
-                followRedirects: true,
-                selfHandleResponse: false
-            },
             '^/es': {
                 target: 'https://dataforsyningen.dk/es/',
                 pathRewrite: {
