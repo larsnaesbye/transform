@@ -97,16 +97,6 @@ export default {
           type: 'WMTS',
           title: 'Ortofoto',
           service: 'orto_foraar_wmts_DAF'
-        },
-        {
-          name: 'dagi',
-          type: 'WMS',
-          title: 'Kommune grænser',
-          service: 'dagi',
-          layer: 'kommune',
-          style: 'red',
-          format: 'image/png',
-          source: 'kf'
         }
       ],
       clustering: false
