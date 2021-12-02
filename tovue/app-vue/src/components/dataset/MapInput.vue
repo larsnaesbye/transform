@@ -13,6 +13,7 @@
             :strokeWidth="1.0"
             color="#000"
         />
+        <BaseInput></BaseInput>
         <Search
             label="">
         </Search>
@@ -40,9 +41,11 @@
 // import Filtering from '@/components/shared/Filtering'
 import Search from "../shared/baseUi/UiInputSearch";
 import UiDropdown from "../shared/baseUi/UiDropdown";
+import BaseInput from "../shared/baseUi/BaseInput";
 
 export default {
   components: {
+    BaseInput,
     Search,
     // Filtering,
     UiDropdown,
