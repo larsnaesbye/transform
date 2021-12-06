@@ -86,18 +86,6 @@ export default {
           title: 'Skærmkort dæmpet',
           service: 'topo_skaermkort_daempet_DAF'
         },
-        {
-          name: 'topo_skaermkort',
-          type: 'WMTS',
-          title: 'Skærmkort',
-          service: 'topo_skaermkort_wmts_DAF'
-        },
-        {
-          name: 'orto_foraar',
-          type: 'WMTS',
-          title: 'Ortofoto',
-          service: 'orto_foraar_wmts_DAF'
-        }
       ],
       clustering: false
     }
