@@ -6,14 +6,17 @@
         <UiDropdown label=""
         >
         </UiDropdown>
-        <Icon
-            icon="EastingIcon"
-            :width="1.0"
-            :height="1.0"
-            :strokeWidth="1.0"
-            color="#000"
-        />
-        <BaseInput></BaseInput>
+        <BaseInput>
+          <Icon
+              icon="EastingIcon"
+              :width="1.0"
+              :height="1.0"
+              :strokeWidth="1.0"
+              color="#000"
+          />
+
+
+        </BaseInput>
         <Search
             label="">
         </Search>
