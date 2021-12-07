@@ -59,7 +59,6 @@ export default {
     },
   },
   created() {
-    // this.$store.dispatch('DatasetMeta/get', '2934')
   },
   mounted() {
 

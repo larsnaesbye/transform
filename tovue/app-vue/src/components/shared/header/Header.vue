@@ -27,7 +27,6 @@ export default {
 
 <style lang="stylus" scoped>
 header
-  //position absolute
   z-index 100
   top 0
   width 100%

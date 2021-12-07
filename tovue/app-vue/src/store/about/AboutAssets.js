@@ -2,7 +2,6 @@ import { ElasticSearch } from '@/store/shared/ElasticSearch'
 import { parseAssets } from '@/store/shared/ParseData'
 import { getByIds } from '@/store/shared/Queries'
 
-// eslint-disable-next-line one-var
 const crud = new ElasticSearch(getByIds, 'es/assets/_search', parseAssets),
   state = crud.state,
   getters = crud.getters,

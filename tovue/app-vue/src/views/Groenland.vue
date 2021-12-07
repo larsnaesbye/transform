@@ -147,7 +147,6 @@ export default {
     }
   },
   created () {
-    // this.$store.dispatch('DatasetsServices/get')
     this.$store.dispatch('Datasets/get')
       .then((response) => {
         this.resetAllFilters()
