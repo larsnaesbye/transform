@@ -28,6 +28,7 @@ export const parseDataset = (data) => {
             relTitles: source.product_rel_titles || '',
             relDataProducts: source.product_rel_dataproducts || [],
             fields: [],
+            tableSettings: datasetMeta[source.o_id].tableSettings || {},
             mapSettings: datasetMeta[source.o_id].mapSettings || {},
             dashboardSettings: datasetMeta[source.o_id].dashboardSettings || {},
             dataDescription: datasetMeta[source.o_id].dataInfo && datasetMeta[source.o_id].dataInfo.dataDescription ? datasetMeta[source.o_id].dataInfo.dataDescription : '',
@@ -57,6 +58,7 @@ export const parseDataset = (data) => {
             relTitles: '',
             relDataProducts: [],
             fields: [],
+            tableSettings: {},
             sectors: []
         }
 
