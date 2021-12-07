@@ -60,17 +60,13 @@ export default {
     },
   },
   created() {
-    this.initDatasetData()
+    this.$store.dispatch('DatasetMeta/get', '2934')
   },
   mounted() {
 
   },
   watch: {},
-  methods: {
-    initDatasetData() {
-      this.$store.dispatch('DatasetMeta/get', '2934')
-    },
-  }
+  methods: {}
 }
 </script>
 
