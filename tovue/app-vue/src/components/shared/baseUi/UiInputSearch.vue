@@ -16,7 +16,7 @@
         icon="SearchIcon"
         :width="2"
         :height="2"
-        :color="$themeColors.dark"
+        :color="$themeColors.turquoise"
         :key="'searchIcon'"
         class="search-icon"
     />
