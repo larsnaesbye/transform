@@ -24,9 +24,6 @@ export class ElasticSearch {
               reject(err)
             })
         })
-      },
-      clear ({ commit, dispatch }) {
-        commit('clear')
       }
     }
 
@@ -40,9 +37,6 @@ export class ElasticSearch {
       },
       error (state) {
         state.status = 'error'
-      },
-      clear (state) {
-        state.data = []
       }
     }
   }
