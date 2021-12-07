@@ -47,10 +47,10 @@ export default {
     title() {
     },
     summary() {
-      return this.dataset ? this.dataset.summary : ''
+      return ''
     },
     tableSettings() {
-      return this.dataset ? this.dataset.tableSettings : null
+      return null
     },
     fields() {
       return []
