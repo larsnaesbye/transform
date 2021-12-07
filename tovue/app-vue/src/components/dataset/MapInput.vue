@@ -21,7 +21,7 @@
       <div class="gritty-output">
 
         <h3>Output</h3>
-        <UiDropdown label=""
+        <UiDropdown label="" color="#3EDDC6"
         >
         </UiDropdown>
         <Icon
