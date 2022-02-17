@@ -25,98 +25,107 @@
 <h2 class="heading text-center" id="bigheading">
     Vent venligst - indlæser...</h2>
 <p class="text-center">Vælg kilde- og destinationsprojektioner, udfyld kildeparametre og klik 'Transformér'</p>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="input-group mb-3">
-                <label for="sel1" class="badge bg-primary">Fra</label>
-                <select class="form-select from" id="sel1">
-                    <option value="">Vælg kilde</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="input-group mb-3">
-                <label for="sel2" class="badge bg-primary">Til</label>
-                <select class="form-select to" id="sel2">
-                    <option value="">Vælg destination</option>
-                </select>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="input-group mb-3">
-                <label for="koordinatfrom1" class="badge bg-secondary" id="koordinatfromlabel1"
-                       style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
-                    1</label>
-                <input type="text" class="form-control searchBox" value="0" id="koordinatfrom1">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="input-group mb-3">
-                <label for="koordinatto1" class="badge bg-secondary" id="koordinattolabel1"
-                       style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
-                    1</label>
-                <input type="text" class="form-control searchBox" id="koordinatto1" readonly tabindex="-1">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="input-group mb-3">
-                <label for="koordinatfrom2" class="badge bg-secondary" id="koordinatfromlabel2"
-                       style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
-                    2</label>
-                <input type="text" class="form-control searchBox" value="0" id="koordinatfrom2">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="input-group mb-3">
-                <label for="koordinatto2" class="badge bg-secondary" id="koordinattolabel2"
-                       style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
-                    2</label>
-                <input type="text" class="form-control searchBox" id="koordinatto2" readonly tabindex="-1">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="input-group mb-3">
-                <label for="koordinatfrom3" class="badge bg-secondary" id="koordinatfromlabel3"
-                       style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
-                    3</label>
-                <input type="text" class="form-control searchBox" value="0" id="koordinatfrom3">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="input-group mb-3">
-                <label for="koordinatto3" class="badge bg-secondary" id="koordinattolabel3"
-                       style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
-                    3</label>
-                <input type="text" class="form-control searchBox" id="koordinatto3" readonly tabindex="-1">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="input-group mb-3">
-                <label for="koordinatfrom4" class="badge bg-secondary" id="koordinatfromlabel4"
-                       style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
-                    4</label>
-                <input type="text" class="form-control searchBox" value="0" id="koordinatfrom4">
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="input-group mb-3">
-                <label for="koordinatto4" class="badge bg-secondary" id="koordinattolabel4"
-                       style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
-                    4</label>
-                <input type="text" class="form-control searchBox" id="koordinatto4" readonly tabindex="-1">
-            </div>
+<div class="row">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <label for="radio1" class="badge bg-primary">Danmark</label>
+            <input type="radio" aria-label="Radio button for following text input" name="radiogroup" id="radio1"
+                   checked>
+            <label for="radio2" class="badge bg-primary">Grønland</label>
+            <input type="radio" aria-label="Radio button for following text input" name="radiogroup" id="radio2">
         </div>
     </div>
-    <div class="main">
-        <div class="text-center">
-            <button class="btn btn-primary convert m-2" type="submit" id="convert" disabled> Transformér</button>
-            <button class="btn btn-primary m-2" onclick="copyToClipboard()"> Kopiér til udklipsholder</button>
-            <button class="btn btn-primary m-2" disabled> Vis på kort</button>
-            <button class="btn btn-primary m-2" onclick="clearVal()"> Nulstil</button>
+
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <label for="sel1" class="badge bg-primary">Fra</label>
+            <select class="form-select from" id="sel1">
+                <option value="">Vælg kilde</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <label for="sel2" class="badge bg-primary">Til</label>
+            <select class="form-select to" id="sel2">
+                <option value="">Vælg destination</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <label for="koordinatfrom1" class="badge bg-secondary" id="koordinatfromlabel1"
+                   style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
+                1</label>
+            <input type="text" class="form-control searchBox" value="0" id="koordinatfrom1">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <label for="koordinatto1" class="badge bg-secondary" id="koordinattolabel1"
+                   style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
+                1</label>
+            <input type="text" class="form-control searchBox" id="koordinatto1" readonly tabindex="-1">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <label for="koordinatfrom2" class="badge bg-secondary" id="koordinatfromlabel2"
+                   style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
+                2</label>
+            <input type="text" class="form-control searchBox" value="0" id="koordinatfrom2">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <label for="koordinatto2" class="badge bg-secondary" id="koordinattolabel2"
+                   style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
+                2</label>
+            <input type="text" class="form-control searchBox" id="koordinatto2" readonly tabindex="-1">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <label for="koordinatfrom3" class="badge bg-secondary" id="koordinatfromlabel3"
+                   style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
+                3</label>
+            <input type="text" class="form-control searchBox" value="0" id="koordinatfrom3">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <label for="koordinatto3" class="badge bg-secondary" id="koordinattolabel3"
+                   style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
+                3</label>
+            <input type="text" class="form-control searchBox" id="koordinatto3" readonly tabindex="-1">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <label for="koordinatfrom4" class="badge bg-secondary" id="koordinatfromlabel4"
+                   style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
+                4</label>
+            <input type="text" class="form-control searchBox" value="0" id="koordinatfrom4">
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="input-group mb-3">
+            <label for="koordinatto4" class="badge bg-secondary" id="koordinattolabel4"
+                   style="min-width: 115px !important; display: inline-block !important; text-align: left;">Koordinat
+                4</label>
+            <input type="text" class="form-control searchBox" id="koordinatto4" readonly tabindex="-1">
         </div>
     </div>
 </div>
+<div class="main">
+    <div class="text-center">
+        <button class="btn btn-primary convert m-2" type="submit" id="convert" disabled> Transformér</button>
+        <button class="btn btn-primary m-2" onclick="copyToClipboard()"> Kopiér til udklipsholder</button>
+        <button class="btn btn-primary m-2" disabled> Vis på kort</button>
+        <button class="btn btn-primary m-2" onclick="clearVal()"> Nulstil</button>
+    </div>
+</div>
+
 <div id="finalAmount" class="text-center">
     <h2>
         <span class="finalValue">
