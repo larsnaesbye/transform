@@ -28,16 +28,16 @@ fromSRS.addEventListener('change', (event) => {
     let fromEPSG = metaByEPSG(e1_txt);
     let v1 = fromEPSG["v1"];
     document.getElementById('koordinatfrom1').disabled = (v1 === null);
-    document.getElementById('koordinatfrom1').tabIndex = (v1 === null ? "-1" : "0")
+    document.getElementById('koordinatfrom1').tabIndex = (v1 === null ? -1 : 0)
     let v2 = fromEPSG["v2"];
     document.getElementById('koordinatfrom2').disabled = (v2 === null);
-    document.getElementById('koordinatfrom2').tabIndex = (v2 === null ? "-1" : "0")
+    document.getElementById('koordinatfrom2').tabIndex = (v2 === null ? -1 : 0)
     let v3 = fromEPSG["v3"];
     document.getElementById('koordinatfrom3').disabled = (v3 === null);
-    document.getElementById('koordinatfrom3').tabIndex = (v3 === null ? "-1" : "0")
+    document.getElementById('koordinatfrom3').tabIndex = (v3 === null ? -1 : 0)
     let v4 = fromEPSG["v4"];
     document.getElementById('koordinatfrom4').disabled = (v4 === null);
-    document.getElementById('koordinatfrom4').tabIndex = (v4 === null ? "-1" : "0")
+    document.getElementById('koordinatfrom4').tabIndex = (v4 === null ? -1 : 0)
     document.getElementById('koordinatfromlabel1').innerHTML = v1;
     document.getElementById('koordinatfromlabel2').innerHTML = v2;
     document.getElementById('koordinatfromlabel3').innerHTML = v3;
