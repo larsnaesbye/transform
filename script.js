@@ -15,7 +15,7 @@ let resultTo;
 let searchValue;
 
 getData();
-setUpUI();
+setUpUI(["DK", "Global"]);
 document.getElementById("bigheading").innerHTML = "Koordinattransformation"; // set title right when done loading data
 
 // Event when fromSRS is changed
@@ -202,31 +202,34 @@ function getData() {
     httpRequest.send();
 }
 
-function setUpUI() {
+function setUpUI(regions) {
     let groupselect1 = document.getElementById('sel1');
     let groupselect2 = document.getElementById('sel2');
+    removeAllChildNodes(groupselect1);
+    removeAllChildNodes(groupselect2);
     let region;
     let description;
     for (region of Object.keys(EPSG_data)) {
         // iterate over regions
-        const opt = document.createElement('option');
-        opt.value = region;
-        opt.innerHTML = region;
-        opt.disabled = true;
-        groupselect1.appendChild(opt);
-        groupselect2.appendChild(opt.cloneNode(true));
-        for (const index of Object.keys(EPSG_data[region])) {
-            // iterate over projections
-            const opt2 = document.createElement('option');
-            opt2.disabled = false;
-            description = EPSG_data[region][index]["EPSG"]
-            opt2.title = EPSG_data[region][index]["EPSG"];
-            opt2.value = EPSG_data[region][index]["EPSG"];
-            opt2.innerHTML = EPSG_data[region][index]["title"];
-            groupselect1.appendChild(opt2);
-            groupselect2.appendChild(opt2.cloneNode(true));
+        if (regions.includes(region)) {
+            const opt = document.createElement('option');
+            opt.value = region;
+            opt.innerHTML = region;
+            opt.disabled = true;
+            groupselect1.appendChild(opt);
+            groupselect2.appendChild(opt.cloneNode(true));
+            for (const index of Object.keys(EPSG_data[region])) {
+                // iterate over projections
+                const opt2 = document.createElement('option');
+                opt2.disabled = false;
+                description = EPSG_data[region][index]["EPSG"]
+                opt2.title = EPSG_data[region][index]["EPSG"];
+                opt2.value = EPSG_data[region][index]["EPSG"];
+                opt2.innerHTML = EPSG_data[region][index]["title"];
+                groupselect1.appendChild(opt2);
+                groupselect2.appendChild(opt2.cloneNode(true));
+            }
         }
-
     }
 }
 
@@ -236,10 +239,18 @@ function handleClick(myRadio) {
         default:
         case "Danmark":
             map.flyTo([56.25, 11], 7);
+            setUpUI(["DK", "Global"])
             break;
         case "Grønland":
             map.flyTo([77, -42.5], 3);
+            setUpUI(["GL", "Global"])
             break;
+    }
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
     }
 }
 
