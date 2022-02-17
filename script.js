@@ -95,20 +95,16 @@ function copyToClipboard() {
     let v3 = document.getElementById('koordinatto3').value;
     let v4 = document.getElementById('koordinatto4').value;
 
-    pushToClipboard(system + "\n" + v1 + "," + v2 + "," + v3 + "," + v4);
-}
+    navigator.clipboard.writeText(system + "\n" + v1 + "," + v2 + "," + v3 + "," + v4)
+  .then(() => {
+    // Maybe notify here?
+  })
+  .catch(err => {
+    console.log('Copying failed!', err);
+  });
 
-const pushToClipboard = str => {
-    const el = document.createElement('textarea');
-    el.value = str;
-    el.setAttribute('readonly', '');
-    el.style.position = 'absolute';
-    el.style.left = '-9999px';
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-};
+
+}
 
 function getResults() {
     const e1 = document.getElementById('sel1');
