@@ -261,11 +261,20 @@ function clearVal() {
     document.getElementsByClassName("finalValue").innerHTML = "";
 }
 
-function showPosition(position) {
-    map.flyTo([position.coords.latitude, position.coords.longitude]);
-    marker.setLatLng([position.coords.latitude, position.coords.longitude]);
+function handlePosition(position) {
+    document.getElementById('koordinatfrom1').value = position.coords.latitude;
+    document.getElementById('koordinatfrom2').value = position.coords.longitude;
+    if (position.altitude) document.getElementById('koordinatfrom3').value = position.altitude;
 }
 
-function jumptoLocation() {
-    navigator.geolocation.getCurrentPosition(showPosition);
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(handlePosition);
+}
+
+function jumptoCoords() {
+    // jump to the position in our input. We may need to call WEBPROJ again
+    lat = document.getElementById('koordinatfrom1').value;
+    long = document.getElementById('koordinatfrom2').value;
+    map.flyTo([lat, long]);
+    marker.setLatLng([lat, long]);
 }
