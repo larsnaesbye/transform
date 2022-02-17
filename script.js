@@ -162,6 +162,7 @@ function getDescription(EPSG) {
 // Get our data from WEBPROJ
 
 function getData() {
+    //TODO: use fetch() instead
     const httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function () {
         let description = {};
@@ -231,6 +232,7 @@ function setUpUI(regions) {
             }
         }
     }
+    (document.getElementById("geolocate")).disabled = !(navigator.geolocation);
 }
 
 function handleClick(myRadio) {
@@ -257,4 +259,12 @@ function removeAllChildNodes(parent) {
 function clearVal() {
     window.location.reload();
     document.getElementsByClassName("finalValue").innerHTML = "";
+}
+
+function showPosition(position) {
+    map.flyTo(position);
+}
+
+function jumptoLocation(){
+    navigator.geolocation.getCurrentPosition(showPosition);
 }
