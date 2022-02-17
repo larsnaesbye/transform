@@ -262,9 +262,10 @@ function clearVal() {
 }
 
 function showPosition(position) {
-    map.flyTo(position);
+    map.flyTo([position.coords.latitude, position.coords.longitude]);
+    marker.setLatLng([position.coords.latitude, position.coords.longitude]);
 }
 
-function jumptoLocation(){
+function jumptoLocation() {
     navigator.geolocation.getCurrentPosition(showPosition);
 }
