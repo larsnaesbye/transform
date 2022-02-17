@@ -30,9 +30,9 @@
         <div class="input-group-prepend">
             <label for="radio1" class="badge bg-primary">Danmark</label>
             <input type="radio" aria-label="Radio button for following text input" name="radiogroup" id="radio1"
-                   checked>
+                   checked onchange="handleClick(this)">
             <label for="radio2" class="badge bg-primary">Grønland</label>
-            <input type="radio" aria-label="Radio button for following text input" name="radiogroup" id="radio2">
+            <input type="radio" aria-label="Radio button for following text input" name="radiogroup" id="radio2" onchange="handleClick(this)">
         </div>
     </div>
 
@@ -139,7 +139,7 @@
 <script>
     // Creating map options
     var mapOptions = {
-        center: [56.3, 10.5],
+        center: [56.25, 11],
         zoom: 7,
     }
 
@@ -153,7 +153,7 @@
     // Add the layer to the map
     map.addLayer(layer);
     // Add a marker
-    let marker = new L.Marker([56.0, 12.0]);
+    let marker = new L.Marker([56.25, 11.0]);
     marker.addTo(map)
 
 

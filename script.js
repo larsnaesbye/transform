@@ -230,6 +230,19 @@ function setUpUI() {
     }
 }
 
+function handleClick(myRadio) {
+    let switchto = myRadio.labels[0].innerText;
+    switch (switchto) {
+        default:
+        case "Danmark":
+            map.flyTo([56.25, 11], 7);
+            break;
+        case "Grønland":
+            map.flyTo([77, -42.5], 3);
+            break;
+    }
+}
+
 function clearVal() {
     window.location.reload();
     document.getElementsByClassName("finalValue").innerHTML = "";
