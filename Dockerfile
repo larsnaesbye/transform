@@ -1,3 +1,3 @@
 FROM nginx
-MAINTAINER lanch@sdfe.dk
+MAINTAINER lanch@sdfi.dk
 COPY . /usr/share/nginx/html
